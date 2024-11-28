@@ -20,8 +20,8 @@ export const Footer = async () => {
           </div>
           <div className={styles.links}>
             <Accordion title="Solutions">
-              <Link href="/tutor-cruncher-starter">Starter</Link>
-              <Link href="/tutor-cruncher-pro">Pro</Link>
+              <Link href="/tutor-cruncher-starter">Pay as you Go</Link>
+              <Link href="/tutor-cruncher-pro">Startup</Link>
               <Link href="/tutor-cruncher-enterprise">Enterprise</Link>
             </Accordion>
             <Accordion title="Newsletter">
@@ -37,7 +37,6 @@ export const Footer = async () => {
             <Accordion title="Support">
               <Link href="/contact">Contact</Link>
               <Link href="/changes">Change log</Link>
-              <Link href="tel:+44 20 3966 1863">+44 20 3966 1863</Link>
               <Link href="https://help.tutorcruncher.com/en/" target="_blank">
                 Help centre
               </Link>

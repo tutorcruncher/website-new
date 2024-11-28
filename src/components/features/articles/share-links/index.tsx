@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/icon-button-link";
 import { Facebook } from "@/svgs/facebook";
 import { LinkedIn } from "@/svgs/linkedin";
-import { Twitter } from "@/svgs/twitter";
+import { Twitter } from "@/svgs/github";
 
 import styles from "./shareLinks.module.scss";
 
@@ -52,7 +52,7 @@ export const ArticleShareLinks = ({
             href={social.href
               .replace(
                 "{url}",
-                encodeURIComponent(`https://tutorcruncher.com/${pathname}`),
+                encodeURIComponent(`https://tutorcruncher.com/${pathname}`)
               )
               .replace("{title}", encodeURIComponent(title))}
             ariaLabel={social.label}

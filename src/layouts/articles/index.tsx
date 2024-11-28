@@ -15,7 +15,7 @@ const ArticlesLayout = async ({
 }: ArticlesLayoutProps) => {
   return (
     <>
-      <Hero heading={<b>Blog</b>} intro={intro} />
+      <Hero heading={<b>Knowledge Hub</b>} intro={intro} />
       <Body spacing="none" background="blue">
         <CategorySearchFilterBar activeCategory={category} />
         {posts.length > 0 ? (

@@ -8,6 +8,7 @@ import { Heading } from "@/components/ui/heading";
 // TODO Replace with CMS navigation
 import { SOLUTIONS_MENU } from "./data";
 import styles from "./solutions-menu.module.scss";
+import { ChevronDown } from "@/svgs/chevron-down";
 
 export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
   const menuRef = useRef(null);
@@ -33,7 +34,7 @@ export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
       ref={menuRef}
       className={clsx(
         styles.solutionsMenu,
-        solutionsVisbile && styles.solutionsVisible,
+        solutionsVisbile && styles.solutionsVisible
       )}
     >
       <button
@@ -95,6 +96,13 @@ export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
             </ul>
           </Link>
         ))}
+      </div>
+      <div className={styles.allFeaturesLink}>
+        {/* TODO: Update to features url */}
+        <Link href="/">
+          <span>Link to all features</span>
+          <ChevronDown />
+        </Link>
       </div>
     </div>
   );

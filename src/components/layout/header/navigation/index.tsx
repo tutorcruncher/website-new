@@ -10,6 +10,7 @@ import { Action } from "@/components/ui/action";
 
 import styles from "./navigation.module.scss";
 import { SolutionsMenu } from "./solutions-menu";
+import { ChevronDown } from "@/svgs/chevron-down";
 
 const NavigationItems = [
   {
@@ -30,7 +31,7 @@ const NavigationItems = [
     link: "/pricing",
   },
   {
-    title: "Blog",
+    title: "Knowledge Hub",
     link: "/blog",
   },
 ];
@@ -84,23 +85,11 @@ export const Navigation = ({
                     onClick={handleToggleSolutionsMenu}
                     className={clsx(
                       styles.navigationLink,
-                      solutionsVisbile && styles.solutionsVisible,
+                      solutionsVisbile && styles.solutionsVisible
                     )}
                   >
                     <span>{item.title}</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                      />
-                    </svg>
+                    <ChevronDown />
                   </button>
                   <SolutionsMenu
                     solutionsVisbile={solutionsVisbile}
