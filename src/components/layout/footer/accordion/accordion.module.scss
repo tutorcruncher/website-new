@@ -1,0 +1,48 @@
+.accordion {
+  margin-bottom: grid(6);
+
+  .content {
+    padding-top: grid(4);
+    display: flex;
+    flex-direction: column;
+    gap: grid(3);
+  }
+
+  .heading {
+    @include heading-xsmall;
+    font-weight: 600;
+    font-family: $font-secondary;
+    margin: 0;
+  }
+
+  @include md-max-display {
+    .summary {
+      background: $light-blue;
+      padding: grid(5);
+      border-radius: grid(6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .content {
+      display: none;
+      padding: grid(4);
+    }
+
+    @include acccordion-toggle-open;
+
+    &.open {
+      @include acccordion-toggle-closed;
+      .content {
+        display: flex;
+      }
+    }
+  }
+
+  @include md-display {
+    svg {
+      display: none;
+    }
+  }
+}

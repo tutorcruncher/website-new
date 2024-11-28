@@ -1,0 +1,67 @@
+// Carousel
+.embla {
+  margin: auto;
+  position: relative;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+
+  :global(.is-snapped) {
+    opacity: 1 !important;
+  }
+}
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 0 grid(6);
+  opacity: 0.2;
+  transition: opacity 0.5s ease-in-out;
+
+  @include md-display {
+    flex: 0 0 80%;
+  }
+
+  @include xl-display {
+    flex: 0 0 60%;
+  }
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 125px;
+  margin: grid(10) auto grid(15);
+  gap: grid(6);
+
+  @include md-display {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    padding: 0 10%;
+  }
+
+  @include xl-display {
+    padding: 0 20%;
+  }
+
+  button {
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    &:hover {
+      rect {
+        fill: $navy-blue;
+      }
+    }
+  }
+}

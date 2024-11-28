@@ -1,0 +1,21 @@
+.container {
+  text-align: center;
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: grid(8);
+  border: 2px solid $navy-blue;
+  border-radius: $border-radius--medium;
+  background-color: $white;
+
+  .buttons {
+    display: inline-flex;
+    gap: grid(2);
+    margin-top: grid(6);
+    margin-bottom: grid(4);
+  }
+
+  .content {
+    font-size: $font-size--base;
+  }
+}

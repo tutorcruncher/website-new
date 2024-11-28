@@ -1,0 +1,62 @@
+.locationItem {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $navy-blue;
+  border-radius: $border-radius--medium;
+  overflow: hidden;
+  background-color: $white;
+
+  .map {
+    width: 100%;
+    background-color: $grey;
+  }
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  .information {
+    display: flex;
+    flex-direction: column;
+    gap: grid(3);
+    padding: grid(3);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .title {
+    font-size: $font-size--xxlarge;
+  }
+
+  h2 {
+    font-size: $font-size--large;
+    margin-bottom: grid(2);
+  }
+
+  .address {
+    font-style: normal;
+  }
+
+  .contactDetails {
+    margin-top: grid(3);
+  }
+
+  .openingHours {
+    margin-top: grid(3);
+  }
+}
+
+@include md-display {
+  .locationItem {
+    flex-direction: row;
+
+    .information {
+      width: 300px;
+      flex-shrink: 0;
+      gap: grid(5);
+      padding: grid(8) grid(10) grid(10) grid(10);
+    }
+  }
+}

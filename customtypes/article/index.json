@@ -1,0 +1,124 @@
+{
+  "id": "article",
+  "label": "Article",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": "URL slug for the article"
+        }
+      },
+      "category": {
+        "type": "Link",
+        "config": {
+          "label": "Category",
+          "select": "document",
+          "customtypes": ["category"]
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Title",
+          "placeholder": ""
+        }
+      },
+      "featured_image": {
+        "type": "Image",
+        "config": {
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "publishDate": {
+        "type": "Date",
+        "config": {
+          "label": "Publish Date",
+          "placeholder": "Date the article was published"
+        }
+      },
+      "content": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "author_image": {
+        "type": "Image",
+        "config": {
+          "label": "Author image ",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "author_name": {
+        "type": "Text",
+        "config": {
+          "label": "Author name",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "custom_url": {
+        "type": "Text",
+        "config": {
+          "label": "Custom URL",
+          "placeholder": ""
+        }
+      },
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {
+            "width": 2400,
+            "height": 1260
+          },
+          "thumbnails": []
+        }
+      }
+    },
+    "Featured": {
+      "featured_within_footer": {
+        "type": "Boolean",
+        "config": {
+          "label": "Featured Within Footer",
+          "placeholder_false": "False",
+          "placeholder_true": "True",
+          "default_value": false
+        }
+      }
+    }
+  }
+}

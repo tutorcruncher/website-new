@@ -1,0 +1,21 @@
+.shareLinksWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  @include text-xsmall;
+
+  @include sm-display {
+    justify-content: start;
+    width: auto;
+  }
+
+  .shareLinks {
+    display: flex;
+    align-items: center;
+    gap: grid(1);
+    grid-area: social;
+    justify-content: center;
+  }
+}

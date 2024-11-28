@@ -1,0 +1,10 @@
+.wrapper {
+  position: relative;
+  z-index: 10;
+  .inner {
+    @include container;
+    display: flex;
+    justify-content: flex-end;
+    gap: grid(5);
+  }
+}

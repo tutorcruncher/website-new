@@ -1,0 +1,14 @@
+.revenueSelect {
+  margin: grid(6) 0 grid(10) 0;
+
+  @include md-display {
+    display: flex;
+    gap: grid(2);
+    align-items: center;
+    justify-content: center;
+  }
+
+  p {
+    font-weight: 600;
+  }
+}

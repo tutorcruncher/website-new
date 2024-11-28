@@ -1,0 +1,70 @@
+{
+  "format": "custom",
+  "id": "testimonial",
+  "label": "Testimonial",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "short_testimonial": {
+        "type": "Text",
+        "config": {
+          "label": "Short Testimonial",
+          "placeholder": ""
+        }
+      },
+      "testimonial": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Testimonial",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "multi": "paragraph,strong"
+        }
+      },
+      "company_logo": {
+        "type": "Image",
+        "config": {
+          "label": "Company logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "reviewer_image": {
+        "type": "Image",
+        "config": {
+          "label": "Reviewer image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "reviewer_name": {
+        "type": "Text",
+        "config": {
+          "label": "Reviewer name",
+          "placeholder": ""
+        }
+      },
+      "reviewer_role": {
+        "type": "Text",
+        "config": {
+          "label": "Reviewer role",
+          "placeholder": ""
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+"use client";
+import clsx from "clsx";
+import Link from "next/link";
+import { useState } from "react";
+
+import { Action } from "@/components/ui/action";
+import LogoSvg from "@/svgs/logo";
+
+import styles from "./header.module.scss";
+import { Navigation } from "./navigation";
+
+export const Header = () => {
+  const [navigationOpen, setNavigationOpen] = useState(false);
+
+  const handleNavigationOpen = (isOpen: boolean) => {
+    document.body.className = isOpen ? "navigation-open" : "";
+    setNavigationOpen(isOpen);
+  };
+
+  return (
+    <header className={styles.header}>
+      <div className={styles.headerInner}>
+        <Link
+          href="/"
+          className={styles.logo}
+          aria-label="Go to homepage via site logo"
+        >
+          <LogoSvg />
+        </Link>
+        <button
+          type="button"
+          className={clsx(styles.menuButton, [navigationOpen && styles.open])}
+          onClick={() => handleNavigationOpen(!navigationOpen)}
+        >
+          <span className="sr-only">Open main menu</span>
+          <div className={styles.menuIcon}>
+            <span aria-hidden="true" className={styles.menuLine} />
+            <span aria-hidden="true" className={styles.menuLine} />
+          </div>
+        </button>
+        <Navigation
+          navigationOpen={navigationOpen}
+          setNavigationOpen={setNavigationOpen}
+        />
+        <div className={styles.headerActions}>
+          <Action href="https://secure.tutorcruncher.com/" variant="outline">
+            Login
+          </Action>
+          <Action href="https://secure.tutorcruncher.com/start/1/?tc_source=google.com">
+            Start free trial
+          </Action>
+        </div>
+      </div>
+    </header>
+  );
+};

@@ -1,0 +1,34 @@
+.pagination {
+  @include container;
+
+  ul {
+    padding: grid(10) 0;
+    margin: 0;
+    display: flex;
+    gap: grid(2);
+    justify-content: center;
+    list-style: none;
+
+    .page {
+      display: flex;
+      height: grid(10);
+      width: grid(10);
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: $navy-blue;
+      border-radius: 50%;
+      border: 1px solid transparent;
+
+      &:hover {
+        border-color: $navy-blue;
+      }
+
+      &.active {
+        border-color: $sky-blue;
+        background-color: $sky-blue;
+        color: $white;
+      }
+    }
+  }
+}

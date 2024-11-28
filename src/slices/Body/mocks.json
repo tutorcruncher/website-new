@@ -1,0 +1,25 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "content": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Enim voluptate ut commodo occaecat id laborum consectetur pariatur in laborum do cillum nostrud."
+            }
+          }
+        ]
+      },
+      "background_colour": {
+        "__TYPE__": "FieldContent",
+        "value": "Blue",
+        "type": "Select"
+      }
+    },
+    "items": []
+  }
+]

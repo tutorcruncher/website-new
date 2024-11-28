@@ -1,0 +1,60 @@
+.slide {
+  padding: grid(10) grid(6);
+  text-align: center;
+  background-color: $cream;
+  border-radius: 50px;
+  border: 2px solid $steel-blue;
+  will-change: transform;
+  font-size: $font-size--xlarge;
+  line-height: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    img {
+      height: 50px;
+      width: auto;
+      object-position: center;
+      object-fit: cover;
+    }
+  }
+
+  .testimonial {
+    margin-top: grid(10);
+    color: #596d80;
+  }
+
+  .cite {
+    font-family: $font-secondary;
+    text-align: center;
+    margin-top: grid(16);
+    font-size: $font-size--large;
+    line-height: 20px;
+    color: #596d80;
+
+    img {
+      width: grid(15);
+      height: grid(15);
+      border: 2px solid $steel-blue;
+      border-radius: 50%;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .name {
+      color: $navy-blue;
+      font-weight: 500;
+      margin-top: grid(2);
+      margin-bottom: grid(1);
+    }
+  }
+
+  @include md-display {
+    padding: grid(20);
+    font-size: $font-size--xlarge;
+  }
+}

@@ -1,0 +1,18 @@
+.backgroundColour {
+  &--cream {
+    background-color: $cream;
+  }
+  &--blue {
+    background-color: $baby-blue;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: grid(8);
+
+  @include md-display {
+    gap: grid(15);
+  }
+}

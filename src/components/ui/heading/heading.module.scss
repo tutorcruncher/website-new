@@ -1,0 +1,70 @@
+.heading {
+  &--xxsmall {
+    @include heading-xxsmall;
+    margin: 0 0 grid(4);
+    @include md-display {
+      margin: 0 0 grid(6);
+    }
+  }
+
+  &--xsmall {
+    @include heading-xsmall;
+    margin: 0 0 grid(6);
+    @include md-display {
+      margin: 0 0 grid(8);
+    }
+  }
+
+  &--small {
+    @include heading-small;
+    margin: 0 0 grid(8);
+    @include md-display {
+      margin: 0 0 grid(10);
+    }
+  }
+
+  &--medium {
+    @include heading-medium;
+    margin: 0 0 grid(10);
+    @include md-display {
+      margin: 0 0 grid(12);
+    }
+  }
+
+  &--large {
+    @include heading-large;
+    margin: 0 0 grid(12);
+    @include md-display {
+      margin: 0 0 grid(14);
+    }
+  }
+
+  &--xlarge {
+    @include heading-xlarge;
+    margin: 0 0 grid(14);
+    @include md-display {
+      margin: 0 0 grid(16);
+    }
+  }
+
+  &--xxlarge {
+    @include heading-xxlarge;
+    margin: 0 0 grid(16);
+    @include md-display {
+      margin: 0 0 grid(18);
+    }
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.noMargin {
+    margin: 0;
+  }
+
+  b,
+  strong {
+    @include heading-gradient;
+  }
+}

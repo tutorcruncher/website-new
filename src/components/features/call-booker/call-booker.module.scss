@@ -1,0 +1,164 @@
+.calendarContainer {
+  width: 100%;
+  display: none;
+
+  &.calendarReady {
+    display: block;
+  }
+
+  :global(.numInputWrapper),
+  :global(.flatpickr-input) {
+    display: none !important;
+  }
+
+  :global(.flatpickr-months) {
+    font-family: $font-secondary;
+    font-size: $font-size--large;
+    color: $navy-blue;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: grid(3);
+
+    :global(.flatpickr-prev-month),
+    :global(.flatpickr-next-month) {
+      cursor: pointer;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  :global(.flatpickr-weekdaycontainer) {
+    display: flex;
+
+    :global(.flatpickr-weekday) {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+  :global(.flatpickr-disabled) {
+    opacity: 0.3;
+    background: none !important;
+
+    &:hover {
+      color: inherit !important;
+      background: none !important;
+      cursor: not-allowed !important;
+    }
+  }
+
+  :global(.dayContainer) {
+    display: flex;
+    flex-wrap: wrap;
+
+    :global(.flatpickr-day) {
+      flex-basis: 14.2857143%;
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="%23d5f3ff"><circle cx="50" cy="50" r="50" /></svg>');
+      background-repeat: no-repeat;
+      background-size: 40px;
+      background-position: center;
+
+      &:hover {
+        background-image: url('data:image/svg+xml,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="%23362e83"><circle cx="50" cy="50" r="50" /></svg>');
+        color: $white;
+      }
+
+      & > * {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+.bookWidget {
+  display: flex;
+  flex-direction: column;
+  padding: grid(5);
+  border: 2px solid $navy-blue;
+  border-radius: $border-radius--medium;
+  background-color: $white;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+
+  .agent {
+    padding-right: grid(5);
+    border-right: 1px solid $light-blue;
+  }
+
+  .agent,
+  .timeSlotsContainer {
+    flex-shrink: 0;
+  }
+
+  .agent {
+    width: calc(100% - 330px);
+    transition: width 0.2s linear;
+  }
+
+  &.dateSelected {
+    .agent {
+      width: 360px;
+    }
+  }
+}
+
+.heading {
+  font-size: $font-size--large;
+  margin-bottom: grid(3);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  position: relative;
+  font-family: $font-secondary;
+  margin-bottom: grid(3);
+
+  > div {
+    padding: 0 grid(2);
+    max-width: 400px;
+    text-align: center;
+  }
+}
+
+.timeSlotsContainer {
+  width: 100%;
+
+  .timeSlots {
+    display: flex;
+    flex-direction: column;
+    gap: grid(2);
+    padding: 0 grid(5);
+    overflow: scroll;
+    max-height: 400px;
+
+    button {
+      padding: grid(3);
+      text-align: center;
+      font-weight: 600;
+      border-radius: $border-radius--small;
+      border: 1px solid $navy-blue;
+      color: $navy-blue;
+
+      &:hover {
+        background-color: $baby-blue;
+      }
+    }
+  }
+}
+
+@include md-display {
+  .bookWidget {
+    padding: grid(10);
+  }
+}

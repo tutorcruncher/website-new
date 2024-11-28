@@ -1,0 +1,81 @@
+// Grid
+$containerWidth: 1360px;
+$gap: 30px;
+$columns: 12;
+$gridBreakpoints: (
+  xs: 0,
+  sm: 500px,
+  md: 800px,
+  lg: 1100px,
+  xl: 1400px,
+);
+$xs: map-get($gridBreakpoints, xs);
+$sm: map-get($gridBreakpoints, sm);
+$md: map-get($gridBreakpoints, md);
+$lg: map-get($gridBreakpoints, lg);
+$xl: map-get($gridBreakpoints, xl);
+
+// Section
+$mobileSpacing: (
+  sm: 40px,
+  md: 60px,
+  lg: 80px,
+);
+$mobileSpacingSm: map-get($mobileSpacing, sm);
+$mobileSpacingMd: map-get($mobileSpacing, md);
+$mobileSpacingLg: map-get($mobileSpacing, md);
+$desktopSpacing: (
+  sm: 80px,
+  md: 100px,
+  lg: 120px,
+);
+$desktopSpacingSm: map-get($desktopSpacing, sm);
+$desktopSpacingMd: map-get($desktopSpacing, md);
+$desktopSpacingLg: map-get($desktopSpacing, lg);
+
+// Colours
+$baby-blue: #d5f3ff;
+$steel-blue: #362e83;
+$dark-blue: #0c042c;
+$sky-blue: #3da2f5;
+$light-blue: #ecf5f6;
+$navy-blue: #1f374e;
+$navy-blue-75: rgba(31, 55, 78, 0.75);
+$navy-blue-50: rgba(31, 55, 78, 0.5);
+$navy-blue-15: rgba(31, 55, 78, 0.15);
+$cream: #fffdf6;
+$white: #fff;
+$black: #000;
+$grey: #f6f6f6;
+
+// Updated font sizing
+$font-size--xxsmall: 10px;
+$font-size--xsmall: 12px;
+$font-size--small: 14px;
+$font-size--base: 16px;
+$font-size--large: 18px;
+$font-size--xlarge: 20px;
+$font-size--xxlarge: 24px;
+
+// Typeface
+
+$font-secondary:
+  halyard-display,
+  -apple-system,
+  "Segoe UI",
+  "Roboto",
+  "Oxygen",
+  "Ubuntu",
+  "Cantarell",
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  sans-sans;
+
+// Z-Indexing
+$z-navigation: 999;
+
+/* Border radius */
+$border-radius--large: grid(12);
+$border-radius--medium: grid(10);
+$border-radius--small: grid(2);

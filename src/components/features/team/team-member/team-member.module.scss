@@ -1,0 +1,25 @@
+.teamMember {
+  flex: 1;
+  img {
+    width: 100%;
+    height: auto;
+    border: 2px solid $navy-blue;
+    border-radius: $border-radius--medium;
+    padding: grid(2);
+  }
+  .content {
+    padding: 0 grid(3) grid(3);
+
+    h3 {
+      font-size: $font-size--xxlarge;
+    }
+    .role {
+      margin: grid(1) 0;
+      font-size: $font-size--large;
+    }
+    .intro {
+      margin-top: grid(2);
+      font-size: $font-size--small;
+    }
+  }
+}

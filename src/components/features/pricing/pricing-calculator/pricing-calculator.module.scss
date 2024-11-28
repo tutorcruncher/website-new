@@ -1,0 +1,84 @@
+.intro {
+  text-align: center;
+  font-size: $font-size--xlarge;
+}
+
+.calculatorInputContainer {
+  text-align: center;
+  font-size: 30px;
+  max-width: 800px;
+  margin: grid(6) auto;
+
+  input {
+    border: none;
+    border-bottom: 1px solid;
+    background-color: transparent;
+    width: 80px;
+    text-align: right;
+    color: #000;
+    font-weight: 700;
+
+    &.revenue {
+      width: 150px;
+    }
+  }
+}
+.calculatorOptions {
+  display: flex;
+  flex-direction: column;
+  gap: grid(5);
+
+  @include md-display {
+    flex-direction: row;
+  }
+
+  width: 100%;
+
+  .tierOption {
+    flex: 1;
+    background-color: $white;
+    padding: grid(7);
+    border-radius: $border-radius--small;
+    border: 2px solid $navy-blue;
+
+    .tierName {
+      font-size: $font-size--xxlarge;
+      text-align: center;
+      padding-bottom: grid(2);
+      border-bottom: 1px solid $navy-blue-15;
+    }
+  }
+  .recommended {
+    background: $baby-blue;
+  }
+}
+
+.tierBreakdown {
+  .breakdownContainer {
+    display: grid;
+    gap: grid(1);
+  }
+
+  .breakdownTotal,
+  .breakdownLine {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .amount {
+    font-weight: 600;
+  }
+
+  .breakdownTotal {
+    margin-top: grid(2);
+    font-size: $font-size--xlarge;
+  }
+}
+
+.terms {
+  text-align: center;
+  font-size: $font-size--small;
+  margin: grid(4) auto;
+  font-style: italic;
+  max-width: 800px;
+}

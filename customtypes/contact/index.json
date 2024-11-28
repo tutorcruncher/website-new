@@ -1,0 +1,112 @@
+{
+  "format": "page",
+  "id": "contact",
+  "label": "Contact",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "content": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Content",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,strong,heading2"
+        }
+      },
+      "locations": {
+        "type": "Group",
+        "config": {
+          "label": "Locations",
+          "repeat": true,
+          "fields": {
+            "name": {
+              "type": "Text",
+              "config": {
+                "label": "Name",
+                "placeholder": ""
+              }
+            },
+            "address": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Address",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph"
+              }
+            },
+            "email": {
+              "type": "Text",
+              "config": {
+                "label": "Email",
+                "placeholder": ""
+              }
+            },
+            "phone_number": {
+              "type": "Text",
+              "config": {
+                "label": "Phone number",
+                "placeholder": ""
+              }
+            },
+            "opening_hours": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Opening hours",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph"
+              }
+            },
+            "map": {
+              "type": "Link",
+              "config": {
+                "label": "Map",
+                "placeholder": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9939.379422937021!2d-0.132548!3d51.479362!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760528b5a414c5%3A0x203347fa580ce37b!2sTutorCruncher!5e0!3m2!1sen!2suk!4v1726840565815!5m2!1sen!2suk",
+                "allowTargetBlank": true,
+                "select": null,
+                "allowText": true
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

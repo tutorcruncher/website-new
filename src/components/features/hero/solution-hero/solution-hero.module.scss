@@ -1,0 +1,17 @@
+.intro,
+.pricing {
+  max-width: 700px;
+  margin: grid(6) auto 0;
+  text-align: center;
+}
+
+.pricing {
+  font-size: $font-size--xlarge;
+}
+
+.buttonsContainer {
+  margin-top: grid(10);
+  display: flex;
+  justify-content: center;
+  gap: grid(4);
+}

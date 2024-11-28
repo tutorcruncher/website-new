@@ -1,0 +1,40 @@
+{
+  "format": "custom",
+  "id": "release",
+  "label": "Release",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "release_name": {
+        "type": "Text",
+        "config": {
+          "label": "Release Name",
+          "placeholder": ""
+        }
+      },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "Date",
+          "placeholder": ""
+        }
+      },
+      "changes": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Changes",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "strong,em,hyperlink,list-item"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.tag {
+  display: inline-flex;
+  background-color: $grey;
+  color: $navy-blue-75;
+  font-size: $font-size--xsmall;
+  font-weight: 500;
+  padding: grid(2) grid(4);
+  border-radius: grid(3);
+  white-space: nowrap;
+
+  @include md-display {
+    font-size: $font-size--base;
+  }
+
+  &:not(.noHoverEffect):not(.active):hover {
+    background-color: $light-blue;
+  }
+
+  &.active {
+    background-color: $navy-blue;
+    color: $white;
+  }
+}

@@ -1,0 +1,79 @@
+.fullFeaturesList {
+  margin-top: grid(10);
+  width: 100%;
+  position: relative;
+
+  .packageTitle {
+    margin-bottom: grid(5);
+    position: sticky;
+    left: 0;
+  }
+
+  table {
+    max-width: none;
+    table-layout: fixed;
+    min-width: 800px;
+  }
+
+  th {
+    background-color: $grey;
+    max-width: 100px;
+    color: $navy-blue;
+    font-family: $font-secondary;
+    text-align: center;
+  }
+  tr {
+    background-color: $white;
+  }
+  tr:nth-of-type(2n) {
+    background: #fbfbfb;
+  }
+  tr > td:first-of-type {
+    text-align: left;
+  }
+  td {
+    text-align: center;
+  }
+
+  .tick {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  svg path {
+    fill: $sky-blue;
+  }
+}
+@include md-max-display {
+  .fullFeaturesList {
+    overflow: scroll;
+
+    .packageTitle {
+      margin-bottom: grid(5);
+      position: sticky;
+      left: 0;
+    }
+
+    tr > td:first-of-type,
+    tr > th:first-of-type {
+      position: sticky;
+      left: 0;
+      z-index: 2;
+    }
+
+    tbody tr > td:first-of-type {
+      background: inherit;
+    }
+  }
+}
+
+.fullFeaturesList {
+  @include md-display {
+    thead tr {
+      position: sticky;
+      top: 0;
+    }
+  }
+}

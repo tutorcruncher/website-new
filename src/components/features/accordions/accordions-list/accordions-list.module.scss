@@ -1,0 +1,25 @@
+.inner {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+
+  .accordionsWrapper {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    @include lg-display {
+      gap: 12px;
+    }
+  }
+
+  @include lg-display {
+    flex-direction: row;
+    justify-content: flex-end;
+
+    .accordionsWrapper {
+      width: calc(50% - 60px);
+    }
+  }
+}

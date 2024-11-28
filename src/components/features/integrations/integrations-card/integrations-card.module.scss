@@ -1,0 +1,39 @@
+.integrationCard {
+  background-color: $white;
+  border: 1px solid $navy-blue-15;
+  border-radius: grid(3);
+  overflow: hidden;
+  padding: grid(5) grid(12);
+  text-align: center;
+  max-width: 360px;
+  cursor: pointer;
+  color: $navy-blue;
+
+  &:hover {
+    border-color: $navy-blue;
+  }
+
+  .logoWrapper {
+    font-size: 50px;
+    font-weight: 700;
+    color: $steel-blue;
+
+    img {
+      width: auto;
+      height: 50px;
+      border-radius: grid(2);
+    }
+  }
+
+  &.intergration_group-world {
+    img {
+      transform: scale(1.3);
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-top: grid(4);
+    line-height: normal;
+  }
+}

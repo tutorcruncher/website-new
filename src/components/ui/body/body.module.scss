@@ -1,0 +1,53 @@
+.wrapper {
+  background-color: $white;
+
+  &.cream {
+    background-color: $cream;
+  }
+
+  &.blue {
+    background-color: $baby-blue;
+  }
+
+  &.spacingNone {
+    padding: 0;
+  }
+
+  &.spacingSmall {
+    @include section-spacing-sm;
+    .headingWrapper {
+      max-width: 661px;
+      margin: 0 auto;
+    }
+  }
+
+  &.spacingMedium {
+    @include section-spacing-md;
+    .headingWrapper {
+      max-width: 770px;
+      margin: 0 auto;
+    }
+  }
+
+  &.spacingLarge {
+    @include section-spacing-lg;
+    .headingWrapper {
+      max-width: 770px;
+      margin: 0 auto;
+    }
+  }
+
+  .inner {
+    &.containerSmall {
+      @include container-sm;
+    }
+
+    &.containerMedium {
+      @include container-md;
+    }
+
+    &.containerLarge {
+      @include container;
+    }
+  }
+}

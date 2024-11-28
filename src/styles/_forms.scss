@@ -1,0 +1,76 @@
+$input-placeholder: rgba(31, 55, 78, 0.5);
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: grid(3);
+
+  input,
+  select,
+  textarea {
+    padding: 15px 20px 15px 20px;
+    border: 1px solid #f6f6f6;
+    background-color: #f6f6f6;
+    border-radius: grid(4);
+    font-weight: 600;
+
+    &:hover,
+    &:active {
+      color: $navy-blue;
+      outline: 2px solid $navy-blue;
+    }
+
+    &::placeholder {
+      color: $input-placeholder;
+      font-weight: 400;
+      opacity: 1;
+    }
+  }
+
+  select:invalid {
+    color: $input-placeholder;
+    font-weight: normal;
+    opacity: 1;
+  }
+
+  .checkboxContainer {
+    display: flex;
+    align-items: start;
+    gap: grid(1);
+    cursor: pointer;
+
+    input[type="checkbox"] {
+      appearance: none;
+      background-color: #f6f6f6;
+      margin: 0;
+      font: inherit;
+      color: currentColor;
+      width: grid(5);
+      height: grid(5);
+      border-radius: grid(1);
+      display: grid;
+      place-content: center;
+    }
+
+    input[type="checkbox"]::before {
+      content: "";
+      width: grid(3.5);
+      height: grid(3.5);
+      transform: scale(0);
+      transition: 120ms transform ease-in-out;
+      box-shadow: inset grid(3) grid(3) $navy-blue;
+      border-radius: grid(1);
+    }
+
+    input[type="checkbox"]:checked {
+      outline: 2px solid $navy-blue;
+    }
+    input[type="checkbox"]:checked::before {
+      transform: scale(1);
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}

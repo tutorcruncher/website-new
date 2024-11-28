@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /*?nf_resize=
+Disallow: /assets/
+Sitemap: https://tutorcruncher.com/sitemap.xml

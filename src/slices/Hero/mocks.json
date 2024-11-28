@@ -1,0 +1,58 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default",
+    "primary": {
+      "intro": {
+        "__TYPE__": "FieldContent",
+        "value": "crop",
+        "type": "Text"
+      },
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Whether"
+            }
+          }
+        ]
+      }
+    },
+    "items": []
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "solutionHero",
+    "primary": {
+      "heading": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Engine"
+            }
+          }
+        ]
+      },
+      "intro": {
+        "__TYPE__": "FieldContent",
+        "value": "school",
+        "type": "Text"
+      },
+      "pricing": {
+        "__TYPE__": "FieldContent",
+        "value": "single",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

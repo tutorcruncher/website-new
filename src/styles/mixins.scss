@@ -1,0 +1,287 @@
+@mixin sm-display {
+  @media screen and (min-width: ($sm + 1px)) {
+    @content;
+  }
+}
+
+@mixin sm-max-display {
+  @media screen and (max-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md-display {
+  @media screen and (min-width: ($md + 1px)) {
+    @content;
+  }
+}
+
+@mixin md-max-display {
+  @media screen and (max-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg-display {
+  @media screen and (min-width: ($lg + 1px)) {
+    @content;
+  }
+}
+
+@mixin lg-max-display {
+  @media screen and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl-display {
+  @media screen and (min-width: $xl) {
+    @content;
+  }
+}
+
+@function grid($unit) {
+  @return $unit * 4px;
+}
+
+@mixin section-spacing-sm {
+  padding: $mobileSpacingSm 0;
+  @include md-display {
+    padding: $desktopSpacingSm 0;
+  }
+}
+
+@mixin section-spacing-md {
+  padding: $mobileSpacingMd 0;
+  @include md-display {
+    padding: $desktopSpacingMd 0;
+  }
+}
+
+@mixin section-spacing-lg {
+  padding: $mobileSpacingLg 0;
+  @include md-display {
+    padding: $desktopSpacingLg 0;
+  }
+}
+
+@mixin buttonReset {
+  background: transparent;
+  text-align: left;
+  line-height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+@mixin container($center: true) {
+  max-width: $containerWidth;
+  padding: 0 grid(5);
+
+  @if $center {
+    margin: 0 auto;
+  }
+  else {
+    margin: 0;
+  }
+
+  @include xl-display {
+    padding: 0;
+  }
+}
+
+@mixin container-md($center: true) {
+  max-width: 980px;
+  padding: 0 grid(5);
+
+  @if $center {
+    margin: 0 auto;
+  }
+  else {
+    margin: 0;
+  }
+
+  @include lg-display {
+    padding: 0;
+  }
+}
+
+@mixin container-sm($center: true) {
+  max-width: 770px;
+  padding: 0 grid(5);
+
+  @if $center {
+    margin: 0 auto;
+  }
+  else {
+    margin: 0;
+  }
+
+  @include lg-display {
+    padding: 0;
+  }
+}
+
+@mixin heading-xxsmall {
+  font-size: $font-size--xlarge;
+  font-weight: 700;
+}
+
+@mixin heading-xsmall {
+  font-size: $font-size--xxlarge;
+  line-height: 120%; /* 28.8px */
+
+  @include md-display {
+    font-size: 32px;
+    line-height: 130%; /* 41.6px */
+  }
+}
+
+@mixin heading-small {
+  font-size: 28px;
+  line-height: 120%; /* 33.6px */
+
+  @include md-display {
+    font-size: 40px;
+    line-height: 120%; /* 48px */
+  }
+}
+
+@mixin heading-medium {
+  font-size: 32px;
+  line-height: 100%; /* 32px */
+
+  @include md-display {
+    font-size: 48px;
+    line-height: 110%; /* 52.8px */
+  }
+}
+
+@mixin heading-large {
+  font-size: 40px;
+  line-height: 100%; /* 40px */
+  letter-spacing: -0.4px;
+
+  @include md-display {
+    font-size: 60px;
+    letter-spacing: -0.6px;
+    line-height: 100%; /* 60px */
+  }
+}
+
+@mixin heading-xlarge {
+  font-size: 44px;
+  line-height: 100%; /* 44px */
+  letter-spacing: -0.88px;
+
+  @include md-display {
+    font-size: 72px;
+    line-height: 95%; /* 68.4px */
+    letter-spacing: -1.44px;
+  }
+}
+
+@mixin heading-xxlarge {
+  font-size: 56px;
+  line-height: 95%; /* 53.2px */
+  letter-spacing: -0.56px;
+
+  @include md-display {
+    font-size: 90px;
+  }
+
+  @include lg-display {
+    font-size: 120px;
+    line-height: 90%; /* 108px */
+    letter-spacing: -1.2px;
+  }
+}
+
+@mixin heading-gradient {
+  background: -webkit-linear-gradient(1deg, #1f374e 0.68%, #5fb2ff 98.16%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin text-xsmall {
+  font-size: $font-size--small;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: -0.28px;
+
+  @include md-display {
+    font-size: $font-size--large;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: -0.36px;
+  }
+}
+
+@mixin text-small {
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size--base;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+
+  @include md-display {
+    font-size: $font-size--large;
+    line-height: 140%; /* 25.2px */
+    letter-spacing: -0.36px;
+  }
+}
+
+@mixin text-medium {
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size--base;
+  letter-spacing: -0.32px;
+
+  @include md-display {
+    font-size: $font-size--xlarge;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: -0.4px;
+  }
+}
+
+@mixin text-large {
+  font-style: normal;
+  font-weight: 400;
+  font-size: $font-size--base;
+  letter-spacing: -0.32px;
+
+  @include md-display {
+    font-size: $font-size--xxlarge;
+    line-height: 140%; /* 22.4px */
+    letter-spacing: -0.72px;
+  }
+}
+
+// Grid
+@mixin grid-layout($columns: 3) {
+  grid-template-columns: repeat($columns, 1fr);
+}
+
+/* Accordion toggle */
+@mixin acccordion-toggle-open {
+  svg {
+    flex-shrink: 0;
+    rect:last-child {
+      transition: all 0.3s ease-in-out;
+      transform-origin: center;
+      transform: rotate(90deg);
+    }
+  }
+}
+@mixin acccordion-toggle-closed {
+  svg {
+    rect:last-child {
+      transform: rotate(0deg);
+    }
+  }
+}

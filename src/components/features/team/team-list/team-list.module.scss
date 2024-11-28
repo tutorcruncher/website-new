@@ -1,0 +1,27 @@
+.teamList {
+  display: grid;
+  margin-top: grid(10);
+  margin-bottom: grid(6);
+  justify-content: center;
+  gap: grid(5);
+
+  @include sm-display {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include md-display {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include lg-display {
+    &.variant-default {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &.variant-sales {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

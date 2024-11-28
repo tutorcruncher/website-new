@@ -1,0 +1,17 @@
+.newsletter {
+  background-color: $baby-blue;
+  border-radius: 30px;
+  padding: grid(8) grid(5);
+  margin: grid(5) 0;
+
+  p {
+    margin-top: grid(3);
+    font-size: $font-size--large;
+  }
+
+  button {
+    margin-top: grid(3);
+    text-align: center;
+    width: 100%;
+  }
+}

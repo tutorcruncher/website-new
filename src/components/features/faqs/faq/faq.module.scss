@@ -1,0 +1,39 @@
+.faq {
+  background-color: $white;
+  border: 1px solid $navy-blue;
+  border-radius: $border-radius--medium;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: grid(6) grid(10);
+    gap: grid(4);
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      flex-shrink: 0;
+      rect:last-child {
+        transition: all 0.3s ease-in-out;
+        transform-origin: center;
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .answer {
+    padding: 0 grid(6) grid(10);
+
+    *:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &.open {
+    svg {
+      rect:last-child {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

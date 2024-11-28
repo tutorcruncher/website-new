@@ -1,0 +1,10 @@
+.grid-container {
+  display: grid;
+  gap: grid(10);
+
+  &.columns--2 {
+    @include md-display {
+      @include grid-layout(2);
+    }
+  }
+}

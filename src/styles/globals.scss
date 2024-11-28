@@ -1,0 +1,255 @@
+@import "./normalize.scss";
+@import "./grid.scss";
+@import "./forms.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: $baby-blue;
+  color: $navy-blue;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  font-display: swap;
+
+  &.navigation-open {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  a {
+    color: $navy-blue;
+    text-decoration: none;
+  }
+}
+
+button {
+  @include buttonReset;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  margin: inherit;
+  font-family: $font-secondary;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/** Custom Error Pages **/
+.not-found {
+  text-align: center;
+  padding: 100px 20px;
+
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+select {
+  border: 2px solid $navy-blue;
+  background-color: $white;
+  color: $navy-blue;
+  border-radius: grid(2);
+  padding: grid(4);
+  font-weight: 600;
+}
+
+summary {
+  list-style: none;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+// Table Styling
+
+table {
+  text-align: left;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  overflow: scroll;
+  border-spacing: 0;
+}
+table td,
+table th {
+  padding: 12px;
+  border: 0.5px solid #e8e8e8;
+  table-layout: inherit;
+}
+table th {
+  background: #1f374e;
+  color: #fff;
+}
+
+// Accessability
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0px, 0px, 0px, 0px);
+  white-space: nowrap;
+  border-width: 0px;
+}
+
+// WYSIWYG content styling
+.main-content {
+  & > :first-child {
+    margin: 0;
+  }
+
+  h2 {
+    @include heading-small;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: $font-size--xxlarge;
+  }
+
+  h5 {
+    font-size: $font-size--xlarge;
+  }
+
+  h6 {
+    font-size: $font-size--base;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: grid(8);
+    & + p {
+      margin: grid(2) 0 0 !important;
+      @include md-display {
+        margin: grid(3) 0 0 !important;
+      }
+    }
+  }
+
+  p,
+  ul,
+  ol {
+    @include text-small;
+    color: $navy-blue-75;
+  }
+
+  li {
+    margin-top: grid(2);
+  }
+
+  img {
+    border-radius: 24px;
+    border: 1px solid $steel-blue;
+    width: 100%;
+  }
+
+  a {
+    color: $steel-blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: $sky-blue;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate {
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+
+    &.animate-enabled {
+      opacity: 0;
+
+      &.animate-in-view {
+        animation-name: enter-fade-in-up;
+      }
+    }
+  }
+
+  .animate-children > * {
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+
+    &:nth-of-type(1) {
+      animation-delay: 0.2s;
+    }
+    &:nth-of-type(2) {
+      animation-delay: 0.4s;
+    }
+    &:nth-of-type(3) {
+      animation-delay: 0.6s;
+    }
+    &:nth-of-type(4) {
+      animation-delay: 0.8s;
+    }
+    &:nth-of-type(5) {
+      animation-delay: 1s;
+    }
+    &:nth-of-type(6) {
+      animation-delay: 1.2s;
+    }
+    &:nth-of-type(7) {
+      animation-delay: 1.4s;
+    }
+  }
+  .animate-enabled.animate-children.animate-in-view > * {
+    animation-name: enter-fade-in-up;
+  }
+}
+
+@keyframes enter-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(1.2em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+*:focus-visible {
+  outline: 3px solid #3da2f5;
+}

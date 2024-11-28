@@ -1,0 +1,28 @@
+{
+  "id": "call_to_action",
+  "type": "SharedSlice",
+  "name": "CallToAction",
+  "description": "CallToAction",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "background_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Background colour",
+            "placeholder": "",
+            "options": ["Cream", "Blue"],
+            "default_value": "Cream"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

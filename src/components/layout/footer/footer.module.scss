@@ -1,0 +1,180 @@
+.footer {
+  background-color: $sky-blue;
+  padding-top: grid(20);
+  padding-bottom: grid(10);
+
+  .footerInner {
+    @include container;
+  }
+
+  .footerContent {
+    border: 2px solid $steel-blue;
+    border-radius: 50px;
+    background-color: $white;
+    padding: grid(5);
+    padding-bottom: 0;
+    display: grid;
+    grid-template-areas:
+      "logo"
+      "book"
+      "social"
+      "links"
+      "legal";
+
+    @include md-display {
+      padding: grid(20) grid(12);
+      padding-bottom: 0;
+      gap: 0 grid(8);
+
+      grid-template-areas:
+        "logo links"
+        "book social"
+        "legal legal";
+    }
+
+    .logo {
+      flex-shrink: 0;
+      line-height: 24px;
+      color: $navy-blue-75;
+      grid-area: logo;
+      text-align: center;
+      margin-top: 40px;
+
+      svg {
+        width: 266px;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .tagLine {
+        max-width: 220px;
+        margin: 20px auto 0;
+      }
+
+      @include md-display {
+        margin-top: 0;
+        max-width: 330px;
+        text-align: left;
+
+        svg {
+          width: 100%;
+        }
+
+        .tagLine {
+          max-width: none;
+          font-size: $font-size--xlarge;
+          padding-left: 65px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .book {
+      grid-area: book;
+
+      a {
+        margin-top: 30px;
+        display: block;
+        text-align: center;
+      }
+
+      @include md-display {
+        a {
+          margin: 0;
+          display: inline-block;
+        }
+      }
+    }
+
+    .links {
+      max-width: 830px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      grid-area: links;
+      margin-top: grid(10);
+      border-top: 1px solid rgba(31, 55, 78, 0.1);
+      padding-top: grid(6);
+
+      > div {
+        flex: 1;
+      }
+
+      @include md-display {
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        border: none;
+        gap: grid(8);
+        flex-wrap: wrap;
+      }
+    }
+
+    .socialLinks {
+      display: flex;
+      gap: grid(1);
+      margin-top: 20px;
+      grid-area: social;
+      justify-content: center;
+
+      @include md-display {
+        margin-top: 0;
+        justify-content: end;
+      }
+
+      a {
+        padding: 19px;
+      }
+    }
+
+    .legalLinks {
+      font-size: $font-size--xsmall;
+      border-top: 1px solid rgba(31, 55, 78, 0.1);
+      padding: grid(6) 0 grid(8) 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: grid(4);
+      grid-area: legal;
+
+      @include sm-display {
+        flex-direction: row;
+      }
+
+      @include md-display {
+        margin-top: grid(6);
+        font-size: $font-size--base;
+        justify-content: start;
+        gap: grid(7);
+      }
+
+      a {
+        color: $navy-blue-75;
+
+        &:hover {
+          color: $navy-blue;
+        }
+      }
+    }
+  }
+
+  .end {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center;
+    background-color: $sky-blue;
+
+    p {
+      color: $black;
+      font-size: $font-size--xsmall;
+      line-height: 22px;
+
+      @include md-display {
+        font-size: $font-size--base;
+      }
+    }
+  }
+}

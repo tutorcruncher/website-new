@@ -1,0 +1,51 @@
+{
+  "name": "tutor-cruncher",
+  "version": "0.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "author": "",
+  "scripts": {
+    "dev": "next dev -p 8000",
+    "next:dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint && npx tsc --noEmit",
+    "slicemachine": "start-slicemachine",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@next/third-parties": "^14.2.7",
+    "@prismicio/client": "^7.8.0",
+    "@prismicio/next": "^1.6.0",
+    "@prismicio/react": "^2.8.0",
+    "@prismicio/types": "^0.2.9",
+    "clsx": "^2.0.0",
+    "embla-carousel-class-names": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
+    "next": "^14.0.1",
+    "react": "^18.2.0",
+    "react-animate-height": "^3.2.3",
+    "react-dom": "^18.2.0",
+    "react-flatpickr": "^3.10.13",
+    "react-google-recaptcha": "^3.1.0",
+    "react-number-format": "^5.4.2",
+    "sass": "^1.77.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@slicemachine/adapter-next": "^0.3.46",
+    "@types/react": "18.2.33",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.52.0",
+    "eslint-config-next": "^14.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "install": "^0.13.0",
+    "npm": "^10.5.2",
+    "postcss": "^8.4.31",
+    "prettier": "^3.3.3",
+    "slice-machine-ui": "^2.7.0",
+    "typescript": "5.5.4"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "id": "articles",
+  "type": "SharedSlice",
+  "name": "Articles",
+  "description": "Articles",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "show_all_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show all button",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "articles": {
+          "type": "Group",
+          "config": {
+            "label": "Articles",
+            "repeat": true,
+            "fields": {
+              "article": {
+                "type": "Link",
+                "config": {
+                  "label": "Article",
+                  "select": "document",
+                  "customtypes": [
+                    "article"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "articlesByCategory",
+      "name": "Articles - By Category",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "show_all_button": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show all button",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
+        },
+        "category": {
+          "type": "Link",
+          "config": {
+            "label": "Category",
+            "select": "document",
+            "customtypes": [
+              "category"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

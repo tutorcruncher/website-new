@@ -1,0 +1,30 @@
+export const au = {
+  name: "Australian",
+  region_code: "au",
+  currency: "$",
+  currency_code: "AUD",
+  pricing: {
+    payg: { revenue_percentage: 1, base_price: 45 },
+    startup: { revenue_percentage: 0.65, base_price: 110 },
+    enterprise_limit: 2000000,
+    enterprise: true,
+    support: { free: 0, chat: 20, phone: 200 },
+    extra_branch_fee: 75,
+    custom_domain_fee: 150,
+    video_call_minutes_allowance: 20000,
+    video_call_minutes_fee: 0.015,
+    video_recording_minutes_fee: 0.046,
+    video_storage_minutes_fee: 0.012,
+  },
+  bill_in_gbp: true,
+  london: {
+    mon_fri: "9am - 5:30pm (British Time)",
+    phone: "+442039661863",
+    phone_formatted: "020 3966 1863",
+  },
+  chicago: {
+    mon_fri: "8am - 4:30pm (EST)",
+    phone: "+1 312-820-9224",
+    phone_formatted: "+1 312-820-9224",
+  },
+};
