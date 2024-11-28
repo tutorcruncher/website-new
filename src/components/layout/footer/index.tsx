@@ -15,7 +15,7 @@ export const Footer = async () => {
           <div className={styles.logo}>
             <LogoSvg />
             <p className={styles.tagLine}>
-              The platform for every stage of your tutoring business
+              The most comprehensive software for tutoring companies
             </p>
           </div>
           <div className={styles.links}>
