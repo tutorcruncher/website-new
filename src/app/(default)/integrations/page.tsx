@@ -5,6 +5,7 @@ import { Hero } from "@/components/ui/hero";
 import { formatMetaData } from "@/helpers/metaData";
 import { fetchIntegrationsPage } from "@/lib/prismic/integrations";
 import { schema } from "@/schema/product";
+import { CallToAction } from "@/components/features/call-to-action";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = await fetchIntegrationsPage();
@@ -23,6 +24,7 @@ export default async function IntegrationsPage() {
       />
       <Hero heading={heading} headingVariant="div" />
       <IntegrationsList integrations={integrations} />
+      <CallToAction background="blue" />
     </div>
   );
 }
