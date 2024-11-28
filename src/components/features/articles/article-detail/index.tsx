@@ -13,6 +13,7 @@ import { createID, filterHeadings } from "../helpers";
 import { Newsletter } from "../newsletter";
 import { ArticleShareLinks } from "../share-links";
 import styles from "./article-detail.module.scss";
+import { CallToAction } from "../../call-to-action";
 
 const components = {
   heading2: ({ text }) => {
@@ -109,7 +110,7 @@ export const ArticleDetail = ({ post, relatedPosts }: ArticleDetailProps) => {
             <Summary headings={headings} />
             <Newsletter />
             <a href="#related-posts" className={styles.relatedPostsLink}>
-              Go to releated articles
+              Go to related articles
               <svg
                 width="45"
                 height="44"
@@ -163,6 +164,7 @@ export const ArticleDetail = ({ post, relatedPosts }: ArticleDetailProps) => {
           />
         </div>
       ) : null}
+      <CallToAction background="blue" />
     </>
   );
 };
