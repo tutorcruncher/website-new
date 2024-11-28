@@ -43,7 +43,7 @@ export const Header = () => {
           setNavigationOpen={setNavigationOpen}
         />
         <div className={styles.headerActions}>
-          <Action href="https://secure.tutorcruncher.com/" variant="outline">
+          <Action href="/login-redirect" variant="outline">
             Login
           </Action>
           <Action href="https://secure.tutorcruncher.com/start/1/?tc_source=google.com">
