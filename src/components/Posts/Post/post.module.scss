@@ -22,6 +22,8 @@
     padding: 20px;
     flex-grow: 1;
     text-align: left;
+    display: flex;
+    flex-direction: column;
 
     .tags {
       margin-bottom: 16px;
@@ -61,5 +63,10 @@
     img {
       transform: scale(1.1);
     }
+  }
+
+  .date {
+    margin-top: auto;
+    margin-bottom: 0;
   }
 }
