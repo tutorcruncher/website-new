@@ -6,7 +6,6 @@
   .accordionsWrapper {
     display: flex;
     flex-direction: column;
-
     gap: 20px;
 
     @include lg-display {
@@ -19,6 +18,8 @@
     justify-content: flex-end;
 
     .accordionsWrapper {
+      min-height: 680px;
+      // min height prevent the subtle jump between the transition of accordions opening and closing
       width: calc(50% - 60px);
     }
   }
