@@ -27,7 +27,6 @@ export const AccordionsList = ({
       }
     >
       <div className={clsx(styles.inner, "animate")}>
-        <div className={styles.imageHolder}></div>
         <div className={styles.accordionsWrapper}>
           {items.map((item, index) => (
             <Accordion
