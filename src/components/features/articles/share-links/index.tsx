@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/icon-button-link";
 import { Facebook } from "@/svgs/facebook";
 import { LinkedIn } from "@/svgs/linkedin";
-import { Twitter } from "@/svgs/github";
+import { Twitter } from "@/svgs/twitter";
 
 import styles from "./shareLinks.module.scss";
 
