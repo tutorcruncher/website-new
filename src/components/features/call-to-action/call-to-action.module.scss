@@ -7,8 +7,6 @@
     gap: grid(8);
   }
   .content {
-    max-width: 600px;
-
     p {
       font-size: $font-size--large;
     }
@@ -19,18 +17,5 @@
   .buttonsContainer {
     display: flex;
     gap: grid(3);
-  }
-}
-
-@include md-display {
-  .callToAction {
-    img {
-      display: block;
-      flex: 0 1 350px;
-      flex-shrink: 0;
-      border-radius: $border-radius--large;
-      border: 2px solid $navy-blue;
-      overflow: hidden;
-    }
   }
 }

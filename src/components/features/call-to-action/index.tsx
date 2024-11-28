@@ -19,18 +19,15 @@ export const CallToAction = ({ background }: CallToActionProps) => (
             Ready for your 2-week free trial? Create an account or get in touch.
           </p>
           <div className={styles.buttonsContainer}>
-            <Action href="/" variant="outline">
+            <Action href="/book-a-call">Book a call </Action>
+            <Action
+              href="https://secure.tutorcruncher.com/start/1/"
+              variant="white"
+            >
               Start free trial
             </Action>
-            <Action href="/book-a-call">Book a call </Action>
           </div>
         </div>
-        <Image
-          src={"/img/home/home-hero-placeholder.jpg"}
-          width={396}
-          height={494}
-          alt=""
-        />
       </div>
     </div>
   </Body>

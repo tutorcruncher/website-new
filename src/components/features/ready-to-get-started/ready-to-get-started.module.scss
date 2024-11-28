@@ -48,6 +48,11 @@
       margin-bottom: -5px;
     }
   }
+
+  .buttonsContainer {
+    display: flex;
+    gap: grid(3);
+  }
 }
 
 @include md-display {

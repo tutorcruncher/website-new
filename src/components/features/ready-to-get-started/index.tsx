@@ -19,7 +19,15 @@ export const ReadyToGetStarted = () => {
             <Heading variant="h2" size="xlarge" className={styles.heading}>
               Ready to get <b>started?</b>
             </Heading>
-            <Action href="/book-a-call">Book a call</Action>
+            <div className={styles.buttonsContainer}>
+              <Action href="/book-a-call">Book a call </Action>
+              <Action
+                href="https://secure.tutorcruncher.com/start/1/"
+                variant="white"
+              >
+                Start free trial
+              </Action>
+            </div>
           </div>
           <div className={clsx(styles.right, "animate-children")}>
             <PillCard>

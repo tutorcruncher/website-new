@@ -40,13 +40,13 @@ export const SolutionHero = ({ heading, pricing, intro }: HeroProps) => {
         className={clsx(styles.buttonsContainer, "animate")}
         style={{ animationDelay: "0.6s" }}
       >
+        <Action href="/book-a-call">Book a call </Action>
         <Action
           href="https://secure.tutorcruncher.com/start/1/"
           variant="white"
         >
           Start free trial
         </Action>
-        <Action href="/book-a-call">Book a call </Action>
       </div>
     </Body>
   );

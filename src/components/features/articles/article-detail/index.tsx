@@ -34,13 +34,13 @@ const components = {
     if (text === "{{ blog_ctas() }}") {
       return (
         <div className={styles.buttonsContainer}>
+          <Action href="/book-a-call">Book a call </Action>
           <Action
             href="https://secure.tutorcruncher.com/start/1/"
             variant="outline"
           >
             Start free trial
           </Action>
-          <Action href="/book-a-call">Book a call </Action>
         </div>
       );
     }
