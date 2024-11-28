@@ -8,6 +8,8 @@ import { Action } from "@/components/ui/action";
 import { FilterSvg } from "@/svgs/filter";
 
 import styles from "./categories.module.scss";
+import { CloseSvg } from "@/svgs/close";
+import Link from "next/link";
 
 const Categories = ({
   tags,
@@ -56,15 +58,18 @@ const Categories = ({
       <button
         ref={buttonRef}
         type="button"
-        className={clsx(styles.categoryToggle, {
-          [styles.active]: activeCategoryTitle,
-        })}
+        className={styles.categoryToggle}
         onClick={() => setIsVisible(!isVisible)}
       >
         <FilterSvg />
         <span className={styles.label}>
           {activeCategoryTitle ? activeCategoryTitle : "Filter by categories"}
         </span>
+        {activeCategoryTitle ? (
+          <Link href="/blog" className={styles.clearFilterBtn}>
+            <CloseSvg />
+          </Link>
+        ) : null}
       </button>
       <FocusTrap>
         <div

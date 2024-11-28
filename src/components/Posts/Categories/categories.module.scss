@@ -30,16 +30,22 @@
     outline: 2px solid $navy-blue;
   }
 
-  &.active {
-    &::before {
-      content: "";
-      border-radius: 50%;
-      width: 16px;
-      height: 16px;
-      background-color: $navy-blue;
-      position: absolute;
-      top: -4px;
-      right: -4px;
+  .clearFilterBtn {
+    border-radius: 50%;
+    width: grid(5);
+    height: grid(5);
+    background-color: $navy-blue;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: grid(3);
+      width: grid(3);
     }
   }
 }
