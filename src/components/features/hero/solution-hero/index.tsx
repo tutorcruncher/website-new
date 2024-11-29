@@ -1,3 +1,4 @@
+"use client";
 import clsx from "clsx";
 
 import { Action } from "@/components/ui/action";
@@ -6,8 +7,33 @@ import { Heading } from "@/components/ui/heading";
 
 import styles from "./solution-hero.module.scss";
 import { HeroProps } from "./types";
+import { useEffect, useState } from "react";
+import { regions } from "app/data/regions/regions";
 
-export const SolutionHero = ({ heading, pricing, intro }: HeroProps) => {
+export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
+  const [region, setRegion] = useState(null);
+
+  useEffect(() => {
+    const fetchRegion = async () => {
+      try {
+        const response = await fetch("api/region");
+        const { country_code } = await response.json();
+        const fetchedRegion = regions.find(
+          (region) => region.region_code === country_code.toLowerCase()
+        );
+        setRegion(fetchedRegion);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchRegion();
+  }, []);
+
+  const basePrice = region?.pricing[pricingTier].base_price;
+  const fromPrice = basePrice
+    ? `From ${region.currency}${basePrice} per month`
+    : null;
   return (
     <Body
       heading={
@@ -28,12 +54,12 @@ export const SolutionHero = ({ heading, pricing, intro }: HeroProps) => {
           </Heading>
         </div>
       ) : null}
-      {pricing ? (
+      {fromPrice ? (
         <div
           className={clsx(styles.pricing, "animate")}
           style={{ animationDelay: "0.4s" }}
         >
-          {pricing}
+          {fromPrice}
         </div>
       ) : null}
       <div

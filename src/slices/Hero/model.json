@@ -55,11 +55,16 @@
             "placeholder": ""
           }
         },
-        "pricing": {
-          "type": "Text",
+        "pricing_tier": {
+          "type": "Select",
           "config": {
-            "label": "Pricing",
-            "placeholder": ""
+            "label": "Pricing Tier",
+            "placeholder": "",
+            "options": [
+              "payg",
+              "startup",
+              "enterprise"
+            ]
           }
         }
       },

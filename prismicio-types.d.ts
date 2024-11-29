@@ -1742,14 +1742,14 @@ export interface HeroSliceSolutionHeroPrimary {
   intro: prismic.KeyTextField;
 
   /**
-   * Pricing field in *Hero → Solution Hero → Primary*
+   * Pricing Tier field in *Hero → Solution Hero → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Select
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.solutionHero.primary.pricing
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: hero.solutionHero.primary.pricing_tier
+   * - **Documentation**: https://prismic.io/docs/field#select
    */
-  pricing: prismic.KeyTextField;
+  pricing_tier: prismic.SelectField<"payg" | "startup" | "enterprise">;
 }
 
 /**

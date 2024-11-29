@@ -25,7 +25,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <SolutionHero
         heading={headingText}
         intro={intro}
-        pricing={slice.primary.pricing}
+        pricingTier={slice.primary.pricing_tier}
       />
     );
   }
