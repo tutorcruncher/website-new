@@ -10,6 +10,23 @@ import { HeroProps } from "./types";
 import { useEffect, useState } from "react";
 import { regions } from "app/data/regions/regions";
 
+const RegionPrice = ({ region, pricingTier }) => {
+  let fromPrice = "";
+  if (region && pricingTier) {
+    const basePrice = region?.pricing[pricingTier].base_price;
+    fromPrice = `From ${region.currency}${basePrice} per month`;
+  }
+
+  return (
+    <div
+      className={clsx(styles.pricing, "animate")}
+      style={{ animationDelay: "0.4s" }}
+    >
+      {fromPrice}
+    </div>
+  );
+};
+
 export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
   const [region, setRegion] = useState(null);
 
@@ -30,10 +47,6 @@ export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
     fetchRegion();
   }, []);
 
-  const basePrice = region?.pricing[pricingTier].base_price;
-  const fromPrice = basePrice
-    ? `From ${region.currency}${basePrice} per month`
-    : null;
   return (
     <Body
       heading={
@@ -54,14 +67,7 @@ export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
           </Heading>
         </div>
       ) : null}
-      {fromPrice ? (
-        <div
-          className={clsx(styles.pricing, "animate")}
-          style={{ animationDelay: "0.4s" }}
-        >
-          {fromPrice}
-        </div>
-      ) : null}
+      <RegionPrice region={region} pricingTier={pricingTier} />
       <div
         className={clsx(styles.buttonsContainer, "animate")}
         style={{ animationDelay: "0.6s" }}
