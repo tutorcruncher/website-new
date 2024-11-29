@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Action } from "../../ui/action";
 import { Heading } from "../../ui/heading";
 import styles from "./home-page-hero.module.scss";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 export const HomePageHero = ({ heading, intro }) => {
   return (
@@ -15,9 +16,10 @@ export const HomePageHero = ({ heading, intro }) => {
           <p className={styles.tagLine}>{intro}</p>
           <div className={styles.buttons}>
             <Action href="/book-a-call">Book a call</Action>
-            <Action href="https://secure.tutorcruncher.com" variant="outline">
-              Start a free trial
-            </Action>
+            <TrackingLink
+              url="https://secure.tutorcruncher.com/start/1/"
+              text="Start a free trial"
+            />
           </div>
         </div>
         <div className={styles.animations}>

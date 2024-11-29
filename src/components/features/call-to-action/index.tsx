@@ -6,6 +6,7 @@ import { Heading } from "@/components/ui/heading";
 
 import styles from "./call-to-action.module.scss";
 import { CallToActionProps } from "./types";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 export const CallToAction = ({ background }: CallToActionProps) => (
   <Body containerSize="medium" background={background} spacing="small">
@@ -20,12 +21,10 @@ export const CallToAction = ({ background }: CallToActionProps) => (
           </p>
           <div className={styles.buttonsContainer}>
             <Action href="/book-a-call">Book a call </Action>
-            <Action
-              href="https://secure.tutorcruncher.com/start/1/"
-              variant="white"
-            >
-              Start free trial
-            </Action>
+            <TrackingLink
+              url="https://secure.tutorcruncher.com/start/1/"
+              text="Start a free trial"
+            />
           </div>
         </div>
       </div>

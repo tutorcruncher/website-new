@@ -14,6 +14,7 @@ import { Newsletter } from "../newsletter";
 import { ArticleShareLinks } from "../share-links";
 import styles from "./article-detail.module.scss";
 import { CallToAction } from "../../call-to-action";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 const components = {
   heading2: ({ text }) => {
@@ -36,12 +37,10 @@ const components = {
       return (
         <div className={styles.buttonsContainer}>
           <Action href="/book-a-call">Book a call </Action>
-          <Action
-            href="https://secure.tutorcruncher.com/start/1/"
-            variant="outline"
-          >
-            Start free trial
-          </Action>
+          <TrackingLink
+            url="https://secure.tutorcruncher.com/start/1/"
+            text="Start a free trial"
+          />
         </div>
       );
     }

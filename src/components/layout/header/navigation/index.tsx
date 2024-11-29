@@ -11,6 +11,7 @@ import { Action } from "@/components/ui/action";
 import styles from "./navigation.module.scss";
 import { SolutionsMenu } from "./solutions-menu";
 import { ChevronDown } from "@/svgs/chevron-down";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 const NavigationItems = [
   {
@@ -113,9 +114,11 @@ export const Navigation = ({
         <Action href="/login-redirect" variant="outline">
           Login
         </Action>
-        <Action href="https://secure.tutorcruncher.com/start/1/?tc_source=google.com">
-          Start free trial
-        </Action>
+        <TrackingLink
+          url="https://secure.tutorcruncher.com/start/1/"
+          text="Start a free trial"
+          variant="solid"
+        />
       </div>
     </nav>
   );

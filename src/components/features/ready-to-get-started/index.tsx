@@ -6,6 +6,7 @@ import { Heading } from "@/components/ui/heading";
 import { PillCard } from "@/components/ui/pill-card";
 
 import styles from "./ready-to-get-started.module.scss";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 export const ReadyToGetStarted = () => {
   return (
@@ -21,12 +22,11 @@ export const ReadyToGetStarted = () => {
             </Heading>
             <div className={styles.buttonsContainer}>
               <Action href="/book-a-call">Book a call </Action>
-              <Action
-                href="https://secure.tutorcruncher.com/start/1/"
+              <TrackingLink
+                url="https://secure.tutorcruncher.com/start/1/"
+                text="Start a free trial"
                 variant="white"
-              >
-                Start free trial
-              </Action>
+              />
             </div>
           </div>
           <div className={clsx(styles.right, "animate-children")}>

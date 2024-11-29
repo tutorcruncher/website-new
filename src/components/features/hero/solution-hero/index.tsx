@@ -9,6 +9,7 @@ import styles from "./solution-hero.module.scss";
 import { HeroProps } from "./types";
 import { useEffect, useState } from "react";
 import { regions } from "app/data/regions/regions";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 const RegionPrice = ({ region, pricingTier }) => {
   let fromPrice = "";
@@ -73,12 +74,10 @@ export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
         style={{ animationDelay: "0.6s" }}
       >
         <Action href="/book-a-call">Book a call </Action>
-        <Action
-          href="https://secure.tutorcruncher.com/start/1/"
-          variant="white"
-        >
-          Start free trial
-        </Action>
+        <TrackingLink
+          url="https://secure.tutorcruncher.com/start/1/"
+          text="Start a free trial"
+        />
       </div>
     </Body>
   );

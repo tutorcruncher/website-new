@@ -8,6 +8,7 @@ import LogoSvg from "@/svgs/logo";
 
 import styles from "./header.module.scss";
 import { Navigation } from "./navigation";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 export const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -46,9 +47,11 @@ export const Header = () => {
           <Action href="/login-redirect" variant="outline">
             Login
           </Action>
-          <Action href="https://secure.tutorcruncher.com/start/1/?tc_source=google.com">
-            Start free trial
-          </Action>
+          <TrackingLink
+            url="https://secure.tutorcruncher.com/start/1/"
+            text="Start a free trial"
+            variant="solid"
+          />
         </div>
       </div>
     </header>
