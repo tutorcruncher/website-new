@@ -1,4 +1,5 @@
 const path = require("path");
+const integrationsRedirects = require("./redirects/integrations");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -27,6 +28,9 @@ const nextConfig = {
   },
   compiler: {
     styledComponents: true,
+  },
+  async redirects() {
+    return [...integrationsRedirects];
   },
 };
 
