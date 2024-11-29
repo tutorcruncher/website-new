@@ -95,10 +95,10 @@ export const PricingTiers = ({ region }) => {
       <div className={styles.pricingCalculatorCta}>
         <PillCard>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt{" "}
+            Want to estimate which the best price plan would be for you, and how
+            much you would be charged? <br />
             <Link href="/pricing-calculator">
-              [Pricing calculator link text].
+              Click here to use our pricing calculator.
             </Link>
           </p>
         </PillCard>

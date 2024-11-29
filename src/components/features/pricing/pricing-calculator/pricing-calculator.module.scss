@@ -35,6 +35,8 @@
   width: 100%;
 
   .tierOption {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     background-color: $white;
     padding: grid(7);
@@ -46,6 +48,10 @@
       text-align: center;
       padding-bottom: grid(2);
       border-bottom: 1px solid $navy-blue-15;
+    }
+
+    .ctaBtn {
+      margin-top: auto;
     }
   }
   .recommended {
@@ -81,4 +87,20 @@
   margin: grid(4) auto;
   font-style: italic;
   max-width: 800px;
+}
+
+.backToLinkContainer {
+  font-size: $font-size--small;
+  text-align: center;
+  .backToLink {
+    display: inline-flex;
+    align-content: center;
+    margin-top: grid(3);
+
+    svg {
+      width: grid(4);
+      height: auto;
+      transform: rotate(90deg);
+    }
+  }
 }

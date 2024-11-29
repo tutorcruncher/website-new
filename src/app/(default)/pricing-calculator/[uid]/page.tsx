@@ -4,6 +4,7 @@ import { PriceCalculator } from "@/components/features/pricing/pricing-calculato
 import { PriceCalculatorGB } from "@/components/features/pricing/pricing-calculator/gb";
 import { Body } from "@/components/ui/body";
 import { Hero } from "@/components/ui/hero";
+import { CallToAction } from "@/components/features/call-to-action";
 
 const PricingPage = ({ params }) => {
   const region = regions.find((region) => region.region_code === params.uid);
@@ -17,6 +18,7 @@ const PricingPage = ({ params }) => {
           <PriceCalculator region={region} />
         )}
       </Body>
+      <CallToAction background="blue" />
     </>
   );
 };
