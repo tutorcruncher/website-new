@@ -40,6 +40,14 @@
           ]
         }
       },
+      "screenshot": {
+        "type": "Image",
+        "config": {
+          "label": "Screenshot",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "description": {
         "type": "StructuredText",
         "config": {

@@ -27,7 +27,6 @@ export const IntegrationsList = ({ integrations }: IntegrationsProps) => {
     setIsModalOpen(false);
     setSelectedIntegration(null);
   };
-
   return (
     <>
       <Body>
@@ -59,11 +58,21 @@ export const IntegrationsList = ({ integrations }: IntegrationsProps) => {
                 width={selectedIntegration.logo.width}
                 height={selectedIntegration.logo.height}
                 alt={selectedIntegration.logo.alt}
+                className={styles.logo}
               />
               <Heading size="small" variant="h2" noMargin>
                 {selectedIntegration.title}
               </Heading>
               <div>{selectedIntegration.content}</div>
+              {selectedIntegration?.screenshot ? (
+                <Image
+                  src={selectedIntegration.screenshot.url}
+                  width={selectedIntegration.screenshot.width}
+                  height={selectedIntegration.screenshot.height}
+                  alt={selectedIntegration.screenshot.alt}
+                  className={styles.screenshot}
+                />
+              ) : null}
             </div>
           )}
         </Modal>

@@ -8,6 +8,7 @@ export interface Integration {
   intro: string;
   category: string;
   content: ReactElement;
+  screenshot?: Image;
 }
 
 export interface IntegrationsProps {

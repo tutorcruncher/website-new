@@ -581,6 +581,17 @@ interface IntegrationDocumentData {
   >;
 
   /**
+   * Screenshot field in *Integration*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integration.screenshot
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  screenshot: prismic.ImageField<never>;
+
+  /**
    * Description field in *Integration*
    *
    * - **Field Type**: Rich Text

@@ -14,7 +14,7 @@ export const IntegrationCard = ({
 }: IntegrationCardProps) => {
   const classes = clsx(
     styles.integrationCard,
-    styles[`intergration_${title.replace(" ", "-").toLowerCase()}`],
+    styles[`intergration_${title.replace(" ", "-").toLowerCase()}`]
   );
   return (
     <button type="button" onClick={onClick} className={classes}>

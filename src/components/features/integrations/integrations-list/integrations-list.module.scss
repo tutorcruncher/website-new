@@ -22,8 +22,14 @@
 }
 
 .integrationModal {
-  img {
+  .logo {
     height: 50px;
     width: auto;
+  }
+  .screenshot {
+    width: 100%;
+    height: auto;
+    margin: grid(4) 0;
+    border-radius: grid(4);
   }
 }

@@ -10,7 +10,7 @@ import {
 
 export const formatIntegrationsPage = (
   data: Simplify<IntegrationsDocumentData>,
-  allIntegrations: Simplify<IntegrationDocument>[],
+  allIntegrations: Simplify<IntegrationDocument>[]
 ) => {
   const heading = <PrismicRichText field={data.heading} />;
 
@@ -25,6 +25,7 @@ export const formatIntegrationsPage = (
     category: data.category,
     intro: data.intro,
     content: <PrismicRichText field={data.description} />,
+    screenshot: prismicToNextImage(data.screenshot),
   }));
 
   return { heading, meta, integrations };
