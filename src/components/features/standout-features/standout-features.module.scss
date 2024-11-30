@@ -1,0 +1,18 @@
+.cards {
+  display: flex;
+  gap: grid(4);
+  flex-direction: column;
+
+  @include sm-display {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.modal {
+  .icon {
+    height: 50px;
+    width: auto;
+  }
+}

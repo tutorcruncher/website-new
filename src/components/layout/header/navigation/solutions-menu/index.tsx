@@ -5,10 +5,9 @@ import { useEffect, useRef } from "react";
 
 import { Heading } from "@/components/ui/heading";
 
-// TODO Replace with CMS navigation
 import { SOLUTIONS_MENU } from "./data";
 import styles from "./solutions-menu.module.scss";
-import { ChevronDown } from "@/svgs/chevron-down";
+import { ArrowLink } from "@/components/ui/arrow-link";
 
 export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
   const menuRef = useRef(null);
@@ -97,13 +96,7 @@ export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
           </Link>
         ))}
       </div>
-      <div className={styles.allFeaturesLink}>
-        {/* TODO: Update to features url */}
-        <Link href="/">
-          <span>Link to all features</span>
-          <ChevronDown />
-        </Link>
-      </div>
+      <ArrowLink text="Link to all features" href="/" />
     </div>
   );
 };

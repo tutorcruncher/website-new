@@ -34,7 +34,7 @@ export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
   useEffect(() => {
     const fetchRegion = async () => {
       try {
-        const response = await fetch("api/region");
+        const response = await fetch("/api/region");
         const { country_code } = await response.json();
         const fetchedRegion = regions.find(
           (region) => region.region_code === country_code.toLowerCase()

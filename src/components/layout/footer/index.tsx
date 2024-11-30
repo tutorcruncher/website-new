@@ -6,6 +6,7 @@ import LogoSvg from "@/svgs/logo";
 import { Accordion } from "./accordion";
 import styles from "./footer.module.scss";
 import { FooterSocialLinks } from "./social-links";
+import { SOLUTIONS_MENU } from "../header/navigation/solutions-menu/data";
 
 export const Footer = async () => {
   return (
@@ -20,9 +21,11 @@ export const Footer = async () => {
           </div>
           <div className={styles.links}>
             <Accordion title="Solutions">
-              <Link href="/tutor-cruncher-starter">Pay as you Go</Link>
-              <Link href="/tutor-cruncher-pro">Startup</Link>
-              <Link href="/tutor-cruncher-enterprise">Enterprise</Link>
+              {SOLUTIONS_MENU.map((solution) => (
+                <Link key={solution.title} href={solution.url}>
+                  {solution.title}
+                </Link>
+              ))}
             </Accordion>
             <Accordion title="Newsletter">
               <p>[]</p>

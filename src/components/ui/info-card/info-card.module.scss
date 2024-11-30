@@ -1,4 +1,4 @@
-.integrationCard {
+.infoCard {
   background-color: $white;
   border: 1px solid $navy-blue-15;
   border-radius: grid(3);
@@ -13,21 +13,11 @@
     border-color: $navy-blue;
   }
 
-  .logoWrapper {
-    font-size: 50px;
-    font-weight: 700;
-    color: $steel-blue;
-
+  .iconWrapper {
     img {
       width: auto;
       height: 50px;
       border-radius: grid(2);
-    }
-  }
-
-  &.intergration_group-world {
-    img {
-      transform: scale(1.3);
     }
   }
 

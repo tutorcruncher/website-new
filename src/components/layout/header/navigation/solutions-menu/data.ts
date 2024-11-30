@@ -8,7 +8,7 @@ export const SOLUTIONS_MENU = [
       "To help your growing startup",
       "Support to get set up",
     ],
-    url: "/tutor-cruncher-starter",
+    url: "/solutions/payg",
   },
   {
     title: "Startup",
@@ -19,7 +19,7 @@ export const SOLUTIONS_MENU = [
       "To scale and expand your company",
       "Customised features",
     ],
-    url: "/tutor-cruncher-pro",
+    url: "/solutions/startup",
   },
   {
     title: "Enterprise",
@@ -30,6 +30,6 @@ export const SOLUTIONS_MENU = [
       "Run all functions from one platform",
       "API access",
     ],
-    url: "/tutor-cruncher-enterprise",
+    url: "/solutions/enterprise",
   },
 ];

@@ -827,6 +827,7 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | StandOutFeaturesSlice
   | YoutubeSlice
   | StatsSlice
   | TestimonialsSlice
@@ -1179,6 +1180,84 @@ export type ReviewsDocument<Lang extends string = string> =
     Lang
   >;
 
+type SolutionsDocumentDataSlicesSlice =
+  | TextImageGridSlice
+  | LogosSlice
+  | AccordionsSlice
+  | TestimonialsSlice
+  | StatsSlice
+  | YoutubeSlice
+  | TeamListSlice
+  | HeroSlice
+  | CallToActionSlice
+  | StandOutFeaturesSlice
+  | BodyTextSlice
+  | ArticlesSlice
+  | FaqsSlice;
+
+/**
+ * Content for Solution documents
+ */
+interface SolutionsDocumentData {
+  /**
+   * Slice Zone field in *Solution*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solutions.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SolutionsDocumentDataSlicesSlice> /**
+   * Meta Title field in *Solution*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: solutions.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Solution*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: solutions.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Solution*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solutions.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Solution document from Prismic
+ *
+ * - **API ID**: `solutions`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SolutionsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SolutionsDocumentData>,
+    "solutions",
+    Lang
+  >;
+
 type TestimonialDocumentDataSlicesSlice = never;
 
 /**
@@ -1293,6 +1372,7 @@ export type AllDocumentTypes =
   | ReleaseDocument
   | ReleasesDocument
   | ReviewsDocument
+  | SolutionsDocument
   | TestimonialDocument;
 
 /**
@@ -1866,6 +1946,98 @@ type LogosSliceVariation = LogosSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type LogosSlice = prismic.SharedSlice<"logos", LogosSliceVariation>;
+
+/**
+ * Item in *StandOutFeatures → Default → Primary → Features*
+ */
+export interface StandOutFeaturesSliceDefaultPrimaryFeaturesItem {
+  /**
+   * Icon field in *StandOutFeatures → Default → Primary → Features*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stand_out_features.default.primary.features[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Title field in *StandOutFeatures → Default → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stand_out_features.default.primary.features[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Intro field in *StandOutFeatures → Default → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stand_out_features.default.primary.features[].intro
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  intro: prismic.KeyTextField;
+
+  /**
+   * Content field in *StandOutFeatures → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stand_out_features.default.primary.features[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *StandOutFeatures → Default → Primary*
+ */
+export interface StandOutFeaturesSliceDefaultPrimary {
+  /**
+   * Features field in *StandOutFeatures → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stand_out_features.default.primary.features[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  features: prismic.GroupField<
+    Simplify<StandOutFeaturesSliceDefaultPrimaryFeaturesItem>
+  >;
+}
+
+/**
+ * Default variation for StandOutFeatures Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StandOutFeaturesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<StandOutFeaturesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *StandOutFeatures*
+ */
+type StandOutFeaturesSliceVariation = StandOutFeaturesSliceDefault;
+
+/**
+ * StandOutFeatures Shared Slice
+ *
+ * - **API ID**: `stand_out_features`
+ * - **Description**: StandOutFeatures
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StandOutFeaturesSlice = prismic.SharedSlice<
+  "stand_out_features",
+  StandOutFeaturesSliceVariation
+>;
 
 /**
  * Item in *Stats → Default → Primary → Stats*
@@ -2570,6 +2742,9 @@ declare module "@prismicio/client" {
       ReviewsDocument,
       ReviewsDocumentData,
       ReviewsDocumentDataSlicesSlice,
+      SolutionsDocument,
+      SolutionsDocumentData,
+      SolutionsDocumentDataSlicesSlice,
       TestimonialDocument,
       TestimonialDocumentData,
       TestimonialDocumentDataSlicesSlice,
@@ -2610,6 +2785,11 @@ declare module "@prismicio/client" {
       LogosSliceDefaultPrimary,
       LogosSliceVariation,
       LogosSliceDefault,
+      StandOutFeaturesSlice,
+      StandOutFeaturesSliceDefaultPrimaryFeaturesItem,
+      StandOutFeaturesSliceDefaultPrimary,
+      StandOutFeaturesSliceVariation,
+      StandOutFeaturesSliceDefault,
       StatsSlice,
       StatsSliceDefaultPrimaryStatsItem,
       StatsSliceDefaultPrimary,

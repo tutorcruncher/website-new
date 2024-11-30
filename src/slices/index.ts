@@ -10,6 +10,7 @@ export const components = {
   faqs: dynamic(() => import("./Faqs")),
   hero: dynamic(() => import("./Hero")),
   logos: dynamic(() => import("./Logos")),
+  stand_out_features: dynamic(() => import("./StandOutFeatures")),
   stats: dynamic(() => import("./Stats")),
   team_list: dynamic(() => import("./TeamList")),
   testimonials: dynamic(() => import("./Testimonials")),

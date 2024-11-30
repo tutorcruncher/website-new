@@ -13,22 +13,6 @@
   .mobleMenuToggle {
     display: none;
   }
-  .allFeaturesLink {
-    margin-top: grid(5);
-    text-align: center;
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: grid(1);
-    }
-
-    svg {
-      transform: rotate(-90deg);
-      width: grid(4);
-      height: grid(4);
-    }
-  }
   .solutionsMenu__inner {
     @include container-md;
     display: flex;

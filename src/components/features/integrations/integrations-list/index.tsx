@@ -8,9 +8,9 @@ import { Heading } from "@/components/ui/heading";
 import { Modal } from "@/components/ui/modal/modal";
 
 import { groupIntegrationsByCategory } from "../helpers";
-import { IntegrationCard } from "../integrations-card";
 import { Integration, IntegrationsProps } from "../types";
 import styles from "./integrations-list.module.scss";
+import { InfoCard } from "@/components/ui/info-card";
 
 export const IntegrationsList = ({ integrations }: IntegrationsProps) => {
   const groupedIntegrations = groupIntegrationsByCategory(integrations);
@@ -37,10 +37,10 @@ export const IntegrationsList = ({ integrations }: IntegrationsProps) => {
             </Heading>
             <div className={clsx(styles.cards, "animate-children")}>
               {groupedIntegrations[categoryTitle].map((integration) => (
-                <IntegrationCard
+                <InfoCard
                   key={integration.title}
                   title={integration.title}
-                  logo={integration.logo}
+                  icon={integration.logo}
                   intro={integration.intro}
                   onClick={() => handleCardClick(integration)}
                 />
