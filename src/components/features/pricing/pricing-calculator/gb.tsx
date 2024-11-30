@@ -69,6 +69,9 @@ const TierBreakdown = ({
               </span>
             </div>
           </div>
+          <Action href="/book-a-call" variant="white" fullwidth>
+            Book a call
+          </Action>
         </div>
       )}
     </div>

@@ -39,7 +39,12 @@ $tierPadding: grid(8);
 
     .pricing {
       line-height: 1.4;
+      .startingFrom {
+        margin-top: grid(4);
+        margin-bottom: 0;
+      }
       h3 {
+        line-height: 1;
         font-size: grid(16);
       }
       .billingCycle {

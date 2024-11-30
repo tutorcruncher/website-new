@@ -12,7 +12,9 @@ export const us = {
       revenue_percentage: 0.65,
       base_price: 80,
     },
-    enterprise: true,
+    enterprise: {
+      base_price: 1000,
+    },
     enterprise_limit: 1000000,
     support: {
       free: 0,

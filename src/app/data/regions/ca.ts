@@ -1,7 +1,7 @@
 export const ca = {
   name: "Canada",
   region_code: "ca",
-  currency: "$",
+  currency: "C$",
   currency_code: "CAD",
   pricing: {
     payg: {

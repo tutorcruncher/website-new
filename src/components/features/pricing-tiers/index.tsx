@@ -13,26 +13,16 @@ import styles from "./pricing-tiers.module.scss";
 const TierPricing = ({ tier, region }) => {
   const pricing = region.pricing[tier.pricing];
 
-  if (tier.name === "Enterprise") {
-    return (
-      <div className={styles.pricing}>
-        <h2 className={styles.title}>{tier.name}</h2>
-        <h3>Custom</h3>
-        <span className={styles.additional}>{tier.additional}</span>
-      </div>
-    );
-  }
-
   if (region.region_code === "gb") {
     return (
       <div className={styles.pricing}>
         <h2 className={styles.title}>{tier.name}</h2>
+        <p className={styles.startingFrom}>Starting from</p>
         <h3>
           {region?.currency}
           {pricing?.base_price}
           <span className={styles.billingCycle}>p/m</span>
         </h3>
-        <span className={styles.additional}>+ payment fees</span>
       </div>
     );
   }
@@ -43,10 +33,10 @@ const TierPricing = ({ tier, region }) => {
       <h3>
         {region?.currency}
         {pricing?.base_price}
-        <span className={styles.billingCycle}>{tier?.billingCycle}</span>
+        <span className={styles.billingCycle}>p/m</span>
       </h3>
       <span className={styles.additional}>
-        + {pricing.revenue_percentage}% of revenue
+        + {pricing.revenue_percentage}% revenue fee
       </span>
     </div>
   );

@@ -58,6 +58,9 @@ const TierBreakdown = ({
                 <span>{totalAmount}</span>
               </span>
             </div>
+            <Action href="/book-a-call" variant="white" fullwidth>
+              Book a call
+            </Action>
           </div>
         </div>
       )}
