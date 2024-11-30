@@ -1,0 +1,40 @@
+.consentBannerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .consentBanner {
+    max-width: 375px;
+    background-color: $white;
+    padding: grid(6);
+    border-radius: $border-radius--small;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.25);
+    border: 2px solid $navy-blue;
+    font-size: 16px;
+    z-index: 99999;
+
+    a {
+      text-decoration: underline;
+    }
+
+    .buttonContainer {
+      display: grid;
+      gap: grid(4);
+    }
+
+    .cookieTypes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0;
+      list-style: none;
+      gap: grid(2);
+    }
+  }
+}
