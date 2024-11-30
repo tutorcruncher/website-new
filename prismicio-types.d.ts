@@ -1997,6 +1997,16 @@ export interface StandOutFeaturesSliceDefaultPrimaryFeaturesItem {
  */
 export interface StandOutFeaturesSliceDefaultPrimary {
   /**
+   * Title field in *StandOutFeatures → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: stand_out_features.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Features field in *StandOutFeatures → Default → Primary*
    *
    * - **Field Type**: Group

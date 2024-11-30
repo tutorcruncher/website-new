@@ -68,6 +68,11 @@
 						]
 					}
 				]
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "highway",
+				"type": "Text"
 			}
 		},
 		"items": []

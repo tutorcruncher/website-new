@@ -28,7 +28,7 @@ const StandOutFeatures = ({ slice }: StandOutFeaturesProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <StandOutFeaturesComponent
-        title={"Features"}
+        title={slice.primary.title}
         features={formatedFeatures}
       />
     </section>
