@@ -254,14 +254,24 @@ export interface ContactDocumentDataLocationsItem {
   opening_hours: prismic.RichTextField;
 
   /**
-   * Map field in *Contact → Locations*
+   * Longitude field in *Contact → Locations*
    *
-   * - **Field Type**: Link
-   * - **Placeholder**: https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9939.379422937021!2d-0.132548!3d51.479362!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760528b5a414c5%3A0x203347fa580ce37b!2sTutorCruncher!5e0!3m2!1sen!2suk!4v1726840565815!5m2!1sen!2suk
-   * - **API ID Path**: contact.locations[].map
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.locations[].longitude
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  map: prismic.LinkField;
+  longitude: prismic.KeyTextField;
+
+  /**
+   * Latitude field in *Contact → Locations*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.locations[].latitude
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  latitude: prismic.KeyTextField;
 }
 
 type ContactDocumentDataSlicesSlice = never;

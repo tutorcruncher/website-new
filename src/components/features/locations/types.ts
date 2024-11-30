@@ -7,7 +7,8 @@ export namespace Locations {
     phoneNumber: string;
     email: string;
     openingHours: ReactElement;
-    map: string;
+    latitude: string;
+    longitude: string;
   }
 
   export interface LocationsProps {

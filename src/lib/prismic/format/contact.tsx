@@ -16,8 +16,9 @@ export const formatContactPage = (data: Simplify<ContactDocumentData>) => {
       phoneNumber: location.phone_number,
       email: location.email,
       openingHours: <PrismicRichText field={location.opening_hours} />,
-      map: location.map.text,
-    }),
+      latitude: location.latitude,
+      longitude: location.longitude,
+    })
   );
 
   const meta = {
