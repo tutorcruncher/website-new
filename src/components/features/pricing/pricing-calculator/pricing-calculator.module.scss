@@ -89,19 +89,3 @@
   font-style: italic;
   max-width: 800px;
 }
-
-.backToLinkContainer {
-  font-size: $font-size--small;
-  text-align: center;
-  .backToLink {
-    display: inline-flex;
-    align-content: center;
-    margin-top: grid(3);
-
-    svg {
-      width: grid(4);
-      height: auto;
-      transform: rotate(90deg);
-    }
-  }
-}

@@ -93,13 +93,9 @@ $tierPadding: grid(8);
     }
 
     .buttonWrapper {
+      display: grid;
+      gap: grid(2);
       margin-top: auto;
-
-      a {
-        display: block;
-        text-align: center;
-        background-color: $white;
-      }
     }
   }
 }

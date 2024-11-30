@@ -74,8 +74,17 @@ export const PricingTiers = ({ region }) => {
                 ))}
               <div className={styles.buttonWrapper}>
                 <Action
-                  href="https://secure.tutorcruncher.com/start/1/"
+                  href={tier.solutionUrl}
                   variant="outline"
+                  fullwidth
+                  size="small"
+                >
+                  Find out more
+                </Action>
+                <Action
+                  href="https://secure.tutorcruncher.com/start/1/"
+                  variant="solid"
+                  fullwidth
                 >
                   Get started
                 </Action>

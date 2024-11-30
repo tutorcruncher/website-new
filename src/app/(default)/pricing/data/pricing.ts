@@ -3,6 +3,7 @@ export const TIERS = [
     pricing: "payg",
     name: "Pay as you go",
     description: "For tutoring companies starting out",
+    solutionUrl: "/solutions/payg",
     featuresList: [
       {
         heading: "Payment Fees",
@@ -54,6 +55,7 @@ export const TIERS = [
     name: "Startup",
     pricing: "startup",
     description: "For scaling tutoring companies",
+    solutionUrl: "/solutions/startup",
     featuresList: [
       {
         heading: "Payment Fees",
@@ -114,7 +116,7 @@ export const TIERS = [
     name: "Enterprise",
     pricing: "enterprise",
     description: "For large-scale tutoring companies",
-    additional: "Access to all features, including (but not limited to):",
+    solutionUrl: "/solutions/enterprise",
     featuresList: [
       {
         heading: "Payment Fees",
