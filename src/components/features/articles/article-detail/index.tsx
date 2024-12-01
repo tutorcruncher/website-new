@@ -15,6 +15,7 @@ import { ArticleShareLinks } from "../share-links";
 import styles from "./article-detail.module.scss";
 import { CallToAction } from "../../call-to-action";
 import TrackingLink from "@/components/ui/tracking-link/tracking-link";
+import { ArticlePage } from "@/lib/prismic/format/article";
 
 const components = {
   heading2: ({ text }) => {
@@ -60,48 +61,39 @@ const components = {
 };
 
 interface ArticleDetailProps {
-  post: ArticleDocument;
+  article: ArticlePage;
   relatedPosts: ArticleDocument[];
 }
 
-export const ArticleDetail = ({ post, relatedPosts }: ArticleDetailProps) => {
-  const { data } = post;
+export const ArticleDetail = ({
+  article,
+  relatedPosts,
+}: ArticleDetailProps) => {
+  const { content } = article;
 
-  // @ts-expect-error
-  const category = data.category?.data?.title || null;
-  const headings = filterHeadings(data.content);
+  const category = content?.category?.title || "";
+  const headings = filterHeadings(content.body);
 
   return (
     <>
       <div className={styles.header}>
         {category ? <Tag title={category} noHoverEffect /> : null}
         <Heading size="large" variant="h1">
-          {post.data.title}
+          {content.title}
         </Heading>
         <div className={styles.authorAndShareLinksWrapper}>
           <AuthorAndDate
-            authorImage={
-              post.data.author_image.url
-                ? {
-                    url: post.data.author_image.url,
-                    alt: post.data.author_image.alt,
-                    width: post.data.author_image.dimensions.width,
-                    height: post.data.author_image.dimensions.height,
-                  }
-                : undefined
-            }
-            authorName={post.data.author_name}
-            date={post.data.publishDate}
+            authorImage={content.author.image}
+            authorName={content.author.name}
+            date={content.publishedDate || content.updatedDate}
           />
           <div className={styles.hideOnMobile}>
-            <ArticleShareLinks title={post.data.title} variant="white" />
+            <ArticleShareLinks title={content.title} variant="white" />
           </div>
         </div>
       </div>
       <div className={styles.divide}>
-        <div className={styles.divideInner}>
-          <PrismicNextImage field={data.featured_image} />
-        </div>
+        <div className={styles.divideInner}>{content.featuredImage}</div>
       </div>
       <div className={styles.contentWrapper}>
         <div className={styles.content}>
@@ -130,26 +122,17 @@ export const ArticleDetail = ({ post, relatedPosts }: ArticleDetailProps) => {
           </div>
           <div>
             <article className="main-content">
-              <PrismicRichText field={data.content} components={components} />
+              <PrismicRichText field={content.body} components={components} />
             </article>
             <div className={styles.authorAndShareLinksWrapper}>
               <div className={styles.hideOnMobile}>
                 <AuthorAndDate
-                  authorImage={
-                    post.data.author_image.url
-                      ? {
-                          url: post.data.author_image.url,
-                          alt: post.data.author_image.alt,
-                          width: post.data.author_image.dimensions.width,
-                          height: post.data.author_image.dimensions.height,
-                        }
-                      : undefined
-                  }
-                  authorName={post.data.author_name}
-                  date={post.data.publishDate}
+                  authorImage={content.author.image}
+                  authorName={content.author.name}
+                  date={content.publishedDate || content.updatedDate}
                 />
               </div>
-              <ArticleShareLinks title={post.data.title} variant="lightBlue" />
+              <ArticleShareLinks title={content.title} variant="lightBlue" />
             </div>
           </div>
         </div>

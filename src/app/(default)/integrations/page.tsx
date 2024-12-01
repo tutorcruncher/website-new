@@ -17,14 +17,14 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function IntegrationsPage() {
   const { heading, integrations } = await fetchIntegrationsPage();
   return (
-    <div>
+    <>
+      <Hero heading={heading} headingVariant="div" />
+      <IntegrationsList integrations={integrations} />
+      <CallToAction background="blue" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      <Hero heading={heading} headingVariant="div" />
-      <IntegrationsList integrations={integrations} />
-      <CallToAction background="blue" />
-    </div>
+    </>
   );
 }

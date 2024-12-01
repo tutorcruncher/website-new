@@ -6,5 +6,5 @@ export interface IAuthor {
     height: number;
   };
   authorName?: string;
-  date?: string;
+  date?: Date;
 }

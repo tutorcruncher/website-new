@@ -5,7 +5,7 @@ import { Body } from "@/components/ui/body";
 import { Hero } from "@/components/ui/hero";
 import { formatMetaData } from "@/helpers/metaData";
 import { fetchReviewsPage } from "@/lib/prismic/reviews";
-import { webApplicationSchema } from "@/schema/web_application";
+import generateWebAppSchema from "@/schema/web_application";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = await fetchReviewsPage();
@@ -22,12 +22,6 @@ const ReviewsPage = async () => {
       <Body containerSize="large" background="cream">
         <TestimonialList testimonials={testimonials} />
       </Body>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webApplicationSchema),
-        }}
-      />
     </>
   );
 };
