@@ -6,7 +6,7 @@
   z-index: 100;
   position: relative;
 
-  @include md-display {
+  @include lg-display {
     padding: 0;
   }
 
@@ -31,7 +31,7 @@
     display: none;
     gap: 12px;
 
-    @include md-display {
+    @include lg-display {
       display: flex;
       width: 248px; // Fixed width to prevent CLS
     }
@@ -48,7 +48,7 @@
     z-index: 100;
     border-radius: 15px;
 
-    @include md-display {
+    @include lg-display {
       display: none;
     }
 
