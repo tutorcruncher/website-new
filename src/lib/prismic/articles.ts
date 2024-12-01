@@ -6,7 +6,7 @@ type ArticleWithCategory = ArticleDocument & { category: CategoryDocument };
 
 export const fetchArticles = async (
   filters = [],
-  limit = 100
+  limit = 1000
 ): Promise<ArticleWithCategory[]> => {
   const client = createClient();
   try {

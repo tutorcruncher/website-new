@@ -3,10 +3,10 @@ import { BASE_META } from "@/schema/meta";
 export const formatMetaData = (
   title: string,
   description: string,
-  url: string,
+  url: string
 ) => {
   return {
-    title,
+    title: title || "TutorCruncher",
     description,
     twitter: {
       ...BASE_META.twitter,

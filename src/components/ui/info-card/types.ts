@@ -5,4 +5,5 @@ export interface InfoCardProps {
   title: string;
   intro: string;
   onClick: () => void;
+  fullWidth?: boolean;
 }

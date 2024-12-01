@@ -27,9 +27,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "stand_out_features": {
-              "type": "SharedSlice"
-            },
             "youtube": {
               "type": "SharedSlice"
             },

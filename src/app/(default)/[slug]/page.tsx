@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { components } from "slices";
 
 import { fetchAllPages, fetchPageByUid } from "@/lib/prismic/pages";
-import { BASE_META } from "@/schema/meta";
+import { formatMetaData } from "@/helpers/metaData";
 
 export async function generateMetadata({
   params,
@@ -15,22 +15,7 @@ export async function generateMetadata({
 
   const url = `https://tutorcruncher.com/${params.slug}`;
 
-  return {
-    title: data.meta_title || "Tutor Cruncher",
-    description: data.meta_description,
-    twitter: {
-      ...BASE_META.twitter,
-      title: data.meta_title,
-    },
-    openGraph: {
-      ...BASE_META.openGraph,
-      url,
-      title: data.meta_title,
-    },
-    alternates: {
-      canonical: url,
-    },
-  };
+  return formatMetaData(data.meta_title, data.meta_description, url);
 }
 
 export default async function StaticPage({

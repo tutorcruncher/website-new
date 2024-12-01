@@ -1,20 +1,17 @@
 import { PrismicRichText } from "@prismicio/react";
-
-import { StandoutFeatures as StandOutFeaturesComponent } from "@/components/features/standout-features";
 import { prismicToNextImage } from "@/helpers/prismicToNextImage";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import { InfoBoxList as InfoBoxListComponent } from "@/components/features/info-box-list";
+/**
+ * Props for `InfoBoxList`.
+ */
+export type InfoBoxListProps = SliceComponentProps<Content.InfoBoxListSlice>;
 
 /**
- * Props for `StandOutFeatures`.
+ * Component for "InfoBoxList" Slices.
  */
-export type StandOutFeaturesProps =
-  SliceComponentProps<Content.StandOutFeaturesSlice>;
-
-/**
- * Component for "StandOutFeatures" Slices.
- */
-const StandOutFeatures = ({ slice }: StandOutFeaturesProps): JSX.Element => {
+const InfoBoxList = ({ slice }: InfoBoxListProps): JSX.Element => {
   const formatedFeatures = slice.primary.features.map((feature) => ({
     title: feature.title,
     icon: prismicToNextImage(feature.icon),
@@ -27,7 +24,7 @@ const StandOutFeatures = ({ slice }: StandOutFeaturesProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <StandOutFeaturesComponent
+      <InfoBoxListComponent
         title={slice.primary.title}
         features={formatedFeatures}
       />
@@ -35,4 +32,4 @@ const StandOutFeatures = ({ slice }: StandOutFeaturesProps): JSX.Element => {
   );
 };
 
-export default StandOutFeatures;
+export default InfoBoxList;
