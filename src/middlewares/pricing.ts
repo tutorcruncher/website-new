@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function handlePricingRedirect(request: NextRequest) {
   try {
-    const response = await fetch(`${process.env.HERMES_BASE_URL}/loc/`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`);
 
     const { country_code }: { country_code: string } = await response.json();
     const targetPath = `${request.nextUrl.pathname}/${country_code.toLowerCase()}`;

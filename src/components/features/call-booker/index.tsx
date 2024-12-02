@@ -81,7 +81,7 @@ export const CallBooker = ({ rep }) => {
       call_type: CALL_TYPE,
     };
 
-    fetch(`${process.env.HERMES_BASE_URL}/callbooker/${CALL_TYPE}/book/`, {
+    fetch(`${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/${CALL_TYPE}/book/`, {
       method: "POST",
       body: JSON.stringify(hermesData),
       headers: {

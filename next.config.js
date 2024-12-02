@@ -4,7 +4,7 @@ const integrationsRedirects = require("./redirects/integrations");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    HERMES_BASE_URL: process.env.HERMES_BASE_URL || "https://hermes.tutorcruncher.com",
+    NEXT_PUBLIC_HERMES_BASE_URL: process.env.NEXT_PUBLIC_HERMES_BASE_URL || "https://hermes.tutorcruncher.com",
   },
   reactStrictMode: true,
   images: {

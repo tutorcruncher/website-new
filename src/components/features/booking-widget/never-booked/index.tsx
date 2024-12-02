@@ -21,7 +21,7 @@ export const NeverBooked = () => {
 
     if (!storedCountryCode) {
       try {
-        const response = await fetch(`${process.env.HERMES_BASE_URL}/loc/`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`);
         const data = await response.json();
         storedCountryCode = data.country_code || "GB";
         localStorage.setItem("_country_code", storedCountryCode);
@@ -52,7 +52,7 @@ export const NeverBooked = () => {
     let salesperson_id = DEFAULT_SALES_PERSON_ID;
     try {
       const response = await fetch(
-        `${process.env.HERMES_BASE_URL}/choose-roundrobin/sales/?plan=${selectedRevenueOption}&country_code=${countryCode}`,
+        `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/choose-roundrobin/sales/?plan=${selectedRevenueOption}&country_code=${countryCode}`,
       );
       const data = await response.json();
       salesperson_id = data["id"];
