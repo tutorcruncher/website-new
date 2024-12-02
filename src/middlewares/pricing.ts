@@ -3,9 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function handlePricingRedirect(request: NextRequest) {
   try {
-    const response = await fetch(
-      "https://import.tutorcruncher.com/api/country/"
-    );
+    const response = await fetch(`${process.env.HERMES_BASE_URL}/loc/`);
 
     const { country_code }: { country_code: string } = await response.json();
     const targetPath = `${request.nextUrl.pathname}/${country_code.toLowerCase()}`;

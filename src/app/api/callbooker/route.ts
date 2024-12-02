@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
-  const url = `https://hermes.tutorcruncher.com/callbooker/availability/?${searchParams.toString()}`;
+  const url = `${process.env.HERMES_BASE_URL}/callbooker/availability/?${searchParams.toString()}`;
 
   try {
     const response = await fetch(url);
