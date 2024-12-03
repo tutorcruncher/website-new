@@ -96,7 +96,6 @@ export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
           </Link>
         ))}
       </div>
-      <ArrowLink text="Link to all features" href="/features" />
     </div>
   );
 };
