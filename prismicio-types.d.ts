@@ -1738,6 +1738,17 @@ export interface CallToActionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   background_colour: prismic.SelectField<"Cream" | "Blue", "filled">;
+
+  /**
+   * Show Image field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: call_to_action.default.primary.show_image
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_image: prismic.BooleanField;
 }
 
 /**

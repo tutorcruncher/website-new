@@ -22,7 +22,10 @@ const CallToAction = ({ slice }: CallToActionProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <CallToActionComponent background={background} />
+      <CallToActionComponent
+        background={background}
+        showImage={slice.primary.show_image}
+      />
     </section>
   );
 };

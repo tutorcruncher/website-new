@@ -17,8 +17,20 @@
           "config": {
             "label": "Background colour",
             "placeholder": "",
-            "options": ["Cream", "Blue"],
+            "options": [
+              "Cream",
+              "Blue"
+            ],
             "default_value": "Cream"
+          }
+        },
+        "show_image": {
+          "type": "Boolean",
+          "config": {
+            "label": "Show Image",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
           }
         }
       },

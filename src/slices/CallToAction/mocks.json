@@ -1,14 +1,18 @@
 [
-  {
-    "__TYPE__": "SharedSliceContent",
-    "variation": "default",
-    "primary": {
-      "background_colour": {
-        "__TYPE__": "FieldContent",
-        "value": "Cream",
-        "type": "Select"
-      }
-    },
-    "items": []
-  }
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"background_colour": {
+				"__TYPE__": "FieldContent",
+				"value": "Cream",
+				"type": "Select"
+			},
+			"show_image": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			}
+		},
+		"items": []
+	}
 ]
