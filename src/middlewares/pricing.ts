@@ -26,7 +26,6 @@ const countryToPricingMap = {
     "es",
   ],
   gb: ["gb", "bg", "hr", "cz", "hu", "pl", "ro", "sw"], // European countries that don't have euro
-  za: ["za"],
   us: ["us"],
 };
 

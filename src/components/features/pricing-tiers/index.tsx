@@ -9,6 +9,7 @@ import { PillCard } from "@/components/ui/pill-card";
 import { TickSvg } from "@/svgs/tick";
 
 import styles from "./pricing-tiers.module.scss";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 const TierPricing = ({ tier, region }) => {
   const pricing = region.pricing[tier.pricing];
@@ -81,13 +82,11 @@ export const PricingTiers = ({ region }) => {
                 >
                   Find out more
                 </Action>
-                <Action
-                  href="https://secure.tutorcruncher.com/start/1/"
+                <TrackingLink
+                  url={`https://secure.tutorcruncher.com/start/1/?plan=${tier.pricing}`}
+                  text="Get Started"
                   variant="solid"
-                  fullwidth
-                >
-                  Get started
-                </Action>
+                />
               </div>
             </div>
           );
