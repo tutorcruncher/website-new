@@ -48,17 +48,13 @@ export const Form = () => {
             formData["attributes-who_are_you_trying_to_reach"],
         },
       };
-      const response = await fetch(
-        "https://socket.tutorcruncher.com/f8d3735b347ad375b206/enquiry",
-        {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      );
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
         setIsSubmitted(true);
@@ -78,6 +74,14 @@ export const Form = () => {
       setErrorMessage("Error submitting form. Please try again later.");
     }
   };
+
+  if (isSubmitted) {
+    return (
+      <div className={styles.form}>
+        <p>Form submitted successfully!</p>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.form}>
@@ -159,7 +163,6 @@ export const Form = () => {
           Send message
         </Action>
       </form>
-      {isSubmitted && <p>Form submitted successfully!</p>}
       {errorMessage && <p className="error">{errorMessage}</p>}
     </div>
   );
