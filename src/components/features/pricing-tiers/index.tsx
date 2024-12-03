@@ -26,7 +26,7 @@ const TierPricing = ({ tier, region }) => {
       <h3>
         {region?.currency}
         {pricing?.base_price}
-        <span className={styles.billingCycle}>p/m</span>
+        <span className={styles.billingCycle}>/month</span>
       </h3>
     </>
   );

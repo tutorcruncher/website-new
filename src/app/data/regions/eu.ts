@@ -12,7 +12,9 @@ export const eu = {
       revenue_percentage: 0.65,
       base_price: 65,
     },
-    enterprise: true,
+    enterprise: {
+      base_price: 950,
+    },
     enterprise_limit: 1000000,
     support: {
       free: 0,
