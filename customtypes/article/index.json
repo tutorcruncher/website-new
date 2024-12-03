@@ -52,21 +52,6 @@
           "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "author_image": {
-        "type": "Image",
-        "config": {
-          "label": "Author image ",
-          "constraint": {},
-          "thumbnails": []
-        }
-      },
-      "author_name": {
-        "type": "Text",
-        "config": {
-          "label": "Author name",
-          "placeholder": ""
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
@@ -106,17 +91,6 @@
             "height": 1260
           },
           "thumbnails": []
-        }
-      }
-    },
-    "Featured": {
-      "featured_within_footer": {
-        "type": "Boolean",
-        "config": {
-          "label": "Featured Within Footer",
-          "placeholder_false": "False",
-          "placeholder_true": "True",
-          "default_value": false
         }
       }
     }

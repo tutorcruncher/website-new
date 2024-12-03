@@ -66,28 +66,6 @@ interface ArticleDocumentData {
   content: prismic.RichTextField;
 
   /**
-   * Author image  field in *Article*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.author_image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  author_image: prismic.ImageField<never>;
-
-  /**
-   * Author name field in *Article*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.author_name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  author_name: prismic.KeyTextField;
-
-  /**
    * Slice Zone field in *Article*
    *
    * - **Field Type**: Slice Zone
@@ -138,17 +116,7 @@ interface ArticleDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  meta_image: prismic.ImageField<never> /**
-   * Featured Within Footer field in *Article*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: article.featured_within_footer
-   * - **Tab**: Featured
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */;
-  featured_within_footer: prismic.BooleanField;
+  meta_image: prismic.ImageField<never>;
 }
 
 /**
