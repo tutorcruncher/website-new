@@ -1,17 +1,12 @@
 import { ArticleDocument, Simplify } from "../../../../prismicio-types";
 import { PrismicNextImage } from "@prismicio/next";
 import { RichTextField } from "@prismicio/types";
-import Image from "next/image";
 
 export interface ArticlePage {
   content: {
     title: string;
     url: string;
     body: RichTextField;
-    author: {
-      name: string;
-      image: any;
-    };
     createdDate: Date;
     publishedDate: Date;
     updatedDate: Date;
@@ -38,14 +33,6 @@ export const formatArticlePage = (
     title: data.title,
     url: `/blog/${page.uid}`,
     body: data.content,
-    author: {
-      name: data.author_name || "TutorCruncher",
-      image: data.author_image ? (
-        <PrismicNextImage field={data.author_image} />
-      ) : (
-        <Image src="/img/placeholder.webp" width={100} height={100} alt={""} />
-      ),
-    },
     createdDate: new Date(page.first_publication_date),
     publishedDate: new Date(data.publishDate),
     updatedDate: new Date(page.last_publication_date),
