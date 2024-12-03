@@ -46,7 +46,6 @@ export const Post = ({ post }: { post: ArticleDocument }) => {
         </Heading>
         <TrimmedRichText content={data.content} />
         <p className={styles.date}>
-          Created:{" "}
           {new Date(data.publishDate)
             .toLocaleDateString("en-GB", {
               day: "2-digit",

@@ -18,7 +18,6 @@ export const generateArticleSchema = (article: ArticlePage) => {
   const datePublished = content.publishedDate;
   const dateModified = content.updatedDate || dateCreated;
 
-  const authorName = content.author.name || "TutorCruncher";
   const publisherLogo = {
     "@type": "ImageObject",
     url: `${SITE_ROOT}/assets/publisher_logo.webp`,
@@ -39,9 +38,9 @@ export const generateArticleSchema = (article: ArticlePage) => {
     thumbnailUrl: image.url,
     author: {
       "@type": "Person",
-      name: authorName,
+      name: "TutorCruncher",
     },
-    creator: [authorName],
+    creator: ["TutorCruncher"],
     publisher: {
       "@type": "Organization",
       name: "TutorCruncher",

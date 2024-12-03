@@ -34,3 +34,4 @@ tsconfig.tsbuildinfo
 
 # IDEs
 .idea/
+.vscode/settings.json

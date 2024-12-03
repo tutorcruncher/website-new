@@ -8,7 +8,6 @@ import { Tag } from "@/components/ui/tag";
 
 import { ArticleDocument } from "../../../../../prismicio-types";
 import { Summary } from "../article-summary";
-import { AuthorAndDate } from "../author-and-date";
 import { createID, filterHeadings } from "../helpers";
 import { Newsletter } from "../newsletter";
 import { ArticleShareLinks } from "../share-links";
@@ -74,6 +73,14 @@ export const ArticleDetail = ({
   const category = content?.category?.title || "";
   const headings = filterHeadings(content.body);
 
+  const publishedDate = new Date(content.publishedDate).toLocaleDateString(
+    "en-GB",
+    {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    }
+  );
   return (
     <>
       <div className={styles.header}>
@@ -81,12 +88,8 @@ export const ArticleDetail = ({
         <Heading size="large" variant="h1">
           {content.title}
         </Heading>
-        <div className={styles.authorAndShareLinksWrapper}>
-          <AuthorAndDate
-            authorImage={content.author.image}
-            authorName={content.author.name}
-            date={content.publishedDate || content.updatedDate}
-          />
+        <div className={styles.dateAndShareWraper}>
+          {publishedDate}
           <div className={styles.hideOnMobile}>
             <ArticleShareLinks title={content.title} variant="white" />
           </div>
@@ -124,14 +127,8 @@ export const ArticleDetail = ({
             <article className="main-content">
               <PrismicRichText field={content.body} components={components} />
             </article>
-            <div className={styles.authorAndShareLinksWrapper}>
-              <div className={styles.hideOnMobile}>
-                <AuthorAndDate
-                  authorImage={content.author.image}
-                  authorName={content.author.name}
-                  date={content.publishedDate || content.updatedDate}
-                />
-              </div>
+            <div className={styles.dateAndShareWraper}>
+              <div className={styles.hideOnMobile}>{publishedDate}</div>
               <ArticleShareLinks title={content.title} variant="lightBlue" />
             </div>
           </div>
