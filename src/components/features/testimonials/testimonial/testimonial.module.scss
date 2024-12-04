@@ -14,7 +14,7 @@
 
   .logo {
     img {
-      height: 50px;
+      max-height: 60px;
       width: auto;
       object-position: center;
       object-fit: cover;
@@ -24,6 +24,7 @@
   .testimonial {
     margin-top: grid(10);
     color: #596d80;
+    min-height: 120px;
   }
 
   .cite {

@@ -15,10 +15,6 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
  */
 
 const queryOptions = {
-  orderings: {
-    field: "document.first_publication_date",
-    direction: "desc",
-  },
   page: 1,
 } as any;
 
