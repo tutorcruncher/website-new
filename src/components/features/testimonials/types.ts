@@ -15,6 +15,7 @@ export interface ITestimonialProps {
     width: number;
     height: number;
   };
+  companyName: string;
   reviewerName: string;
   reviewerRole: string;
 }

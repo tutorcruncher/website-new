@@ -38,6 +38,7 @@ export const TestimonialSlider = ({
                   <Testimonial
                     shortTestimonial={item.shortTestimonial}
                     companyLogo={item.companyLogo}
+                    companyName={item.companyName}
                     reviewerImage={item.reviewerImage}
                     reviewerName={item.reviewerName}
                     reviewerRole={item.reviewerRole}
@@ -47,6 +48,7 @@ export const TestimonialSlider = ({
                   <Testimonial
                     shortTestimonial={item.shortTestimonial}
                     companyLogo={item.companyLogo}
+                    companyName={item.companyName}
                     reviewerImage={item.reviewerImage}
                     reviewerName={item.reviewerName}
                     reviewerRole={item.reviewerRole}

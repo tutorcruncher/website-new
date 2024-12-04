@@ -28,17 +28,25 @@
 
   .cite {
     font-family: $font-secondary;
-    text-align: center;
+    text-align: left;
     margin-top: grid(16);
     font-size: $font-size--large;
     line-height: 20px;
     color: #596d80;
+    display: flex;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     img {
-      width: grid(15);
-      height: grid(15);
+      width: grid(18);
+      height: grid(18);
       border: 2px solid $steel-blue;
       border-radius: 50%;
+      margin-right: grid(4);
     }
 
     p {
@@ -48,8 +56,6 @@
     .name {
       color: $navy-blue;
       font-weight: 500;
-      margin-top: grid(2);
-      margin-bottom: grid(1);
     }
   }
 
