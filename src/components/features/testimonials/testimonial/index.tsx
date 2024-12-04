@@ -29,8 +29,8 @@ export const Testimonial = ({
           height={reviewerImage.height}
         />
         <div className={styles.info}>
-          <p className={styles.name}>{reviewerName}, {companyName}</p>
-          <p className={styles.role}>{reviewerRole}</p>
+          <p className={styles.name}>{reviewerName}</p>
+          <p className={styles.role}>{reviewerRole}, {companyName}</p>
         </div>
       </div>
     </div>
