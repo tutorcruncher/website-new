@@ -7,7 +7,6 @@ import { Heading } from "@/components/ui/heading";
 
 import { SOLUTIONS_MENU } from "./data";
 import styles from "./solutions-menu.module.scss";
-import { ArrowLink } from "@/components/ui/arrow-link";
 
 export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
   const menuRef = useRef(null);
@@ -75,6 +74,9 @@ export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
             >
               {solution.title}
             </Heading>
+            <p className={styles.subHeading}>
+              Our <b>{solution.pricePlan}</b> package gives you:
+            </p>
             <ul className={styles.description}>
               {solution.description.map((item) => (
                 <li key={item}>
