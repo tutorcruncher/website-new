@@ -5,6 +5,7 @@ import { prismicToNextImage } from "@/helpers/prismicToNextImage";
 export const formatTestimonials = (testimonials) => {
   return testimonials.map(({ data }) => ({
     companyLogo: prismicToNextImage(data.company_logo),
+    companyName: data.company_name,
     testimonial: <PrismicRichText field={data.testimonial} />,
     shortTestimonial: data.short_testimonial,
     reviewerImage: prismicToNextImage(data.reviewer_image),
