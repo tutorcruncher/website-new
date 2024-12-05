@@ -1,20 +1,13 @@
 .cards {
   display: grid;
-  gap: grid(4);
+  gap: grid(10);
   flex-direction: column;
 
   @include sm-display {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include md-display {
+  @include lg-display {
     grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.modal {
-  .icon {
-    height: 50px;
-    width: auto;
   }
 }

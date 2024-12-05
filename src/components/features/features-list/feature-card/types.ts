@@ -1,6 +1,6 @@
 import { Image } from "@/types/image";
 
-export interface InfoCardProps {
+export interface FeatureCardProps {
   icon: Image;
   title: string;
   intro: string;
