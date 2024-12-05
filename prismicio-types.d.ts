@@ -965,7 +965,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type PricingDocumentDataSlicesSlice = BodyTextSlice;
+type PricingDocumentDataSlicesSlice = InfoBoxListSlice;
 
 /**
  * Content for Pricing documents
@@ -1352,6 +1352,17 @@ interface TestimonialDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   company_logo: prismic.ImageField<never>;
+
+  /**
+   * Company name field in *Testimonial*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.company_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
 
   /**
    * Reviewer image field in *Testimonial*

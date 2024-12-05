@@ -2,7 +2,32 @@
 	{
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
-		"primary": {},
+		"primary": {
+			"features": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"content",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Est id pariatur tempor. Ullamco qui non elit duis eiusmod voluptate ad ullamco eu tempor. Elit laboris ipsum aliqua quis nostrud eu commodo ipsum laborum nisi incididunt enim consequat Lorem."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
 		"items": []
 	}
 ]
