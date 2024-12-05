@@ -1,9 +1,13 @@
+import * as prismic from "@prismicio/client";
+
 import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 
 import { formatMetaData } from "@/helpers/metaData";
-import { ArticleLayout } from "@/layouts/article";
 import { createClient } from "@/lib/prismic/prismicio";
+import { fetchArticleByUid, fetchArticles } from "@/lib/prismic/articles";
+import { generateArticleSchema } from "@/schema/blog_post";
+import { ArticleDetail } from "@/components/features/articles/article-detail";
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   const client = createClient();
@@ -25,13 +29,23 @@ export async function generateStaticParams() {
 }
 
 const StaticBlogPage = async ({ params }) => {
-  const client = createClient();
-  const article = await client.getByUID("article", params.uid, {
-    fetchLinks: "category.title",
-  });
+  const article = await fetchArticleByUid(params.uid);
+  const relatedPosts = await fetchArticles(
+    [prismic.filter.at("my.article.category", article.content.category.id)],
+    3
+  );
+  const schemaData = generateArticleSchema(article);
 
   try {
-    return <ArticleLayout content={article} />;
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaData }}
+        />
+        <ArticleDetail article={article} relatedPosts={relatedPosts} />
+      </>
+    );
   } catch (error) {
     console.error("Error fetching content:", error);
     return notFound();

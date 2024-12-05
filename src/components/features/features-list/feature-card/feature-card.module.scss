@@ -1,0 +1,36 @@
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  color: $navy-blue;
+
+  &:hover {
+    .imageWrapper {
+      img {
+        scale: 1.1;
+      }
+    }
+  }
+
+  .imageWrapper {
+    position: relative;
+    margin-bottom: grid(3);
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: 0.3s linear;
+    }
+  }
+
+  h2 {
+    text-decoration: underline;
+  }
+
+  p {
+    margin-top: auto;
+    margin-bottom: 0;
+    line-height: normal;
+  }
+}

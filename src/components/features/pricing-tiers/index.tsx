@@ -9,45 +9,38 @@ import { PillCard } from "@/components/ui/pill-card";
 import { TickSvg } from "@/svgs/tick";
 
 import styles from "./pricing-tiers.module.scss";
+import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
 const TierPricing = ({ tier, region }) => {
   const pricing = region.pricing[tier.pricing];
 
-  if (tier.name === "Enterprise") {
-    return (
-      <div className={styles.pricing}>
-        <h2 className={styles.title}>{tier.name}</h2>
-        <h3>Custom</h3>
-        <span className={styles.additional}>{tier.additional}</span>
-      </div>
-    );
-  }
-
-  if (region.region_code === "gb") {
-    return (
-      <div className={styles.pricing}>
-        <h2 className={styles.title}>{tier.name}</h2>
-        <h3>
-          {region?.currency}
-          {pricing?.base_price}
-          <span className={styles.billingCycle}>p/m</span>
-        </h3>
-        <span className={styles.additional}>+ payment fees</span>
-      </div>
-    );
-  }
-
-  return (
-    <div className={styles.pricing}>
+  const PricingHeader = () => (
+    <div className={styles.heading}>
       <h2 className={styles.title}>{tier.name}</h2>
+      <p className={styles.description}>{tier.description}</p>
+    </div>
+  );
+
+  const PricingDetails = () => (
+    <>
+      <p className={styles.startingFrom}>Starting from</p>
       <h3>
         {region?.currency}
         {pricing?.base_price}
-        <span className={styles.billingCycle}>{tier?.billingCycle}</span>
+        <span className={styles.billingCycle}>/month</span>
       </h3>
-      <span className={styles.additional}>
-        + {pricing.revenue_percentage}% of revenue
-      </span>
+    </>
+  );
+
+  return (
+    <div className={styles.pricing}>
+      <PricingHeader />
+      <PricingDetails />
+      {region.region_code !== "gb" && (
+        <span className={styles.additional}>
+          + {pricing.revenue_percentage}% revenue fee
+        </span>
+      )}
     </div>
   );
 };
@@ -82,11 +75,18 @@ export const PricingTiers = ({ region }) => {
                 ))}
               <div className={styles.buttonWrapper}>
                 <Action
-                  href="https://secure.tutorcruncher.com/start/1/"
+                  href={tier.solutionUrl}
                   variant="outline"
+                  fullwidth
+                  size="small"
                 >
-                  Get started
+                  Find out more
                 </Action>
+                <TrackingLink
+                  url={`https://secure.tutorcruncher.com/start/1/?plan=${tier.pricing}`}
+                  text="Get Started"
+                  variant="solid"
+                />
               </div>
             </div>
           );

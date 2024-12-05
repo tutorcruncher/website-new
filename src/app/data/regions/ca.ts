@@ -1,7 +1,7 @@
 export const ca = {
   name: "Canada",
   region_code: "ca",
-  currency: "$",
+  currency: "C$",
   currency_code: "CAD",
   pricing: {
     payg: {
@@ -12,8 +12,10 @@ export const ca = {
       revenue_percentage: 0.65,
       base_price: 105,
     },
+    enterprise: {
+      base_price: 1400,
+    },
     enterprise_limit: 1000000,
-    enterprise: true,
     support: {
       free: 0,
       chat: 18,

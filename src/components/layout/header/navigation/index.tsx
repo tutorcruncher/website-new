@@ -24,6 +24,10 @@ const NavigationItems = [
     link: "/solutions",
   },
   {
+    title: "Features",
+    link: "/features",
+  },
+  {
     title: "Integrations",
     link: "/integrations",
   },

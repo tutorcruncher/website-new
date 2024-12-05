@@ -24,23 +24,33 @@ $tierPadding: grid(8);
     font-size: $font-size--small;
     background: linear-gradient(to top, #d5f3ff, #fff);
 
-    .title {
-      font-size: grid(8);
-      line-height: 1.4;
+    .heading {
       border-bottom: 1px solid $navy-blue-15;
       padding-bottom: grid(2);
       margin-bottom: grid(2);
-      display: flex;
 
-      span {
-        font-size: $font-size--base;
+      .title {
+        font-size: grid(8);
+        line-height: 1.4;
+        display: flex;
+        margin: 0;
+      }
+
+      .description {
+        margin-top: 0;
+        margin-bottom: grid(2);
       }
     }
 
     .pricing {
       line-height: 1.4;
+      .startingFrom {
+        margin-top: grid(4);
+        margin-bottom: 0;
+      }
       h3 {
-        font-size: grid(16);
+        line-height: 1;
+        font-size: grid(14);
       }
       .billingCycle {
         font-size: 30px;
@@ -83,13 +93,9 @@ $tierPadding: grid(8);
     }
 
     .buttonWrapper {
+      display: grid;
+      gap: grid(2);
       margin-top: auto;
-
-      a {
-        display: block;
-        text-align: center;
-        background-color: $white;
-      }
     }
   }
 }

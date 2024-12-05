@@ -23,7 +23,47 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "info_box_list": {
+              "type": "SharedSlice"
+            },
+            "text_image_grid": {
+              "type": "SharedSlice"
+            },
+            "accordions": {
+              "type": "SharedSlice"
+            },
+            "logos": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "youtube": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "team_list": {
+              "type": "SharedSlice"
+            },
+            "faqs": {
+              "type": "SharedSlice"
+            },
+            "stats": {
+              "type": "SharedSlice"
+            },
+            "body_text": {
+              "type": "SharedSlice"
+            },
+            "articles": {
+              "type": "SharedSlice"
+            },
+            "call_to_action": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },
@@ -37,12 +77,10 @@
         }
       },
       "list_text": {
-        "type": "StructuredText",
+        "type": "Text",
         "config": {
-          "label": "List Text",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          "label": "List text",
+          "placeholder": ""
         }
       }
     },

@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { Image } from "@/types/image";
 
-export interface StandoutFeaturesProps {
+export interface InfoBoxListProps {
   title: string;
   features: Feature[];
 }

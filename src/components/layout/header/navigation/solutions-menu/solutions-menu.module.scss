@@ -51,6 +51,11 @@
         padding: grid(4);
         padding-bottom: 0;
       }
+      .subHeading {
+        padding: grid(2) grid(4) 0 grid(4);
+        margin: 0;
+        font-size: $font-size--small;
+      };
       .description {
         font-size: $font-size--small;
         padding: grid(3) grid(4);

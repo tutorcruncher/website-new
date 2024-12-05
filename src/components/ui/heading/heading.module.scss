@@ -1,9 +1,9 @@
 .heading {
   &--xxsmall {
     @include heading-xxsmall;
-    margin: 0 0 grid(4);
+    margin: 0 0 grid(2);
     @include md-display {
-      margin: 0 0 grid(6);
+      margin: 0 0 grid(3);
     }
   }
 

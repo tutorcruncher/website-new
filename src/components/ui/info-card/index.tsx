@@ -10,16 +10,16 @@ export const InfoCard = ({ icon, title, intro, onClick }: InfoCardProps) => {
   const classes = clsx(styles.infoCard);
   return (
     <button type="button" onClick={onClick} className={classes}>
-      <div className={styles.iconWrapper}>
-        {icon?.url ? (
+      {icon?.url ? (
+        <div className={styles.imageWrapper}>
           <Image
             src={icon.url}
             width={icon.width}
             height={icon.height}
             alt={icon.alt}
           />
-        ) : null}
-      </div>
+        </div>
+      ) : null}
       <div className={styles.content}>
         <Heading size="xsmall" className={styles.heading} variant="h3" noMargin>
           {title}

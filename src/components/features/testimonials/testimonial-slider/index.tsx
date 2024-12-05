@@ -38,15 +38,7 @@ export const TestimonialSlider = ({
                   <Testimonial
                     shortTestimonial={item.shortTestimonial}
                     companyLogo={item.companyLogo}
-                    reviewerImage={item.reviewerImage}
-                    reviewerName={item.reviewerName}
-                    reviewerRole={item.reviewerRole}
-                  />
-                </div>
-                <div className={styles.embla__slide} key={index}>
-                  <Testimonial
-                    shortTestimonial={item.shortTestimonial}
-                    companyLogo={item.companyLogo}
+                    companyName={item.companyName}
                     reviewerImage={item.reviewerImage}
                     reviewerName={item.reviewerName}
                     reviewerRole={item.reviewerRole}

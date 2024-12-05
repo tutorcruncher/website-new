@@ -7,7 +7,7 @@ export const au = {
     payg: { revenue_percentage: 1, base_price: 45 },
     startup: { revenue_percentage: 0.65, base_price: 110 },
     enterprise_limit: 2000000,
-    enterprise: true,
+    enterprise: { base_price: 1350 },
     support: { free: 0, chat: 20, phone: 200 },
     extra_branch_fee: 75,
     custom_domain_fee: 150,

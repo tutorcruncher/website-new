@@ -8,8 +8,6 @@ import { DEFAULT_SALES_PERSON_ID } from "../constants";
 import { getCurrencyOptions } from "../helpers";
 import styles from "./never-booked.module.scss";
 
-const HERMES_URL = "https://hermes.tutorcruncher.com";
-
 export const NeverBooked = () => {
   const [revenueOptions, setRevenueOptions] = useState(null);
   const [selectedRevenueOption, setSelectedRevenueOption] = useState(null);
@@ -23,7 +21,7 @@ export const NeverBooked = () => {
 
     if (!storedCountryCode) {
       try {
-        const response = await fetch(`${HERMES_URL}/loc/`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`);
         const data = await response.json();
         storedCountryCode = data.country_code || "GB";
         localStorage.setItem("_country_code", storedCountryCode);
@@ -54,7 +52,7 @@ export const NeverBooked = () => {
     let salesperson_id = DEFAULT_SALES_PERSON_ID;
     try {
       const response = await fetch(
-        `${HERMES_URL}/choose-roundrobin/sales/?plan=${selectedRevenueOption}&country_code=${countryCode}`,
+        `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/choose-roundrobin/sales/?plan=${selectedRevenueOption}&country_code=${countryCode}`,
       );
       const data = await response.json();
       salesperson_id = data["id"];
@@ -66,7 +64,7 @@ export const NeverBooked = () => {
   };
 
   const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const selectedIndex = e.target.selectedIndex - 1; // Adjust for the disabled placeholder option
+    const selectedIndex = e.target.selectedIndex - 1;
     const selectedValue = e.target.value;
 
     setSelectedRevenueOption(selectedValue);

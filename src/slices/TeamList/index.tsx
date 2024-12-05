@@ -29,7 +29,6 @@ const TeamList = ({ slice }: TeamListProps): JSX.Element => {
     return (
       <>
         <BookingWidget />
-        <TeamListComponent heading={heading} team={team} variant={"sales"} />
       </>
     );
   }

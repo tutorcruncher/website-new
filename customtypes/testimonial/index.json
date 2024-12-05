@@ -36,6 +36,13 @@
           "thumbnails": []
         }
       },
+      "company_name": {
+        "type": "Text",
+        "config": {
+          "label": "Company name",
+          "placeholder": ""
+        }
+      },
       "reviewer_image": {
         "type": "Image",
         "config": {

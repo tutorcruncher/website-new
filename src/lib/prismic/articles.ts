@@ -1,12 +1,13 @@
 import { createClient } from "@/lib/prismic/prismicio";
 
 import { ArticleDocument, CategoryDocument } from "../../../prismicio-types";
+import { ArticlePage, formatArticlePage } from "./format/article";
 
 type ArticleWithCategory = ArticleDocument & { category: CategoryDocument };
 
 export const fetchArticles = async (
   filters = [],
-  limit = 100
+  limit = 1000
 ): Promise<ArticleWithCategory[]> => {
   const client = createClient();
   try {
@@ -25,14 +26,15 @@ export const fetchArticles = async (
   }
 };
 
-export const fetchArticleByUid = async (uid: string) => {
+export const fetchArticleByUid = async (uid: string): Promise<ArticlePage> => {
   const client = createClient();
   try {
-    return await client.getByUID("article", uid, {
+    const article = await client.getByUID("article", uid, {
       fetchLinks: "category.title",
     });
+    return formatArticlePage(article);
   } catch (error) {
     console.error("Error fetching articles:", error);
-    return [];
+    return null;
   }
 };

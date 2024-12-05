@@ -8,16 +8,30 @@ declare global {
   }
 }
 
-// TODO: Add google analytics check once GTM installed
 const LoginRedirectPage = () => {
   useEffect(() => {
-    const checkGa = () => {
-      window.location.href = "https://secure.tutorcruncher.com/";
+    const checkGA = () => {
+      if (
+        window.dataLayer &&
+        window.dataLayer.some(
+          (event: Record<string, any>) => event.event === "gtm.js"
+        )
+      ) {
+        window.location.href = "https://secure.tutorcruncher.com/";
+      } else {
+        setTimeout(checkGA, 500);
+      }
     };
-    checkGa();
+
+    checkGA();
   }, []);
 
-  return null;
+  return (
+    <p className="text-center">
+      Redirecting you to TutorCruncher’s login page. If that doesn't happen,
+      please click here.
+    </p>
+  );
 };
 
 export default LoginRedirectPage;

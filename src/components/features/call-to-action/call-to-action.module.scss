@@ -13,9 +13,16 @@
   }
   img {
     display: none;
+    border-radius: $border-radius--small;
   }
   .buttonsContainer {
     display: flex;
     gap: grid(3);
+  }
+
+  @include md-display {
+    img {
+      display: block;
+    }
   }
 }

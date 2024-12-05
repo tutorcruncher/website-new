@@ -8,10 +8,21 @@ import styles from "./call-to-action.module.scss";
 import { CallToActionProps } from "./types";
 import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
-export const CallToAction = ({ background }: CallToActionProps) => (
+export const CallToAction = ({
+  background,
+  showImage = false,
+}: CallToActionProps) => (
   <Body containerSize="medium" background={background} spacing="small">
     <div className={styles.callToAction}>
       <div className={styles.wrapper}>
+        {showImage && (
+          <Image
+            src={"/img/placeholder.webp"}
+            width={500}
+            height={250}
+            alt=""
+          />
+        )}
         <div className={styles.content}>
           <Heading variant="h2" noMargin>
             Start Your Journey with TutorCruncher

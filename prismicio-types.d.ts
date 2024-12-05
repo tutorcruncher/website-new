@@ -55,6 +55,17 @@ interface ArticleDocumentData {
   publishDate: prismic.DateField;
 
   /**
+   * Updated Date field in *Article*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.updated_date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  updated_date: prismic.DateField;
+
+  /**
    * Content field in *Article*
    *
    * - **Field Type**: Rich Text
@@ -64,28 +75,6 @@ interface ArticleDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
-
-  /**
-   * Author image  field in *Article*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.author_image
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  author_image: prismic.ImageField<never>;
-
-  /**
-   * Author name field in *Article*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.author_name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  author_name: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *Article*
@@ -138,17 +127,7 @@ interface ArticleDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  meta_image: prismic.ImageField<never> /**
-   * Featured Within Footer field in *Article*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: article.featured_within_footer
-   * - **Tab**: Featured
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */;
-  featured_within_footer: prismic.BooleanField;
+  meta_image: prismic.ImageField<never>;
 }
 
 /**
@@ -361,7 +340,20 @@ export type ContactDocument<Lang extends string = string> =
     Lang
   >;
 
-type FeatureDocumentDataSlicesSlice = never;
+type FeatureDocumentDataSlicesSlice =
+  | InfoBoxListSlice
+  | TextImageGridSlice
+  | AccordionsSlice
+  | LogosSlice
+  | TestimonialsSlice
+  | YoutubeSlice
+  | HeroSlice
+  | TeamListSlice
+  | FaqsSlice
+  | StatsSlice
+  | BodyTextSlice
+  | ArticlesSlice
+  | CallToActionSlice;
 
 /**
  * Content for Feature documents
@@ -399,15 +391,15 @@ interface FeatureDocumentData {
   list_image: prismic.ImageField<never>;
 
   /**
-   * List Text field in *Feature*
+   * List text field in *Feature*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: feature.list_text
    * - **Tab**: List
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  list_text: prismic.RichTextField /**
+  list_text: prismic.KeyTextField /**
    * Meta Title field in *Feature*
    *
    * - **Field Type**: Text
@@ -454,6 +446,82 @@ export type FeatureDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<
     Simplify<FeatureDocumentData>,
     "feature",
+    Lang
+  >;
+
+type FeaturesDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Features documents
+ */
+interface FeaturesDocumentData {
+  /**
+   * Heading field in *Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Features*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<FeaturesDocumentDataSlicesSlice> /**
+   * Meta Title field in *Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: features.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: features.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Features*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Features document from Prismic
+ *
+ * - **API ID**: `features`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FeaturesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FeaturesDocumentData>,
+    "features",
     Lang
   >;
 
@@ -827,7 +895,6 @@ export type NavigationDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
-  | StandOutFeaturesSlice
   | YoutubeSlice
   | StatsSlice
   | TestimonialsSlice
@@ -909,7 +976,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type PricingDocumentDataSlicesSlice = BodyTextSlice;
+type PricingDocumentDataSlicesSlice = InfoBoxListSlice;
 
 /**
  * Content for Pricing documents
@@ -1181,6 +1248,7 @@ export type ReviewsDocument<Lang extends string = string> =
   >;
 
 type SolutionsDocumentDataSlicesSlice =
+  | InfoBoxListSlice
   | TextImageGridSlice
   | LogosSlice
   | AccordionsSlice
@@ -1190,7 +1258,6 @@ type SolutionsDocumentDataSlicesSlice =
   | TeamListSlice
   | HeroSlice
   | CallToActionSlice
-  | StandOutFeaturesSlice
   | BodyTextSlice
   | ArticlesSlice
   | FaqsSlice;
@@ -1298,6 +1365,17 @@ interface TestimonialDocumentData {
   company_logo: prismic.ImageField<never>;
 
   /**
+   * Company name field in *Testimonial*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonial.company_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company_name: prismic.KeyTextField;
+
+  /**
    * Reviewer image field in *Testimonial*
    *
    * - **Field Type**: Image
@@ -1363,6 +1441,7 @@ export type AllDocumentTypes =
   | CategoryDocument
   | ContactDocument
   | FeatureDocument
+  | FeaturesDocument
   | HomePageDocument
   | IntegrationDocument
   | IntegrationsDocument
@@ -1681,6 +1760,17 @@ export interface CallToActionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   background_colour: prismic.SelectField<"Cream" | "Blue", "filled">;
+
+  /**
+   * Show Image field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: call_to_action.default.primary.show_image
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  show_image: prismic.BooleanField;
 }
 
 /**
@@ -1881,6 +1971,108 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceSolutionHero;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Item in *InfoBoxList → Default → Primary → Features*
+ */
+export interface InfoBoxListSliceDefaultPrimaryFeaturesItem {
+  /**
+   * Icon field in *InfoBoxList → Default → Primary → Features*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_box_list.default.primary.features[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * Title field in *InfoBoxList → Default → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_box_list.default.primary.features[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Intro field in *InfoBoxList → Default → Primary → Features*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_box_list.default.primary.features[].intro
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  intro: prismic.KeyTextField;
+
+  /**
+   * Content field in *InfoBoxList → Default → Primary → Features*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_box_list.default.primary.features[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *InfoBoxList → Default → Primary*
+ */
+export interface InfoBoxListSliceDefaultPrimary {
+  /**
+   * Title field in *InfoBoxList → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_box_list.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Features field in *InfoBoxList → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_box_list.default.primary.features[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  features: prismic.GroupField<
+    Simplify<InfoBoxListSliceDefaultPrimaryFeaturesItem>
+  >;
+}
+
+/**
+ * Default variation for InfoBoxList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoBoxListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InfoBoxListSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *InfoBoxList*
+ */
+type InfoBoxListSliceVariation = InfoBoxListSliceDefault;
+
+/**
+ * InfoBoxList Shared Slice
+ *
+ * - **API ID**: `info_box_list`
+ * - **Description**: InfoBoxList
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoBoxListSlice = prismic.SharedSlice<
+  "info_box_list",
+  InfoBoxListSliceVariation
+>;
+
+/**
  * Item in *Logos → Default → Primary → Logo*
  */
 export interface LogosSliceDefaultPrimaryLogoItem {
@@ -1946,108 +2138,6 @@ type LogosSliceVariation = LogosSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type LogosSlice = prismic.SharedSlice<"logos", LogosSliceVariation>;
-
-/**
- * Item in *StandOutFeatures → Default → Primary → Features*
- */
-export interface StandOutFeaturesSliceDefaultPrimaryFeaturesItem {
-  /**
-   * Icon field in *StandOutFeatures → Default → Primary → Features*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: stand_out_features.default.primary.features[].icon
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  icon: prismic.ImageField<never>;
-
-  /**
-   * Title field in *StandOutFeatures → Default → Primary → Features*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: stand_out_features.default.primary.features[].title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Intro field in *StandOutFeatures → Default → Primary → Features*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: stand_out_features.default.primary.features[].intro
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  intro: prismic.KeyTextField;
-
-  /**
-   * Content field in *StandOutFeatures → Default → Primary → Features*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: stand_out_features.default.primary.features[].content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-}
-
-/**
- * Primary content in *StandOutFeatures → Default → Primary*
- */
-export interface StandOutFeaturesSliceDefaultPrimary {
-  /**
-   * Title field in *StandOutFeatures → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: stand_out_features.default.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Features field in *StandOutFeatures → Default → Primary*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: stand_out_features.default.primary.features[]
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  features: prismic.GroupField<
-    Simplify<StandOutFeaturesSliceDefaultPrimaryFeaturesItem>
-  >;
-}
-
-/**
- * Default variation for StandOutFeatures Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type StandOutFeaturesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<StandOutFeaturesSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *StandOutFeatures*
- */
-type StandOutFeaturesSliceVariation = StandOutFeaturesSliceDefault;
-
-/**
- * StandOutFeatures Shared Slice
- *
- * - **API ID**: `stand_out_features`
- * - **Description**: StandOutFeatures
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type StandOutFeaturesSlice = prismic.SharedSlice<
-  "stand_out_features",
-  StandOutFeaturesSliceVariation
->;
 
 /**
  * Item in *Stats → Default → Primary → Stats*
@@ -2726,6 +2816,9 @@ declare module "@prismicio/client" {
       FeatureDocument,
       FeatureDocumentData,
       FeatureDocumentDataSlicesSlice,
+      FeaturesDocument,
+      FeaturesDocumentData,
+      FeaturesDocumentDataSlicesSlice,
       HomePageDocument,
       HomePageDocumentData,
       HomePageDocumentDataSlicesSlice,
@@ -2790,16 +2883,16 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceSolutionHero,
+      InfoBoxListSlice,
+      InfoBoxListSliceDefaultPrimaryFeaturesItem,
+      InfoBoxListSliceDefaultPrimary,
+      InfoBoxListSliceVariation,
+      InfoBoxListSliceDefault,
       LogosSlice,
       LogosSliceDefaultPrimaryLogoItem,
       LogosSliceDefaultPrimary,
       LogosSliceVariation,
       LogosSliceDefault,
-      StandOutFeaturesSlice,
-      StandOutFeaturesSliceDefaultPrimaryFeaturesItem,
-      StandOutFeaturesSliceDefaultPrimary,
-      StandOutFeaturesSliceVariation,
-      StandOutFeaturesSliceDefault,
       StatsSlice,
       StatsSliceDefaultPrimaryStatsItem,
       StatsSliceDefaultPrimary,

@@ -10,6 +10,7 @@ import styles from "./pricing-calculator.module.scss";
 import { calculateFees } from "./utils";
 import Link from "next/link";
 import { ChevronDown } from "@/svgs/chevron-down";
+import { ArrowLink } from "@/components/ui/arrow-link";
 
 const TierBreakdown = ({
   tier,
@@ -58,6 +59,9 @@ const TierBreakdown = ({
                 <span>{totalAmount}</span>
               </span>
             </div>
+            <Action href="/book-a-call" variant="white" fullwidth>
+              Book a call
+            </Action>
           </div>
         </div>
       )}
@@ -146,12 +150,7 @@ export const PriceCalculator = ({ region }) => {
         your first 3 months and any fees from our integrated payment providers,
         see our Terms and Conditions for more info.
       </p>
-      <div className={styles.backToLinkContainer}>
-        <Link href="/pricing" className={styles.backToLink}>
-          <ChevronDown />
-          <span>Back to pricing</span>
-        </Link>
-      </div>
+      <ArrowLink href="/pricing" text="Back to pricing" direction="backward" />
     </div>
   );
 };

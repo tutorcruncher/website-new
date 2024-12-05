@@ -20,6 +20,7 @@ export const TeamList = ({
 }: TeamListProps) => {
   return (
     <Body
+      background="blue"
       heading={
         <Heading variant="div" noMargin center>
           {heading}

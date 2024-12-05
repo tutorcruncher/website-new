@@ -77,6 +77,7 @@
 
   .breakdownTotal {
     margin-top: grid(2);
+    margin-bottom: grid(3);
     font-size: $font-size--xlarge;
   }
 }
@@ -87,20 +88,4 @@
   margin: grid(4) auto;
   font-style: italic;
   max-width: 800px;
-}
-
-.backToLinkContainer {
-  font-size: $font-size--small;
-  text-align: center;
-  .backToLink {
-    display: inline-flex;
-    align-content: center;
-    margin-top: grid(3);
-
-    svg {
-      width: grid(4);
-      height: auto;
-      transform: rotate(90deg);
-    }
-  }
 }

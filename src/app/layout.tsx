@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/header";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { TrackingProvider } from "./providers/tracking-provider";
 import IntercomClientComponent from "@/components/intercom/intercom";
+import CookieConsentBanner from "@/components/cookie-consent-banner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default async function RootLayout({ children }) {
       <GoogleTagManager gtmId="GTM-M6QLN6V3" />
       <body>
         <TrackingProvider>
+          <CookieConsentBanner/>
           <Header />
           <main>{children}</main>
           <Footer />

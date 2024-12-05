@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "info_box_list": {
+              "type": "SharedSlice"
+            },
             "text_image_grid": {
               "type": "SharedSlice"
             },
@@ -42,9 +45,6 @@
               "type": "SharedSlice"
             },
             "call_to_action": {
-              "type": "SharedSlice"
-            },
-            "stand_out_features": {
               "type": "SharedSlice"
             },
             "body_text": {

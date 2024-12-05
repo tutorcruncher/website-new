@@ -27,8 +27,18 @@ export const Footer = async () => {
                 </Link>
               ))}
             </Accordion>
-            <Accordion title="Newsletter">
-              <p>[]</p>
+            <Accordion title="Features">
+              <Link href="/features/tutor-client-student-management">
+                Tutor, client &amp; student management
+              </Link>
+              <Link href="/features/billing-and-payroll">
+                Billing &amp; payroll
+              </Link>
+              <Link href="/features/calendar-and-scheduling">
+                Calendar &amp; scheduling
+              </Link>
+              <Link href="/features/customization">Customization</Link>
+              <Link href="/features">View all</Link>
             </Accordion>
             <Accordion title="About us">
               <Link href="/about">About</Link>

@@ -7,6 +7,7 @@ export const Testimonial = ({
   reviewerImage,
   companyLogo,
   reviewerName,
+  companyName,
   reviewerRole,
 }) => {
   return (
@@ -27,8 +28,10 @@ export const Testimonial = ({
           width={reviewerImage.width}
           height={reviewerImage.height}
         />
-        <p className={styles.name}>{reviewerName}</p>
-        <p className={styles.role}>{reviewerRole}</p>
+        <div className={styles.info}>
+          <p className={styles.name}>{reviewerName}</p>
+          <p className={styles.role}>{reviewerRole}, {companyName}</p>
+        </div>
       </div>
     </div>
   );
