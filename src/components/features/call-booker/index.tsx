@@ -291,13 +291,20 @@ export const CallBooker = ({ rep, rb }) => {
             <span />
           </div>
           <form id="call-booker-form" onSubmit={handleSubmit}>
-            <input id="name" name="name" placeholder="Name" required />
+            <input
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+              value={searchParams.get("name") || ""}
+            />
             <input
               id="email"
               name="email"
               type="email"
               placeholder="Email"
               required
+              value={searchParams.get("email") || ""}
             />
             <input
               type="text"
@@ -306,6 +313,7 @@ export const CallBooker = ({ rep, rb }) => {
               required
               name="company"
               maxLength={255}
+              value={searchParams.get("cn") || ""}
             />
             <input
               type="text"
@@ -313,6 +321,7 @@ export const CallBooker = ({ rep, rb }) => {
               name="website"
               maxLength={255}
               placeholder="Website"
+              value={searchParams.get("website") || ""}
             />
             <input
               type="text"
@@ -321,6 +330,7 @@ export const CallBooker = ({ rep, rb }) => {
               required
               maxLength={20}
               placeholder="Phone number"
+              value={searchParams.get("phone") || ""}
             />
             <input
               id="selected-time"
