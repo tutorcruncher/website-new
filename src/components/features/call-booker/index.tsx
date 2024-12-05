@@ -11,10 +11,13 @@ import { Heading } from "@/components/ui/heading";
 
 import styles from "./call-booker.module.scss";
 import { fetchAvailableSlots } from "./helpers";
+import { getCurrencyOptions } from "../booking-widget/helpers";
+import { regions } from "app/data/regions/regions";
+import { useSearchParams } from "next/navigation";
 
 const CALL_TYPE = "sales";
 
-export const CallBooker = ({ rep }) => {
+export const CallBooker = ({ rep, rb }) => {
   const [openSlots, setOpenSlots] = useState([]);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTimeSlots, setSelectedTimeSlots] = useState<any[]>(null);
@@ -24,6 +27,13 @@ export const CallBooker = ({ rep }) => {
   const [minDate, setMinDate] = useState(new Date());
   const [calendarReady, setCalendarReady] = useState(false);
   const [timezone, setTimezone] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [revenueOptions, setRevenueOptions] = useState(null);
+  const [countryCode, setCountryCode] = useState("GB");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -38,6 +48,26 @@ export const CallBooker = ({ rep }) => {
   };
 
   useEffect(() => {
+    const getCountryCode = async () => {
+      let storedCountryCode = localStorage.getItem("_country_code");
+
+      if (!storedCountryCode) {
+        try {
+          const response = await fetch(
+            `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
+          );
+
+          const { country_code }: { country_code: string } =
+            await response.json();
+          storedCountryCode = country_code || "GB";
+          localStorage.setItem("_country_code", storedCountryCode);
+          setCountryCode(country_code);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+
     const fetchSlots = async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const express = urlParams.get("ex") !== null;
@@ -67,39 +97,104 @@ export const CallBooker = ({ rep }) => {
     };
 
     fetchSlots();
+    getCountryCode();
   }, [isExpress, rep.hermes_admin_id]);
 
+  useEffect(() => {
+    setRevenueOptions(getCurrencyOptions(countryCode));
+  }, [countryCode]);
+
   const handleSubmit = (event: FormEvent) => {
+    setIsLoading(true);
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
+    const region = regions.find(
+      (region) => region.region_code === countryCode.toLowerCase()
+    );
+
+    const estimatedIncome = formData.get("revenue");
+    const pricePlan = revenueOptions.find(
+      ([_, value]) => value === estimatedIncome
+    )[0];
+
+    const bdrPersonId =
+      localStorage.getItem("_bdr_person_id") || searchParams.get("bdr");
+    const utmCampaign =
+      localStorage.getItem("_tc_campaign") || searchParams.get("utm_campaign");
+    const utmSource =
+      localStorage.getItem("_tc_source") || searchParams.get("utm_source");
 
     const hermesData = {
-      admin_id: "13",
-      name: formData.get("name"),
-      email: formData.get("email"),
-      meeting_dt: formData.get("selected-time"),
+      admin_id: rep.hermes_admin_id,
+      bdr_person_id: bdrPersonId,
       call_type: CALL_TYPE,
+      company_name: formData.get("company"),
+      country: countryCode,
+      currency: region.currency_code,
+      email: formData.get("email"),
+      estimated_income: estimatedIncome,
+      meeting_dt: formData.get("selected-time"),
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      price_plan: pricePlan,
+      utm_campaign: utmCampaign,
+      utm_source: utmSource,
+      website: formData.get("website"),
     };
 
-    fetch(`${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/${CALL_TYPE}/book/`, {
-      method: "POST",
-      body: JSON.stringify(hermesData),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
+    console.log("hermesData", hermesData);
+
+    fetch(
+      `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/${CALL_TYPE}/book/`,
+      {
+        method: "POST",
+        body: JSON.stringify(hermesData),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.status === "error") {
-          throw new Error(data.message);
+          setErrorMessage("Sorry something went wrong, please try again");
         }
-        alert("Booking successful!");
+        setIsSubmitted(true);
+        setIsLoading(false);
       })
       .catch((error) => {
-        alert("Error booking call: " + error.message);
+        setErrorMessage("Sorry something went wrong, please try again");
+        setIsLoading(false);
       });
   };
+  const defaultRevenueOptionIndex = +rb;
+
+  if (isSubmitted) {
+    return (
+      <div className={clsx(styles.bookWidget)}>
+        <Image
+          src="https://tutorcruncher.com/assets/blog/tc-gaming-dino.653b242.png"
+          width={80}
+          height={80}
+          alt=""
+          style={{
+            borderRadius: "50%",
+            margin: "0 auto 10px",
+          }}
+        />
+        <Heading size="xxsmall" center variant="h3">
+          Meet with {rep.rep_name} from TutorCruncher
+        </Heading>
+
+        <p>
+          Thanks for booking with us! We've just sent you a calendar invite
+          which also includes the video call URL. We look forward to hearing
+          about your business!
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -206,10 +301,10 @@ export const CallBooker = ({ rep }) => {
             />
             <input
               type="text"
-              id="company-name"
+              id="company"
               placeholder="Company name"
               required
-              name="company-name"
+              name="company"
               maxLength={255}
             />
             <input
@@ -233,27 +328,25 @@ export const CallBooker = ({ rep }) => {
               type="hidden"
               value={selectedTimeSlot ? selectedTimeSlot[0].toISOString() : ""}
             />
-            {/* <select
-                class="estimated-income"
-                id="estimated-income"
-                required="required"
-                name="estimated-income"
-              ></select> */}
-            <Action type="submit" variant="outline">
+            <select
+              name="revenue"
+              defaultValue={
+                revenueOptions?.[defaultRevenueOptionIndex]?.[0] || ""
+              }
+            >
+              {revenueOptions?.map(([_, label]) => (
+                <option value={label} key={`revenue-option-${label}`}>
+                  {label}
+                </option>
+              ))}
+            </select>
+            <Action type="submit" variant="outline" disabled={isLoading}>
               Submit
             </Action>
           </form>
         </>
       ) : null}
-
-      {/* {
-          // confirmation}
-          <p>
-            Thanks for booking with us! We've just sent you a calendar invite
-            which also includes the video call URL. We look forward to hearing
-            about your business!
-          </p>
-        } */}
+      {errorMessage ? <p>{errorMessage}</p> : null}
     </div>
   );
 };

@@ -6,7 +6,8 @@ import { Hero } from "@/components/ui/hero";
 import { reps } from "../data";
 import styles from "./book-a-call.module.scss";
 
-const BookACallUserPage = async ({ params }) => {
+const BookACallUserPage = async ({ params, searchParams }) => {
+  const rb = searchParams.rb;
   const uid = params.uid;
   const rep = reps.find((r) => r.hermes_admin_id === Number(uid));
 
@@ -80,7 +81,7 @@ const BookACallUserPage = async ({ params }) => {
               </li>
             </ul>
           </div>
-          <CallBooker rep={rep} />
+          <CallBooker rep={rep} rb={rb} />
         </div>
       </Body>
     </>
