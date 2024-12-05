@@ -142,8 +142,6 @@ export const CallBooker = ({ rep, rb }) => {
       website: formData.get("website"),
     };
 
-    console.log("hermesData", hermesData);
-
     fetch(
       `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/${CALL_TYPE}/book/`,
       {
@@ -229,8 +227,8 @@ export const CallBooker = ({ rep, rb }) => {
               minDate: minDate,
               maxDate: addMonths(minDate, 1),
               enable: openSlots,
-              monthSelectorType: "static", // Disables the dropdown for month selection
-              disableMobile: true, // Ensure the same behavior on mobile
+              monthSelectorType: "static",
+              disableMobile: true,
             }}
           />
           <p className="text-center">
