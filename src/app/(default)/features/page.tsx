@@ -9,8 +9,8 @@ import { fetchFeaturesLandingPage } from "@/lib/prismic/features";
 import { FeaturesList } from "@/components/features/features-list";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const { meta } = await fetchIntegrationsPage();
-  const url = `https://tutorcruncher.com/integrations`;
+  const { meta } = await fetchFeaturesLandingPage();
+  const url = `https://tutorcruncher.com/features`;
 
   return formatMetaData(meta.title, meta.description, url);
 }

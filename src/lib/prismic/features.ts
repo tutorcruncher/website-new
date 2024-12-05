@@ -1,6 +1,4 @@
 import { createClient } from "@/lib/prismic/prismicio";
-
-import { formatIntegrationsPage } from "./format/integrations";
 import { formatFeaturesLandingPage } from "./format/features";
 
 export const fetchFeaturesLandingPage = async () => {
