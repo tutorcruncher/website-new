@@ -64,7 +64,7 @@ export const NeverBooked = () => {
   };
 
   const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const selectedIndex = e.target.selectedIndex - 1; // Adjust for the disabled placeholder option
+    const selectedIndex = e.target.selectedIndex - 1;
     const selectedValue = e.target.value;
 
     setSelectedRevenueOption(selectedValue);
