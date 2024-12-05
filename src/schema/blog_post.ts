@@ -16,7 +16,7 @@ export const generateArticleSchema = (article: ArticlePage) => {
 
   const dateCreated = content.createdDate;
   const datePublished = content.publishedDate;
-  const dateModified = content.updatedDate || dateCreated;
+  const dateModified = content.updatedDate;
 
   const publisherLogo = {
     "@type": "ImageObject",

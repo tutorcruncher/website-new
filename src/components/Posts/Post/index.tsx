@@ -7,6 +7,27 @@ import { Tag } from "@/components/ui/tag";
 import { ArticleDocument } from "../../../../prismicio-types";
 import styles from "./post.module.scss";
 
+const DisplayDate = ({ publishDate, updateDate }) => {
+  const publish = new Date(publishDate);
+  const update = new Date(updateDate);
+
+  const isUpdated = update > publish;
+
+  const formattedDate = new Date(isUpdated ? updateDate : publishDate)
+    .toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "2-digit",
+    })
+    .replace(/ /g, " ");
+
+  return (
+    <p className={styles.date}>
+      {isUpdated ? "Updated" : "Posted"} {formattedDate}
+    </p>
+  );
+};
+
 const TrimmedRichText = ({ content }) => {
   const firstParagraph = content.find((block) => block.type === "paragraph");
 
@@ -45,15 +66,10 @@ export const Post = ({ post }: { post: ArticleDocument }) => {
           {data.title}
         </Heading>
         <TrimmedRichText content={data.content} />
-        <p className={styles.date}>
-          {new Date(data.publishDate)
-            .toLocaleDateString("en-GB", {
-              day: "2-digit",
-              month: "short",
-              year: "2-digit",
-            })
-            .replace(/ /g, " ")}
-        </p>
+        <DisplayDate
+          publishDate={data.publishDate}
+          updateDate={data.updated_date}
+        />
       </div>
     </Link>
   );

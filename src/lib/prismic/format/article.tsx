@@ -35,7 +35,9 @@ export const formatArticlePage = (
     body: data.content,
     createdDate: new Date(page.first_publication_date),
     publishedDate: new Date(data.publishDate),
-    updatedDate: new Date(page.last_publication_date),
+    updatedDate: data.updated_date
+      ? new Date(data.updated_date)
+      : new Date(data.publishDate),
     featuredImage: <PrismicNextImage field={data.featured_image} />,
     featuredImageUrl: data.featured_image.url,
     category: {

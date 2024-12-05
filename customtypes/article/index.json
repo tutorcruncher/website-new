@@ -43,6 +43,13 @@
           "placeholder": "Date the article was published"
         }
       },
+      "updated_date": {
+        "type": "Date",
+        "config": {
+          "label": "Updated Date",
+          "placeholder": ""
+        }
+      },
       "content": {
         "type": "StructuredText",
         "config": {

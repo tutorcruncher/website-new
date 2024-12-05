@@ -55,6 +55,17 @@ interface ArticleDocumentData {
   publishDate: prismic.DateField;
 
   /**
+   * Updated Date field in *Article*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.updated_date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  updated_date: prismic.DateField;
+
+  /**
    * Content field in *Article*
    *
    * - **Field Type**: Rich Text
