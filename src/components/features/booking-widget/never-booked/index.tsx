@@ -27,7 +27,6 @@ export const NeverBooked = () => {
 
         const { country_code }: { country_code: string } =
           await response.json();
-        console.log("country_code", country_code);
         storedCountryCode = country_code || "GB";
         localStorage.setItem("_country_code", storedCountryCode);
       } catch (error) {

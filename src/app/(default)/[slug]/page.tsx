@@ -11,11 +11,15 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const { data } = await fetchPageByUid(params.slug);
+  try {
+    const { data } = await fetchPageByUid(params.slug);
 
-  const url = `https://tutorcruncher.com/${params.slug}`;
+    const url = `https://tutorcruncher.com/${params.slug}`;
 
-  return formatMetaData(data.meta_title, data.meta_description, url);
+    return formatMetaData(data.meta_title, data.meta_description, url);
+  } catch {
+    return formatMetaData(null, null, null);
+  }
 }
 
 export default async function StaticPage({

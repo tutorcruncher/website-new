@@ -1,4 +1,4 @@
-import "../styles/globals.scss";
+import "../../styles/globals.scss";
 
 import { Inter } from "next/font/google";
 
@@ -6,7 +6,7 @@ import AnimateObserver from "@/components/AnimateObserver";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { TrackingProvider } from "./providers/tracking-provider";
+import { TrackingProvider } from "../providers/tracking-provider";
 import IntercomClientComponent from "@/components/intercom/intercom";
 import CookieConsentBanner from "@/components/cookie-consent-banner";
 
@@ -22,7 +22,7 @@ export default async function RootLayout({ children }) {
       <GoogleTagManager gtmId="GTM-M6QLN6V3" />
       <body>
         <TrackingProvider>
-          <CookieConsentBanner/>
+          <CookieConsentBanner />
           <Header />
           <main>{children}</main>
           <Footer />
