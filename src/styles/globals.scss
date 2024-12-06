@@ -210,7 +210,6 @@ table th {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-timing-function: ease-in-out;
-    opacity: 0;
 
     &:nth-of-type(1) {
       animation-delay: 0.2s;
@@ -233,6 +232,9 @@ table th {
     &:nth-of-type(7) {
       animation-delay: 1.4s;
     }
+  }
+  .animate-enabled.animate-children > * {
+    opacity: 0;
   }
   .animate-enabled.animate-children.animate-in-view > * {
     animation-name: enter-fade-in-up;
