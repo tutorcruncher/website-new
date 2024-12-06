@@ -28,11 +28,13 @@
   }
 
   &.variant-feature {
+    display: flex;
+    flex-direction: column;
     padding: grid(10);
     width: 100%;
 
     .heading {
-      max-width: 200px;
+      max-width: 300px;
       margin: auto;
     }
     .imageWrapper {
