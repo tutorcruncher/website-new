@@ -66,6 +66,8 @@ export const TrackingProvider = ({
     setQueryParams((prev) => ({ ...prev, ...newParams }));
   };
 
+  console.log("queryParams", queryParams);
+
   return (
     <TrackingContext.Provider value={{ queryParams, updateQueryParams }}>
       {children}
