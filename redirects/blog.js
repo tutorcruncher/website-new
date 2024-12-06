@@ -276,7 +276,7 @@ const blogRedirects = [
   },
   {
       source: '/tutor-management-software/5-tips-for-starting-a-tutoring-agency-in-2020/',
-      destination: '/',
+      destination: '/blog/how-to-start-a-tutoring-business',
       permanent: true,
   },
   {
