@@ -12,4 +12,5 @@ export interface ActionProps {
   disableAnimation?: boolean;
   type?: "button" | "submit";
   fullwidth?: boolean;
+  loading?: boolean;
 }
