@@ -10,8 +10,19 @@
   }
 
   button {
-    margin-top: grid(3);
+    margin: 0;
     text-align: center;
     width: 100%;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .errorMessage,
+  .successMessage {
+    text-align: center;
+    font-size: $font-size--base;
   }
 }

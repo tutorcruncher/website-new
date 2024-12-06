@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import styles from "./action.module.scss";
 import { ActionProps } from "./types";
+import { LoadingSvg } from "@/svgs/loading";
 
 export const Action = ({
   href,
@@ -14,6 +15,7 @@ export const Action = ({
   disableAnimation,
   type = "button",
   fullwidth = false,
+  loading = false,
 }: ActionProps) => {
   const className = clsx(
     styles.action,
@@ -21,7 +23,7 @@ export const Action = ({
     variant && styles[variant],
     size && styles[size],
     disabled && styles.disabled,
-    fullwidth && styles.fullwidth,
+    fullwidth && styles.fullwidth
   );
 
   if (href) {
@@ -39,7 +41,7 @@ export const Action = ({
       onClick={type === "button" ? onClick : undefined}
       className={className}
     >
-      {children}
+      {loading ? <LoadingSvg /> : children}
     </button>
   );
 };

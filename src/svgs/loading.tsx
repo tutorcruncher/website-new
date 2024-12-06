@@ -1,6 +1,11 @@
 import * as React from "react";
 export const LoadingSvg = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 200 200"
+    width={50}
+    height={50}
+  >
     <radialGradient
       id="a"
       cx={0.66}
@@ -9,11 +14,11 @@ export const LoadingSvg = () => (
       fy={0.313}
       gradientTransform="scale(1.5)"
     >
-      <stop offset={0} stopColor="#FF156D" />
-      <stop offset={0.3} stopColor="#FF156D" stopOpacity={0.9} />
-      <stop offset={0.6} stopColor="#FF156D" stopOpacity={0.6} />
-      <stop offset={0.8} stopColor="#FF156D" stopOpacity={0.3} />
-      <stop offset={1} stopColor="#FF156D" stopOpacity={0} />
+      <stop offset={0} stopColor="currentColor" />
+      <stop offset={0.3} stopColor="currentColor" stopOpacity={0.9} />
+      <stop offset={0.6} stopColor="currentColor" stopOpacity={0.6} />
+      <stop offset={0.8} stopColor="currentColor" stopOpacity={0.3} />
+      <stop offset={1} stopColor="currentColor" stopOpacity={0} />
     </radialGradient>
     <circle
       cx={100}
@@ -42,7 +47,7 @@ export const LoadingSvg = () => (
       cy={100}
       r={70}
       fill="none"
-      stroke="#FF156D"
+      stroke="currentColor"
       strokeLinecap="round"
       strokeWidth={15}
       opacity={0.2}
