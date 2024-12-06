@@ -12,12 +12,7 @@ export const InfoCard = ({ icon, title, intro, onClick }: InfoCardProps) => {
     <button type="button" onClick={onClick} className={classes}>
       {icon?.url ? (
         <div className={styles.imageWrapper}>
-          <Image
-            src={icon.url}
-            width={icon.width}
-            height={icon.height}
-            alt={icon.alt}
-          />
+          <Image src={icon.url} width={100} height={100} alt={icon.alt} />
         </div>
       ) : null}
       <div className={styles.content}>
