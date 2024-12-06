@@ -22,6 +22,7 @@ export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
   const closeModal = () => {
     setSelectedItem(null);
   };
+
   return (
     <>
       <Body>
@@ -35,12 +36,13 @@ export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
               title={integration.title}
               icon={integration.icon}
               intro={integration.intro}
+              variant="feature"
               onClick={() => handleCardClick(integration)}
             />
           ))}
         </div>
         <div className="animate">
-          <ArrowLink text="Link to all features" href="/features" />
+          <ArrowLink text="View all features" href="/features" />
         </div>
       </Body>
       {selectedItem ? (

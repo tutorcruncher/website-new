@@ -1,18 +1,26 @@
 .cards {
-  display: flex;
+  display: grid;
   gap: grid(4);
-  flex-direction: column;
+  justify-items: center;
 
   @include sm-display {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include md-display {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include lg-display {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 .modal {
   .icon {
-    height: 50px;
+    height: 100px;
     width: auto;
+    filter: brightness(0) saturate(100%) invert(59%) sepia(91%) saturate(2295%)
+      hue-rotate(182deg) brightness(97%) contrast(98%);
   }
 }

@@ -6,8 +6,15 @@ import { Heading } from "@/components/ui/heading";
 import styles from "./info-card.module.scss";
 import { InfoCardProps } from "./types";
 
-export const InfoCard = ({ icon, title, intro, onClick }: InfoCardProps) => {
-  const classes = clsx(styles.infoCard);
+export const InfoCard = ({
+  icon,
+  title,
+  intro,
+  variant = "default",
+  onClick,
+}: InfoCardProps) => {
+  const classes = clsx(styles.infoCard, styles[`variant-${variant}`]);
+  const headingSize = variant === "default" ? "xsmall" : "xxsmall";
   return (
     <button type="button" onClick={onClick} className={classes}>
       {icon?.url ? (
@@ -16,10 +23,15 @@ export const InfoCard = ({ icon, title, intro, onClick }: InfoCardProps) => {
         </div>
       ) : null}
       <div className={styles.content}>
-        <Heading size="xsmall" className={styles.heading} variant="h3" noMargin>
+        <Heading
+          size={headingSize}
+          className={styles.heading}
+          variant="h3"
+          noMargin
+        >
           {title}
         </Heading>
-        <p>{intro}</p>
+        {intro ? <p>{intro}</p> : null}
       </div>
     </button>
   );
