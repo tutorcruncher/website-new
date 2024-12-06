@@ -106,7 +106,7 @@ const blogRedirects = [
   },
   {
       source: '/tutor-management-software/',
-      destination: '',
+      destination: '/',
       permanent: true,
   },
   {
@@ -221,7 +221,7 @@ const blogRedirects = [
   },
   {
       source: '/tutor-management-software/help/whiteboard-integration/online-whiteboard-integration/',
-      destination: '',
+      destination: '/',
       permanent: true,
   },
   {
@@ -231,7 +231,7 @@ const blogRedirects = [
   },
   {
       source: '/tutor-management-software/help/#tutorcruncher-video',
-      destination: '',
+      destination: '/',
       permanent: true,
   },
   {
@@ -276,12 +276,12 @@ const blogRedirects = [
   },
   {
       source: '/tutor-management-software/5-tips-for-starting-a-tutoring-agency-in-2020/',
-      destination: '',
+      destination: '/',
       permanent: true,
   },
   {
       source: '/tutor-management-software/help/jobs/charitable-donations/#2-how-do-i-add-a-charitable-donation-to-a-job',
-      destination: '',
+      destination: '/',
       permanent: true,
   },
   {
@@ -391,7 +391,7 @@ const blogRedirects = [
   },
   {
       source: '/tutor-management-software/calendar/',
-      destination: '',
+      destination: '/',
       permanent: true,
   },
   {
