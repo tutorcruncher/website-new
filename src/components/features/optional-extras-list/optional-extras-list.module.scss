@@ -1,0 +1,35 @@
+.integrationGroup {
+  &:not(:last-of-type) {
+    margin-bottom: grid(24);
+  }
+
+  .title {
+    text-transform: capitalize;
+    margin-bottom: grid(8);
+    text-align: center;
+  }
+  .cards {
+    display: flex;
+    gap: grid(4);
+    flex-direction: column;
+
+    @include sm-display {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+.integrationModal {
+  .logo {
+    height: 50px;
+    width: auto;
+  }
+  .screenshot {
+    width: 100%;
+    height: auto;
+    margin: grid(4) 0;
+    border-radius: grid(4);
+  }
+}

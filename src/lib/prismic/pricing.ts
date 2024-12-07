@@ -6,7 +6,8 @@ export const fetchPricingPageByUid = async (uid: string) => {
   const client = createClient();
   try {
     const { data } = await client.getByUID("pricing", uid);
-    return formatPricingPage(data);
+    const allOptionalExtras = await client.getAllByType("optional_extra");
+    return formatPricingPage(data, allOptionalExtras);
   } catch (error) {
     console.error("Error fetching integrations:", error);
   }

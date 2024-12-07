@@ -17,7 +17,7 @@ export const InfoCard = ({
   const headingSize = variant === "default" ? "xsmall" : "xxsmall";
   return (
     <button type="button" onClick={onClick} className={classes}>
-      {icon?.url ? (
+      {icon && icon?.url ? (
         <div className={styles.imageWrapper}>
           <Image src={icon.url} width={100} height={100} alt={icon.alt} />
         </div>

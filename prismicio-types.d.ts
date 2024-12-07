@@ -894,6 +894,65 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Optional Extra documents
+ */
+interface OptionalExtraDocumentData {
+  /**
+   * Category field in *Optional Extra*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: optional_extra.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  category: prismic.SelectField<
+    | "Payments"
+    | "Lessons & Communications"
+    | "Customisation"
+    | "Support options"
+  >;
+
+  /**
+   * Title field in *Optional Extra*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: optional_extra.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Content field in *Optional Extra*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: optional_extra.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Optional Extra document from Prismic
+ *
+ * - **API ID**: `optional_extra`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OptionalExtraDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<OptionalExtraDocumentData>,
+    "optional_extra",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | YoutubeSlice
   | StatsSlice
@@ -976,7 +1035,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type PricingDocumentDataSlicesSlice = InfoBoxListSlice;
+type PricingDocumentDataSlicesSlice = never;
 
 /**
  * Content for Pricing documents
@@ -1446,6 +1505,7 @@ export type AllDocumentTypes =
   | IntegrationDocument
   | IntegrationsDocument
   | NavigationDocument
+  | OptionalExtraDocument
   | PageDocument
   | PricingDocument
   | ReleaseDocument
@@ -2831,6 +2891,8 @@ declare module "@prismicio/client" {
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataLinksItem,
+      OptionalExtraDocument,
+      OptionalExtraDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
