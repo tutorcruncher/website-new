@@ -16,11 +16,11 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 }
 
 export default async function Index() {
-  const { heading, intro, slices } = await fetchHomePage();
+  const { heading, intro, slices, heroImages } = await fetchHomePage();
 
   return (
     <>
-      <HomePageHero heading={heading} intro={intro} />
+      <HomePageHero heading={heading} intro={intro} heroImages={heroImages} />
       <SliceZone slices={slices} components={components} />
       <ReadyToGetStarted />
     </>

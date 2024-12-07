@@ -525,6 +525,21 @@ export type FeaturesDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Home Page → Hero Images*
+ */
+export interface HomePageDocumentDataHeroImagesItem {
+  /**
+   * Image field in *Home Page → Hero Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.hero_images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
 type HomePageDocumentDataSlicesSlice =
   | AccordionsSlice
   | TestimonialsSlice
@@ -557,6 +572,17 @@ interface HomePageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   intro: prismic.KeyTextField;
+
+  /**
+   * Hero Images field in *Home Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.hero_images[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  hero_images: prismic.GroupField<Simplify<HomePageDocumentDataHeroImagesItem>>;
 
   /**
    * Slice Zone field in *Home Page*
@@ -2920,6 +2946,7 @@ declare module "@prismicio/client" {
       FeaturesDocumentDataSlicesSlice,
       HomePageDocument,
       HomePageDocumentData,
+      HomePageDocumentDataHeroImagesItem,
       HomePageDocumentDataSlicesSlice,
       IntegrationDocument,
       IntegrationDocumentData,
