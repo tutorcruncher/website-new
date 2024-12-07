@@ -36,7 +36,7 @@ export const HomePageHero = ({ heading, intro, heroImages }) => {
             <Image image={heroImages[4].image} unoptimized />
           </div>
           <div className={styles.imageWrapper}>
-            <Image image={heroImages[0].image} />
+            <Image image={heroImages[0].image} loading="eager" />
           </div>
         </div>
       </div>

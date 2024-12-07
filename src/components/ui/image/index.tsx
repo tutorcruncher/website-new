@@ -1,5 +1,21 @@
 import { PrismicNextImage } from "@prismicio/next";
 
-export const Image = ({ image, unoptimized = false }) => {
-  return <PrismicNextImage field={image} unoptimized={unoptimized} />;
+type ImageProps = {
+  image: any;
+  loading?: "eager" | "lazy";
+  unoptimized?: boolean;
+};
+
+export const Image = ({
+  image,
+  loading = "lazy",
+  unoptimized = false,
+}: ImageProps) => {
+  return (
+    <PrismicNextImage
+      field={image}
+      unoptimized={unoptimized}
+      loading={loading}
+    />
+  );
 };
