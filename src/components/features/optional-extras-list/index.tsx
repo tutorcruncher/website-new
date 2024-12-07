@@ -27,6 +27,9 @@ export const OptionalExtrasList = ({ optionalExtras }) => {
     setIsModalOpen(false);
     setSelectedOptionalExtra(null);
   };
+
+  console.log(groupedOptionalExtras);
+
   return (
     <>
       <Body background="cream">
@@ -36,13 +39,13 @@ export const OptionalExtrasList = ({ optionalExtras }) => {
               {categoryTitle}
             </Heading>
             <div className={clsx(styles.cards, "animate-children")}>
-              {groupedOptionalExtras[categoryTitle].map((integration) => (
+              {groupedOptionalExtras[categoryTitle].map((optionalExtra) => (
                 <InfoCard
-                  key={integration.title}
-                  title={integration.title}
-                  icon={integration.logo}
-                  intro={integration.intro}
-                  onClick={() => handleCardClick(integration)}
+                  key={optionalExtra.title}
+                  title={optionalExtra.title}
+                  icon={optionalExtra.image}
+                  onClick={() => handleCardClick(optionalExtra)}
+                  variant="feature"
                 />
               ))}
             </div>

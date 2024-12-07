@@ -30,7 +30,9 @@ const PricingPage = async ({ params }) => {
       />
       <Hero heading={heading} headingVariant="div" />
       <PricingTiers region={region} />
-      <OptionalExtrasList optionalExtras={optionalExtras} />
+      {optionalExtras.length !== 0 ? (
+        <OptionalExtrasList optionalExtras={optionalExtras} />
+      ) : null}
     </>
   );
 };

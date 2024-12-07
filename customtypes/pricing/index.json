@@ -21,6 +21,23 @@
           "label": "UID"
         }
       },
+      "optional_extras": {
+        "type": "Group",
+        "config": {
+          "label": "Optional Extras",
+          "repeat": true,
+          "fields": {
+            "extra": {
+              "type": "Link",
+              "config": {
+                "label": "Extra",
+                "select": "document",
+                "customtypes": ["optional_extra"]
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

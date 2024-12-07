@@ -926,6 +926,17 @@ interface OptionalExtraDocumentData {
   title: prismic.KeyTextField;
 
   /**
+   * Image field in *Optional Extra*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: optional_extra.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
    * Content field in *Optional Extra*
    *
    * - **Field Type**: Rich Text
@@ -1035,6 +1046,21 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+/**
+ * Item in *Pricing → Optional Extras*
+ */
+export interface PricingDocumentDataOptionalExtrasItem {
+  /**
+   * Extra field in *Pricing → Optional Extras*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.optional_extras[].extra
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  extra: prismic.ContentRelationshipField<"optional_extra">;
+}
+
 type PricingDocumentDataSlicesSlice = never;
 
 /**
@@ -1051,6 +1077,19 @@ interface PricingDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Optional Extras field in *Pricing*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.optional_extras[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  optional_extras: prismic.GroupField<
+    Simplify<PricingDocumentDataOptionalExtrasItem>
+  >;
 
   /**
    * Slice Zone field in *Pricing*
@@ -2898,6 +2937,7 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PricingDocument,
       PricingDocumentData,
+      PricingDocumentDataOptionalExtrasItem,
       PricingDocumentDataSlicesSlice,
       ReleaseDocument,
       ReleaseDocumentData,

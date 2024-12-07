@@ -29,14 +29,7 @@ export const FeatureCard = ({
         <Heading size="xxsmall" className={styles.heading} variant="h2">
           {title}
         </Heading>
-        {intro ? (
-          <p>{intro}</p>
-        ) : (
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        )}
+        {intro ? <p>{intro}</p> : null}
       </div>
     </button>
   );

@@ -32,6 +32,14 @@
           "placeholder": ""
         }
       },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
       "content": {
         "type": "StructuredText",
         "config": {

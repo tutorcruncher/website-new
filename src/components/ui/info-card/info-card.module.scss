@@ -31,7 +31,9 @@
     display: flex;
     flex-direction: column;
     padding: grid(10);
+    justify-content: center;
     width: 100%;
+    min-height: 200px;
 
     .heading {
       max-width: 300px;
@@ -42,11 +44,9 @@
       justify-items: center;
       img {
         width: 100px;
-        height: auto;
+        height: 100px;
         object-fit: cover;
         border-radius: 0;
-        filter: brightness(0) saturate(100%) invert(59%) sepia(91%)
-          saturate(2295%) hue-rotate(182deg) brightness(97%) contrast(98%);
       }
     }
   }
