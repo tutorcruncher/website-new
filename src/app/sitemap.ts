@@ -78,6 +78,10 @@ export default async function sitemap() {
     url: `${BASE_URL}/book-a-call/${rep.hermes_admin_id}`,
     lastModified: new Date("2024-12-17").toISOString(),
   }));
+  const smsPricing = {
+    url: `${BASE_URL}/sms-pricing`,
+    lastModified: new Date("2024-12-17").toISOString(),
+  };
 
   return [
     ...homeEntries,
@@ -92,5 +96,6 @@ export default async function sitemap() {
     ...reviewEntries,
     ...releasesEntries,
     ...bookACallEntries,
+    smsPricing,
   ];
 }

@@ -7,9 +7,8 @@ import { Heading } from "@/components/ui/heading";
 
 import styles from "./solution-hero.module.scss";
 import { HeroProps } from "./types";
-import { useEffect, useState } from "react";
-import { regions } from "app/data/regions/regions";
 import TrackingLink from "@/components/ui/tracking-link/tracking-link";
+import { useRegion } from "@/providers/region-provider";
 
 const RegionPrice = ({ region, pricingTier }) => {
   let fromPrice = "";
@@ -29,27 +28,9 @@ const RegionPrice = ({ region, pricingTier }) => {
 };
 
 export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
-  const [region, setRegion] = useState(null);
+  const { region } = useRegion();
 
-  useEffect(() => {
-    const fetchRegion = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
-        );
-        const { country_code } = await response.json();
-        const fetchedRegion = regions.find(
-          (region) => region.region_code === country_code.toLowerCase()
-        );
-        setRegion(fetchedRegion);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    fetchRegion();
-  }, []);
-
+  console.log("region", region);
   return (
     <Body
       heading={

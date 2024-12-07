@@ -2,13 +2,13 @@ import { Body } from "@/components/ui/body";
 import { Hero } from "@/components/ui/hero";
 
 import { SMS_PRICING } from "./data";
-
-const Tooltip = ({ price, message }) => <span title={message}>{price}</span>;
+import { WebApplicationSchema } from "@/schema/web_application";
 
 const PricingPage = () => {
   const sortedData = [...SMS_PRICING].sort((a, b) => b.priority - a.priority);
   return (
     <>
+      <WebApplicationSchema />
       <Hero heading="SMS Pricing" />
       <Body>
         <p className="text-center">
@@ -31,17 +31,7 @@ const PricingPage = () => {
                 <td>
                   $ {country.usd_price} {country.is_range && "*"}
                 </td>
-                <td>
-                  £
-                  {country.is_range ? (
-                    <Tooltip
-                      price={country.gbp_price}
-                      message="Costs vary depending on the recipient carrier within the country you are sending to."
-                    />
-                  ) : (
-                    country.gbp_price
-                  )}
-                </td>
+                <td>£{country.gbp_price}</td>
               </tr>
             ))}
           </tbody>

@@ -28,8 +28,6 @@ export const OptionalExtrasList = ({ optionalExtras }) => {
     setSelectedOptionalExtra(null);
   };
 
-  console.log(groupedOptionalExtras);
-
   return (
     <>
       <Body background="cream">

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Action } from "../action";
-import { useTracking } from "app/providers/tracking-provider";
+import { useTracking } from "@/providers/tracking-provider";
 import { ActionVariants } from "../action/types";
 
 interface TrackingLinkProps {

@@ -6,9 +6,10 @@ import AnimateObserver from "@/components/AnimateObserver";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { GoogleTagManager } from "@next/third-parties/google";
-import { TrackingProvider } from "../providers/tracking-provider";
+import { TrackingProvider } from "../../providers/tracking-provider";
 import IntercomClientComponent from "@/components/intercom/intercom";
 import CookieConsentBanner from "@/components/cookie-consent-banner";
+import { RegionProvider } from "@/providers/region-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,12 +23,14 @@ export default async function RootLayout({ children }) {
       <GoogleTagManager gtmId="GTM-M6QLN6V3" />
       <body>
         <TrackingProvider>
-          <CookieConsentBanner />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <AnimateObserver />
-          <IntercomClientComponent />
+          <RegionProvider>
+            <CookieConsentBanner />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <AnimateObserver />
+            <IntercomClientComponent />
+          </RegionProvider>
         </TrackingProvider>
       </body>
     </html>

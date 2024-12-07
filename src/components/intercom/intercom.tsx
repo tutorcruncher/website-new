@@ -13,7 +13,6 @@ const IntercomClientComponent: React.FC = () => {
           api_base: "https://api-iam.intercom.io",
           app_id: INTERCOM_APP_ID,
         };
-        console.log("LOADED");
 
         const script = document.createElement("script");
         script.src = `https://widget.intercom.io/widget/${INTERCOM_APP_ID}`;

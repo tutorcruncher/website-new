@@ -7,44 +7,21 @@ import { Action } from "@/components/ui/action";
 import { DEFAULT_SALES_PERSON_ID } from "../constants";
 import { getCurrencyOptions } from "../helpers";
 import styles from "./never-booked.module.scss";
+import { useRegion } from "@/providers/region-provider";
 
 export const NeverBooked = () => {
   const [revenueOptions, setRevenueOptions] = useState(null);
   const [selectedRevenueOption, setSelectedRevenueOption] = useState(null);
   const [selectedRevenueIndex, setSelectedRevenueIndex] = useState(null);
-  const [countryCode, setCountryCode] = useState("");
 
   const router = useRouter();
 
-  const getCountryCode = async () => {
-    let storedCountryCode = localStorage.getItem("_country_code");
-
-    if (!storedCountryCode) {
-      try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
-        );
-
-        const { country_code }: { country_code: string } =
-          await response.json();
-        storedCountryCode = country_code || "GB";
-        localStorage.setItem("_country_code", storedCountryCode);
-      } catch (error) {
-        storedCountryCode = "GB";
-      }
-    }
-
-    setCountryCode(storedCountryCode);
-  };
+  const { countryCode } = useRegion();
 
   const loadOptions = (code: string) => {
     const options = getCurrencyOptions(code);
     setRevenueOptions(options);
   };
-
-  useEffect(() => {
-    getCountryCode();
-  }, []);
 
   useEffect(() => {
     if (countryCode) {

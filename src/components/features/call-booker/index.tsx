@@ -14,10 +14,12 @@ import { fetchAvailableSlots } from "./helpers";
 import { getCurrencyOptions } from "../booking-widget/helpers";
 import { regions } from "app/data/regions/regions";
 import { useSearchParams } from "next/navigation";
+import { useRegion } from "@/providers/region-provider";
 
 const CALL_TYPE = "sales";
 
 export const CallBooker = ({ rep, rb }) => {
+  const { countryCode } = useRegion();
   const [openSlots, setOpenSlots] = useState([]);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTimeSlots, setSelectedTimeSlots] = useState<any[]>(null);
@@ -30,7 +32,6 @@ export const CallBooker = ({ rep, rb }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [revenueOptions, setRevenueOptions] = useState(null);
-  const [countryCode, setCountryCode] = useState("GB");
   const [isLoading, setIsLoading] = useState(false);
 
   const searchParams = useSearchParams();
@@ -48,26 +49,6 @@ export const CallBooker = ({ rep, rb }) => {
   };
 
   useEffect(() => {
-    const getCountryCode = async () => {
-      let storedCountryCode = localStorage.getItem("_country_code");
-
-      if (!storedCountryCode) {
-        try {
-          const response = await fetch(
-            `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
-          );
-
-          const { country_code }: { country_code: string } =
-            await response.json();
-          storedCountryCode = country_code || "GB";
-          localStorage.setItem("_country_code", storedCountryCode);
-          setCountryCode(country_code);
-        } catch (error) {
-          console.error(error);
-        }
-      }
-    };
-
     const fetchSlots = async () => {
       const urlParams = new URLSearchParams(window.location.search);
       const express = urlParams.get("ex") !== null;
@@ -97,7 +78,6 @@ export const CallBooker = ({ rep, rb }) => {
     };
 
     fetchSlots();
-    getCountryCode();
   }, [isExpress, rep.hermes_admin_id]);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import "../../styles/globals.scss";
 
-import { TrackingProvider } from "app/providers/tracking-provider";
+import { TrackingProvider } from "@/providers/tracking-provider";
 import { Inter } from "next/font/google";
 
 export const metadata = {
