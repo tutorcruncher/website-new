@@ -20,8 +20,10 @@ const AlternatingGrid = ({ slice }: TextImageGridProps): JSX.Element => {
     return {
       ...item,
       content: <PrismicRichText field={item.content} />,
-      image: item.image,
-      imagePosition: item.image_postion,
+      image: {
+        ...prismicToNextImage(item.image),
+        position: item.image_postion,
+      },
       button:
         item.button_text && item.button_link
           ? {

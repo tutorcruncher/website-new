@@ -6,7 +6,6 @@ import { Tag } from "@/components/ui/tag";
 
 import { ArticleDocument } from "../../../../prismicio-types";
 import styles from "./post.module.scss";
-import { Image } from "@/components/ui/image";
 
 const DisplayDate = ({ publishDate, updateDate }) => {
   const publish = new Date(publishDate);
@@ -53,7 +52,7 @@ export const Post = ({ post }: { post: ArticleDocument }) => {
       className={styles.postListItem}
     >
       <div className={styles.imageWrapper}>
-        <Image image={data.featured_image} />
+        <PrismicNextImage field={data.featured_image} />
       </div>
       <div className={styles.inner}>
         <div className={styles.tags}>

@@ -16,7 +16,6 @@ export const Image = ({
       field={image}
       unoptimized={unoptimized}
       loading={loading}
-      alt={image.alt || ""}
     />
   );
 };

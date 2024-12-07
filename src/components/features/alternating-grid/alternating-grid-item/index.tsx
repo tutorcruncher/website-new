@@ -1,18 +1,17 @@
 import clsx from "clsx";
+import Image from "next/image";
 
 import { Action } from "@/components/ui/action";
 import { Heading } from "@/components/ui/heading";
 
 import { AlternatingGridItem } from "../types";
 import styles from "./alternating-grid-item.module.scss";
-import { Image } from "@/components/ui/image";
 
 export const TextImageGridItem = ({
   heading,
   content,
   button,
   image,
-  imagePosition,
   className,
   variation = "default",
 }: AlternatingGridItem) => {
@@ -22,13 +21,18 @@ export const TextImageGridItem = ({
         "animate",
         styles.alternatingGridItem,
         styles[`variant--${variation}`],
-        image && imagePosition === "Left" && styles.imageOnLeft,
-        className
+        image && image.position === "Left" && styles.imageOnLeft,
+        className,
       )}
     >
       {image ? (
         <div className={styles.imageWrapper}>
-          <Image image={image} />
+          <Image
+            src={image.url}
+            alt={image.alt || " "}
+            width={image.width}
+            height={image.height}
+          />
         </div>
       ) : null}
       <div className={styles.contentWrapper}>
