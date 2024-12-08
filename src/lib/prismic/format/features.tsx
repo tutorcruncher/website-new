@@ -4,8 +4,6 @@ import { prismicToNextImage } from "@/helpers/prismicToNextImage";
 
 import {
   FeatureDocument,
-  FeatureDocumentData,
-  IntegrationDocument,
   IntegrationsDocumentData,
   Simplify,
 } from "../../../../prismicio-types";

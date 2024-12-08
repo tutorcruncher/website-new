@@ -1,5 +1,7 @@
+import { ArticleDocument } from "../../../prismicio-types";
+
 export interface ArticlesLayoutProps {
-  posts: any[];
+  posts: ArticleDocument<string>[];
   category?: string;
   intro?: string;
   page?: number;

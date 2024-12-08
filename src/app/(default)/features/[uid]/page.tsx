@@ -31,8 +31,7 @@ const FeaturePage = async ({ params }) => {
 
   try {
     return <SliceZone slices={content.data.slices} components={components} />;
-  } catch (error) {
-    console.error("Error fetching content:", error);
+  } catch {
     return notFound();
   }
 };

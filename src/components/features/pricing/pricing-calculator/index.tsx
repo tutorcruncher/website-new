@@ -8,8 +8,6 @@ import { Action } from "@/components/ui/action";
 import { tiers } from "./data";
 import styles from "./pricing-calculator.module.scss";
 import { calculateFees } from "./utils";
-import Link from "next/link";
-import { ChevronDown } from "@/svgs/chevron-down";
 import { ArrowLink } from "@/components/ui/arrow-link";
 
 const TierBreakdown = ({

@@ -2,7 +2,6 @@ import { Metadata } from "next/types";
 
 import { Hero } from "@/components/ui/hero";
 import { formatMetaData } from "@/helpers/metaData";
-import { fetchIntegrationsPage } from "@/lib/prismic/integrations";
 import { schema } from "@/schema/product";
 import { CallToAction } from "@/components/features/call-to-action";
 import { fetchFeaturesLandingPage } from "@/lib/prismic/features";

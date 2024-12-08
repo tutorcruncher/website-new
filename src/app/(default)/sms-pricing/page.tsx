@@ -13,8 +13,8 @@ const PricingPage = () => {
       <Body>
         <p className="text-center">
           Some countries listed below may display a price range as costs vary
-          depending on the recipient's mobile carrier. The cost of all sent SMSs
-          can be viewed from within TutorCruncher.
+          depending on the recipient&apos;s mobile carrier. The cost of all sent
+          SMSs can be viewed from within TutorCruncher.
         </p>
         <table>
           <thead>

@@ -12,12 +12,12 @@ export const fetchAvailableSlots = async (
   const response = await fetch(`/api/callbooker?${searchParams.toString()}`);
   const { slots } = await response.json();
 
-  const formattedSlots = slots.map((slot: any) => [
+  const formattedSlots = slots.map((slot: unknown) => [
     new Date(slot[0]),
     new Date(slot[1]),
   ]);
 
-  const dates = formattedSlots.map((slot: any) => slot[0]);
+  const dates = formattedSlots.map((slot: unknown) => slot[0]);
   return {
     formattedSlots,
     dates,

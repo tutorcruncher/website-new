@@ -1,14 +1,12 @@
 import { createClient } from "@/lib/prismic/prismicio";
 
-import { ArticleDocument, CategoryDocument } from "../../../prismicio-types";
 import { ArticlePage, formatArticlePage } from "./format/article";
-
-type ArticleWithCategory = ArticleDocument & { category: CategoryDocument };
+import { ArticleDocument } from "../../../prismicio-types";
 
 export const fetchArticles = async (
   filters = [],
   limit = 1000
-): Promise<ArticleWithCategory[]> => {
+): Promise<ArticleDocument<string>[]> => {
   const client = createClient();
   try {
     return await client.getAllByType("article", {

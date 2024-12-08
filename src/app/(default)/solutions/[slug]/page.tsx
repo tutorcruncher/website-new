@@ -33,8 +33,7 @@ export default async function StaticPage({
     }
 
     return <SliceZone slices={content.data.slices} components={components} />;
-  } catch (error) {
-    console.error("Error rendering content:", error);
+  } catch {
     return notFound();
   }
 }
@@ -46,7 +45,7 @@ export async function generateStaticParams() {
       uid: document.uid,
     }));
     return documents;
-  } catch (error) {
+  } catch {
     console.error("Error fetching documents");
   }
 }

@@ -46,8 +46,7 @@ const StaticBlogPage = async ({ params }) => {
         <ArticleDetail article={article} relatedPosts={relatedPosts} />
       </>
     );
-  } catch (error) {
-    console.error("Error fetching content:", error);
+  } catch {
     return notFound();
   }
 };

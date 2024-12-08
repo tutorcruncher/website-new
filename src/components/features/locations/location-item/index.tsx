@@ -1,13 +1,13 @@
 "use client";
-import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
-import { Locations } from "../types";
+import { GoogleMap, Marker } from "@react-google-maps/api";
+import { Location } from "../types";
 import styles from "./location-item.module.scss";
 
 export const LocationItem = ({
   location,
   isLoaded,
 }: {
-  location: Locations.Location;
+  location: Location;
   isLoaded: boolean;
 }) => {
   return (

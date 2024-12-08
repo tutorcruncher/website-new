@@ -29,7 +29,7 @@ export const NeverBooked = () => {
           await response.json();
         storedCountryCode = country_code || "GB";
         localStorage.setItem("_country_code", storedCountryCode);
-      } catch (error) {
+      } catch {
         storedCountryCode = "GB";
       }
     }
@@ -61,6 +61,7 @@ export const NeverBooked = () => {
       const data = await response.json();
       salesperson_id = data["id"];
     } catch (e) {
+      console.error(e);
       salesperson_id = DEFAULT_SALES_PERSON_ID;
     } finally {
       router.push(`/book-a-call/${salesperson_id}/?rb=${selectedRevenueIndex}`);

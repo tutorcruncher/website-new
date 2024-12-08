@@ -8,7 +8,12 @@ import styles from "./logos.module.scss";
 
 interface LogosProps {
   heading: ReactNode;
-  logos: any[];
+  logos: {
+    url: string;
+    alt: string;
+    width: number;
+    height: number;
+  }[];
 }
 
 export const Logos = ({ heading, logos }: LogosProps) => {

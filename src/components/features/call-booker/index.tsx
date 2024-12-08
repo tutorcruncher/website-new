@@ -17,12 +17,17 @@ import { useSearchParams } from "next/navigation";
 
 const CALL_TYPE = "sales";
 
+interface Slot {
+  start: Date;
+  end: Date;
+}
+
 export const CallBooker = ({ rep, rb }) => {
   const [openSlots, setOpenSlots] = useState([]);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [selectedTimeSlots, setSelectedTimeSlots] = useState<any[]>(null);
-  const [selectedTimeSlot, setSelectedTimeSlot] = useState<any>(null);
-  const [cachedSlots, setCachedSlots] = useState<any[]>([]);
+  const [selectedTimeSlots, setSelectedTimeSlots] = useState<Slot[]>(null);
+  const [selectedTimeSlot, setSelectedTimeSlot] = useState<Slot>(null);
+  const [cachedSlots, setCachedSlots] = useState<[]>([]);
   const [isExpress, setIsExpress] = useState(false);
   const [minDate, setMinDate] = useState(new Date());
   const [calendarReady, setCalendarReady] = useState(false);
@@ -114,8 +119,8 @@ export const CallBooker = ({ rep, rb }) => {
 
     const estimatedIncome = formData.get("revenue");
     const pricePlan = revenueOptions.find(
-      ([_, value]) => value === estimatedIncome
-    )[0];
+      ([, value]) => value === estimatedIncome
+    )?.[0];
 
     const bdrPersonId =
       localStorage.getItem("_bdr_person_id") || searchParams.get("bdr");
@@ -162,6 +167,7 @@ export const CallBooker = ({ rep, rb }) => {
         setIsLoading(false);
       })
       .catch((error) => {
+        console.error(error);
         setErrorMessage("Sorry something went wrong, please try again");
         setIsLoading(false);
       });
@@ -186,7 +192,7 @@ export const CallBooker = ({ rep, rb }) => {
         </Heading>
 
         <p>
-          Thanks for booking with us! We've just sent you a calendar invite
+          Thanks for booking with us! We&apos;ve just sent you a calendar invite
           which also includes the video call URL. We look forward to hearing
           about your business!
         </p>
@@ -257,7 +263,7 @@ export const CallBooker = ({ rep, rb }) => {
             <span />
           </div>
           <div className={styles.timeSlots}>
-            {selectedTimeSlots.map((slot: any, index: number) => (
+            {selectedTimeSlots.map((slot, index) => (
               <button key={index} onClick={() => setSelectedTimeSlot(slot)}>
                 {formatTime(slot[0])} - {formatTime(slot[1])}
               </button>
@@ -342,7 +348,7 @@ export const CallBooker = ({ rep, rb }) => {
                 revenueOptions?.[defaultRevenueOptionIndex]?.[0] || ""
               }
             >
-              {revenueOptions?.map(([_, label]) => (
+              {revenueOptions?.map(([, label]) => (
                 <option value={label} key={`revenue-option-${label}`}>
                   {label}
                 </option>

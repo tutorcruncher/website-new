@@ -20,7 +20,7 @@ export const Testimonial = ({
           height={companyLogo.height}
         />
       </div>
-      <div className={styles.testimonial}>"{shortTestimonial}"</div>
+      <div className={styles.testimonial}>&#34;{shortTestimonial}&#34;</div>
       <div className={styles.cite}>
         <Image
           src={reviewerImage.url}
@@ -30,7 +30,9 @@ export const Testimonial = ({
         />
         <div className={styles.info}>
           <p className={styles.name}>{reviewerName}</p>
-          <p className={styles.role}>{reviewerRole}, {companyName}</p>
+          <p className={styles.role}>
+            {reviewerRole}, {companyName}
+          </p>
         </div>
       </div>
     </div>

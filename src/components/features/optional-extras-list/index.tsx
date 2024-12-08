@@ -1,6 +1,5 @@
 "use client";
 import clsx from "clsx";
-import Image from "next/image";
 import { useState } from "react";
 
 import { Body } from "@/components/ui/body";

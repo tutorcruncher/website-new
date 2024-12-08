@@ -1,7 +1,7 @@
 import { PrismicNextImage } from "@prismicio/next";
 
 type ImageProps = {
-  image: any;
+  image: unknown;
   loading?: "eager" | "lazy";
   unoptimized?: boolean;
 };

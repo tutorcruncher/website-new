@@ -34,20 +34,23 @@
     "sass": "^1.77.8"
   },
   "devDependencies": {
-    "@eslint/js": "^9.10.0",
+    "@eslint/js": "^9.16.0",
     "@slicemachine/adapter-next": "^0.3.46",
     "@types/react": "18.2.33",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.52.0",
-    "eslint-config-next": "^14.0.1",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.20",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^15.13.0",
     "install": "^0.13.0",
     "npm": "^10.5.2",
     "postcss": "^8.4.31",
     "prettier": "^3.3.3",
     "slice-machine-ui": "^2.7.0",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "typescript-eslint": "^8.17.0"
   }
 }

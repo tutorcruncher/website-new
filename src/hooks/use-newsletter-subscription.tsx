@@ -26,7 +26,7 @@ export const useNewsletterSubscription = () => {
       }
 
       setIsSubmitted(true);
-    } catch (error) {
+    } catch {
       setErrorMessage("Sorry, something went wrong. Please try again later.");
     } finally {
       setIsLoading(false);

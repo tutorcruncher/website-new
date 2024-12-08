@@ -5,6 +5,7 @@ import type { JSX } from "react";
 
 import { LatestPosts } from "@/components/Posts/LatestPosts";
 import { createClient } from "@/lib/prismic/prismicio";
+import { ArticleDocument } from "../../../prismicio-types";
 
 export type ArticlesProps = SliceComponentProps<Content.ArticlesSlice>;
 
@@ -50,7 +51,7 @@ const Articles = async ({
   return (
     <LatestPosts
       title={primary.heading}
-      posts={posts}
+      posts={posts as ArticleDocument<string>[]}
       showAllBtn={primary.show_all_button}
     />
   );

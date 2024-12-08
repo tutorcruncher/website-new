@@ -5,7 +5,7 @@ import { Heading } from "@/components/ui/heading";
 import styles from "./team-member.module.scss";
 import { TeamMemberProps } from "./types";
 
-export const TeamMember = ({ image, name, role, intro }: TeamMemberProps) => {
+export const TeamMember = ({ image, name, role }: TeamMemberProps) => {
   return (
     <div className={styles.teamMember}>
       <div className={styles.imageContainer}>
@@ -21,7 +21,6 @@ export const TeamMember = ({ image, name, role, intro }: TeamMemberProps) => {
           {name}
         </Heading>
         <p className={styles.role}>{role}</p>
-        {intro ? <div className={styles.intro}>{intro}</div> : null}
       </div>
     </div>
   );
