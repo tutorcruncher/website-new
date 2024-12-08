@@ -23,23 +23,49 @@ export const RegionProvider = ({ children }: { children: React.ReactNode }) => {
   const [region, setRegion] = useState<(typeof regions)[0] | null>(null);
 
   useEffect(() => {
+    const getCountryCodeFromStorage = (): string | null => {
+      return localStorage.getItem("countryCode");
+    };
+
+    const setCountryCodeInStorage = (code: string) => {
+      localStorage.setItem("countryCode", code);
+    };
+
     const fetchRegion = async () => {
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
-        );
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+        const storedCode = getCountryCodeFromStorage();
+        if (storedCode) {
+          setRegionFromCode(storedCode);
+        } else {
+          const response = await fetch(
+            `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
+          );
+
+          if (response.ok) {
+            const { country_code } = await response.json();
+            setCountryCodeInStorage(country_code);
+            setRegionFromCode(country_code);
+          } else {
+            setFallbackRegion();
+          }
         }
-        const { country_code } = await response.json();
-        setCountryCode(country_code);
-        const fetchedRegion = regions.find(
-          (region) => region.region_code === country_code.toLowerCase()
-        );
-        setRegion(fetchedRegion || null);
       } catch (err) {
-        console.error("Failed to fetch region:", err);
+        setFallbackRegion();
       }
+    };
+
+    const setRegionFromCode = (code: string) => {
+      setCountryCode(code);
+      const matchedRegion = regions.find(
+        (region) => region.region_code === code.toLowerCase()
+      );
+      setRegion(matchedRegion || null);
+    };
+
+    const setFallbackRegion = () => {
+      const fallbackCode = "GB";
+      setCountryCodeInStorage(fallbackCode);
+      setRegionFromCode(fallbackCode);
     };
 
     fetchRegion();

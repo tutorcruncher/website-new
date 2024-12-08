@@ -30,7 +30,6 @@ const RegionPrice = ({ region, pricingTier }) => {
 export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
   const { region } = useRegion();
 
-  console.log("region", region);
   return (
     <Body
       heading={
