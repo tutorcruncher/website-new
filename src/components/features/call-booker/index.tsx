@@ -14,13 +14,9 @@ import { fetchAvailableSlots } from "./helpers";
 import { getCurrencyOptions } from "../booking-widget/helpers";
 import { regions } from "app/data/regions/regions";
 import { useSearchParams } from "next/navigation";
+import { Slot } from "./types";
 
 const CALL_TYPE = "sales";
-
-interface Slot {
-  start: Date;
-  end: Date;
-}
 
 export const CallBooker = ({ rep, rb }) => {
   const [openSlots, setOpenSlots] = useState([]);

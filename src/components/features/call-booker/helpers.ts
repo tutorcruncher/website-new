@@ -1,3 +1,5 @@
+import { Slot } from "./types";
+
 export const fetchAvailableSlots = async (
   admin_id: string,
   start: Date,
@@ -12,12 +14,12 @@ export const fetchAvailableSlots = async (
   const response = await fetch(`/api/callbooker?${searchParams.toString()}`);
   const { slots } = await response.json();
 
-  const formattedSlots = slots.map((slot: unknown) => [
+  const formattedSlots = slots.map((slot: Slot) => [
     new Date(slot[0]),
     new Date(slot[1]),
   ]);
 
-  const dates = formattedSlots.map((slot: unknown) => slot[0]);
+  const dates = formattedSlots.map((slot: Slot) => slot[0]);
   return {
     formattedSlots,
     dates,

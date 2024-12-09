@@ -16,7 +16,7 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
 
 const queryOptions = {
   page: 1,
-} as any;
+};
 
 const Testimonials = async ({ slice }: TestimonialsProps) => {
   const client = createClient();
