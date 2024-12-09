@@ -6,10 +6,15 @@ import { Heading } from "@/components/ui/heading";
 
 import { TeamMember } from "../team-member";
 import styles from "./team-list.module.scss";
+import type { Image } from "@/types/image";
 
 interface TeamListProps {
   heading: ReactNode;
-  team: any;
+  team: {
+    image: Image;
+    name: string;
+    role: string;
+  }[];
   variant?: "default" | "sales";
 }
 
@@ -34,7 +39,6 @@ export const TeamList = ({
             image={member.image}
             name={member.name}
             role={member.role}
-            intro={member.intro}
           />
         ))}
       </div>

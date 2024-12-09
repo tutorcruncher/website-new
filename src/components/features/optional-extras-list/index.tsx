@@ -1,6 +1,5 @@
 "use client";
 import clsx from "clsx";
-import Image from "next/image";
 import { useState } from "react";
 
 import { Body } from "@/components/ui/body";
@@ -27,8 +26,6 @@ export const OptionalExtrasList = ({ optionalExtras }) => {
     setIsModalOpen(false);
     setSelectedOptionalExtra(null);
   };
-
-  console.log(groupedOptionalExtras);
 
   return (
     <>

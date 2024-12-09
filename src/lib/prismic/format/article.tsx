@@ -41,9 +41,9 @@ export const formatArticlePage = (
     featuredImage: <PrismicNextImage field={data.featured_image} />,
     featuredImageUrl: data.featured_image.url,
     category: {
-      // @ts-ignore
+      // @ts-expect-error - TODO
       id: data.category.id,
-      // @ts-ignore
+      // @ts-expect-error - TODO
       title: data.category.data.title,
     },
   };

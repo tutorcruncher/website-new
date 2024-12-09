@@ -9,7 +9,7 @@ export const getCurrencyOptions = (countryCode: string) => {
 };
 
 export const getKeyByCurrencyCode = (currencyCode: string) => {
-  for (let key in LISTED_CURRENCIES) {
+  for (const key in LISTED_CURRENCIES) {
     if (key.includes(currencyCode)) {
       return key;
     }

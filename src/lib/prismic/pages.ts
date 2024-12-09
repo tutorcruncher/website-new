@@ -5,8 +5,7 @@ export const fetchAllPages = async () => {
   try {
     const pages = await client.getAllByType("page");
     return pages;
-  } catch (error) {
-    console.error("Error fetching articles:", error);
+  } catch {
     return [];
   }
 };

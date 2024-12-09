@@ -1,14 +1,11 @@
-import { SliceZone } from "@prismicio/react";
 import { regions } from "app/data/regions/regions";
 import { Metadata } from "next/types";
-import { components } from "slices";
 
 import { PricingTiers } from "@/components/features/pricing-tiers";
 import { Hero } from "@/components/ui/hero";
 import { formatMetaData } from "@/helpers/metaData";
 import { fetchPricingPageByUid } from "@/lib/prismic/pricing";
 import generateWebAppSchema from "@/schema/web_application";
-import { IntegrationsList } from "@/components/features/integrations/integrations-list";
 import { OptionalExtrasList } from "@/components/features/optional-extras-list";
 
 export async function generateMetadata({ params }): Promise<Metadata> {

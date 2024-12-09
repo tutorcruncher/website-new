@@ -31,7 +31,7 @@ export const TrackingProvider = ({
     const urlParams = new URLSearchParams(window?.location.search);
 
     const getTrackingParams = () => {
-      let params: Record<string, string> = {};
+      const params: Record<string, string> = {};
 
       const tcSource =
         localStorage.getItem("_tc_source") ||

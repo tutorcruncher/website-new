@@ -36,8 +36,8 @@ const BookACallUserPage = async ({ params, searchParams }) => {
                   <b>Get paid on time and increase your profit</b>
                 </p>
                 <p>
-                  Automate your invoicing safely and securely. We'll chase late
-                  payments from your clients.
+                  Automate your invoicing safely and securely. We&apos;ll chase
+                  late payments from your clients.
                 </p>
               </li>
               <li>
@@ -46,7 +46,7 @@ const BookACallUserPage = async ({ params, searchParams }) => {
                 </p>
                 <p>
                   Let your clients book lessons directly with you through their
-                  personal logins. We'll send them reminders and online
+                  personal logins. We&apos;ll send them reminders and online
                   classroom URLs.
                 </p>
               </li>
@@ -56,7 +56,8 @@ const BookACallUserPage = async ({ params, searchParams }) => {
                 </p>
                 <p>
                   Our features are designed to empower ambitious companies,
-                  whether they're sole traders or large tutoring franchises.
+                  whether they&apos;re sole traders or large tutoring
+                  franchises.
                 </p>
               </li>
               <li>
@@ -76,7 +77,7 @@ const BookACallUserPage = async ({ params, searchParams }) => {
                 <p>
                   Trust and communication are vital to a successful partnership.
                   We like to get to know every business that we work with and
-                  you'll always get an honest answer from us.
+                  you&apos;ll always get an honest answer from us.
                 </p>
               </li>
             </ul>

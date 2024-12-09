@@ -5,7 +5,6 @@ import { Body } from "@/components/ui/body";
 import { Hero } from "@/components/ui/hero";
 import { formatMetaData } from "@/helpers/metaData";
 import { fetchReviewsPage } from "@/lib/prismic/reviews";
-import generateWebAppSchema from "@/schema/web_application";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = await fetchReviewsPage();

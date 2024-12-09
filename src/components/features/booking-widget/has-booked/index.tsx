@@ -40,8 +40,9 @@ export const HasBooked = () => {
       </select>
       <p>
         <i>
-          Don't worry if the sales person you spoke to isn't listed above, or
-          you can't remember who it was. Just select <b>No/Not sure</b> above.
+          Don&apos;t worry if the sales person you spoke to isn&apos;t listed
+          above, or you can&apos;t remember who it was. Just select{" "}
+          <b>No/Not sure</b> above.
         </i>
       </p>
     </div>

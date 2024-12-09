@@ -1,11 +1,11 @@
-import type { ReactHTMLElement } from "react";
+import { ReactNode } from "react";
 
 export type ActionVariants = "solid" | "outline" | "white";
 
 export interface ActionProps {
   href?: string;
   onClick?: () => void;
-  children: string | ReactHTMLElement<any>;
+  children: ReactNode;
   variant?: "solid" | "outline" | "white";
   size?: "small" | "base";
   disabled?: boolean;
