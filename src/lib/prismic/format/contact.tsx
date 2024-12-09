@@ -29,7 +29,5 @@ export const formatContactPage = (
     description: data.meta_description,
   };
 
-  console.log("schema", schema);
-
   return { content, locations, meta, schema };
 };

@@ -9,7 +9,6 @@ export const fetchFeaturesLandingPage = async () => {
     const allFeatures = await client.getAllByType("feature");
     // @ts-expect-error - TODO
     const schema = await fetchSchema(data.schema);
-    console.log("schema", schema);
     return formatFeaturesLandingPage(data, allFeatures, schema);
   } catch (error) {
     console.error("Error fetching integrations:", error);
