@@ -714,7 +714,10 @@ interface IntegrationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   category: prismic.SelectField<
-    "Payments" | "Online Classrooms" | "Integrations" | "Single Sign Ons"
+    | "Payments"
+    | "Online Classrooms"
+    | "Other Integrations"
+    | "Accounting Platforms"
   >;
 
   /**
