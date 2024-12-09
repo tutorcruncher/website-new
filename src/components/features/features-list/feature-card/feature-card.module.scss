@@ -3,6 +3,7 @@
   flex-direction: column;
   cursor: pointer;
   color: $navy-blue;
+  text-align: center;
 
   &:hover {
     .imageWrapper {
@@ -16,6 +17,9 @@
     position: relative;
     margin-bottom: grid(3);
     overflow: hidden;
+    border: 1px solid $navy-blue;
+    background-color: $baby-blue;
+    border-radius: $border-radius--small;
     img {
       width: 100%;
       height: auto;
@@ -24,13 +28,7 @@
     }
   }
 
-  h2 {
-    text-decoration: underline;
-  }
-
   p {
-    margin-top: auto;
     margin-bottom: 0;
-    line-height: normal;
   }
 }

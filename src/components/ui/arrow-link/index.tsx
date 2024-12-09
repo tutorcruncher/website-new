@@ -1,8 +1,8 @@
 import { ChevronDown } from "@/svgs/chevron-down";
-import Link from "next/link";
 import clsx from "clsx";
 import styles from "./arrow-link.module.scss";
 import { ArrowLinkProps } from "./type";
+import { Action } from "../action";
 
 export const ArrowLink = ({
   text,
@@ -10,9 +10,9 @@ export const ArrowLink = ({
   direction = "forward",
 }: ArrowLinkProps) => (
   <div className={clsx(styles.arrowLink, styles[direction])}>
-    <Link href={href}>
+    <Action href={href} variant="outline">
       <span>{text}</span>
       <ChevronDown />
-    </Link>
+    </Action>
   </div>
 );
