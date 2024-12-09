@@ -5,6 +5,7 @@ import { LocationsList } from "@/components/features/locations/locations-list";
 import { Hero } from "@/components/ui/hero";
 import { formatMetaData } from "@/helpers/metaData";
 import { fetchContactPage } from "@/lib/prismic/contact";
+import { RenderSchema } from "@/components/schema";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = await fetchContactPage();
@@ -15,9 +16,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const ContactPage = async () => {
-  const { content, locations } = await fetchContactPage();
+  const { content, locations, schema } = await fetchContactPage();
   return (
     <>
+      <RenderSchema schema={schema} />
       <Hero heading="Get in touch" />
       <ContactForm content={content} />
       <LocationsList locations={locations} />

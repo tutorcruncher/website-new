@@ -4,7 +4,10 @@ import { PricingDocumentData, Simplify } from "../../../../prismicio-types";
 import { prismicToNextImage } from "@/helpers/prismicToNextImage";
 import { OptionalExtra } from "@/components/features/optional-extras-list/types";
 
-export const formatPricingPage = (data: Simplify<PricingDocumentData>) => {
+export const formatPricingPage = (
+  data: Simplify<PricingDocumentData>,
+  schema
+) => {
   const heading = <PrismicRichText field={data.heading} />;
 
   const meta = {
@@ -23,5 +26,5 @@ export const formatPricingPage = (data: Simplify<PricingDocumentData>) => {
     }
   );
 
-  return { heading, meta, optionalExtras };
+  return { heading, meta, optionalExtras, schema };
 };

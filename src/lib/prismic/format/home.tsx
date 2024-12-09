@@ -2,7 +2,10 @@ import { PrismicRichText } from "@prismicio/react";
 
 import { HomePageDocumentData, Simplify } from "../../../../prismicio-types";
 
-export const formatHomePage = (data: Simplify<HomePageDocumentData>) => {
+export const formatHomePage = async (
+  data: Simplify<HomePageDocumentData>,
+  schema
+) => {
   const heading = <PrismicRichText field={data.heading} />;
   const intro = data.intro;
   const slices = data.slices;
@@ -13,5 +16,5 @@ export const formatHomePage = (data: Simplify<HomePageDocumentData>) => {
     description: data.meta_description,
   };
 
-  return { heading, intro, heroImages, slices, meta };
+  return { heading, intro, heroImages, slices, meta, schema };
 };

@@ -5,6 +5,8 @@ import { components } from "slices";
 
 import { fetchAllPages, fetchPageByUid } from "@/lib/prismic/pages";
 import { formatMetaData } from "@/helpers/metaData";
+import { fetchSchema } from "@/lib/prismic/helpers";
+import { RenderSchema } from "@/components/schema";
 
 export async function generateMetadata({
   params,
@@ -36,7 +38,15 @@ export default async function StaticPage({
       return notFound();
     }
 
-    return <SliceZone slices={content.data.slices} components={components} />;
+    //@ts-expect-error - TODO
+    const schema = await fetchSchema(content.data.schema);
+
+    return (
+      <>
+        <RenderSchema schema={schema} />
+        <SliceZone slices={content.data.slices} components={components} />;
+      </>
+    );
   } catch {
     return notFound();
   }

@@ -86,6 +86,14 @@
           },
           "thumbnails": []
         }
+      },
+      "schema": {
+        "type": "Link",
+        "config": {
+          "label": "Schema",
+          "select": "document",
+          "customtypes": ["schema"]
+        }
       }
     }
   }

@@ -322,6 +322,17 @@ interface ContactDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Contact*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -507,6 +518,17 @@ interface FeaturesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Features*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -625,6 +647,17 @@ interface HomePageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Home Page*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -834,6 +867,17 @@ interface IntegrationsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Integrations*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1058,6 +1102,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Page*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1158,6 +1213,17 @@ interface PricingDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Pricing*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1277,6 +1343,17 @@ interface ReleasesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Releases*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: releases.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1353,6 +1430,17 @@ interface ReviewsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Reviews*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1370,6 +1458,34 @@ export type ReviewsDocument<Lang extends string = string> =
     "reviews",
     Lang
   >;
+
+/**
+ * Content for Schema documents
+ */
+interface SchemaDocumentData {
+  /**
+   * Schema Script field in *Schema*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: schema.schema_script
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  schema_script: prismic.RichTextField;
+}
+
+/**
+ * Schema document from Prismic
+ *
+ * - **API ID**: `schema`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SchemaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<SchemaDocumentData>, "schema", Lang>;
 
 type SolutionsDocumentDataSlicesSlice =
   | InfoBoxListSlice
@@ -1431,6 +1547,17 @@ interface SolutionsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Solution*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solutions.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1576,6 +1703,7 @@ export type AllDocumentTypes =
   | ReleaseDocument
   | ReleasesDocument
   | ReviewsDocument
+  | SchemaDocument
   | SolutionsDocument
   | TestimonialDocument;
 
@@ -2974,6 +3102,8 @@ declare module "@prismicio/client" {
       ReviewsDocument,
       ReviewsDocumentData,
       ReviewsDocumentDataSlicesSlice,
+      SchemaDocument,
+      SchemaDocumentData,
       SolutionsDocument,
       SolutionsDocumentData,
       SolutionsDocumentDataSlicesSlice,
