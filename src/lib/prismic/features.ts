@@ -6,7 +6,12 @@ export const fetchFeaturesLandingPage = async () => {
   const client = createClient();
   try {
     const { data } = await client.getSingle("features");
-    const allFeatures = await client.getAllByType("feature");
+    const allFeatures = await client.getAllByType("feature", {
+      orderings: {
+        field: "my.feature.order",
+        direction: "desc",
+      },
+    });
     // @ts-expect-error - TODO
     const schema = await fetchSchema(data.schema);
     return formatFeaturesLandingPage(data, allFeatures, schema);
