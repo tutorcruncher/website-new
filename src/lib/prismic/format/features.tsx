@@ -1,7 +1,5 @@
 import { PrismicRichText } from "@prismicio/react";
 
-import { prismicToNextImage } from "@/helpers/prismicToNextImage";
-
 import {
   FeatureDocument,
   IntegrationsDocumentData,
@@ -22,7 +20,7 @@ export const formatFeaturesLandingPage = (
 
   const features = allFeatures.map((feature) => ({
     title: feature.data.heading,
-    listImage: prismicToNextImage(feature.data.list_image),
+    listImage: feature.data.list_image,
     listText: feature.data.list_text,
     url: `/features/${feature.uid}`,
   }));

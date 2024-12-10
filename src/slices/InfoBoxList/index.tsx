@@ -1,5 +1,4 @@
 import { PrismicRichText } from "@prismicio/react";
-import { prismicToNextImage } from "@/helpers/prismicToNextImage";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { InfoBoxList as InfoBoxListComponent } from "@/components/features/info-box-list";
@@ -14,7 +13,7 @@ export type InfoBoxListProps = SliceComponentProps<Content.InfoBoxListSlice>;
 const InfoBoxList = ({ slice }: InfoBoxListProps): JSX.Element => {
   const formatedFeatures = slice.primary.features.map((feature) => ({
     title: feature.title,
-    icon: prismicToNextImage(feature.icon),
+    icon: feature.icon,
     intro: feature.intro,
     content: <PrismicRichText field={feature.content} />,
   }));

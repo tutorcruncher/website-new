@@ -1,6 +1,5 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { prismicToNextImage } from "helpers/prismicToNextImage";
 import type { JSX } from "react";
 
 import { Logos as LogoComponent } from "@/components/features/logos";
@@ -17,7 +16,7 @@ const Logos = ({ slice }: LogosProps): JSX.Element => {
   const { heading, logo } = slice.primary;
 
   const formattedHeading = <PrismicRichText field={heading} />;
-  const formattedImages = logo.map(({ image }) => prismicToNextImage(image));
+  const formattedImages = logo.map(({ image }) => image);
   return <LogoComponent heading={formattedHeading} logos={formattedImages} />;
 };
 

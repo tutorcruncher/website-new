@@ -1,14 +1,14 @@
 import { ReactElement } from "react";
 
-import { Image } from "../../../types/image";
+import { ImageField } from "@prismicio/client";
 
 export interface Integration {
-  logo: Image;
+  logo: ImageField;
   title: string;
   intro: string;
   category: string;
   content: ReactElement;
-  screenshot?: Image;
+  screenshot?: ImageField;
 }
 
 export interface IntegrationsProps {
