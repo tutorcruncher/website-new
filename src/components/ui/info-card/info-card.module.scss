@@ -40,8 +40,8 @@
       margin: auto;
     }
     .imageWrapper {
-      display: grid;
-      justify-items: center;
+      display: block;
+      margin: 0 auto;
       img {
         width: 100px;
         height: 100px;
