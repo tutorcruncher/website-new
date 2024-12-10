@@ -1,9 +1,8 @@
-import { Image } from "@/components/ui/image";
-
 import { Action } from "../../ui/action";
 import { Heading } from "../../ui/heading";
 import styles from "./home-page-hero.module.scss";
 import TrackingLink from "@/components/ui/tracking-link/tracking-link";
+import { PrismicNextImage } from "@prismicio/next";
 
 export const HomePageHero = ({ heading, intro, heroImages }) => {
   return (
@@ -24,19 +23,19 @@ export const HomePageHero = ({ heading, intro, heroImages }) => {
         </div>
         <div className={styles.animations}>
           <div className={styles.imageOne}>
-            <Image image={heroImages[1].image} unoptimized />
+            <PrismicNextImage field={heroImages[1].image} unoptimized />
           </div>
           <div className={styles.imageTwo}>
-            <Image image={heroImages[2].image} unoptimized />
+            <PrismicNextImage field={heroImages[2].image} unoptimized />
           </div>
           <div className={styles.imageThree}>
-            <Image image={heroImages[3].image} unoptimized />
+            <PrismicNextImage field={heroImages[3].image} unoptimized />
           </div>
           <div className={styles.imageFour}>
-            <Image image={heroImages[4].image} unoptimized />
+            <PrismicNextImage field={heroImages[4].image} unoptimized />
           </div>
           <div className={styles.imageWrapper}>
-            <Image image={heroImages[0].image} loading="eager" />
+            <PrismicNextImage field={heroImages[0].image} loading="eager" />
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 
-import { Image } from "../../../types/image";
+import { ImageField } from "@prismicio/types";
 
 export interface OptionalExtra {
-  image: Image;
+  image: ImageField;
   title: string;
   category: string;
   content: ReactElement;

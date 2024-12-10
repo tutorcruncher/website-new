@@ -1,6 +1,5 @@
-import Image from "next/image";
-
 import styles from "./testimonial.module.scss";
+import { PrismicNextImage } from "@prismicio/next";
 
 export const Testimonial = ({
   shortTestimonial,
@@ -13,21 +12,11 @@ export const Testimonial = ({
   return (
     <div className={styles.slide}>
       <div className={styles.logo}>
-        <Image
-          src={companyLogo.url}
-          alt={companyLogo.alt || "logo"}
-          width={companyLogo.width}
-          height={companyLogo.height}
-        />
+        <PrismicNextImage field={companyLogo} />
       </div>
       <div className={styles.testimonial}>&#34;{shortTestimonial}&#34;</div>
       <div className={styles.cite}>
-        <Image
-          src={reviewerImage.url}
-          alt={reviewerImage.alt || "photo of author"}
-          width={reviewerImage.width}
-          height={reviewerImage.height}
-        />
+        <PrismicNextImage field={reviewerImage} />
         <div className={styles.info}>
           <p className={styles.name}>{reviewerName}</p>
           <p className={styles.role}>

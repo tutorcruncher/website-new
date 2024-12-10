@@ -1,7 +1,6 @@
 import { PrismicRichText } from "@prismicio/react";
 
 import { PricingDocumentData, Simplify } from "../../../../prismicio-types";
-import { prismicToNextImage } from "@/helpers/prismicToNextImage";
 import { OptionalExtra } from "@/components/features/optional-extras-list/types";
 
 export const formatPricingPage = (
@@ -19,7 +18,7 @@ export const formatPricingPage = (
     ({ extra }) => {
       return {
         title: extra.data?.title,
-        image: prismicToNextImage(extra.data?.image),
+        image: extra.data?.image,
         content: <PrismicRichText field={extra.data?.content} />,
         category: extra.data?.category,
       };

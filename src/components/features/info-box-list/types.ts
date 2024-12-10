@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Image } from "@/types/image";
+import { ImageField } from "@prismicio/types";
 
 export interface InfoBoxListProps {
   title: string;
@@ -7,7 +7,7 @@ export interface InfoBoxListProps {
 }
 
 export interface Feature {
-  icon: Image;
+  icon: ImageField;
   title: string;
   intro: string;
   content: ReactElement;

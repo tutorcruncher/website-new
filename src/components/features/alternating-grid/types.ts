@@ -1,15 +1,11 @@
+import { ImageField } from "@prismicio/types";
 import React from "react";
 
 export interface AlternatingGridItem {
   heading: string;
   content: React.ReactNode;
-  image?: {
-    url: string;
-    alt?: string;
-    width: number;
-    height: number;
-    position?: "Right" | "Left";
-  };
+  image?: ImageField;
+  imagePosition?: "Left" | "Right";
   button?: {
     text: string;
     link: string;

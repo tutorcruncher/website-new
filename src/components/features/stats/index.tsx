@@ -1,11 +1,11 @@
 import clsx from "clsx";
-import Image from "next/image";
 
 import { Body } from "@/components/ui/body";
 import { Heading } from "@/components/ui/heading";
 
 import styles from "./stats.module.scss";
 import { StatsProps } from "./types";
+import { PrismicNextImage } from "@prismicio/next";
 
 export const Stats = ({ heading, stats }: StatsProps) => {
   return (
@@ -24,12 +24,7 @@ export const Stats = ({ heading, stats }: StatsProps) => {
             className={clsx(styles.statsCard, "animate")}
             style={{ animationDelay: ` ${index * 0.2}s` }}
           >
-            <Image
-              src={image.url}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
-            />
+            <PrismicNextImage field={image} />
             <Heading size="small" variant="h3" noMargin>
               {percent}
             </Heading>

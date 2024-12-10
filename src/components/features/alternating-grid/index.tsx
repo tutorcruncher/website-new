@@ -19,6 +19,7 @@ export const AlternatingGrid = ({
             heading={item.heading}
             content={item.content}
             variation={variation}
+            imagePosition={item.imagePosition}
             button={item.button}
             image={item.image}
           />

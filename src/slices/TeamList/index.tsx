@@ -1,6 +1,5 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { prismicToNextImage } from "helpers/prismicToNextImage";
 import type { JSX } from "react";
 
 import { BookingWidget } from "@/components/features/booking-widget";
@@ -21,7 +20,7 @@ const TeamList = ({ slice }: TeamListProps): JSX.Element => {
     return {
       name: teamMember.name,
       role: teamMember.role,
-      image: prismicToNextImage(teamMember.image),
+      image: teamMember.image,
     };
   });
 

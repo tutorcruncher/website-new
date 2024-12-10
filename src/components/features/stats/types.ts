@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 
-import { Image } from "@/types/image";
+import { ImageField } from "@prismicio/types";
 
 interface Stat {
-  image: Image;
+  image: ImageField;
   percent: string;
   description: string;
 }

@@ -1,12 +1,12 @@
 "use client";
 import clsx from "clsx";
-import Image from "next/image";
 import AnimateHeight from "react-animate-height";
 
 import { Heading } from "@/components/ui/heading";
 
 import { IAccordion } from "../types";
 import styles from "./accordion.module.scss";
+import { PrismicNextImage } from "@prismicio/next";
 
 export const Accordion = ({
   heading,
@@ -44,12 +44,7 @@ export const Accordion = ({
       </div>
       {image ? (
         <div className={styles.imageWrapper}>
-          <Image
-            src={image.url}
-            alt={image.alt}
-            width={image.width}
-            height={image.height}
-          />
+          <PrismicNextImage field={image} />
         </div>
       ) : null}
     </div>

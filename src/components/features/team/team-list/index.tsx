@@ -6,12 +6,12 @@ import { Heading } from "@/components/ui/heading";
 
 import { TeamMember } from "../team-member";
 import styles from "./team-list.module.scss";
-import type { Image } from "@/types/image";
+import { ImageField } from "@prismicio/types";
 
 interface TeamListProps {
   heading: ReactNode;
   team: {
-    image: Image;
+    image: ImageField;
     name: string;
     role: string;
   }[];

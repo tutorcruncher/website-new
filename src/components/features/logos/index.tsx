@@ -1,19 +1,15 @@
 "use client";
-import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { Body } from "../../ui/body";
 import { Heading } from "../../ui/heading";
 import styles from "./logos.module.scss";
+import { PrismicNextImage } from "@prismicio/next";
+import { ImageField } from "@prismicio/types";
 
 interface LogosProps {
   heading: ReactNode;
-  logos: {
-    url: string;
-    alt: string;
-    width: number;
-    height: number;
-  }[];
+  logos: ImageField[];
 }
 
 export const Logos = ({ heading, logos }: LogosProps) => {
@@ -29,12 +25,9 @@ export const Logos = ({ heading, logos }: LogosProps) => {
     >
       <div className={styles.logos}>
         {logos.map((image, index) => (
-          <Image
+          <PrismicNextImage
+            field={image}
             key={index}
-            width={image.width}
-            height={image.height}
-            src={image.url}
-            alt={image.alt}
             className="animate"
             style={{ animationDelay: ` ${index * 0.2}s` }}
           />

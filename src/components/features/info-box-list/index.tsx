@@ -1,6 +1,5 @@
 "use client";
 import clsx from "clsx";
-import Image from "next/image";
 import { useState } from "react";
 
 import { Body } from "@/components/ui/body";
@@ -11,6 +10,7 @@ import styles from "./info-box-list.module.scss";
 import { InfoCard } from "@/components/ui/info-card";
 import { Feature, InfoBoxListProps } from "./types";
 import { ArrowLink } from "@/components/ui/arrow-link";
+import { PrismicNextImage } from "@prismicio/next";
 
 export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
   const [selectedItem, setSelectedItem] = useState<Feature | null>(null);
@@ -48,13 +48,7 @@ export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
         <Modal isOpen={true} onClose={closeModal}>
           <div className={styles.modal}>
             {selectedItem.icon ? (
-              <Image
-                src={selectedItem.icon.url}
-                width={selectedItem.icon.width}
-                height={selectedItem.icon.height}
-                alt={selectedItem.icon.alt}
-                className={styles.icon}
-              />
+              <PrismicNextImage field={selectedItem.icon} />
             ) : null}
             <Heading size="small" variant="h2" noMargin>
               {selectedItem.title}

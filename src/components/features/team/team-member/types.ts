@@ -1,7 +1,7 @@
-import type { Image } from "@/types/image";
+import { ImageField } from "@prismicio/types";
 
 export interface TeamMemberProps {
-  image: Image;
+  image: ImageField;
   name: string;
   role: string;
 }
