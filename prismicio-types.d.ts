@@ -410,7 +410,18 @@ interface FeatureDocumentData {
    * - **Tab**: List
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  list_text: prismic.KeyTextField /**
+  list_text: prismic.KeyTextField;
+
+  /**
+   * Order field in *Feature*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.order
+   * - **Tab**: List
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  order: prismic.NumberField /**
    * Meta Title field in *Feature*
    *
    * - **Field Type**: Text
@@ -716,8 +727,8 @@ interface IntegrationDocumentData {
   category: prismic.SelectField<
     | "Payments"
     | "Online Classrooms"
-    | "Other Integrations"
     | "Accounting Platforms"
+    | "Other Integrations"
   >;
 
   /**
@@ -1768,7 +1779,7 @@ export interface AccordionsSliceDefaultPrimary {
    * - **API ID Path**: accordions.default.primary.background_colour
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_colour: prismic.SelectField<"Cream" | "Blue", "filled">;
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * Content field in *Accordions → Default → Primary*
@@ -1843,6 +1854,17 @@ export interface ArticlesSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
+   * Background colour field in *Articles → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Cream
+   * - **API ID Path**: articles.default.primary.background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
+
+  /**
    * Show all button field in *Articles → Default → Primary*
    *
    * - **Field Type**: Boolean
@@ -1892,6 +1914,17 @@ export interface ArticlesSliceArticlesByCategoryPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading: prismic.KeyTextField;
+
+  /**
+   * Background colour field in *Articles → Articles - By Category → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Cream
+   * - **API ID Path**: articles.articlesByCategory.primary.background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * Show all button field in *Articles → Articles - By Category → Primary*
@@ -2015,7 +2048,7 @@ export interface CallToActionSliceDefaultPrimary {
    * - **API ID Path**: call_to_action.default.primary.background_colour
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_colour: prismic.SelectField<"Cream" | "Blue", "filled">;
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * Show Image field in *CallToAction → Default → Primary*
@@ -2088,6 +2121,17 @@ export interface FaqsSliceDefaultPrimaryFaqsItem {
  * Primary content in *Faqs → Default → Primary*
  */
 export interface FaqsSliceDefaultPrimary {
+  /**
+   * Background colour field in *Faqs → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Cream
+   * - **API ID Path**: faqs.default.primary.background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
+
   /**
    * Faqs field in *Faqs → Default → Primary*
    *
@@ -2284,6 +2328,17 @@ export interface InfoBoxListSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
+
+  /**
+   * Background colour field in *InfoBoxList → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Cream
+   * - **API ID Path**: info_box_list.default.primary.background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * Features field in *InfoBoxList → Default → Primary*
@@ -2896,7 +2951,7 @@ export interface TextImageGridSliceDefaultPrimary {
    * - **API ID Path**: text_image_grid.default.primary.background_colour
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_colour: prismic.SelectField<"Cream" | "Blue", "filled">;
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * content field in *AlternatingGrid → default → Primary*

@@ -12,6 +12,19 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "background_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Background colour",
+            "placeholder": "",
+            "options": [
+              "Cream",
+              "Blue",
+              "White"
+            ],
+            "default_value": "Cream"
+          }
+        },
         "faqs": {
           "type": "Group",
           "config": {

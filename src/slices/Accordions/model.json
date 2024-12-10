@@ -26,7 +26,11 @@
           "config": {
             "label": "Background colour",
             "placeholder": "",
-            "options": ["Cream", "Blue"],
+            "options": [
+              "Cream",
+              "Blue",
+              "White"
+            ],
             "default_value": "Cream"
           }
         },

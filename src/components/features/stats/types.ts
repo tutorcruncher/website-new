@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 import { ImageField } from "@prismicio/types";
+import { BackgroundColour } from "@/types/backgroundColor";
 
 interface Stat {
   image: ImageField;
@@ -10,6 +11,6 @@ interface Stat {
 
 export interface StatsProps {
   heading: ReactNode;
-  background?: "blue" | "cream";
+  background?: BackgroundColour;
   stats: Stat[];
 }

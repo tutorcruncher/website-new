@@ -19,7 +19,8 @@
             "placeholder": "",
             "options": [
               "Cream",
-              "Blue"
+              "Blue",
+              "White"
             ],
             "default_value": "Cream"
           }

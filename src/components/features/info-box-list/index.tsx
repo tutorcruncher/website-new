@@ -12,7 +12,11 @@ import { Feature, InfoBoxListProps } from "./types";
 import { ArrowLink } from "@/components/ui/arrow-link";
 import { PrismicNextImage } from "@prismicio/next";
 
-export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
+export const InfoBoxList = ({
+  title,
+  features,
+  background,
+}: InfoBoxListProps) => {
   const [selectedItem, setSelectedItem] = useState<Feature | null>(null);
 
   const handleCardClick = (integration) => {
@@ -25,7 +29,7 @@ export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
 
   return (
     <>
-      <Body>
+      <Body background={background}>
         <Heading variant="h2" className={styles.title} center>
           {title}
         </Heading>
