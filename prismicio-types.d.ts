@@ -1156,7 +1156,12 @@ export interface PricingDocumentDataOptionalExtrasItem {
   extra: prismic.ContentRelationshipField<"optional_extra">;
 }
 
-type PricingDocumentDataSlicesSlice = never;
+type PricingDocumentDataSlicesSlice =
+  | TextImageGridSlice
+  | AccordionsSlice
+  | FaqsSlice
+  | CallToActionSlice
+  | BodyTextSlice;
 
 /**
  * Content for Pricing documents

@@ -14,6 +14,8 @@ export const formatPricingPage = (
     description: data.meta_description,
   };
 
+  const slices = data.slices;
+
   const optionalExtras: OptionalExtra[] = data.optional_extras.map(
     ({ extra }) => {
       return {
@@ -25,5 +27,5 @@ export const formatPricingPage = (
     }
   );
 
-  return { heading, meta, optionalExtras, schema };
+  return { heading, meta, optionalExtras, schema, slices };
 };

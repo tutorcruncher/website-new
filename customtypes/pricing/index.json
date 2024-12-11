@@ -42,7 +42,23 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "text_image_grid": {
+              "type": "SharedSlice"
+            },
+            "accordions": {
+              "type": "SharedSlice"
+            },
+            "faqs": {
+              "type": "SharedSlice"
+            },
+            "call_to_action": {
+              "type": "SharedSlice"
+            },
+            "body_text": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

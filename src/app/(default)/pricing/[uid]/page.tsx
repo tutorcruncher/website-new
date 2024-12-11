@@ -7,6 +7,8 @@ import { formatMetaData } from "@/helpers/metaData";
 import { fetchPricingPageByUid } from "@/lib/prismic/pricing";
 import { OptionalExtrasList } from "@/components/features/optional-extras-list";
 import { RenderSchema } from "@/components/schema";
+import { SliceZone } from "@prismicio/react";
+import { components } from "slices";
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   const { meta } = await fetchPricingPageByUid(params.uid);
@@ -16,18 +18,17 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 }
 
 const PricingPage = async ({ params }) => {
-  const { heading, optionalExtras, schema } = await fetchPricingPageByUid(
-    params.uid
-  );
+  const { heading, schema, slices } = await fetchPricingPageByUid(params.uid);
   const region = regions.find((region) => region.region_code === params.uid);
   return (
     <>
       <RenderSchema schema={schema} />
       <Hero heading={heading} headingVariant="div" />
       <PricingTiers region={region} />
-      {optionalExtras.length !== 0 ? (
+      {/* {optionalExtras.length !== 0 ? (
         <OptionalExtrasList optionalExtras={optionalExtras} />
-      ) : null}
+      ) : null} */}
+      <SliceZone slices={slices} components={components} />;
     </>
   );
 };
