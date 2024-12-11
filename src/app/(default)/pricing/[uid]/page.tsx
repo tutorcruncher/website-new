@@ -5,7 +5,6 @@ import { PricingTiers } from "@/components/features/pricing-tiers";
 import { Hero } from "@/components/ui/hero";
 import { formatMetaData } from "@/helpers/metaData";
 import { fetchPricingPageByUid } from "@/lib/prismic/pricing";
-import { OptionalExtrasList } from "@/components/features/optional-extras-list";
 import { RenderSchema } from "@/components/schema";
 import { SliceZone } from "@prismicio/react";
 import { components } from "slices";
