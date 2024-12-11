@@ -44,7 +44,7 @@ export default async function StaticPage({
     return (
       <>
         <RenderSchema schema={schema} />
-        <SliceZone slices={content.data.slices} components={components} />;
+        <SliceZone slices={content.data.slices} components={components} />
       </>
     );
   } catch {
