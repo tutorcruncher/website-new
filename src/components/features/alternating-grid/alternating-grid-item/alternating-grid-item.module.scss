@@ -47,6 +47,7 @@
     width: 100%;
 
     img {
+      background-color: $baby-blue;
       border: 1px $navy-blue solid;
       border-radius: 24px;
       width: 100%;
@@ -88,7 +89,7 @@
         padding: 60px;
         position: relative;
         img {
-          border: 1px $navy-blue solid;
+          border: none;
           border-radius: 0;
           position: absolute;
           top: 0;

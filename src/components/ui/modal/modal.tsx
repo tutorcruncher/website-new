@@ -1,6 +1,7 @@
 import { ReactNode, useEffect } from "react";
 
 import styles from "./modal.module.scss";
+import { CloseSvg } from "@/svgs/close";
 
 interface ModalProps {
   children: ReactNode;
@@ -31,19 +32,7 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeButton} onClick={onClose}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
+          <CloseSvg />
         </button>
         {children}
       </div>

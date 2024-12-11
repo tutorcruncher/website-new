@@ -15,6 +15,8 @@ const TrackingLink = ({
   text,
   variant = "outline",
 }: TrackingLinkProps) => {
+  const { queryParams } = useTracking();
+
   if (typeof window === "undefined") {
     return (
       <Action href={url.toString()} variant={variant}>
@@ -23,11 +25,9 @@ const TrackingLink = ({
     );
   }
 
-  const { queryParams } = useTracking();
-
   const trackingUrl = new URL(url, window?.location.origin);
   Object.entries(queryParams).forEach(([key, value]) => {
-    return trackingUrl.searchParams.set(key, value as any);
+    return trackingUrl.searchParams.set(key, String(value));
   });
 
   return (

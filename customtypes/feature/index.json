@@ -82,6 +82,13 @@
           "label": "List text",
           "placeholder": ""
         }
+      },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "Order",
+          "placeholder": ""
+        }
       }
     },
     "SEO & Metadata": {

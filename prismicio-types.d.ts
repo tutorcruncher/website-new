@@ -322,6 +322,17 @@ interface ContactDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Contact*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -399,7 +410,18 @@ interface FeatureDocumentData {
    * - **Tab**: List
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  list_text: prismic.KeyTextField /**
+  list_text: prismic.KeyTextField;
+
+  /**
+   * Order field in *Feature*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: feature.order
+   * - **Tab**: List
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  order: prismic.NumberField /**
    * Meta Title field in *Feature*
    *
    * - **Field Type**: Text
@@ -507,6 +529,17 @@ interface FeaturesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Features*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -524,6 +557,21 @@ export type FeaturesDocument<Lang extends string = string> =
     "features",
     Lang
   >;
+
+/**
+ * Item in *Home Page → Hero Images*
+ */
+export interface HomePageDocumentDataHeroImagesItem {
+  /**
+   * Image field in *Home Page → Hero Images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.hero_images[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
 
 type HomePageDocumentDataSlicesSlice =
   | AccordionsSlice
@@ -557,6 +605,17 @@ interface HomePageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   intro: prismic.KeyTextField;
+
+  /**
+   * Hero Images field in *Home Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.hero_images[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  hero_images: prismic.GroupField<Simplify<HomePageDocumentDataHeroImagesItem>>;
 
   /**
    * Slice Zone field in *Home Page*
@@ -599,6 +658,17 @@ interface HomePageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Home Page*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -655,7 +725,10 @@ interface IntegrationDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   category: prismic.SelectField<
-    "Payments" | "Online Classrooms" | "Integrations" | "Single Sign Ons"
+    | "Payments"
+    | "Online Classrooms"
+    | "Accounting Platforms"
+    | "Other Integrations"
   >;
 
   /**
@@ -808,6 +881,17 @@ interface IntegrationsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Integrations*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -894,6 +978,76 @@ export type NavigationDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Optional Extra documents
+ */
+interface OptionalExtraDocumentData {
+  /**
+   * Category field in *Optional Extra*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: optional_extra.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  category: prismic.SelectField<
+    | "Payments"
+    | "Lessons & Communications"
+    | "Customisation"
+    | "Support options"
+  >;
+
+  /**
+   * Title field in *Optional Extra*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: optional_extra.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Image field in *Optional Extra*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: optional_extra.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Content field in *Optional Extra*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: optional_extra.content
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Optional Extra document from Prismic
+ *
+ * - **API ID**: `optional_extra`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OptionalExtraDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<OptionalExtraDocumentData>,
+    "optional_extra",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | YoutubeSlice
   | StatsSlice
@@ -962,6 +1116,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Page*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -976,7 +1141,22 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-type PricingDocumentDataSlicesSlice = InfoBoxListSlice;
+/**
+ * Item in *Pricing → Optional Extras*
+ */
+export interface PricingDocumentDataOptionalExtrasItem {
+  /**
+   * Extra field in *Pricing → Optional Extras*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.optional_extras[].extra
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  extra: prismic.ContentRelationshipField<"optional_extra">;
+}
+
+type PricingDocumentDataSlicesSlice = never;
 
 /**
  * Content for Pricing documents
@@ -992,6 +1172,19 @@ interface PricingDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   heading: prismic.RichTextField;
+
+  /**
+   * Optional Extras field in *Pricing*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.optional_extras[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  optional_extras: prismic.GroupField<
+    Simplify<PricingDocumentDataOptionalExtrasItem>
+  >;
 
   /**
    * Slice Zone field in *Pricing*
@@ -1034,6 +1227,17 @@ interface PricingDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Pricing*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1153,6 +1357,17 @@ interface ReleasesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Releases*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: releases.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1229,6 +1444,17 @@ interface ReviewsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Reviews*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1246,6 +1472,34 @@ export type ReviewsDocument<Lang extends string = string> =
     "reviews",
     Lang
   >;
+
+/**
+ * Content for Schema documents
+ */
+interface SchemaDocumentData {
+  /**
+   * Schema Script field in *Schema*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: schema.schema_script
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  schema_script: prismic.RichTextField;
+}
+
+/**
+ * Schema document from Prismic
+ *
+ * - **API ID**: `schema`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SchemaDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<SchemaDocumentData>, "schema", Lang>;
 
 type SolutionsDocumentDataSlicesSlice =
   | InfoBoxListSlice
@@ -1307,6 +1561,17 @@ interface SolutionsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schema field in *Solution*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solutions.schema
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
 }
 
 /**
@@ -1446,11 +1711,13 @@ export type AllDocumentTypes =
   | IntegrationDocument
   | IntegrationsDocument
   | NavigationDocument
+  | OptionalExtraDocument
   | PageDocument
   | PricingDocument
   | ReleaseDocument
   | ReleasesDocument
   | ReviewsDocument
+  | SchemaDocument
   | SolutionsDocument
   | TestimonialDocument;
 
@@ -1512,7 +1779,7 @@ export interface AccordionsSliceDefaultPrimary {
    * - **API ID Path**: accordions.default.primary.background_colour
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_colour: prismic.SelectField<"Cream" | "Blue", "filled">;
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * Content field in *Accordions → Default → Primary*
@@ -1587,6 +1854,17 @@ export interface ArticlesSliceDefaultPrimary {
   heading: prismic.KeyTextField;
 
   /**
+   * Background colour field in *Articles → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Cream
+   * - **API ID Path**: articles.default.primary.background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
+
+  /**
    * Show all button field in *Articles → Default → Primary*
    *
    * - **Field Type**: Boolean
@@ -1636,6 +1914,17 @@ export interface ArticlesSliceArticlesByCategoryPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading: prismic.KeyTextField;
+
+  /**
+   * Background colour field in *Articles → Articles - By Category → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Cream
+   * - **API ID Path**: articles.articlesByCategory.primary.background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * Show all button field in *Articles → Articles - By Category → Primary*
@@ -1759,7 +2048,7 @@ export interface CallToActionSliceDefaultPrimary {
    * - **API ID Path**: call_to_action.default.primary.background_colour
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_colour: prismic.SelectField<"Cream" | "Blue", "filled">;
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * Show Image field in *CallToAction → Default → Primary*
@@ -1832,6 +2121,17 @@ export interface FaqsSliceDefaultPrimaryFaqsItem {
  * Primary content in *Faqs → Default → Primary*
  */
 export interface FaqsSliceDefaultPrimary {
+  /**
+   * Background colour field in *Faqs → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Cream
+   * - **API ID Path**: faqs.default.primary.background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
+
   /**
    * Faqs field in *Faqs → Default → Primary*
    *
@@ -2028,6 +2328,17 @@ export interface InfoBoxListSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
+
+  /**
+   * Background colour field in *InfoBoxList → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Cream
+   * - **API ID Path**: info_box_list.default.primary.background_colour
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * Features field in *InfoBoxList → Default → Primary*
@@ -2640,7 +2951,7 @@ export interface TextImageGridSliceDefaultPrimary {
    * - **API ID Path**: text_image_grid.default.primary.background_colour
    * - **Documentation**: https://prismic.io/docs/field#select
    */
-  background_colour: prismic.SelectField<"Cream" | "Blue", "filled">;
+  background_colour: prismic.SelectField<"Cream" | "Blue" | "White", "filled">;
 
   /**
    * content field in *AlternatingGrid → default → Primary*
@@ -2821,6 +3132,7 @@ declare module "@prismicio/client" {
       FeaturesDocumentDataSlicesSlice,
       HomePageDocument,
       HomePageDocumentData,
+      HomePageDocumentDataHeroImagesItem,
       HomePageDocumentDataSlicesSlice,
       IntegrationDocument,
       IntegrationDocumentData,
@@ -2831,11 +3143,14 @@ declare module "@prismicio/client" {
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataLinksItem,
+      OptionalExtraDocument,
+      OptionalExtraDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       PricingDocument,
       PricingDocumentData,
+      PricingDocumentDataOptionalExtrasItem,
       PricingDocumentDataSlicesSlice,
       ReleaseDocument,
       ReleaseDocumentData,
@@ -2845,6 +3160,8 @@ declare module "@prismicio/client" {
       ReviewsDocument,
       ReviewsDocumentData,
       ReviewsDocumentDataSlicesSlice,
+      SchemaDocument,
+      SchemaDocumentData,
       SolutionsDocument,
       SolutionsDocumentData,
       SolutionsDocumentDataSlicesSlice,

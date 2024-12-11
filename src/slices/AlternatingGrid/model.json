@@ -26,7 +26,11 @@
           "config": {
             "label": "Background colour",
             "placeholder": "",
-            "options": ["Cream", "Blue"],
+            "options": [
+              "Cream",
+              "Blue",
+              "White"
+            ],
             "default_value": "Cream"
           }
         },
@@ -81,7 +85,10 @@
                 "config": {
                   "label": "Image postion",
                   "placeholder": "",
-                  "options": ["Right", "Left"],
+                  "options": [
+                    "Right",
+                    "Left"
+                  ],
                   "default_value": "Right"
                 }
               }
@@ -113,7 +120,10 @@
           "config": {
             "label": "Background colour",
             "placeholder": "",
-            "options": ["Cream", "Blue"],
+            "options": [
+              "Cream",
+              "Blue"
+            ],
             "default_value": "Cream"
           }
         },
@@ -168,7 +178,10 @@
                 "config": {
                   "label": "Image postion",
                   "placeholder": "",
-                  "options": ["Right", "Left"],
+                  "options": [
+                    "Right",
+                    "Left"
+                  ],
                   "default_value": "Right"
                 }
               }

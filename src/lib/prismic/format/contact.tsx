@@ -6,7 +6,10 @@ import {
   Simplify,
 } from "../../../../prismicio-types";
 
-export const formatContactPage = (data: Simplify<ContactDocumentData>) => {
+export const formatContactPage = (
+  data: Simplify<ContactDocumentData>,
+  schema
+) => {
   const content = <PrismicRichText field={data.content} />;
 
   const locations = data.locations.map(
@@ -26,5 +29,5 @@ export const formatContactPage = (data: Simplify<ContactDocumentData>) => {
     description: data.meta_description,
   };
 
-  return { content, locations, meta };
+  return { content, locations, meta, schema };
 };

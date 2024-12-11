@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { usePathname } from "next/dist/client/components/navigation";
 import Link from "next/dist/client/link";
-import type { MouseEvent } from "react";
+import type { Dispatch, MouseEvent, SetStateAction } from "react";
 import { useEffect, useState } from "react";
 
 import { Action } from "@/components/ui/action";
@@ -43,7 +43,7 @@ const NavigationItems = [
 
 interface NavigationProps {
   navigationOpen: boolean;
-  setNavigationOpen: any; // TODO
+  setNavigationOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Navigation = ({

@@ -5,17 +5,23 @@ import { components } from "slices";
 
 import { fetchAllPages, fetchPageByUid } from "@/lib/prismic/pages";
 import { formatMetaData } from "@/helpers/metaData";
+import { fetchSchema } from "@/lib/prismic/helpers";
+import { RenderSchema } from "@/components/schema";
 
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const { data } = await fetchPageByUid(params.slug);
+  try {
+    const { data } = await fetchPageByUid(params.slug);
 
-  const url = `https://tutorcruncher.com/${params.slug}`;
+    const url = `https://tutorcruncher.com/${params.slug}`;
 
-  return formatMetaData(data.meta_title, data.meta_description, url);
+    return formatMetaData(data.meta_title, data.meta_description, url);
+  } catch {
+    return formatMetaData(null, null, null);
+  }
 }
 
 export default async function StaticPage({
@@ -32,9 +38,16 @@ export default async function StaticPage({
       return notFound();
     }
 
-    return <SliceZone slices={content.data.slices} components={components} />;
-  } catch (error) {
-    console.error("Error rendering content:", error);
+    //@ts-expect-error - TODO
+    const schema = await fetchSchema(content.data.schema);
+
+    return (
+      <>
+        <RenderSchema schema={schema} />
+        <SliceZone slices={content.data.slices} components={components} />;
+      </>
+    );
+  } catch {
     return notFound();
   }
 }
@@ -47,6 +60,6 @@ export async function generateStaticParams() {
     }));
     return documents;
   } catch (error) {
-    console.error("Error fetching documents");
+    console.error("Error fetching documents", error);
   }
 }

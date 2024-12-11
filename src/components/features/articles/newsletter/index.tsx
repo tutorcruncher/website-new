@@ -3,7 +3,7 @@
 import { Action } from "@/components/ui/action";
 import { Heading } from "@/components/ui/heading";
 import styles from "./newsletter.module.scss";
-import { useNewsletterSubscription } from "hooks/newsletter-subscription";
+import { useNewsletterSubscription } from "hooks/use-newsletter-subscription";
 
 export const Newsletter = () => {
   const { isLoading, isSubmitted, errorMessage, subscribe } =

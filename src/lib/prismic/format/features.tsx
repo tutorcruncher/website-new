@@ -1,18 +1,15 @@
 import { PrismicRichText } from "@prismicio/react";
 
-import { prismicToNextImage } from "@/helpers/prismicToNextImage";
-
 import {
   FeatureDocument,
-  FeatureDocumentData,
-  IntegrationDocument,
   IntegrationsDocumentData,
   Simplify,
 } from "../../../../prismicio-types";
 
 export const formatFeaturesLandingPage = (
   data: Simplify<IntegrationsDocumentData>,
-  allFeatures: Simplify<FeatureDocument>[]
+  allFeatures: Simplify<FeatureDocument>[],
+  schema
 ) => {
   const heading = <PrismicRichText field={data.heading} />;
 
@@ -23,10 +20,10 @@ export const formatFeaturesLandingPage = (
 
   const features = allFeatures.map((feature) => ({
     title: feature.data.heading,
-    listImage: prismicToNextImage(feature.data.list_image),
+    listImage: feature.data.list_image,
     listText: feature.data.list_text,
     url: `/features/${feature.uid}`,
   }));
 
-  return { heading, meta, features };
+  return { heading, meta, features, schema };
 };

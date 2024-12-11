@@ -1,3 +1,4 @@
+/* eslint-disable */
 export const filterHeadings = (data: any[]): any[] => {
   const headingTexts = data
     .filter((item) => item.type.startsWith("heading"))

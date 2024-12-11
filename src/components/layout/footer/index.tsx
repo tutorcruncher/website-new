@@ -66,7 +66,7 @@ export const Footer = async () => {
               API Documentation
             </Link>
             <Link href="/terms">Terms & Conditions</Link>
-            <Link href="#">Cookies</Link>
+            <Link href="/privacy">Privacy</Link>
           </div>
         </div>
         <div className={styles.end}>

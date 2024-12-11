@@ -19,6 +19,19 @@
             "placeholder": ""
           }
         },
+        "background_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Background colour",
+            "placeholder": "",
+            "options": [
+              "Cream",
+              "Blue",
+              "White"
+            ],
+            "default_value": "Cream"
+          }
+        },
         "show_all_button": {
           "type": "Boolean",
           "config": {
@@ -63,6 +76,19 @@
           "config": {
             "label": "Heading",
             "placeholder": ""
+          }
+        },
+        "background_colour": {
+          "type": "Select",
+          "config": {
+            "label": "Background colour",
+            "placeholder": "",
+            "options": [
+              "Cream",
+              "Blue",
+              "White"
+            ],
+            "default_value": "Cream"
           }
         },
         "show_all_button": {

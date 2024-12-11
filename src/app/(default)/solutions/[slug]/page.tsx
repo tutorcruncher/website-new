@@ -5,6 +5,8 @@ import { components } from "slices";
 
 import { fetchAllSolutions, fetchSolutionByUid } from "@/lib/prismic/solution";
 import { formatMetaData } from "@/helpers/metaData";
+import { RenderSchema } from "@/components/schema";
+import { fetchSchema } from "@/lib/prismic/helpers";
 
 export async function generateMetadata({
   params,
@@ -32,9 +34,15 @@ export default async function StaticPage({
       return notFound();
     }
 
-    return <SliceZone slices={content.data.slices} components={components} />;
-  } catch (error) {
-    console.error("Error rendering content:", error);
+    //@ts-expect-error - TODO
+    const schema = await fetchSchema(content.data.schema);
+    return (
+      <>
+        <RenderSchema schema={schema} />
+        <SliceZone slices={content.data.slices} components={components} />
+      </>
+    );
+  } catch {
     return notFound();
   }
 }
@@ -46,7 +54,7 @@ export async function generateStaticParams() {
       uid: document.uid,
     }));
     return documents;
-  } catch (error) {
+  } catch {
     console.error("Error fetching documents");
   }
 }

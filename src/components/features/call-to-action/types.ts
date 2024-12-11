@@ -1,4 +1,6 @@
+import { BackgroundColour } from "@/types/backgroundColor";
+
 export interface CallToActionProps {
-  background: "cream" | "blue";
+  background: BackgroundColour;
   showImage?: boolean;
 }

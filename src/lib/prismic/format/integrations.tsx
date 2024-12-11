@@ -1,7 +1,5 @@
 import { PrismicRichText } from "@prismicio/react";
 
-import { prismicToNextImage } from "@/helpers/prismicToNextImage";
-
 import {
   IntegrationDocument,
   IntegrationsDocumentData,
@@ -10,7 +8,8 @@ import {
 
 export const formatIntegrationsPage = (
   data: Simplify<IntegrationsDocumentData>,
-  allIntegrations: Simplify<IntegrationDocument>[]
+  allIntegrations: Simplify<IntegrationDocument>[],
+  schema
 ) => {
   const heading = <PrismicRichText field={data.heading} />;
 
@@ -21,12 +20,12 @@ export const formatIntegrationsPage = (
 
   const integrations = allIntegrations.map(({ data }) => ({
     title: data.title,
-    logo: prismicToNextImage(data.logo),
+    logo: data.logo,
     category: data.category,
     intro: data.intro,
     content: <PrismicRichText field={data.description} />,
-    screenshot: prismicToNextImage(data.screenshot),
+    screenshot: data.screenshot,
   }));
 
-  return { heading, meta, integrations };
+  return { heading, meta, integrations, schema };
 };

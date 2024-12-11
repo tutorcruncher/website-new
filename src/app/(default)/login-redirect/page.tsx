@@ -14,7 +14,7 @@ const LoginRedirectPage = () => {
       if (
         window.dataLayer &&
         window.dataLayer.some(
-          (event: Record<string, any>) => event.event === "gtm.js"
+          (event: Record<string, string>) => event.event === "gtm.js"
         )
       ) {
         window.location.href = "https://secure.tutorcruncher.com/";
@@ -28,8 +28,8 @@ const LoginRedirectPage = () => {
 
   return (
     <p className="text-center">
-      Redirecting you to TutorCruncher’s login page. If that doesn't happen,
-      please click here.
+      Redirecting you to TutorCruncher’s login page. If that doesn&apos;t
+      happen, please click here.
     </p>
   );
 };

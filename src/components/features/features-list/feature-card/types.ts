@@ -1,7 +1,7 @@
-import { Image } from "@/types/image";
+import { ImageField } from "@prismicio/types";
 
 export interface FeatureCardProps {
-  icon: Image;
+  icon: ImageField;
   title: string;
   intro: string;
   onClick: () => void;

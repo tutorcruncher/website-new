@@ -18,6 +18,8 @@ $header-height: 75px;
     cursor: pointer;
 
     svg {
+      margin-left: grid(1);
+      margin-top: grid(1);
       width: grid(4);
       height: auto;
       pointer-events: none;

@@ -1,12 +1,20 @@
 import { createClient } from "@/lib/prismic/prismicio";
 import { formatFeaturesLandingPage } from "./format/features";
+import { fetchSchema } from "./helpers";
 
 export const fetchFeaturesLandingPage = async () => {
   const client = createClient();
   try {
     const { data } = await client.getSingle("features");
-    const allFeatures = await client.getAllByType("feature");
-    return formatFeaturesLandingPage(data, allFeatures);
+    const allFeatures = await client.getAllByType("feature", {
+      orderings: {
+        field: "my.feature.order",
+        direction: "desc",
+      },
+    });
+    // @ts-expect-error - TODO
+    const schema = await fetchSchema(data.schema);
+    return formatFeaturesLandingPage(data, allFeatures, schema);
   } catch (error) {
     console.error("Error fetching integrations:", error);
   }

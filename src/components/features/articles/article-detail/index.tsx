@@ -1,4 +1,3 @@
-import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 
 import { LatestPosts } from "@/components/Posts/LatestPosts";

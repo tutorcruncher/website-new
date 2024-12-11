@@ -1,11 +1,10 @@
-import Image from "next/image";
-
 import { Action } from "../../ui/action";
 import { Heading } from "../../ui/heading";
 import styles from "./home-page-hero.module.scss";
 import TrackingLink from "@/components/ui/tracking-link/tracking-link";
+import { PrismicNextImage } from "@prismicio/next";
 
-export const HomePageHero = ({ heading, intro }) => {
+export const HomePageHero = ({ heading, intro, heroImages }) => {
   return (
     <div className={styles.hero}>
       <div className={styles.inner}>
@@ -24,45 +23,19 @@ export const HomePageHero = ({ heading, intro }) => {
         </div>
         <div className={styles.animations}>
           <div className={styles.imageOne}>
-            <Image
-              src={"/img/home/hero-image-one.svg"}
-              width={233}
-              height={134}
-              alt=""
-            />
+            <PrismicNextImage field={heroImages[1].image} unoptimized />
           </div>
           <div className={styles.imageTwo}>
-            <Image
-              src={"/img/home/hero-image-two.png"}
-              width={150}
-              height={213}
-              alt=""
-            />
+            <PrismicNextImage field={heroImages[2].image} unoptimized />
           </div>
           <div className={styles.imageThree}>
-            <Image
-              src={"/img/home/hero-image-three.png"}
-              width={136}
-              height={151}
-              alt=""
-            />
+            <PrismicNextImage field={heroImages[3].image} unoptimized />
           </div>
           <div className={styles.imageFour}>
-            <Image
-              src={"/img/home/hero-image-four.svg"}
-              width={215}
-              height={171}
-              alt=""
-            />
+            <PrismicNextImage field={heroImages[4].image} unoptimized />
           </div>
           <div className={styles.imageWrapper}>
-            <Image
-              src={"/img/home/home-hero-placeholder.jpg"}
-              width={396}
-              height={494}
-              alt=""
-              priority
-            />
+            <PrismicNextImage field={heroImages[0].image} loading="eager" />
           </div>
         </div>
       </div>

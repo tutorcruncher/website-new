@@ -43,7 +43,7 @@ const TrimmedRichText = ({ content }) => {
 
 export const Post = ({ post }: { post: ArticleDocument }) => {
   const { data } = post;
-  // @ts-expect-error
+  // @ts-expect-error - category does not exist on the article by standard
   const category = data.category?.data?.title;
   return (
     <Link

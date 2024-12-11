@@ -2,10 +2,11 @@ import clsx from "clsx";
 import type { ReactNode } from "react";
 
 import styles from "./body.module.scss";
+import { BackgroundColour } from "@/types/backgroundColor";
 
 export interface BodyProps {
   children?: ReactNode;
-  background?: "white" | "cream" | "blue";
+  background?: BackgroundColour;
   spacing?: "none" | "small" | "medium" | "large";
   containerSize?: "small" | "medium" | "large" | "screenWidth";
   heading?: ReactNode;

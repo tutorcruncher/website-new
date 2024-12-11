@@ -57,8 +57,11 @@ $font-size--large: 18px;
 $font-size--xlarge: 20px;
 $font-size--xxlarge: 24px;
 
-// Typeface
+// Icon filter
+$icon-filter: brightness(0) saturate(100%) invert(16%) sepia(11%)
+  saturate(2718%) hue-rotate(169deg) brightness(99%) contrast(88%);
 
+// Typeface
 $font-secondary:
   halyard-display,
   -apple-system,

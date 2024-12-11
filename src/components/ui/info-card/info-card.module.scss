@@ -13,11 +13,14 @@
     border-color: $navy-blue;
   }
 
-  .iconWrapper {
+  .imageWrapper {
     img {
       width: auto;
       height: 50px;
       border-radius: grid(2);
+    }
+    &.withImageFilter {
+      filter: $icon-filter;
     }
   }
 
@@ -25,5 +28,29 @@
     margin: 0;
     margin-top: grid(4);
     line-height: normal;
+  }
+
+  &.variant-feature {
+    display: flex;
+    flex-direction: column;
+    padding: grid(10);
+    justify-content: center;
+    width: 100%;
+    min-height: 200px;
+
+    .heading {
+      max-width: 300px;
+      margin: auto;
+    }
+    .imageWrapper {
+      display: block;
+      margin: 0 auto;
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 0;
+      }
+    }
   }
 }

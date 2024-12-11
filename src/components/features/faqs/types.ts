@@ -1,3 +1,4 @@
+import { BackgroundColour } from "@/types/backgroundColor";
 import React from "react";
 
 export interface IFaq {
@@ -7,4 +8,5 @@ export interface IFaq {
 
 export interface IFaqsProps {
   faqs: IFaq[];
+  background: BackgroundColour;
 }

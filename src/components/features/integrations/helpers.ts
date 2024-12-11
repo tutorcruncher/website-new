@@ -4,10 +4,10 @@ export function groupIntegrationsByCategory(
   items: Integration[],
 ): Record<string, Integration[]> {
   const customOrder = [
-    "Payments",
-    "Online Classrooms",
-    "Integrations",
-    "Single Sign Ons",
+        "Payments",
+        "Online Classrooms",
+        "Accounting Platforms",
+        "Other Integrations"
   ];
 
   const groupedItems = items.reduce(

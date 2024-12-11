@@ -21,15 +21,28 @@
           "label": "UID"
         }
       },
+      "optional_extras": {
+        "type": "Group",
+        "config": {
+          "label": "Optional Extras",
+          "repeat": true,
+          "fields": {
+            "extra": {
+              "type": "Link",
+              "config": {
+                "label": "Extra",
+                "select": "document",
+                "customtypes": ["optional_extra"]
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "info_box_list": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },
@@ -58,6 +71,14 @@
           "thumbnails": []
         },
         "type": "Image"
+      },
+      "schema": {
+        "type": "Link",
+        "config": {
+          "label": "Schema",
+          "select": "document",
+          "customtypes": ["schema"]
+        }
       }
     }
   }

@@ -1,8 +1,10 @@
-import { Image } from "@/types/image";
+import { ImageField } from "@prismicio/client";
 
 export interface InfoCardProps {
-  icon: Image;
   title: string;
-  intro: string;
+  icon?: ImageField;
+  intro?: string;
+  variant?: "default" | "feature";
+  imageFilter?: boolean;
   onClick: () => void;
 }

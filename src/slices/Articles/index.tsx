@@ -5,6 +5,8 @@ import type { JSX } from "react";
 
 import { LatestPosts } from "@/components/Posts/LatestPosts";
 import { createClient } from "@/lib/prismic/prismicio";
+import { ArticleDocument } from "../../../prismicio-types";
+import { backgroundColor } from "@/helpers/backgroundColor";
 
 export type ArticlesProps = SliceComponentProps<Content.ArticlesSlice>;
 
@@ -23,6 +25,7 @@ const Articles = async ({
 }: ArticlesProps): Promise<JSX.Element | null> => {
   const client = createClient();
   const { variation, primary } = slice;
+  const background = backgroundColor(slice.primary.background_colour);
 
   if (variation === "articlesByCategory") {
     const { results } = await client.getByType("article", {
@@ -37,6 +40,7 @@ const Articles = async ({
         title={primary.heading}
         posts={results}
         showAllBtn={primary.show_all_button}
+        background={background}
       />
     );
   }
@@ -50,8 +54,9 @@ const Articles = async ({
   return (
     <LatestPosts
       title={primary.heading}
-      posts={posts}
+      posts={posts as ArticleDocument<string>[]}
       showAllBtn={primary.show_all_button}
+      background={background}
     />
   );
 };

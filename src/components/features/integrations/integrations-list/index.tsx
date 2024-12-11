@@ -1,6 +1,5 @@
 "use client";
 import clsx from "clsx";
-import Image from "next/image";
 import { useState } from "react";
 
 import { Body } from "@/components/ui/body";
@@ -11,6 +10,7 @@ import { groupIntegrationsByCategory } from "../helpers";
 import { Integration, IntegrationsProps } from "../types";
 import styles from "./integrations-list.module.scss";
 import { InfoCard } from "@/components/ui/info-card";
+import { PrismicNextImage } from "@prismicio/next";
 
 export const IntegrationsList = ({ integrations }: IntegrationsProps) => {
   const groupedIntegrations = groupIntegrationsByCategory(integrations);
@@ -53,23 +53,18 @@ export const IntegrationsList = ({ integrations }: IntegrationsProps) => {
         <Modal isOpen={true} onClose={closeModal}>
           {selectedIntegration && (
             <div className={styles.integrationModal}>
-              <Image
-                src={selectedIntegration.logo.url}
-                width={selectedIntegration.logo.width}
-                height={selectedIntegration.logo.height}
-                alt={selectedIntegration.logo.alt}
+              <PrismicNextImage
+                field={selectedIntegration.logo}
                 className={styles.logo}
               />
+
               <Heading size="small" variant="h2" noMargin>
                 {selectedIntegration.title}
               </Heading>
               <div>{selectedIntegration.content}</div>
               {selectedIntegration?.screenshot ? (
-                <Image
-                  src={selectedIntegration.screenshot.url}
-                  width={selectedIntegration.screenshot.width}
-                  height={selectedIntegration.screenshot.height}
-                  alt={selectedIntegration.screenshot.alt}
+                <PrismicNextImage
+                  field={selectedIntegration.screenshot}
                   className={styles.screenshot}
                 />
               ) : null}

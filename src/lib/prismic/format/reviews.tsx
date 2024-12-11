@@ -10,6 +10,7 @@ import { formatTestimonials } from "./testimonials";
 export const formatReviewsPage = (
   data: Simplify<ReviewsDocumentData>,
   allTestimonials: Simplify<TestimonialDocument>[],
+  schema
 ) => {
   const heading = <PrismicRichText field={data.heading} />;
 
@@ -20,5 +21,5 @@ export const formatReviewsPage = (
 
   const testimonials = formatTestimonials(allTestimonials);
 
-  return { heading, meta, testimonials };
+  return { heading, meta, testimonials, schema };
 };

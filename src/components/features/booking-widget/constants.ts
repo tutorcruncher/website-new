@@ -1302,4 +1302,4 @@ export const COUNTRIES_CURRENCIES = {
   },
 };
 
-export const DEFAULT_SALES_PERSON_ID = 13;
+export const DEFAULT_SALES_PERSON_ID = 1;

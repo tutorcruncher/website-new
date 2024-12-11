@@ -1,7 +1,10 @@
 .cards {
   display: grid;
   gap: grid(10);
+  row-gap: grid(12);
   flex-direction: column;
+  max-width: 1080px;
+  margin: 0 auto;
 
   @include sm-display {
     grid-template-columns: repeat(2, 1fr);

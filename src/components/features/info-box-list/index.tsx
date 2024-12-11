@@ -1,6 +1,5 @@
 "use client";
 import clsx from "clsx";
-import Image from "next/image";
 import { useState } from "react";
 
 import { Body } from "@/components/ui/body";
@@ -11,8 +10,13 @@ import styles from "./info-box-list.module.scss";
 import { InfoCard } from "@/components/ui/info-card";
 import { Feature, InfoBoxListProps } from "./types";
 import { ArrowLink } from "@/components/ui/arrow-link";
+import { PrismicNextImage } from "@prismicio/next";
 
-export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
+export const InfoBoxList = ({
+  title,
+  features,
+  background,
+}: InfoBoxListProps) => {
   const [selectedItem, setSelectedItem] = useState<Feature | null>(null);
 
   const handleCardClick = (integration) => {
@@ -22,9 +26,10 @@ export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
   const closeModal = () => {
     setSelectedItem(null);
   };
+
   return (
     <>
-      <Body>
+      <Body background={background}>
         <Heading variant="h2" className={styles.title} center>
           {title}
         </Heading>
@@ -34,24 +39,22 @@ export const InfoBoxList = ({ title, features }: InfoBoxListProps) => {
               key={integration.title}
               title={integration.title}
               icon={integration.icon}
-              intro={integration.intro}
+              variant="feature"
               onClick={() => handleCardClick(integration)}
+              imageFilter
             />
           ))}
         </div>
         <div className="animate">
-          <ArrowLink text="Link to all features" href="/features" />
+          <ArrowLink text="View all features" href="/features" />
         </div>
       </Body>
       {selectedItem ? (
         <Modal isOpen={true} onClose={closeModal}>
           <div className={styles.modal}>
             {selectedItem.icon ? (
-              <Image
-                src={selectedItem.icon.url}
-                width={selectedItem.icon.width}
-                height={selectedItem.icon.height}
-                alt={selectedItem.icon.alt}
+              <PrismicNextImage
+                field={selectedItem.icon}
                 className={styles.icon}
               />
             ) : null}

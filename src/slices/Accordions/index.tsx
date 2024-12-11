@@ -1,7 +1,6 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@prismicio/react";
-import { prismicToNextImage } from "helpers/prismicToNextImage";
 import type { JSX } from "react";
 
 import { AccordionsList } from "@/components/features/accordions/accordions-list";
@@ -19,7 +18,6 @@ const Accordions = ({ slice }: AccordionsProps): JSX.Element => {
     return {
       ...item,
       content: <PrismicRichText field={item.content} />,
-      image: prismicToNextImage(item.image),
     };
   });
 

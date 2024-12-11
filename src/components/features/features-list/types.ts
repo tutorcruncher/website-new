@@ -1,10 +1,10 @@
-import { Image } from "@/types/image";
+import { ImageField } from "@prismicio/client";
 
 export interface FeaturesListProps {
   features: {
     title: string;
     url: string;
     listText: string;
-    listImage: Image;
+    listImage: ImageField;
   }[];
 }

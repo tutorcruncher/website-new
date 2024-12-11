@@ -1,5 +1,4 @@
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { prismicToNextImage } from "helpers/prismicToNextImage";
 import type { JSX } from "react";
 
 import { AlternatingGrid as AlternatingGridComponent } from "@/components/features/alternating-grid";
@@ -20,10 +19,8 @@ const AlternatingGrid = ({ slice }: TextImageGridProps): JSX.Element => {
     return {
       ...item,
       content: <PrismicRichText field={item.content} />,
-      image: {
-        ...prismicToNextImage(item.image),
-        position: item.image_postion,
-      },
+      image: item.image,
+      imagePosition: item.image_postion,
       button:
         item.button_text && item.button_link
           ? {

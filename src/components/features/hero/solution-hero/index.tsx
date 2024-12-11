@@ -34,7 +34,9 @@ export const SolutionHero = ({ heading, pricingTier, intro }: HeroProps) => {
   useEffect(() => {
     const fetchRegion = async () => {
       try {
-        const response = await fetch("/api/region");
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
+        );
         const { country_code } = await response.json();
         const fetchedRegion = regions.find(
           (region) => region.region_code === country_code.toLowerCase()

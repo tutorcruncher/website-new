@@ -4,12 +4,14 @@ import { Heading } from "@/components/ui/heading";
 
 import { Posts } from "..";
 import styles from "./latestPosts.module.scss";
+import { ArticleDocument } from "../../../../prismicio-types";
+import { BackgroundColour } from "@/types/backgroundColor";
 
 interface LatestPostsProps {
-  posts: any[];
+  posts: ArticleDocument[];
   title: string;
   showAllBtn?: boolean;
-  background?: "blue" | "cream";
+  background?: BackgroundColour;
 }
 
 export const LatestPosts = ({

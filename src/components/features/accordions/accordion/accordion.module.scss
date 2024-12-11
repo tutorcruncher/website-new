@@ -40,6 +40,7 @@
     img {
       max-width: 100%;
       height: auto;
+      padding: 0 grid(10) grid(10);
     }
   }
 
@@ -84,6 +85,7 @@
         object-fit: contain;
         position: relative;
         z-index: 2;
+        padding: grid(20);
       }
     }
 

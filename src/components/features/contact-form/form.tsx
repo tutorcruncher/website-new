@@ -34,7 +34,7 @@ export const Form = () => {
     setIsSubmitted(false);
     setErrorMessage("");
     try {
-      // @ts-ignore
+      // @ts-expect-error -- TODO
       const recaptchaValue = recaptchaRef.current.getValue();
       const data = {
         client_name: formData.client_name,
@@ -70,7 +70,7 @@ export const Form = () => {
       } else {
         setErrorMessage("Failed to submit the form. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setErrorMessage("Error submitting form. Please try again later.");
     }
   };
