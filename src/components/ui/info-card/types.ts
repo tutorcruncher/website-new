@@ -5,5 +5,6 @@ export interface InfoCardProps {
   icon?: ImageField;
   intro?: string;
   variant?: "default" | "feature";
+  imageFilter?: boolean;
   onClick: () => void;
 }

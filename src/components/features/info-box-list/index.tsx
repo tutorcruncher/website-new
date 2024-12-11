@@ -41,6 +41,7 @@ export const InfoBoxList = ({
               icon={integration.icon}
               variant="feature"
               onClick={() => handleCardClick(integration)}
+              imageFilter
             />
           ))}
         </div>
@@ -52,7 +53,10 @@ export const InfoBoxList = ({
         <Modal isOpen={true} onClose={closeModal}>
           <div className={styles.modal}>
             {selectedItem.icon ? (
-              <PrismicNextImage field={selectedItem.icon} />
+              <PrismicNextImage
+                field={selectedItem.icon}
+                className={styles.icon}
+              />
             ) : null}
             <Heading size="small" variant="h2" noMargin>
               {selectedItem.title}

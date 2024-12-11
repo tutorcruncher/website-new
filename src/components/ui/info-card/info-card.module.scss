@@ -19,6 +19,9 @@
       height: 50px;
       border-radius: grid(2);
     }
+    &.withImageFilter {
+      filter: $icon-filter;
+    }
   }
 
   p {

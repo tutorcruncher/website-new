@@ -43,6 +43,7 @@ export const OptionalExtrasList = ({ optionalExtras }) => {
                   icon={optionalExtra.image}
                   onClick={() => handleCardClick(optionalExtra)}
                   variant="feature"
+                  imageFilter
                 />
               ))}
             </div>

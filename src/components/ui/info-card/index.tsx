@@ -11,6 +11,7 @@ export const InfoCard = ({
   title,
   intro,
   variant = "default",
+  imageFilter = false,
   onClick,
 }: InfoCardProps) => {
   const classes = clsx(styles.infoCard, styles[`variant-${variant}`]);
@@ -18,7 +19,12 @@ export const InfoCard = ({
   return (
     <button type="button" onClick={onClick} className={classes}>
       {icon && icon?.url ? (
-        <div className={styles.imageWrapper}>
+        <div
+          className={clsx(
+            styles.imageWrapper,
+            imageFilter && styles.withImageFilter
+          )}
+        >
           <Image src={icon.url} width={100} height={100} alt={icon.alt} />
         </div>
       ) : null}
