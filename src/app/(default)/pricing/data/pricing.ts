@@ -8,10 +8,16 @@ export const TIERS = [
       {
         heading: "Payment Fees",
         features: [
-          "Offline payments 1% (Charges & invoices not processed with our payment system but logged on the system)",
-          "Online payments 2.65% (Charges processed with our payment system)",
+          "Standard UK card fees 2.65%",
         ],
         regions: ["gb"],
+      },
+      {
+        heading: "Payment Fees",
+        features: [
+          "Payment fees 1%",
+        ],
+        regions: ["eu", "au", "us", "ca"],
       },
       {
         heading: "First Class Customer Support",
@@ -60,10 +66,16 @@ export const TIERS = [
       {
         heading: "Payment Fees",
         features: [
-          "Offline payments 1% (Charges & invoices not processed with our payment system but logged on the system)",
-          "Online payments 2.3% (Charges processed with our payment system)",
+          "Standard UK card fees 2.3%",
         ],
         regions: ["gb"],
+      },
+      {
+        heading: "Payment Fees",
+        features: [
+          "Payment fees 0.65%",
+        ],
+        regions: ["eu", "au", "us", "ca"],
       },
       {
         heading: "First Class Customer Support",
@@ -121,7 +133,7 @@ export const TIERS = [
       {
         heading: "Payment Fees",
         features: ["Competitive rates for high-volume merchants"],
-        regions: ["gb"],
+        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "First Class Customer Support",

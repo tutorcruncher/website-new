@@ -30,7 +30,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     );
   }
 
-  return <HeroComponent heading={headingText} headingVariant="div" />;
+  return <HeroComponent heading={headingText} intro={intro} headingVariant="div" />
 };
 
 export default Hero;

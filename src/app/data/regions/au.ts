@@ -1,7 +1,7 @@
 export const au = {
   name: "Australian",
   region_code: "au",
-  currency: "$",
+  currency: "A$",
   currency_code: "AUD",
   pricing: {
     payg: { revenue_percentage: 1, base_price: 45 },

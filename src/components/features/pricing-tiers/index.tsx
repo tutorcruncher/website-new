@@ -36,11 +36,6 @@ const TierPricing = ({ tier, region }) => {
     <div className={styles.pricing}>
       <PricingHeader />
       <PricingDetails />
-      {region.region_code !== "gb" && (
-        <span className={styles.additional}>
-          + {pricing.revenue_percentage}% revenue fee
-        </span>
-      )}
     </div>
   );
 };
