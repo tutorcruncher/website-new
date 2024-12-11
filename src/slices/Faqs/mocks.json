@@ -39,6 +39,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "Blue",
 				"type": "Select"
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "riding",
+				"type": "Text"
 			}
 		},
 		"items": []

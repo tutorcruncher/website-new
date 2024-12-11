@@ -2127,6 +2127,16 @@ export interface FaqsSliceDefaultPrimaryFaqsItem {
  */
 export interface FaqsSliceDefaultPrimary {
   /**
+   * Title field in *Faqs → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faqs.default.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
    * Background colour field in *Faqs → Default → Primary*
    *
    * - **Field Type**: Select

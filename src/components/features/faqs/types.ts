@@ -7,6 +7,7 @@ export interface IFaq {
 }
 
 export interface IFaqsProps {
+  title: string;
   faqs: IFaq[];
   background: BackgroundColour;
 }

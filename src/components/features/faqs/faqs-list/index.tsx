@@ -5,14 +5,14 @@ import { Faq } from "../faq";
 import { IFaqsProps } from "../types";
 import styles from "./faqs-list.module.scss";
 
-export const FaqsList = ({ faqs, background }: IFaqsProps) => {
+export const FaqsList = ({ title, faqs, background }: IFaqsProps) => {
   return (
     <Body
       containerSize="small"
       background={background}
       heading={
         <Heading variant="h2" center>
-          Frequently Asked Questions
+          {title}
         </Heading>
       }
     >

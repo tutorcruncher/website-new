@@ -16,6 +16,7 @@ export type FaqsProps = SliceComponentProps<Content.FaqsSlice>;
 const Faqs = async ({ slice }: FaqsProps): Promise<JSX.Element> => {
   const faqs = slice.primary.faqs;
   const background = backgroundColor(slice.primary.background_colour);
+  const title = slice.primary.title || "Frequently Asked Questions";
   const formattedFaqs = faqs.map((faq) => {
     return {
       question: faq.question,
@@ -28,7 +29,7 @@ const Faqs = async ({ slice }: FaqsProps): Promise<JSX.Element> => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <FaqsList faqs={formattedFaqs} background={background} />
+      <FaqsList faqs={formattedFaqs} background={background} title={title} />
     </section>
   );
 };
