@@ -1,22 +1,57 @@
 const blogRedirects = [
   {
+    source: '/how-to-start-a-tutoring-business',
+    destination: '/blog/how-to-start-a-tutoring-business',
+    permanent: true,
+  },
+  {
+    source: '/expand-tutoring-business',
+    destination: '/blog/expand-tutoring-business',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-business-growth',
+    destination: '/blog/tutoring-business-growth',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-business-plan',
+    destination: '/blog/tutoring-business-plan',
+    permanent: true,
+  },
+  {
     source: '/tutoring-business-plan/',
     destination: '/blog/tutoring-business-plan',
     permanent: true,
   },
   {
     source: '/starting-tutor-business/tutoring-strategies',
-    destination: '/solutions/payg',
+    destination: '/blog/tutoring-strategies',
     permanent: true,
   },
   {
     source: '/getting-paid/how-to-market-yourself-better-as-a-tutor',
-    destination: '/features/payment-integrations',
+    destination: '/blog/how-to-market-yourself-better-as-a-tutor',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-online/creating-a-positive-learning-environment',
+    destination: '/blog/creating-a-positive-learning-environment',
+    permanent: true,
+  },
+  {
+    source: '/online-tutoring-platforms',
+    destination: '/blog/online-tutoring-platforms',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-online/new-online-whiteboard-options',
+    destination: '/blog/new-online-whiteboard-options',
     permanent: true,
   },
   {
     source: '/starting-tutor-business/how-to-structure-a-tutoring-session',
-    destination: '/solutions/payg',
+    destination: '/blog/how-to-structure-a-tutoring-session',
     permanent: true,
   },
   {
@@ -100,11 +135,6 @@ const blogRedirects = [
     permanent: true,
   },
   {
-    source: '/getting-paid/how-to-market-yourself-better-as-a-tutor/',
-    destination: '/blog/how-to-market-yourself-better-as-a-tutor',
-    permanent: true,
-  },
-  {
     source: '/business-growth/social-media-strategy-for-tutoring-businesses/',
     destination: '/solutions/startup',
     permanent: true,
@@ -146,6 +176,11 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/whiteboard/',
+    destination: '/integrations',
+    permanent: true,
+  },
+  {
+    source: '/us/features/online-whiteboard/',
     destination: '/integrations',
     permanent: true,
   },
@@ -251,12 +286,17 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/where-to-advertise-tutoring-services/',
-    destination: '/blog/where-to-advertise-tutoring-services',
+    destination: '/blog/tutoring-online-where-to-advertise-tutoring-services',
     permanent: true,
   },
   {
     source: '/remote-teaching-tips/',
     destination: '/blog/remote-teaching-tips',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-online/why-continuing-your-childs-education-is-more-important-now-than-ever',
+    destination: '/blog/why-continuing-your-childs-education-is-more-important-now-than-ever',
     permanent: true,
   },
   {
@@ -340,6 +380,21 @@ const blogRedirects = [
     permanent: true,
   },
   {
+    source: '/average-tutoring-rates-uk',
+    destination: '/blog/average-tutoring-rates-uk',
+    permanent: true,
+  },
+  {
+    source: '/average-tutoring-rates',
+    destination: '/blog/average-tutoring-rates',
+    permanent: true,
+  },
+  {
+    source: '/best-online-whiteboards',
+    destination: '/blog/best-online-whiteboards',
+    permanent: true,
+  },
+  {
     source: '/tutor-management-software/5-tips-for-starting-a-tutoring-agency-in-2020/',
     destination: '/blog/how-to-start-a-tutoring-business',
     permanent: true,
@@ -405,8 +460,13 @@ const blogRedirects = [
     permanent: true,
   },
   {
+    source: '/tutoring-online/where-to-advertise-tutoring-services',
+    destination: '/blog/where-to-advertise-tutoring-services',
+    permanent: true,
+  },
+  {
     source: '/business-growth/stimulating-learning-environment',
-    destination: '/solutions/startup',
+    destination: '/blog/tutoring-online-creating-a-positive-learning-environment',
     permanent: true,
   },
   {
@@ -421,7 +481,7 @@ const blogRedirects = [
   },
   {
     source: '/starting-tutor-business/online-teaching-skills',
-    destination: '/solutions/payg',
+    destination: '/blog/online-teaching-skills',
     permanent: true,
   },
   {
@@ -435,8 +495,13 @@ const blogRedirects = [
     permanent: true,
   },
   {
+    source: '/tutoring-online/tutoring-signs',
+    destination: '/blog/tutoring-signs',
+    permanent: true,
+  },
+  {
     source: '/starting-tutor-business/tutoring-side-hustle',
-    destination: '/solutions/payg',
+    destination: '/blog/tutoring-side-hustle',
     permanent: true,
   },
   {
@@ -462,6 +527,21 @@ const blogRedirects = [
   {
     source: '/benefits-of-tutor-management-software/',
     destination: '/blog/benefits-of-tutor-management-software',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-online/how-to-become-a-certified-tutor',
+    destination: '/blog/how-to-become-a-certified-tutor',
+    permanent: true,
+  },
+  {
+    source: '/tutor-bio-example',
+    destination: '/blog/tutor-bio-example',
+    permanent: true,
+  },
+  {
+    source: '/tutor-online-vs-in-person',
+    destination: '/blog/tutor-online-vs-in-person',
     permanent: true,
   },
   {
@@ -495,11 +575,6 @@ const blogRedirects = [
     permanent: true,
   },
   {
-    source: '/crm/what-makes-a-great-tutor/',
-    destination: '/features/tutor-client-student-management',
-    permanent: true,
-  },
-  {
     source: '/tutor-management-software/calendar/',
     destination: '/',
     permanent: true,
@@ -522,6 +597,91 @@ const blogRedirects = [
   {
     source: '/online-tutoring-tips/',
     destination: '/blog/online-tutoring-tips',
+    permanent: true,
+  },
+  {
+    source: '/getting-paid/how-to-market-yourself-better-as-a-tutor/',
+    destination: '/blog/how-to-market-yourself-as-a-tutor-10-helpful-tips',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-online/tips-for-tutors-online-tutoring-best-practice/',
+    destination: '/blog/online-tutoring-tips',
+    permanent: true,
+  },
+  {
+    source: '/business-growth/how-to-start-a-tutoring-agency/',
+    destination: '/blog/how-to-start-a-nanny-agency',
+    permanent: true,
+  },
+  {
+    source: '/find-a-tutor/',
+    destination: '/blog/tutoring-online-where-to-advertise-tutoring-services',
+    permanent: true,
+  },
+  {
+    source: '/business-growth/legal-implications-when-starting-a-tutoring-business/',
+    destination: '/blog/legal-requirements-for-tutoring-business',
+    permanent: true,
+  },
+  {
+    source: '/business-growth/stimulating-learning-environment/',
+    destination: '/blog/tutoring-online-creating-a-positive-learning-environment',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-online/mock-gcse-and-a-level-exams-2021-what-should-you-expect/',
+    destination: '/',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-online/what-is-the-true-cost-of-tutoring-in-the-uk/',
+    destination: '/blog/average-tutoring-rates-uk',
+    permanent: true,
+  },
+  {
+    source: '/business-growth/marketing-strategies-tutoring-agencies/',
+    destination: '/blog/how-to-market-yourself-as-a-tutor-10-helpful-tips',
+    permanent: true,
+  },
+  {
+    source: '/business-growth/private-tuition-market-in-the-uk-overview/',
+    destination: '/blog/average-tutoring-rates-uk',
+    permanent: true,
+  },
+  {
+    source: '/starting-tutor-business/5-tips-for-starting-a-tutoring-agency-in-2020/',
+    destination: '/blog/how-to-start-a-tutoring-business',
+    permanent: true,
+  },
+  {
+    source: '/tutor-management-software/top-ten-most-popular-online-whiteboards-2019/',
+    destination: '/blog/best-online-whiteboards',
+    permanent: true,
+  },
+  {
+    source: '/companies/',
+    destination: '/blog/tutoring-online-where-to-advertise-tutoring-services',
+    permanent: true,
+  },
+  {
+    source: '/crm/what-makes-a-great-tutor/',
+    destination: '/blog/how-to-be-a-better-tutor',
+    permanent: true,
+  },
+  {
+    source: '/business-growth/tutoring-company-marketing/',
+    destination: '/',
+    permanent: true,
+  },
+  {
+    source: '/starting-tutor-business/onboarding-processes/',
+    destination: '/',
+    permanent: true,
+  },
+  {
+    source: '/business-growth/business-coaching-101/',
+    destination: '/blog/tutor-online-vs-in-person',
     permanent: true,
   },
 ];
