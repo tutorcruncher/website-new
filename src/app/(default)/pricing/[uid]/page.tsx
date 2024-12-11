@@ -27,7 +27,7 @@ const PricingPage = async ({ params }) => {
       {/* {optionalExtras.length !== 0 ? (
         <OptionalExtrasList optionalExtras={optionalExtras} />
       ) : null} */}
-      <SliceZone slices={slices} components={components} />;
+      <SliceZone slices={slices} components={components} />
     </>
   );
 };
