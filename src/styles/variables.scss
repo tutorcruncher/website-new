@@ -57,9 +57,9 @@ $font-size--large: 18px;
 $font-size--xlarge: 20px;
 $font-size--xxlarge: 24px;
 
-// Icon filter
-$icon-filter: brightness(0) saturate(100%) invert(16%) sepia(11%)
-  saturate(2718%) hue-rotate(169deg) brightness(99%) contrast(88%);
+// Icon filter, use https://angel-rs.github.io/css-color-filter-generator/ to generate
+$icon-filter: brightness(0) saturate(100%) invert(19%) sepia(17%)
+  saturate(1484%) hue-rotate(168deg) brightness(94%) contrast(94%);
 
 // Typeface
 $font-secondary:
