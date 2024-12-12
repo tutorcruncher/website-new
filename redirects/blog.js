@@ -21,12 +21,12 @@ const blogRedirects = [
   },
   {
     source: '/starting-tutor-business/tutoring-strategies',
-    destination: '/blog/tutoring-strategies',
+    destination: '/blog/10-effective-tutoring-strategies-techniques-for-successful-learning',
     permanent: true,
   },
   {
     source: '/tutoring-online/creating-a-positive-learning-environment',
-    destination: '/blog/creating-a-positive-learning-environment',
+    destination: '/blog/tutoring-online-creating-a-positive-learning-environment',
     permanent: true,
   },
   {
@@ -41,7 +41,7 @@ const blogRedirects = [
   },
   {
     source: '/starting-tutor-business/how-to-structure-a-tutoring-session',
-    destination: '/blog/how-to-structure-a-tutoring-session',
+    destination: '/blog/how-to-structure-a-tutoring-session-in-7-easy-steps',
     permanent: true,
   },
   {
@@ -71,7 +71,7 @@ const blogRedirects = [
   },
   {
     source: '/business-growth/interview-tutors-for-tutoring-company',
-    destination: '/blog/interview-tutors-for-tutoring-company',
+    destination: '/blog/business-growth-interview-tutors-for-tutoring-company',
     permanent: true,
   },
   {
@@ -81,7 +81,7 @@ const blogRedirects = [
   },
   {
     source: '/business-growth/how-to-continue-growing-your-tutoring-business-2020-tutoring-market-trends',
-    destination: '/blog/how-to-continue-growing-your-tutoring-business-2020-tutoring-market-trends',
+    destination: '/blog/how-to-continue-growing-your-tutoring-business-tutoring-market-trends',
     permanent: true,
   },
   {
@@ -111,7 +111,7 @@ const blogRedirects = [
   },
   {
     source: '/starting-tutor-business/5-social-media-tips-to-you-help-kick-start-your-online-presence',
-    destination: '/blog/5-social-media-tips-to-you-help-kick-start-your-online-presence',
+    destination: '/blog',
     permanent: true,
   },
   {
@@ -186,7 +186,7 @@ const blogRedirects = [
   },
   {
     source: '/starting-tutor-business/tutor-matching',
-    destination: '/blog/tutor-matching',
+    destination: '/blog/starting-tutor-business-tutor-matching',
     permanent: true,
   },
   {
@@ -211,7 +211,7 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/why-continuing-your-childs-education-is-more-important-now-than-ever',
-    destination: '/blog/why-continuing-your-childs-education-is-more-important-now-than-ever',
+    destination: '/blog/why-continuing-your-child-s-education-is-more-important-now-than-ever',
     permanent: true,
   },
   {
@@ -226,7 +226,7 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/a-beginners-guide-to-tutoring-online',
-    destination: '/blog/a-beginners-guide-to-tutoring-online',
+    destination: '/blog/how-to-tutor-online-a-best-practice-guide',
     permanent: true,
   },
   {
@@ -261,7 +261,7 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/high-dosage-tutoring',
-    destination: '/blog/high-dosage-tutoring',
+    destination: '/blog/tutoring-online-high-dosage-tutoring',
     permanent: true,
   },
   {
@@ -361,7 +361,7 @@ const blogRedirects = [
   },
   {
     source: '/starting-tutor-business/online-teaching-skills',
-    destination: '/blog/online-teaching-skills',
+    destination: '/blog/7-online-teaching-skills-worth-developing',
     permanent: true,
   },
   {
@@ -376,7 +376,7 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/tutoring-signs',
-    destination: '/blog/tutoring-signs',
+    destination: '/blog/tutoring-online-tutoring-signs',
     permanent: true,
   },
   {
@@ -411,7 +411,7 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/how-to-become-a-certified-tutor',
-    destination: '/blog/how-to-become-a-certified-tutor',
+    destination: '/blog/tutoring-online-how-to-become-a-certified-tutor',
     permanent: true,
   },
   {
