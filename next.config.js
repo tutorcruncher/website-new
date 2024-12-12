@@ -5,6 +5,7 @@ const integrationsRedirects = require("./redirects/integrations");
 const nextConfig = {
   env: {
     NEXT_PUBLIC_HERMES_BASE_URL: process.env.NEXT_PUBLIC_HERMES_BASE_URL || "https://hermes.tutorcruncher.com",
+    NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID || "GTM-MSTGZ73"
   },
   reactStrictMode: true,
   images: {

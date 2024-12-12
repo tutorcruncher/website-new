@@ -19,7 +19,7 @@ export default async function RootLayout({ children }) {
         <link rel="stylesheet" href="https://use.typekit.net/mnd5til.css" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <GoogleTagManager gtmId="GTM-M6QLN6V3" />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
       <body>
         <TrackingProvider>
           <CookieConsentBanner />
