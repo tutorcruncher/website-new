@@ -1,7 +1,7 @@
 const path = require("path");
 const integrationsRedirects = require("./redirects/integrations");
 const blogRedirects = require("./redirects/blog");
-const miscellaneousRedirects = require("./redirects/miscellaneousRedirects");
+const miscellaneousRedirects = require("./redirects/miscellaneous");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
