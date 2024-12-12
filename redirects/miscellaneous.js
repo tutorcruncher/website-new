@@ -29,12 +29,11 @@ const miscellaneousRedirects = [
     destination: '/book-a-call/2',
     permanent: true,
   },
-  // TODO - Ask Chris about this one
-  // {
-  //   source: '/help/',
-  //   destination: 'https://help.tutorcruncher.com/en/',
-  //   permanent: true,
-  // },
+  {
+    source: '/help',
+    destination: 'https://help.tutorcruncher.com/en/',
+    permanent: true,
+  },
 ]
 
 module.exports = miscellaneousRedirects;
