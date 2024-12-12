@@ -38,7 +38,9 @@ export const formatArticlePage = (
     updatedDate: data.updated_date
       ? new Date(data.updated_date)
       : new Date(data.publishDate),
-    featuredImage: <PrismicNextImage field={data.featured_image} />,
+    featuredImage: (
+      <PrismicNextImage field={data.featured_image} fallbackAlt="" />
+    ),
     featuredImageUrl: data.featured_image.url,
     category: {
       // @ts-expect-error - TODO

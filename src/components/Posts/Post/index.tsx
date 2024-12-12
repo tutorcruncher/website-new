@@ -52,7 +52,7 @@ export const Post = ({ post }: { post: ArticleDocument }) => {
       className={styles.postListItem}
     >
       <div className={styles.imageWrapper}>
-        <PrismicNextImage field={data.featured_image} />
+        <PrismicNextImage field={data.featured_image} fallbackAlt="" />
       </div>
       <div className={styles.inner}>
         <div className={styles.tags}>

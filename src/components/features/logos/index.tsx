@@ -26,6 +26,7 @@ export const Logos = ({ heading, logos }: LogosProps) => {
       <div className={styles.logos}>
         {logos.map((image, index) => (
           <PrismicNextImage
+            fallbackAlt=""
             field={image}
             key={index}
             className="animate"
