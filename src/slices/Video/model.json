@@ -1,7 +1,7 @@
 {
   "id": "youtube",
   "type": "SharedSlice",
-  "name": "Youtube",
+  "name": "Video",
   "description": "Youtube",
   "variations": [
     {
@@ -12,11 +12,19 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "youtube_id": {
+        "video_url": {
           "type": "Text",
           "config": {
-            "label": "Youtube ID",
-            "placeholder": "ID of the youtube video"
+            "label": "Video Url",
+            "placeholder": ""
+          }
+        },
+        "placeholder_image": {
+          "type": "Image",
+          "config": {
+            "label": "Placeholder Image",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

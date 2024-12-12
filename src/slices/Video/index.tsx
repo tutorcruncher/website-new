@@ -2,7 +2,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { JSX } from "react";
 
-import { Youtube as YoutubeComponent } from "@/components/features/youtube";
+import { VideoPlayerContainer } from "@/components/features/video";
 /**
  * Props for `Youtube`.
  */
@@ -17,7 +17,10 @@ const Youtube = ({ slice }: YoutubeProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <YoutubeComponent videoId={slice.primary.youtube_id} />
+      <VideoPlayerContainer
+        videoUrl={slice.primary.video_url}
+        placeholderImage={slice.primary.placeholder_image}
+      />
     </section>
   );
 };

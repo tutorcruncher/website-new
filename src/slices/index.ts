@@ -15,5 +15,5 @@ export const components = {
   team_list: dynamic(() => import("./TeamList")),
   testimonials: dynamic(() => import("./Testimonials")),
   text_image_grid: dynamic(() => import("./AlternatingGrid")),
-  youtube: dynamic(() => import("./Youtube")),
+  youtube: dynamic(() => import("./Video")),
 };

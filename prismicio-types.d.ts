@@ -3065,22 +3065,32 @@ export type TextImageGridSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Youtube → Default → Primary*
+ * Primary content in *Video → Default → Primary*
  */
 export interface YoutubeSliceDefaultPrimary {
   /**
-   * Youtube ID field in *Youtube → Default → Primary*
+   * Video Url field in *Video → Default → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: ID of the youtube video
-   * - **API ID Path**: youtube.default.primary.youtube_id
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube.default.primary.video_url
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  youtube_id: prismic.KeyTextField;
+  video_url: prismic.KeyTextField;
+
+  /**
+   * Placeholder Image field in *Video → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: youtube.default.primary.placeholder_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  placeholder_image: prismic.ImageField<never>;
 }
 
 /**
- * Default variation for Youtube Slice
+ * Default variation for Video Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -3093,12 +3103,12 @@ export type YoutubeSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *Youtube*
+ * Slice variation for *Video*
  */
 type YoutubeSliceVariation = YoutubeSliceDefault;
 
 /**
- * Youtube Shared Slice
+ * Video Shared Slice
  *
  * - **API ID**: `youtube`
  * - **Description**: Youtube
