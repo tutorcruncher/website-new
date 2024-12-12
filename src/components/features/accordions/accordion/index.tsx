@@ -44,7 +44,7 @@ export const Accordion = ({
       </div>
       {image ? (
         <div className={styles.imageWrapper}>
-          <PrismicNextImage field={image} />
+          <PrismicNextImage field={image} fallbackAlt="" />
         </div>
       ) : null}
     </div>

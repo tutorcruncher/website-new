@@ -23,19 +23,23 @@ export const HomePageHero = ({ heading, intro, heroImages }) => {
         </div>
         <div className={styles.animations}>
           <div className={styles.imageOne}>
-            <PrismicNextImage field={heroImages[1].image} unoptimized />
+            <PrismicNextImage field={heroImages[1].image} fallbackAlt="" />
           </div>
           <div className={styles.imageTwo}>
-            <PrismicNextImage field={heroImages[2].image} unoptimized />
+            <PrismicNextImage field={heroImages[2].image} fallbackAlt="" />
           </div>
           <div className={styles.imageThree}>
-            <PrismicNextImage field={heroImages[3].image} unoptimized />
+            <PrismicNextImage field={heroImages[3].image} fallbackAlt="" />
           </div>
           <div className={styles.imageFour}>
-            <PrismicNextImage field={heroImages[4].image} unoptimized />
+            <PrismicNextImage field={heroImages[4].image} fallbackAlt="" />
           </div>
           <div className={styles.imageWrapper}>
-            <PrismicNextImage field={heroImages[0].image} loading="eager" />
+            <PrismicNextImage
+              field={heroImages[0].image}
+              loading="eager"
+              fallbackAlt=""
+            />
           </div>
         </div>
       </div>

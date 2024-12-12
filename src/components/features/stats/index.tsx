@@ -24,7 +24,7 @@ export const Stats = ({ heading, stats }: StatsProps) => {
             className={clsx(styles.statsCard, "animate")}
             style={{ animationDelay: ` ${index * 0.2}s` }}
           >
-            <PrismicNextImage field={image} />
+            <PrismicNextImage field={image} fallbackAlt="" />
             <Heading size="small" variant="h3" noMargin>
               {percent}
             </Heading>

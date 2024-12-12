@@ -56,6 +56,7 @@ export const IntegrationsList = ({ integrations }: IntegrationsProps) => {
               <PrismicNextImage
                 field={selectedIntegration.logo}
                 className={styles.logo}
+                fallbackAlt=""
               />
 
               <Heading size="small" variant="h2" noMargin>
@@ -66,6 +67,7 @@ export const IntegrationsList = ({ integrations }: IntegrationsProps) => {
                 <PrismicNextImage
                   field={selectedIntegration.screenshot}
                   className={styles.screenshot}
+                  fallbackAlt=""
                 />
               ) : null}
             </div>

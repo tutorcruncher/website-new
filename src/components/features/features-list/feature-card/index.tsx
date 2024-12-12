@@ -12,7 +12,7 @@ export const FeatureCard = ({ icon, title, onClick }: FeatureCardProps) => {
     <button type="button" onClick={onClick} className={classes}>
       {icon?.url ? (
         <div className={styles.imageWrapper}>
-          <PrismicNextImage field={icon} />
+          <PrismicNextImage field={icon} fallbackAlt="" />
         </div>
       ) : null}
       <Heading size="xxsmall" className={styles.heading} variant="h2">

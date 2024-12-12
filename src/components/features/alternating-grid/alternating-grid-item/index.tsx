@@ -28,10 +28,7 @@ export const TextImageGridItem = ({
     >
       {image ? (
         <div className={styles.imageWrapper}>
-          <PrismicNextImage
-            field={image}
-            fallback={<p>The field is empty!</p>}
-          />
+          <PrismicNextImage field={image} fallbackAlt="" />
         </div>
       ) : null}
       <div className={styles.contentWrapper}>

@@ -12,11 +12,11 @@ export const Testimonial = ({
   return (
     <div className={styles.slide}>
       <div className={styles.logo}>
-        <PrismicNextImage field={companyLogo} />
+        <PrismicNextImage field={companyLogo} fallbackAlt="" />
       </div>
       <div className={styles.testimonial}>&#34;{shortTestimonial}&#34;</div>
       <div className={styles.cite}>
-        <PrismicNextImage field={reviewerImage} />
+        <PrismicNextImage field={reviewerImage} fallbackAlt="" />
         <div className={styles.info}>
           <p className={styles.name}>{reviewerName}</p>
           <p className={styles.role}>

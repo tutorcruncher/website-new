@@ -56,6 +56,7 @@ export const InfoBoxList = ({
               <PrismicNextImage
                 field={selectedItem.icon}
                 className={styles.icon}
+                fallbackAlt=""
               />
             ) : null}
             <Heading size="small" variant="h2" noMargin>
