@@ -1,31 +1,31 @@
 const miscellaneousRedirects = [
   {
-    source: "/us/",
+    source: "/us",
     destination: "/",
     permanent: true,
   },
   {
-    source: '/pricing/',
+    source: '/pricing',
     destination: '/pricing/gb',
     permanent: true,
   },
   {
-    source: '/us/features/tutorcruncher-socket/',
+    source: '/us/features/tutorcruncher-socket',
     destination: '/features/customization',
     permanent: true,
   },
   {
-    source: '/book-a-call/sam/',
+    source: '/book-a-call/sam',
     destination: '/book-a-call/1',
     permanent: true,
   },
   {
-    source: '/book-a-call/daniel/',
+    source: '/book-a-call/daniel',
     destination: '/book-a-call/1',
     permanent: true,
   },
   {
-    source: '/book-a-call/fionn/',
+    source: '/book-a-call/fionn',
     destination: '/book-a-call/2',
     permanent: true,
   },
