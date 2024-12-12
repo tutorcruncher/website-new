@@ -320,7 +320,7 @@ const blogRedirects = [
     permanent: true,
   },
   {
-    source: 'business-growth/tutor-marketing/',
+    source: '/business-growth/tutor-marketing/',
     destination: 'solutions/startup',
     permanent: true,
   },
