@@ -11,11 +11,14 @@ import { ArticleDetail } from "@/components/features/articles/article-detail";
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   const client = createClient();
-  const { data } = await client.getByUID("article", params.uid);
 
-  const url = `https://tutorcruncher.com/${params.slug}`;
-
-  return formatMetaData(data.title, data.meta_description, url);
+  try {
+    const { data } = await client.getByUID("article", params.uid);
+    const url = `https://tutorcruncher.com/${params.slug}`;
+    return formatMetaData(data.title, data.meta_description, url);
+  } catch {
+    return null;
+  }
 }
 
 export async function generateStaticParams() {
@@ -29,14 +32,13 @@ export async function generateStaticParams() {
 }
 
 const StaticBlogPage = async ({ params }) => {
-  const article = await fetchArticleByUid(params.uid);
-  const relatedPosts = await fetchArticles(
-    [prismic.filter.at("my.article.category", article.content.category.id)],
-    3
-  );
-  const schemaData = generateArticleSchema(article);
-
   try {
+    const article = await fetchArticleByUid(params.uid);
+    const relatedPosts = await fetchArticles(
+      [prismic.filter.at("my.article.category", article.content.category.id)],
+      3
+    );
+    const schemaData = generateArticleSchema(article);
     return (
       <>
         <script
