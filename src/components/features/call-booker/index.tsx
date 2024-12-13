@@ -174,7 +174,7 @@ export const CallBooker = ({ rep, rb }) => {
     return (
       <div className={clsx(styles.bookWidget)}>
         <Image
-          src="https://tutorcruncher.com/assets/blog/tc-gaming-dino.653b242.png"
+          src={rep.img_path}
           width={80}
           height={80}
           alt=""
@@ -201,7 +201,7 @@ export const CallBooker = ({ rep, rb }) => {
       className={clsx(styles.bookWidget, [selectedDate && styles.dateSelected])}
     >
       <Image
-        src="https://tutorcruncher.com/assets/blog/tc-gaming-dino.653b242.png"
+        src={rep.img_path}
         width={80}
         height={80}
         alt=""

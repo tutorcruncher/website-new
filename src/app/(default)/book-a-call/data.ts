@@ -1,8 +1,8 @@
 export const reps = [
   {
     rep_name: "Sam",
-    img_path: "/assets/about/sam.webp",
     callbooker_url: "/book-a-call/sam/",
+    img_path: "/img/reps/sam_blue.webp",
     hermes_admin_id: 1,
     alt_rep_name: "Fionn",
     alt_rep_hermes_admin_id: 2,
@@ -12,7 +12,7 @@ export const reps = [
   {
     rep_name: "Fionn",
     callbooker_url: "/book-a-call/fionn/",
-    img_path: "/assets/about/fionn.webp",
+    img_path: "/img/reps/fionn_blue.webp",
     hermes_admin_id: 2,
     alt_rep_name: "Sam",
     alt_callbooker_url: "/book-a-call/sam/",
@@ -23,24 +23,12 @@ export const reps = [
   {
     rep_name: "Tony",
     callbooker_url: "/book-a-call/tony/",
-    img_path: "/assets/about/tony.webp",
+    img_path: "/img/reps/tony_blue.webp",
     hermes_admin_id: 9,
     alt_rep_name: "Sam",
     alt_callbooker_url: "/book-a-call/sam/",
     alt_rep_hermes_admin_id: 1,
     description:
       "Tony is a recent graduate of Northern Illinois University residing in the city of Chicago, bringing with him a wealth of experience in sales and account management within the telecommunications industry. Now, poised to leverage his expertise as a Sales Consultant for TutorCruncher, he aims to revolutionize businesses of all scales by optimizing their operational workflows through TutorCruncher's innovative platform.",
-  },
-  {
-    rep_name: "Chris",
-    callbooker_url: "/book-a-call/chris/",
-    img_path: "/assets/blog/tc-gaming-dino.png",
-    hermes_admin_id: 13,
-    alt_rep_name: "Sam",
-    alt_callbooker_url: "/book-a-call/sam/",
-    alt_rep_hermes_admin_id: 1,
-    ignore: true,
-    description:
-      "This is a test account for our web development team. Please do not book a call with Chris.",
   },
 ];
