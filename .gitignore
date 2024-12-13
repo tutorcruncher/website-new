@@ -35,3 +35,6 @@ tsconfig.tsbuildinfo
 # IDEs
 .idea/
 .vscode/settings.json
+
+# Sentry Config File
+.env.sentry-build-plugin
