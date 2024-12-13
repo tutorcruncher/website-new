@@ -549,6 +549,81 @@ const blogRedirects = [
     destination: '/blog/tutor-online-vs-in-person',
     permanent: true,
   },
+  {
+    source: '/blog/tutoring-strategies',
+    destination: '/blog/10-effective-tutoring-strategies-techniques-for-successful-learning',
+    permanent: true,
+  },
+    {
+    source: '/blog/how-to-market-yourself-better-as-a-tutor',
+    destination: '/blog/how-to-market-yourself-as-a-tutor-10-helpful-tips',
+    permanent: true,
+  },
+  {
+    source: '/blog/creating-a-positive-learning-environment',
+    destination: '/blog/tutoring-online-creating-a-positive-learning-environment',
+    permanent: true,
+  },
+  {
+    source: '/blog/how-to-structure-a-tutoring-session',
+    destination: '/blog/how-to-structure-a-tutoring-session-in-7-easy-steps',
+    permanent: true,
+  },
+    {
+    source: '/blog/online-teaching-skills',
+    destination: '/blog/7-online-teaching-skills-worth-developing',
+    permanent: true,
+  },
+  {
+    source: '/blog/how-to-become-a-certified-tutor',
+    destination: '/blog/tutoring-online-how-to-become-a-certified-tutor',
+    permanent: true,
+  },
+  {
+    source: '/blog/interview-tutors-for-tutoring-company',
+    destination: '/blog/business-growth-interview-tutors-for-tutoring-company',
+    permanent: true,
+  },
+  {
+    source: '/blog/how-to-continue-growing-your-tutoring-business-2020-tutoring-market-trends',
+    destination: '/blog/how-to-continue-growing-your-tutoring-business-tutoring-market-trends',
+    permanent: true,
+  },
+  {
+    source: '/blog/5-social-media-tips-to-you-help-kick-start-your-online-presence',
+    destination: '/blog',
+    permanent: true,
+  },
+  {
+    source: '/blog/tutor-matching',
+    destination: '/blog/starting-tutor-business-tutor-matching',
+    permanent: true,
+  },
+  {
+    source: '/blog/where-to-advertise-tutoring-services',
+    destination: '/blog/tutoring-online-where-to-advertise-tutoring-services',
+    permanent: true,
+  },
+  {
+    source: '/blog/why-continuing-your-childs-education-is-more-important-now-than-ever',
+    destination: '/blog/why-continuing-your-child-s-education-is-more-important-now-than-ever',
+    permanent: true,
+  },
+  {
+    source: '/blog/a-beginners-guide-to-tutoring-online',
+    destination: '/blog/how-to-tutor-online-a-best-practice-guide',
+    permanent: true,
+  },
+  {
+    source: '/blog/high-dosage-tutoring',
+    destination: '/blog/tutoring-online-high-dosage-tutoring',
+    permanent: true,
+  },
+  {
+    source: '/blog/tutoring-signs',
+    destination: '/blog/tutoring-online-tutoring-signs',
+    permanent: true,
+  },
 ];
 
 module.exports = blogRedirects;
