@@ -20,6 +20,7 @@
     "@prismicio/react": "^2.8.0",
     "@prismicio/types": "^0.2.9",
     "@react-google-maps/api": "^2.20.3",
+    "@sentry/nextjs": "^8.45.0",
     "clsx": "^2.0.0",
     "embla-carousel-class-names": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
