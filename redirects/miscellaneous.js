@@ -36,7 +36,7 @@ const miscellaneousRedirects = [
   },
   {
     source: '/split-payments',
-    destination: 'https://help.tutorcruncher.com/en/',
+    destination: '/',
     permanent: true,
   },
 ]
