@@ -31,6 +31,16 @@ const components = {
   heading6: ({ text }) => {
     return <h6 id={createID(text)}>{text}</h6>;
   },
+  embed: ({ node }) => {
+    if (node.oembed.provider_name === "YouTube") {
+      return (
+        <div className="embed-wrapper">
+          <p>a</p>
+          <div dangerouslySetInnerHTML={{ __html: node.oembed.html ?? "" }} />
+        </div>
+      );
+    }
+  },
   paragraph: ({ children, text }) => {
     if (text === "{{ blog_ctas() }}") {
       return (
