@@ -35,7 +35,6 @@ export const checkPreviousBookings = (): string | false => {
     price_plan: pricePlan,
   } = previousCallData;
 
-  const [phoneExt, phoneNumber] = phone.split(" ");
   const currencyKey = getKeyByCurrencyCode(currency);
 
   if (!currencyKey) {
@@ -51,5 +50,5 @@ export const checkPreviousBookings = (): string | false => {
     return `/book-a-call/${salespersonId}/`;
   }
 
-  return `/book-a-call/${salespersonId}/?rb=${rbIndex}&name=${name}&email=${email}&cn=${companyName}&website=${website}&phone=${phoneNumber}&pe=${phoneExt}`;
+  return `/book-a-call/${salespersonId}/?rb=${rbIndex}&name=${name}&email=${email}&company=${companyName}&website=${website}&phone=${phone}`;
 };

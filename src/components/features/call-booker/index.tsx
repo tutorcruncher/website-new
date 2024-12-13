@@ -111,7 +111,7 @@ export const CallBooker = ({ rep, rb }) => {
     setRevenueOptions(getCurrencyOptions(countryCode));
   }, [countryCode]);
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     setIsLoading(true);
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
@@ -149,30 +149,33 @@ export const CallBooker = ({ rep, rb }) => {
       website: formData.get("website"),
     };
 
-    fetch(
-      `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/${CALL_TYPE}/book/`,
-      {
-        method: "POST",
-        body: JSON.stringify(hermesData),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.status === "error") {
-          setErrorMessage("Sorry something went wrong, please try again");
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/${CALL_TYPE}/book/`,
+        {
+          method: "POST",
+          body: JSON.stringify(hermesData),
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
         }
-        setIsSubmitted(true);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
+      );
+
+      const data = await response.json();
+
+      if (data.status === "error") {
         setErrorMessage("Sorry something went wrong, please try again");
-        setIsLoading(false);
-      });
+      } else {
+        localStorage.setItem("call_data", JSON.stringify(hermesData));
+        setIsSubmitted(true);
+      }
+    } catch (error) {
+      console.error("API Error:", error);
+      setErrorMessage("Sorry something went wrong, please try again");
+    } finally {
+      setIsLoading(false);
+    }
   };
   const defaultRevenueOptionIndex = +rb;
 
@@ -352,7 +355,7 @@ export const CallBooker = ({ rep, rb }) => {
             <select
               name="revenue"
               defaultValue={
-                revenueOptions?.[defaultRevenueOptionIndex]?.[0] || ""
+                revenueOptions?.[defaultRevenueOptionIndex]?.[1] || ""
               }
             >
               {revenueOptions?.map(([, label]) => (
