@@ -45,7 +45,7 @@ export const TextImageGridItem = ({
         <div className={styles.content}>{content}</div>
         {button ? (
           <div className={styles.actionWrapper}>
-            <Action href={button.link}>{button.text}</Action>
+            <Action href={button.link || button.target}>{button.text}</Action>
           </div>
         ) : null}
       </div>
