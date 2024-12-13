@@ -34,6 +34,12 @@ export const CallBooker = ({ rep, rb }) => {
   const [countryCode, setCountryCode] = useState("GB");
   const [isLoading, setIsLoading] = useState(false);
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [website, setWebsite] = useState("");
+  const [phone, setPhone] = useState("");
+
   const searchParams = useSearchParams();
 
   useEffect(() => {
@@ -296,7 +302,8 @@ export const CallBooker = ({ rep, rb }) => {
               name="name"
               placeholder="Name"
               required
-              value={searchParams.get("name") || ""}
+              onChange={(e) => setName(e.target.value)}
+              value={name || searchParams.get("name")}
             />
             <input
               id="email"
@@ -304,7 +311,8 @@ export const CallBooker = ({ rep, rb }) => {
               type="email"
               placeholder="Email"
               required
-              value={searchParams.get("email") || ""}
+              onChange={(e) => setEmail(e.target.value)}
+              value={email || searchParams.get("email")}
             />
             <input
               type="text"
@@ -313,7 +321,8 @@ export const CallBooker = ({ rep, rb }) => {
               required
               name="company"
               maxLength={255}
-              value={searchParams.get("cn") || ""}
+              onChange={(e) => setCompany(e.target.value)}
+              value={company || searchParams.get("company")}
             />
             <input
               type="text"
@@ -321,7 +330,8 @@ export const CallBooker = ({ rep, rb }) => {
               name="website"
               maxLength={255}
               placeholder="Website"
-              value={searchParams.get("website") || ""}
+              onChange={(e) => setWebsite(e.target.value)}
+              value={website || searchParams.get("website")}
             />
             <input
               type="text"
@@ -330,7 +340,8 @@ export const CallBooker = ({ rep, rb }) => {
               required
               maxLength={20}
               placeholder="Phone number"
-              value={searchParams.get("phone") || ""}
+              onChange={(e) => setPhone(e.target.value)}
+              value={phone || searchParams.get("phone")}
             />
             <input
               id="selected-time"
