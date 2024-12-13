@@ -34,6 +34,11 @@ const miscellaneousRedirects = [
     destination: 'https://help.tutorcruncher.com/en/',
     permanent: true,
   },
+  {
+    source: '/split-payments',
+    destination: '/',
+    permanent: true,
+  },
 ]
 
 module.exports = miscellaneousRedirects;
