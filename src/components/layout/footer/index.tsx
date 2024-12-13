@@ -62,7 +62,7 @@ export const Footer = async () => {
             <FooterSocialLinks />
           </div>
           <div className={styles.legalLinks}>
-            <Link href="https://tutorcruncher.com/api/" target="_blank">
+            <Link href="https://api.tutorcruncher.com/" target="_blank">
               API Documentation
             </Link>
             <Link href="/terms">Terms & Conditions</Link>
