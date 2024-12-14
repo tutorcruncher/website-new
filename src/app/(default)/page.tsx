@@ -8,10 +8,10 @@ import { formatMetaData } from "@/helpers/metaData";
 import { fetchHomePage } from "@/lib/prismic/home";
 import { RenderSchema } from "@/components/schema";
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const { meta } = await fetchHomePage();
 
-  const url = `https://tutorcruncher.com/${params.slug}`;
+  const url = `https://tutorcruncher.com`;
 
   return formatMetaData(meta.title, meta.description, url);
 }
