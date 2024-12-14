@@ -1,11 +1,18 @@
-export const RenderSchema = ({ schema }) => {
-  if (schema)
+export const RenderSchemas = ({ schemas }) => {
+  if (schemas && Array.isArray(schemas)) {
     return (
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schema),
-        }}
-      />
+      <>
+        {schemas.map((schema, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(schema),
+            }}
+          />
+        ))}
+      </>
     );
+  }
+  return null;
 };

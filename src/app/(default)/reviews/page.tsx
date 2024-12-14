@@ -5,7 +5,7 @@ import { Body } from "@/components/ui/body";
 import { Hero } from "@/components/ui/hero";
 import { formatMetaData } from "@/helpers/metaData";
 import { fetchReviewsPage } from "@/lib/prismic/reviews";
-import { RenderSchema } from "@/components/schema";
+import { RenderSchemas } from "@/components/schema";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = await fetchReviewsPage();
@@ -15,10 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const ReviewsPage = async () => {
-  const { testimonials, schema } = await fetchReviewsPage();
+  const { testimonials, schemas } = await fetchReviewsPage();
   return (
     <>
-      <RenderSchema schema={schema} />
+      <RenderSchemas schemas={schemas} />
       <Hero heading="Reviews" />
       <Body containerSize="large" background="cream">
         <TestimonialList testimonials={testimonials} />

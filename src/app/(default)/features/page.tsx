@@ -5,7 +5,7 @@ import { formatMetaData } from "@/helpers/metaData";
 import { CallToAction } from "@/components/features/call-to-action";
 import { fetchFeaturesLandingPage } from "@/lib/prismic/features";
 import { FeaturesList } from "@/components/features/features-list";
-import { RenderSchema } from "@/components/schema";
+import { RenderSchemas } from "@/components/schema";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { meta } = await fetchFeaturesLandingPage();
@@ -15,10 +15,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function FeaturesPage() {
-  const { heading, features, schema } = await fetchFeaturesLandingPage();
+  const { heading, features, schemas } = await fetchFeaturesLandingPage();
   return (
     <>
-      <RenderSchema schema={schema} />
+      <RenderSchemas schemas={schemas} />
       <Hero heading={heading} headingVariant="div" />
       <FeaturesList features={features} />
       <CallToAction background="blue" />

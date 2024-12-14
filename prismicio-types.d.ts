@@ -256,6 +256,21 @@ export interface ContactDocumentDataLocationsItem {
 type ContactDocumentDataSlicesSlice = never;
 
 /**
+ * Item in *Contact → Schemas*
+ */
+export interface ContactDocumentDataSchemasItem {
+  /**
+   * Schema field in *Contact → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
+
+/**
  * Content for Contact documents
  */
 interface ContactDocumentData {
@@ -333,6 +348,17 @@ interface ContactDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Contact*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<ContactDocumentDataSchemasItem>>;
 }
 
 /**
@@ -474,6 +500,21 @@ export type FeatureDocument<Lang extends string = string> =
 type FeaturesDocumentDataSlicesSlice = never;
 
 /**
+ * Item in *Features → Schemas*
+ */
+export interface FeaturesDocumentDataSchemasItem {
+  /**
+   * Schema field in *Features → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
+
+/**
  * Content for Features documents
  */
 interface FeaturesDocumentData {
@@ -540,6 +581,17 @@ interface FeaturesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Features*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: features.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<FeaturesDocumentDataSchemasItem>>;
 }
 
 /**
@@ -579,6 +631,21 @@ type HomePageDocumentDataSlicesSlice =
   | LogosSlice
   | TextImageGridSlice
   | ArticlesSlice;
+
+/**
+ * Item in *Home Page → Schemas*
+ */
+export interface HomePageDocumentDataSchemasItem {
+  /**
+   * Schema field in *Home Page → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
 
 /**
  * Content for Home Page documents
@@ -669,6 +736,17 @@ interface HomePageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Home Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_page.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<HomePageDocumentDataSchemasItem>>;
 }
 
 /**
@@ -826,6 +904,21 @@ export type IntegrationDocument<Lang extends string = string> =
 type IntegrationsDocumentDataSlicesSlice = never;
 
 /**
+ * Item in *Integrations → Schemas*
+ */
+export interface IntegrationsDocumentDataSchemasItem {
+  /**
+   * Schema field in *Integrations → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
+
+/**
  * Content for Integrations documents
  */
 interface IntegrationsDocumentData {
@@ -892,6 +985,17 @@ interface IntegrationsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Integrations*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: integrations.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<IntegrationsDocumentDataSchemasItem>>;
 }
 
 /**
@@ -1061,6 +1165,21 @@ type PageDocumentDataSlicesSlice =
   | HeroSlice;
 
 /**
+ * Item in *Page → Schemas*
+ */
+export interface PageDocumentDataSchemasItem {
+  /**
+   * Schema field in *Page → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
+
+/**
  * Content for Page documents
  */
 interface PageDocumentData {
@@ -1127,6 +1246,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<PageDocumentDataSchemasItem>>;
 }
 
 /**
@@ -1162,6 +1292,21 @@ type PricingDocumentDataSlicesSlice =
   | FaqsSlice
   | CallToActionSlice
   | BodyTextSlice;
+
+/**
+ * Item in *Pricing → Schemas*
+ */
+export interface PricingDocumentDataSchemasItem {
+  /**
+   * Schema field in *Pricing → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
 
 /**
  * Content for Pricing documents
@@ -1243,6 +1388,17 @@ interface PricingDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Pricing*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<PricingDocumentDataSchemasItem>>;
 }
 
 /**
@@ -1318,6 +1474,21 @@ export type ReleaseDocument<Lang extends string = string> =
 type ReleasesDocumentDataSlicesSlice = HeroSlice;
 
 /**
+ * Item in *Releases → Schemas*
+ */
+export interface ReleasesDocumentDataSchemasItem {
+  /**
+   * Schema field in *Releases → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: releases.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
+
+/**
  * Content for Releases documents
  */
 interface ReleasesDocumentData {
@@ -1373,6 +1544,17 @@ interface ReleasesDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Releases*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: releases.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<ReleasesDocumentDataSchemasItem>>;
 }
 
 /**
@@ -1392,6 +1574,21 @@ export type ReleasesDocument<Lang extends string = string> =
   >;
 
 type ReviewsDocumentDataSlicesSlice = never;
+
+/**
+ * Item in *Reviews → Schemas*
+ */
+export interface ReviewsDocumentDataSchemasItem {
+  /**
+   * Schema field in *Reviews → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
 
 /**
  * Content for Reviews documents
@@ -1460,6 +1657,17 @@ interface ReviewsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Reviews*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reviews.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<ReviewsDocumentDataSchemasItem>>;
 }
 
 /**
@@ -1522,6 +1730,21 @@ type SolutionsDocumentDataSlicesSlice =
   | FaqsSlice;
 
 /**
+ * Item in *Solution → Schemas*
+ */
+export interface SolutionsDocumentDataSchemasItem {
+  /**
+   * Schema field in *Solution → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solutions.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
+
+/**
  * Content for Solution documents
  */
 interface SolutionsDocumentData {
@@ -1577,6 +1800,17 @@ interface SolutionsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Solution*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: solutions.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<SolutionsDocumentDataSchemasItem>>;
 }
 
 /**
@@ -3149,22 +3383,26 @@ declare module "@prismicio/client" {
       ContactDocumentData,
       ContactDocumentDataLocationsItem,
       ContactDocumentDataSlicesSlice,
+      ContactDocumentDataSchemasItem,
       FeatureDocument,
       FeatureDocumentData,
       FeatureDocumentDataSlicesSlice,
       FeaturesDocument,
       FeaturesDocumentData,
       FeaturesDocumentDataSlicesSlice,
+      FeaturesDocumentDataSchemasItem,
       HomePageDocument,
       HomePageDocumentData,
       HomePageDocumentDataHeroImagesItem,
       HomePageDocumentDataSlicesSlice,
+      HomePageDocumentDataSchemasItem,
       IntegrationDocument,
       IntegrationDocumentData,
       IntegrationDocumentDataSlicesSlice,
       IntegrationsDocument,
       IntegrationsDocumentData,
       IntegrationsDocumentDataSlicesSlice,
+      IntegrationsDocumentDataSchemasItem,
       NavigationDocument,
       NavigationDocumentData,
       NavigationDocumentDataLinksItem,
@@ -3173,23 +3411,28 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PageDocumentDataSchemasItem,
       PricingDocument,
       PricingDocumentData,
       PricingDocumentDataOptionalExtrasItem,
       PricingDocumentDataSlicesSlice,
+      PricingDocumentDataSchemasItem,
       ReleaseDocument,
       ReleaseDocumentData,
       ReleasesDocument,
       ReleasesDocumentData,
       ReleasesDocumentDataSlicesSlice,
+      ReleasesDocumentDataSchemasItem,
       ReviewsDocument,
       ReviewsDocumentData,
       ReviewsDocumentDataSlicesSlice,
+      ReviewsDocumentDataSchemasItem,
       SchemaDocument,
       SchemaDocumentData,
       SolutionsDocument,
       SolutionsDocumentData,
       SolutionsDocumentDataSlicesSlice,
+      SolutionsDocumentDataSchemasItem,
       TestimonialDocument,
       TestimonialDocumentData,
       TestimonialDocumentDataSlicesSlice,

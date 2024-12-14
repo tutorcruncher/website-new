@@ -5,7 +5,7 @@ import { OptionalExtra } from "@/components/features/optional-extras-list/types"
 
 export const formatPricingPage = (
   data: Simplify<PricingDocumentData>,
-  schema
+  schemas
 ) => {
   const heading = <PrismicRichText field={data.heading} />;
 
@@ -27,5 +27,5 @@ export const formatPricingPage = (
     }
   );
 
-  return { heading, meta, optionalExtras, schema, slices };
+  return { heading, meta, optionalExtras, schemas, slices };
 };
