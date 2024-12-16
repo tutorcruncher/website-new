@@ -8,8 +8,7 @@ export interface AlternatingGridItem {
   imagePosition?: "Left" | "Right";
   button?: {
     text: string;
-    link: string;
-    target?: string;
+    url: string;
   };
   variation?: "default" | "withBackground";
   className?: string;

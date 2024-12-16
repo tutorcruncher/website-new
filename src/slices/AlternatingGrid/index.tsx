@@ -25,8 +25,7 @@ const AlternatingGrid = ({ slice }: TextImageGridProps): JSX.Element => {
         item.button_text && item.button_link
           ? {
               text: item.button_text,
-              link: item.button_link.slug,
-              target: item.button_link.url,
+              url: item.button_link.url,
             }
           : undefined,
     };
