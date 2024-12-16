@@ -10,7 +10,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
   const client = createClient();
   const { data } = await client.getByUID("feature", params.uid);
 
-  const url = `https://tutorcruncher.com/${params.slug}`;
+  const url = `https://tutorcruncher.com/features/${params.uid}`;
 
   return formatMetaData(data.meta_title, data.meta_description, url);
 }

@@ -8,11 +8,11 @@ import { Body } from "@/components/ui/body";
 import { formatMetaData } from "@/helpers/metaData";
 import { createClient } from "@/lib/prismic/prismicio";
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
   const { data } = await client.getSingle("releases");
 
-  const url = `https://tutorcruncher.com/${params.slug}`;
+  const url = `https://tutorcruncher.com/changes`;
 
   return formatMetaData(data.meta_title, data.meta_description, url);
 }
