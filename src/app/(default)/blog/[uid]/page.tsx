@@ -14,7 +14,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
   try {
     const { data } = await client.getByUID("article", params.uid);
-    const url = `https://tutorcruncher.com/${params.slug}`;
+    const url = `https://tutorcruncher.com/${params.uid}`;
     return formatMetaData(data.title, data.meta_description, url);
   } catch {
     return null;
