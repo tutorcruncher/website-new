@@ -1,5 +1,4 @@
 import { BASE_META } from "@/schema/meta";
-import { D } from "@liveblocks/react/dist/suspense-DJOhRXB2";
 
 export const formatMetaData = (
   title: string,
