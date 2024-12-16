@@ -11,11 +11,11 @@ import { fetchSchema } from "@/lib/prismic/helpers";
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: { uid: string };
 }): Promise<Metadata> {
-  const { data } = await fetchSolutionByUid(params.slug);
+  const { data } = await fetchSolutionByUid(params.uid);
 
-  const url = `https://tutorcruncher.com/${params.slug}`;
+  const url = `https://tutorcruncher.com/solutions/${params.uid}`;
 
   return formatMetaData(data.meta_title, data.meta_description, url);
 }
@@ -23,12 +23,12 @@ export async function generateMetadata({
 export default async function StaticPage({
   params,
 }: {
-  params: { slug: string };
+  params: { uid: string };
 }) {
-  const { slug } = params;
+  const { uid } = params;
 
   try {
-    const content = await fetchSolutionByUid(slug);
+    const content = await fetchSolutionByUid(uid);
 
     if (!content) {
       return notFound();
