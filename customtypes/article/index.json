@@ -99,6 +99,15 @@
           },
           "thumbnails": []
         }
+      },
+      "no_index": {
+        "type": "Boolean",
+        "config": {
+          "label": "No index",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": false
+        }
       }
     }
   }

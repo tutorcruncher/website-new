@@ -1,13 +1,16 @@
 import { BASE_META } from "@/schema/meta";
+import { D } from "@liveblocks/react/dist/suspense-DJOhRXB2";
 
 export const formatMetaData = (
   title: string,
   description: string,
-  url: string
+  url: string,
+  hidePage?: boolean
 ) => {
   return {
     title: title || "TutorCruncher",
     description,
+    ...(hidePage ? { robots: { index: false } } : {}),
     twitter: {
       ...BASE_META.twitter,
       title,
