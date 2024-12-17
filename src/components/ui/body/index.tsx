@@ -40,9 +40,11 @@ export const Body = ({
   return (
     <section className={clsx(styles.wrapper, backgroundClass, spacingClass)}>
       <div className={clsx(styles.inner, containerClass)}>
-        <div className={clsx(styles.headingWrapper, "animate")}>
-          {heading ? heading : null}
-        </div>
+        {heading ? (
+          <div className={clsx(styles.headingWrapper, "animate")}>
+            {heading}
+          </div>
+        ) : null}
         {children ? children : null}
       </div>
     </section>

@@ -1,12 +1,19 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function AnimateObserver() {
   const pathname = usePathname();
+  const [isClient, setIsClient] = useState(false); // Tracks if component has hydrated
 
-  useLayoutEffect(() => {
+  useEffect(() => {
+    setIsClient(true); // Runs only on the client-side
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return; // Skip logic until client-side
+
     const elements = document.querySelectorAll(".animate, .animate-children");
 
     elements.forEach((elm) => elm.classList.add("animate-enabled"));
@@ -29,7 +36,7 @@ export default function AnimateObserver() {
     return () => {
       elements.forEach((element) => observer.unobserve(element));
     };
-  }, [pathname]);
+  }, [pathname, isClient]);
 
   return null;
 }

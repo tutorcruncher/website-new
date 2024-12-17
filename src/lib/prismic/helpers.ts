@@ -12,7 +12,6 @@ export const fetchSchemas = async (schemas): Promise<RichTextField[]> => {
     if (schemaId) {
       try {
         const schemaDocument: SchemaDocument = await client.getByID(schemaId);
-        console.log("schemaDocument", schemaDocument);
         const schemaScript = schemaDocument.data.schema_script;
         // @ts-expect-error TODO
         return JSON.parse(schemaScript[0].text);

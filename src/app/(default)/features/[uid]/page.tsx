@@ -7,12 +7,16 @@ import { SliceZone } from "@prismicio/react";
 import { components } from "slices";
 
 export async function generateMetadata({ params }): Promise<Metadata> {
-  const client = createClient();
-  const { data } = await client.getByUID("feature", params.uid);
+  try {
+    const client = createClient();
+    const { data } = await client.getByUID("feature", params.uid);
 
-  const url = `https://tutorcruncher.com/features/${params.uid}`;
+    const url = `https://tutorcruncher.com/features/${params.uid}`;
 
-  return formatMetaData(data.meta_title, data.meta_description, url);
+    return formatMetaData(data.meta_title, data.meta_description, url);
+  } catch {
+    return null;
+  }
 }
 
 export async function generateStaticParams() {
@@ -26,10 +30,9 @@ export async function generateStaticParams() {
 }
 
 const FeaturePage = async ({ params }) => {
-  const client = createClient();
-  const content = await client.getByUID("feature", params.uid);
-
   try {
+    const client = createClient();
+    const content = await client.getByUID("feature", params.uid);
     return <SliceZone slices={content.data.slices} components={components} />;
   } catch {
     return notFound();
