@@ -8,25 +8,36 @@ import { fetchPricingPageByUid } from "@/lib/prismic/pricing";
 import { RenderSchemas } from "@/components/schema";
 import { SliceZone } from "@prismicio/react";
 import { components } from "slices";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }): Promise<Metadata> {
-  const { meta } = await fetchPricingPageByUid(params.uid);
-  const url = `https://tutorcruncher.com/pricing`;
+  try {
+    const { meta } = await fetchPricingPageByUid(params.uid);
+    const url = `https://tutorcruncher.com/pricing`;
 
-  return formatMetaData(meta.title, meta.description, url);
+    return formatMetaData(meta.title, meta.description, url);
+  } catch {
+    return null;
+  }
 }
 
 const PricingPage = async ({ params }) => {
-  const { heading, schemas, slices } = await fetchPricingPageByUid(params.uid);
-  const region = regions.find((region) => region.region_code === params.uid);
-  return (
-    <>
-      <RenderSchemas schemas={schemas} />
-      <Hero heading={heading} headingVariant="div" />
-      <PricingTiers region={region} />
-      <SliceZone slices={slices} components={components} />
-    </>
-  );
+  try {
+    const { heading, schemas, slices } = await fetchPricingPageByUid(
+      params.uid
+    );
+    const region = regions.find((region) => region.region_code === params.uid);
+    return (
+      <>
+        <RenderSchemas schemas={schemas} />
+        <Hero heading={heading} headingVariant="div" />
+        <PricingTiers region={region} />
+        <SliceZone slices={slices} components={components} />
+      </>
+    );
+  } catch {
+    return notFound();
+  }
 };
 
 export default PricingPage;

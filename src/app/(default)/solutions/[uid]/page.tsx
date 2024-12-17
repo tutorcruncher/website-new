@@ -13,11 +13,13 @@ export async function generateMetadata({
 }: {
   params: { uid: string };
 }): Promise<Metadata> {
-  const { data } = await fetchSolutionByUid(params.uid);
-
-  const url = `https://tutorcruncher.com/solutions/${params.uid}`;
-
-  return formatMetaData(data.meta_title, data.meta_description, url);
+  try {
+    const { data } = await fetchSolutionByUid(params.uid);
+    const url = `https://tutorcruncher.com/solutions/${params.uid}`;
+    return formatMetaData(data.meta_title, data.meta_description, url);
+  } catch {
+    return null;
+  }
 }
 
 export default async function StaticPage({
