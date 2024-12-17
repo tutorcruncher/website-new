@@ -39,6 +39,11 @@ const miscellaneousRedirects = [
     destination: '/',
     permanent: true,
   },
+  {
+    source: '/api',
+    destination: 'https://api.tutorcruncher.com/',
+    permanent: true,
+  },
 ]
 
 module.exports = miscellaneousRedirects;
