@@ -8,7 +8,7 @@ import {
 
 export const formatContactPage = (
   data: Simplify<ContactDocumentData>,
-  schema
+  schemas
 ) => {
   const content = <PrismicRichText field={data.content} />;
 
@@ -29,5 +29,5 @@ export const formatContactPage = (
     description: data.meta_description,
   };
 
-  return { content, locations, meta, schema };
+  return { content, locations, meta, schemas };
 };

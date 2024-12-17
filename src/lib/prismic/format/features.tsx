@@ -9,7 +9,7 @@ import {
 export const formatFeaturesLandingPage = (
   data: Simplify<IntegrationsDocumentData>,
   allFeatures: Simplify<FeatureDocument>[],
-  schema
+  schemas
 ) => {
   const heading = <PrismicRichText field={data.heading} />;
 
@@ -25,5 +25,5 @@ export const formatFeaturesLandingPage = (
     url: `/features/${feature.uid}`,
   }));
 
-  return { heading, meta, features, schema };
+  return { heading, meta, features, schemas };
 };

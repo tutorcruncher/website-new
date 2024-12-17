@@ -51,6 +51,23 @@
           "select": "document",
           "customtypes": ["schema"]
         }
+      },
+      "schemas": {
+        "type": "Group",
+        "config": {
+          "label": "Schemas",
+          "repeat": true,
+          "fields": {
+            "schema": {
+              "type": "Link",
+              "config": {
+                "label": "Schema",
+                "select": "document",
+                "customtypes": ["schema"]
+              }
+            }
+          }
+        }
       }
     }
   }
