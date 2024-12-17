@@ -67,14 +67,7 @@ export const SolutionsMenu = ({ solutionsVisbile, setSolutionsVisible }) => {
             <div className={styles.imageContainer}>
               <Image src={solution.image} alt="" width={400} height={600} />
             </div>
-            <Heading
-              size="xxsmall"
-              variant="h2"
-              noMargin
-              className={styles.heading}
-            >
-              {solution.title}
-            </Heading>
+            <p className={styles.heading}>{solution.title}</p>
             <p className={styles.subHeading}>
               Our <b>{solution.pricePlan}</b> package gives you:
             </p>
