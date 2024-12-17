@@ -128,6 +128,18 @@ interface ArticleDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * No index field in *Article*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: article.no_index
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  no_index: prismic.BooleanField;
 }
 
 /**
@@ -1061,6 +1073,21 @@ type PageDocumentDataSlicesSlice =
   | HeroSlice;
 
 /**
+ * Item in *Page → Schemas*
+ */
+export interface PageDocumentDataSchemasItem {
+  /**
+   * Schema field in *Page → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
+
+/**
  * Content for Page documents
  */
 interface PageDocumentData {
@@ -1127,6 +1154,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   schema: prismic.ContentRelationshipField<"schema">;
+
+  /**
+   * Schemas field in *Page*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<Simplify<PageDocumentDataSchemasItem>>;
 }
 
 /**
@@ -3173,6 +3211,7 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PageDocumentDataSchemasItem,
       PricingDocument,
       PricingDocumentData,
       PricingDocumentDataOptionalExtrasItem,
