@@ -49,6 +49,36 @@ const miscellaneousRedirects = [
     destination: '/online-tutoring',
     permanent: true,
   },
+  {
+    source: '/gb/pricing',
+    destination: '/pricing/gb',
+    permanent: true,
+  },
+  {
+    source: '/au/pricing',
+    destination: '/pricing/au',
+    permanent: true,
+  },
+  {
+    source: '/eu/pricing',
+    destination: '/pricing/eu',
+    permanent: true,
+  },
+  {
+    source: '/ca/pricing',
+    destination: '/pricing/ca',
+    permanent: true,
+  },
+  {
+    source: '/us/pricing',
+    destination: '/pricing/us',
+    permanent: true,
+  },
+  {
+    source: '/za/pricing',
+    destination: '/',
+    permanent: true,
+  },
 ]
 
 module.exports = miscellaneousRedirects;
