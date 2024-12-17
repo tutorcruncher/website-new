@@ -5,11 +5,6 @@ const miscellaneousRedirects = [
     permanent: true,
   },
   {
-    source: '/pricing',
-    destination: '/pricing/gb',
-    permanent: true,
-  },
-  {
     source: '/us/features/tutorcruncher-socket',
     destination: '/features/customization',
     permanent: true,
@@ -47,6 +42,11 @@ const miscellaneousRedirects = [
   {
     source: '/tutoring-online',
     destination: '/online-tutoring',
+    permanent: true,
+  },
+  {
+    source: '/pricing',
+    destination: '/pricing/gb',
     permanent: true,
   },
   {
