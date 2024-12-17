@@ -3,8 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-import { Heading } from "@/components/ui/heading";
-
 import { SOLUTIONS_MENU } from "./data";
 import styles from "./solutions-menu.module.scss";
 import { TickSvg } from "@/svgs/tick";
