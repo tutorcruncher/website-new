@@ -1,0 +1,33 @@
+[
+  [
+    {
+      "question": "Do you provide mostly one to one lessons or group classes?",
+      "type": "dropdown",
+      "options": ["Entirely one to one", "Mostly one to one", "Half one to one and half groups", "Mostly groups", "Entirely groups"]
+    },
+    {
+      "question": "Are lessons mostly remote or in-person?",
+      "type": "dropdown",
+      "options": ["Entirely in-person", "Mostly in-person", "Half in-person and half remote", "Mostly remote", "Entirely remote"]
+    },
+    {
+      "question": "Do you take payment from clients upfront or after the lesson takes place?",
+      "type": "dropdown",
+      "options": ["Entirely upfront", "Mostly upfront", "half upfront and half after the lesson takes place", "Mostly after the lesson takes place", "Entirely after the lesson takes place"]
+    },
+    {
+      "question": "How do you currently match your students to tutors?",
+      "type": "dropdown",
+      "options": ["Students can view a list of Tutors and can choose themselves", "We assign tutors to students manually", "We notify relevant tutors and allow them to apply to work with students", "All of the above"]
+    },
+    {
+      "question": "How many students are currently actively using your service?",
+      "type": "number"
+    },
+    {
+      "question": "How did you hear about us?",
+      "type": "dropdown",
+      "options": ["Search engine (Google, Bing, etc.)", "Personal recommendation", "Social Media", "Blog or Article", "Other"]
+    }
+  ]
+]
