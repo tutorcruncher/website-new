@@ -44,6 +44,11 @@ const miscellaneousRedirects = [
     destination: 'https://api.tutorcruncher.com/',
     permanent: true,
   },
+  {
+    source: '/tutoring-online',
+    destination: '/online-tutoring',
+    permanent: true,
+  },
 ]
 
 module.exports = miscellaneousRedirects;
