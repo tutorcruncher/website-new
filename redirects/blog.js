@@ -624,6 +624,21 @@ const blogRedirects = [
     destination: '/blog/tutoring-online-tutoring-signs',
     permanent: true,
   },
+  {
+    source: '/crm/revolutionising-tutoring-insights-from-syed-talha-founder-of-canonical-tutors',
+    destination: '/blog/revolutionising-tutoring-insights-from-syed-talha-founder-of-canonical-tutors',
+    permanent: true,
+  },
+  {
+    source: '/how-to-make-a-tutoring-website',
+    destination: '/blog/how-to-make-a-tutoring-website',
+    permanent: true,
+  },
+  {
+    source: '/social-media-for-online-tutors',
+    destination: '/blog/social-media-for-online-tutors',
+    permanent: true,
+  },
 ];
 
 module.exports = blogRedirects;
