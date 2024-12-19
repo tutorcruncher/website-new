@@ -31,4 +31,24 @@ export const reps = [
     description:
       "Tony is a recent graduate of Northern Illinois University residing in the city of Chicago, bringing with him a wealth of experience in sales and account management within the telecommunications industry. Now, poised to leverage his expertise as a Sales Consultant for TutorCruncher, he aims to revolutionize businesses of all scales by optimizing their operational workflows through TutorCruncher's innovative platform.",
   },
+  {
+    rep_name: "Raashi",
+    callbooker_url: "/book-a-call/raashi/",
+    img_path: "/img/reps/raashi_blue.webp",
+    hermes_admin_id: 4,
+    alt_rep_name: "Maahi",
+    alt_callbooker_url: "/book-a-call/maahi/",
+    alt_rep_hermes_admin_id: 3,
+    description: "",
+  },
+  {
+    rep_name: "Maahi",
+    callbooker_url: "/book-a-call/maahi/",
+    img_path: "/img/reps/maahi_blue.webp",
+    hermes_admin_id: 3,
+    alt_rep_name: "Raashi",
+    alt_callbooker_url: "/book-a-call/raashi/",
+    alt_rep_hermes_admin_id: 4,
+    description: "",
+  },
 ];
