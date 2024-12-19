@@ -45,6 +45,11 @@ const miscellaneousRedirects = [
     permanent: true,
   },
   {
+    source: '/change-log',
+    destination: '/changes',
+    permanent: true,
+  },
+  {
     source: '/pricing',
     destination: '/pricing/gb',
     permanent: true,
