@@ -10,10 +10,10 @@ let client: prismic.Client<AllDocumentTypes>;
 export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
   if (!client) {
     client = prismic.createClient(repositoryName, {
-      fetchOptions: {
-        next: { revalidate: 0, tags: ["prismic"] },
-        cache: "force-cache",
-      },
+      fetchOptions:
+        process.env.NODE_ENV === "production"
+          ? { next: { tags: ["prismic"] }, cache: "force-cache" }
+          : { next: { revalidate: 50 } },
       ...config,
     });
 
