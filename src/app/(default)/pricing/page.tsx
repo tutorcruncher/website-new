@@ -1,6 +1,5 @@
 "use client";
 
-import { Hero } from "@/components/ui/hero";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
