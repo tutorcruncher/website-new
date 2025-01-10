@@ -1,7 +1,26 @@
-"use client";
+// app/pricing-redirect/page.tsx
+import { redirect } from "next/navigation";
 
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+async function fetchCountryCode() {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch country code");
+    }
+
+    const { country_code }: { country_code: string } = await response.json();
+    return country_code;
+  } catch (error) {
+    console.error("Error fetching country info:", error);
+    return "gb";
+  }
+}
 
 const countryToPricingMap = {
   au: ["au"],
@@ -40,32 +59,9 @@ const getCountryPath = (country: string) => {
   return "gb";
 };
 
-const PricingRedirectPage = () => {
-  const router = useRouter();
-  useEffect(() => {
-    const redirectToPricing = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
-        );
+export default async function PricingRedirectPage() {
+  const countryCode = await fetchCountryCode();
+  const targetPath = `/pricing/${getCountryPath(countryCode)}`;
 
-        const { country_code }: { country_code: string } =
-          await response.json();
-
-        const country = getCountryPath(country_code);
-
-        const targetPath = `pricing/${country}`;
-        router.push(targetPath);
-      } catch (error) {
-        console.error("Error fetching country info:", error);
-        router.push("/pricing/gb");
-      }
-    };
-
-    redirectToPricing();
-  }, [router]);
-
-  return null;
-};
-
-export default PricingRedirectPage;
+  redirect(targetPath);
+}
