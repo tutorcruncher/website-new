@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Heading } from "@/components/ui/heading";
 import { Tag } from "@/components/ui/tag";
 
-import { ArticleDocument } from "../../../../prismicio-types";
+import { ArticleDocument } from "../../../../../prismicio-types";
 import styles from "./post.module.scss";
 
 const DisplayDate = ({ publishDate, updateDate }) => {

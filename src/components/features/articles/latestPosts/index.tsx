@@ -2,9 +2,9 @@ import { Action } from "@/components/ui/action";
 import { Body } from "@/components/ui/body";
 import { Heading } from "@/components/ui/heading";
 
-import { Posts } from "..";
+import { Posts } from "../articles-list";
 import styles from "./latestPosts.module.scss";
-import { ArticleDocument } from "../../../../prismicio-types";
+import { ArticleDocument } from "../../../../../prismicio-types";
 import { BackgroundColour } from "@/types/backgroundColor";
 
 interface LatestPostsProps {

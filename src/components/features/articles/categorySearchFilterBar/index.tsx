@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 
-import { Categories } from "@/components/Posts/Categories";
-import { Search } from "@/components/Posts/Search";
+import { Categories } from "@/components/features/articles/categories";
+import { Search } from "@/components/features/articles/search";
 
 import styles from "./categorySearchFilterBar.module.scss";
 

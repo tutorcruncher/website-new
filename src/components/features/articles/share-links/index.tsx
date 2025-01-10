@@ -12,7 +12,7 @@ import { Twitter } from "@/svgs/twitter";
 
 import styles from "./shareLinks.module.scss";
 
-export const socials = [
+const socials = [
   {
     outlet: "Facebook",
     href: "https://www.facebook.com/sharer.php?u={url}",

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import ClientSideCategories from "@/components/Posts/Categories/Categories";
+import ClientSideCategories from "@/components/features/articles/categories/categories";
 import { Tag } from "@/components/ui/tag";
 import { createClient } from "@/lib/prismic/prismicio";
 

@@ -1,6 +1,6 @@
 import { PrismicRichText } from "@prismicio/react";
 
-import { LatestPosts } from "@/components/Posts/LatestPosts";
+import { LatestPosts } from "@/components/features/articles/latestPosts";
 import { Action } from "@/components/ui/action";
 import { Heading } from "@/components/ui/heading";
 import { Tag } from "@/components/ui/tag";

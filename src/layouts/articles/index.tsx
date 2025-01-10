@@ -1,6 +1,6 @@
 import { CategorySearchFilterBar } from "@/components/features/articles/categorySearchFilterBar";
 import { Pagination } from "@/components/features/pagination";
-import { Posts } from "@/components/Posts";
+import { Posts } from "@/components/features/articles/articles-list";
 import { Body } from "@/components/ui/body";
 import { Hero } from "@/components/ui/hero";
 

@@ -3,7 +3,7 @@ import { Facebook } from "@/svgs/facebook";
 import { LinkedIn } from "@/svgs/linkedin";
 import { Github } from "@/svgs/github";
 
-export const socials = [
+const socials = [
   {
     outlet: "Facebook",
     href: "https://www.facebook.com/TutorCruncher",

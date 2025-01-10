@@ -8,7 +8,7 @@ export const getCurrencyOptions = (countryCode: string) => {
   return LISTED_CURRENCIES[currencyStr];
 };
 
-export const getKeyByCurrencyCode = (currencyCode: string) => {
+const getKeyByCurrencyCode = (currencyCode: string) => {
   for (const key in LISTED_CURRENCIES) {
     if (key.includes(currencyCode)) {
       return key;

@@ -3,7 +3,7 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import type { JSX } from "react";
 
-import { LatestPosts } from "@/components/Posts/LatestPosts";
+import { LatestPosts } from "@/components/features/articles/latestPosts";
 import { createClient } from "@/lib/prismic/prismicio";
 import { ArticleDocument } from "../../../prismicio-types";
 import { backgroundColor } from "@/helpers/backgroundColor";

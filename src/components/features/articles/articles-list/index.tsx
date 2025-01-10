@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
-import { ArticleDocument } from "../../../prismicio-types";
-import { Post } from "./Post";
+import { ArticleDocument } from "../../../../../prismicio-types";
+import { Post } from "../post";
 import styles from "./posts.module.scss";
 
 export const Posts = ({
