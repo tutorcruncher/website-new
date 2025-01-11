@@ -14,6 +14,7 @@ import styles from "./article-detail.module.scss";
 import { CallToAction } from "../../call-to-action";
 import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 import { ArticlePage } from "@/lib/prismic/format/article";
+import { ArrowDownSvg } from "@/svgs/arrow-down";
 
 const components = {
   heading2: ({ text }) => {
@@ -114,22 +115,7 @@ export const ArticleDetail = ({
             <Newsletter />
             <a href="#related-posts" className={styles.relatedPostsLink}>
               Go to related articles
-              <svg
-                width="45"
-                height="44"
-                viewBox="0 0 45 44"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M28.0838 0H16.5822C7.60802 0 0.333008 7.27501 0.333008 16.2492V27.7508C0.333008 36.725 7.60802 44 16.5822 44H28.0838C37.058 44 44.333 36.725 44.333 27.7508V16.2492C44.333 7.27501 37.058 0 28.0838 0Z"
-                  fill="white"
-                />
-                <path
-                  d="M21.4389 13L21.4389 27.2348L16.3264 22.085L15 23.4453L22.5 31L30 23.4453L28.6495 22.085L23.5611 27.2348L23.5611 13L21.4389 13Z"
-                  fill="#362E83"
-                />
-              </svg>
+              <ArrowDownSvg />
             </a>
           </div>
           <div>
