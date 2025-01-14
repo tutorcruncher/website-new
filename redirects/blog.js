@@ -639,6 +639,46 @@ const blogRedirects = [
     destination: '/blog/social-media-for-online-tutors',
     permanent: true,
   },
+  {
+    source: '/tutoring-online/a-brief-history-of-tutoring-infographic',
+    destination: '/blog/a-brief-history-of-tutoring-infographic',
+    permanent: true,
+  },
+  {
+    source: '/uk-tutoring-financial-trends',
+    destination: '/blog/online-tutoring-trends',
+    permanent: true,
+  },
+  {
+    source: '/uk-tutoring-financial-trends',
+    destination: '/blog/online-tutoring-trends',
+    permanent: true,
+  },
+  {
+    source: '/features/tutorcruncher-socket',
+    destination: '/blog/introducing-tutorcruncher-socket',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-blogs',
+    destination: '/blog',
+    permanent: true,
+  },
+  {
+    source: '/tutoring-contract-essentials/',
+    destination: '/blog/tutoring-contract-essentials',
+    permanent: true,
+  },
+  {
+    source: '/business-growth/pros-and-cons-of-online-studying/',
+    destination: '/blog/tutor-online-vs-in-person',
+    permanent: true,
+  },
+  {
+    source: '/how-to-get-tutoring-clients',
+    destination: '/blog/how-to-get-tutoring-clients',
+    permanent: true,
+  },
 ];
 
 module.exports = blogRedirects;

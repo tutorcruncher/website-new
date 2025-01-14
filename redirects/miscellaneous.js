@@ -79,6 +79,31 @@ const miscellaneousRedirects = [
     destination: "/",
     permanent: true,
   },
+  {
+    source: "/undefined",
+    destination: "/",
+    permanent: true,
+  },
+  {
+    source: "/tutoring-online/star-rating-remains-the-most-important-part-of-a-review",
+    destination: "/",
+    permanent: true,
+  },
+  {
+    source: "/split-payments-details",
+    destination: "https://help.tutorcruncher.com/en/articles/8250106-split-payments-guide",
+    permanent: true,
+  },
+  {
+    source: "/tc-socket",
+    destination: "https://help.tutorcruncher.com/en/articles/8255881-getting-started-with-tutorcruncher-socket",
+    permanent: true,
+  },
+  {
+    source: "/tutoring-online/zapier",
+    destination: "https://help.tutorcruncher.com/en/articles/8250193-integrating-tutorcruncher-with-other-apps-via-zapier",
+    permanent: true,
+  },
 ];
 
 module.exports = miscellaneousRedirects;
