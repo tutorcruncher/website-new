@@ -670,7 +670,7 @@ const blogRedirects = [
     permanent: true,
   },
   {
-    source: '/business-growth/pros-and-cons-of-online-studying/',
+    source: '/business-growth/pros-and-cons-of-online-studying',
     destination: '/blog/tutor-online-vs-in-person',
     permanent: true,
   },
