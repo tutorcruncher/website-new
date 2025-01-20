@@ -48,7 +48,6 @@ export const Form = () => {
             sign_up: formData["attributes-sign_up"],
         },
       };
-      console.error(data)
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
@@ -56,7 +55,6 @@ export const Form = () => {
         },
         body: JSON.stringify(data),
       });
-      console.error(data)
 
       if (response.ok) {
         setIsSubmitted(true);
@@ -70,11 +68,9 @@ export const Form = () => {
           terms_and_conditions: true,
         });
       } else {
-      console.error(data)
         setErrorMessage("Failed to submit the form. Please try again.");
       }
     } catch {
-      console.error(data)
       setErrorMessage("Error submitting form. Please try again later.");
     }
   };
