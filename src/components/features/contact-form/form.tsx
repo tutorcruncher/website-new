@@ -55,6 +55,7 @@ export const Form = () => {
         },
         body: JSON.stringify(data),
       });
+      console.error(data)
 
       if (response.ok) {
         setIsSubmitted(true);
