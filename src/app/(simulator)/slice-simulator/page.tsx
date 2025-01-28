@@ -8,7 +8,7 @@ import { components } from "slices";
 
 export default function SliceSimulatorPage({
   searchParams,
-}: SliceSimulatorParams & { searchParams: { secret?: string } }) {
+}: SliceSimulatorParams & { searchParams: { state?: string } }) {
   const slices = getSlices(searchParams.state);
 
   return (
