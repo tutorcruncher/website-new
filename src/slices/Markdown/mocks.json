@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"markdown": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Cillum sunt labore Lorem veniam aliqua. Irure consequat do veniam veniam nulla elit eu ea aliquip deserunt. Non consectetur mollit magna sint aute amet reprehenderit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

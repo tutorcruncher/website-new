@@ -1,0 +1,28 @@
+{
+  "id": "markdown",
+  "type": "SharedSlice",
+  "name": "Markdown",
+  "description": "Markdown",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "markdown": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Markdown",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "multi": "preformatted"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

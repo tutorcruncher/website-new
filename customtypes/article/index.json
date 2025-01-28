@@ -63,7 +63,11 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "markdown": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },
