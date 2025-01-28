@@ -202,6 +202,15 @@ table th {
       color: $sky-blue;
     }
   }
+
+  table {
+    margin: grid(2) 0;
+  }
+
+  pre {
+    background: $grey;
+    padding: grid(4);
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

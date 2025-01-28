@@ -11,6 +11,7 @@ export const components = {
   hero: dynamic(() => import("./Hero")),
   info_box_list: dynamic(() => import("./InfoBoxList")),
   logos: dynamic(() => import("./Logos")),
+  markdown: dynamic(() => import("./Markdown")),
   stats: dynamic(() => import("./Stats")),
   team_list: dynamic(() => import("./TeamList")),
   testimonials: dynamic(() => import("./Testimonials")),

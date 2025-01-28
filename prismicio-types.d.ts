@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ArticleDocumentDataSlicesSlice = never;
+type ArticleDocumentDataSlicesSlice = MarkdownSlice;
 
 /**
  * Content for Article documents
@@ -1165,6 +1165,7 @@ export type OptionalExtraDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | MarkdownSlice
   | YoutubeSlice
   | StatsSlice
   | TestimonialsSlice
@@ -1483,7 +1484,7 @@ export type ReleaseDocument<Lang extends string = string> =
     Lang
   >;
 
-type ReleasesDocumentDataSlicesSlice = HeroSlice;
+type ReleasesDocumentDataSlicesSlice = MarkdownSlice | HeroSlice;
 
 /**
  * Item in *Releases → Schemas*
@@ -2712,6 +2713,51 @@ type LogosSliceVariation = LogosSliceDefault;
 export type LogosSlice = prismic.SharedSlice<"logos", LogosSliceVariation>;
 
 /**
+ * Primary content in *Markdown → Default → Primary*
+ */
+export interface MarkdownSliceDefaultPrimary {
+  /**
+   * Markdown field in *Markdown → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: markdown.default.primary.markdown
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  markdown: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Markdown Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarkdownSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MarkdownSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Markdown*
+ */
+type MarkdownSliceVariation = MarkdownSliceDefault;
+
+/**
+ * Markdown Shared Slice
+ *
+ * - **API ID**: `markdown`
+ * - **Description**: Markdown
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MarkdownSlice = prismic.SharedSlice<
+  "markdown",
+  MarkdownSliceVariation
+>;
+
+/**
  * Item in *Stats → Default → Primary → Stats*
  */
 export interface StatsSliceDefaultPrimaryStatsItem {
@@ -3490,6 +3536,10 @@ declare module "@prismicio/client" {
       LogosSliceDefaultPrimary,
       LogosSliceVariation,
       LogosSliceDefault,
+      MarkdownSlice,
+      MarkdownSliceDefaultPrimary,
+      MarkdownSliceVariation,
+      MarkdownSliceDefault,
       StatsSlice,
       StatsSliceDefaultPrimaryStatsItem,
       StatsSliceDefaultPrimary,
