@@ -1,20 +1,29 @@
-import { Body } from "@/components/ui/body";
 import { Hero } from "@/components/ui/hero";
+import { Body } from "@/components/ui/body";
+import { getSmsPricing } from "@/lib/sms-data";
+import { Metadata } from "next";
+import { formatMetaData } from "@/helpers/metaData";
 
-import { SMS_PRICING } from "./data";
+export const revalidate = 86400;
 
-const Tooltip = ({ price, message }) => <span title={message}>{price}</span>;
+export async function generateMetadata(): Promise<Metadata> {
+  const url = `https://tutorcruncher.com`;
 
-const PricingPage = () => {
-  const sortedData = [...SMS_PRICING].sort((a, b) => b.priority - a.priority);
+  return formatMetaData("SMS Pricing | TutorCruncher", "", url);
+}
+
+export default async function PricingPage() {
+  const smsPricing = await getSmsPricing();
+
   return (
     <>
       <Hero heading="SMS Pricing" />
       <Body>
         <p className="text-center">
           Some countries listed below may display a price range as costs vary
-          depending on the recipient&apos;s mobile carrier. The cost of all sent
-          SMSs can be viewed from within TutorCruncher.
+          depending on the recipient&apos;s mobile carrier.
+          <br /> The cost of all sent SMSs can be viewed from within
+          TutorCruncher.
         </p>
         <table>
           <thead>
@@ -25,23 +34,13 @@ const PricingPage = () => {
             </tr>
           </thead>
           <tbody>
-            {sortedData.map((country) => (
+            {smsPricing.map((country) => (
               <tr key={country.country}>
                 <td className="feature-name">{country.country}</td>
                 <td>
                   $ {country.usd_price} {country.is_range && "*"}
                 </td>
-                <td>
-                  £
-                  {country.is_range ? (
-                    <Tooltip
-                      price={country.gbp_price}
-                      message="Costs vary depending on the recipient carrier within the country you are sending to."
-                    />
-                  ) : (
-                    country.gbp_price
-                  )}
-                </td>
+                <td>£{country.gbp_price}</td>
               </tr>
             ))}
           </tbody>
@@ -53,6 +52,4 @@ const PricingPage = () => {
       </Body>
     </>
   );
-};
-
-export default PricingPage;
+}
