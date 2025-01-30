@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function PricingPage() {
   const smsPricing = await getSmsPricing();
-
+  const sortedData = smsPricing.sort((a, b) => b.priority - a.priority);
   return (
     <>
       <Hero heading="SMS Pricing" />
@@ -34,7 +34,7 @@ export default async function PricingPage() {
             </tr>
           </thead>
           <tbody>
-            {smsPricing.map((country) => (
+            {sortedData.map((country) => (
               <tr key={country.country}>
                 <td className="feature-name">{country.country}</td>
                 <td>

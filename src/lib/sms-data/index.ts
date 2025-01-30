@@ -39,11 +39,11 @@ export async function getUsdForex() {
 
 const COST_MULTIPLIER = 2;
 const PRIORITY = [
-  "United States of America",
-  "Canada",
-  "United Kingdom",
-  "Australia",
   "South Africa",
+  "Australia",
+  "United Kingdom",
+  "Canada",
+  "United States of America",
 ];
 
 function groupByContiguous(sortedArray, keyGetter) {
