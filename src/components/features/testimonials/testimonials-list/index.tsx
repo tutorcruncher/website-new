@@ -1,5 +1,5 @@
 import { Heading } from "@/components/ui/heading";
-import Image from "next/image";
+import { PrismicImage } from "@prismicio/react";
 
 import styles from "./testimonials-list.module.scss";
 
@@ -18,12 +18,7 @@ export const TestimonialList = ({ testimonials }) => {
           <div className={styles.testimonial} key={id}>
             <div className="main-content">{testimonial}</div>
             <div className={styles.cite}>
-              <Image
-                src={companyLogo.url}
-                alt={companyLogo.alt || "logo"}
-                width={companyLogo.width}
-                height={companyLogo.height}
-              />
+              <PrismicImage field={companyLogo} />
               <div>
                 <Heading size="xxsmall" variant="h3" noMargin>
                   {reviewerName}
