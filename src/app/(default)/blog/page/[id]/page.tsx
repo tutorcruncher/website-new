@@ -1,6 +1,6 @@
 import ArticlesLayout from "@/layouts/articles";
 import { fetchArticles } from "@/lib/prismic/articles";
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 
 const PER_PAGE = 9;
 

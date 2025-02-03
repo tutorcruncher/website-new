@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 import { SchemaDocument } from "../../../prismicio-types";
 import { RichTextField } from "@prismicio/types";
 

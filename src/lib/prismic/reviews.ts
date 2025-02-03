@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 
 import { formatReviewsPage } from "./format/reviews";
 import { fetchSchemas } from "./helpers";

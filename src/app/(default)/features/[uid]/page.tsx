@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 
 import { formatMetaData } from "@/helpers/metaData";
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 import { SliceZone } from "@prismicio/react";
 import { components } from "slices";
 

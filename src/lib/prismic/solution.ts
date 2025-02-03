@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 
 export const fetchAllSolutions = async () => {
   const client = createClient();

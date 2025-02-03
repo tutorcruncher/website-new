@@ -9,6 +9,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { TrackingProvider } from "../providers/tracking-provider";
 import IntercomClientComponent from "@/components/intercom/intercom";
 import CookieConsentBanner from "@/components/cookie-consent-banner";
+import { PrismicPreview } from "@prismicio/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }) {
           <Footer />
           <AnimateObserver />
           <IntercomClientComponent />
+          <PrismicPreview repositoryName={"tutor-cruncher"} />
         </TrackingProvider>
       </body>
     </html>
