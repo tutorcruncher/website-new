@@ -6,7 +6,7 @@ import { components } from "slices";
 import { ReleasesList } from "@/components/features/releases/releases-list";
 import { Body } from "@/components/ui/body";
 import { formatMetaData } from "@/helpers/metaData";
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();

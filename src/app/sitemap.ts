@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 import { reps } from "./(default)/book-a-call/data";
 
 const BASE_URL = "https://tutorcruncher.com";

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import ClientSideCategories from "@/components/Posts/Categories/Categories";
 import { Tag } from "@/components/ui/tag";
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 
 import styles from "./categories.module.scss";
 

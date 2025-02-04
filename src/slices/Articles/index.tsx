@@ -4,7 +4,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import type { JSX } from "react";
 
 import { LatestPosts } from "@/components/Posts/LatestPosts";
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 import { ArticleDocument } from "../../../prismicio-types";
 import { backgroundColor } from "@/helpers/backgroundColor";
 

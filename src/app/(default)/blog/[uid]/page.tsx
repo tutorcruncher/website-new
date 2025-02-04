@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
 
 import { formatMetaData } from "@/helpers/metaData";
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 import { fetchArticleByUid, fetchArticles } from "@/lib/prismic/articles";
 import { generateArticleSchema } from "@/schema/blog_post";
 import { ArticleDetail } from "@/components/features/articles/article-detail";

@@ -2,7 +2,7 @@ import * as prismic from "@prismicio/client";
 
 import ArticlesLayout from "@/layouts/articles";
 import { fetchArticles } from "@/lib/prismic/articles";
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 
 const BlogListPage = async ({ searchParams }) => {
   const { query, category } = searchParams;

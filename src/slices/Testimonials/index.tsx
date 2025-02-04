@@ -3,7 +3,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
 import { TestimonialSlider } from "@/components/features/testimonials/testimonial-slider";
 import { formatTestimonials } from "@/lib/prismic/format/testimonials";
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 
 /**
  * Props for `Testimonials`.

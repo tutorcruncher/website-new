@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 
 import { ArticlePage, formatArticlePage } from "./format/article";
 import { ArticleDocument } from "../../../prismicio-types";

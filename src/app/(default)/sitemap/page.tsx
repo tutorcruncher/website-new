@@ -1,4 +1,4 @@
-import { createClient } from "@/lib/prismic/prismicio";
+import { createClient } from "prismicio";
 import { Body } from "@/components/ui/body";
 import Link from "next/link";
 import { Heading } from "@/components/ui/heading";
