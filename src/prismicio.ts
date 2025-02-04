@@ -25,8 +25,12 @@ const routes: prismic.ClientConfig["routes"] = [
     path: "/blog/:uid",
   },
   {
-    type: "features",
+    type: "feature",
     path: "/features/:uid",
+  },
+  {
+    type: "features",
+    path: "/features",
   },
   {
     type: "pricing",
@@ -39,6 +43,10 @@ const routes: prismic.ClientConfig["routes"] = [
   {
     type: "releases",
     path: "/changes",
+  },
+  {
+    type: "integration",
+    path: "/integrations",
   },
   {
     type: "integrations",
