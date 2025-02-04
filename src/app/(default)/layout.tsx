@@ -29,7 +29,6 @@ export default async function RootLayout({ children }) {
           <Footer />
           <AnimateObserver />
           <IntercomClientComponent />
-          <PrismicPreview repositoryName={"tutor-cruncher"} />
         </TrackingProvider>
       </body>
     </html>
