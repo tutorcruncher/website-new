@@ -2,6 +2,17 @@ import { ArticleDocument, Simplify } from "../../../../prismicio-types";
 import { PrismicNextImage } from "@prismicio/next";
 import { RichTextField } from "@prismicio/types";
 
+export interface ArticleDocumentWithCategory extends Simplify<ArticleDocument> {
+  data: ArticleDocument["data"] & {
+    category: {
+      id: string;
+      data: {
+        title: string;
+      };
+    };
+  };
+}
+
 export interface ArticlePage {
   content: {
     title: string;
@@ -25,7 +36,7 @@ export interface ArticlePage {
 }
 
 export const formatArticlePage = (
-  page: Simplify<ArticleDocument>
+  page: ArticleDocumentWithCategory
 ): ArticlePage => {
   const { data } = page;
 
@@ -42,12 +53,12 @@ export const formatArticlePage = (
       <PrismicNextImage field={data.featured_image} fallbackAlt="" />
     ),
     featuredImageUrl: data.featured_image.url,
-    category: {
-      // @ts-expect-error - TODO
-      id: data.category.id,
-      // @ts-expect-error - TODO
-      title: data.category.data.title,
-    },
+    ...(data.category && {
+      category: {
+        id: data.category?.id,
+        title: data.category.data?.title,
+      },
+    }),
   };
 
   const meta = {
