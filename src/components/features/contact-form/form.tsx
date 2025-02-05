@@ -33,22 +33,25 @@ export const Form = () => {
     e.preventDefault();
     setIsSubmitted(false);
     setErrorMessage("");
+
+    // @ts-expect-error -- TODO
+    const recaptchaValue = recaptchaRef.current.getValue();
+    const data = {
+      client_name: formData.client_name,
+      client_email: formData.client_email,
+      client_phone: formData.client_phone,
+      grecaptcha_response: recaptchaValue,
+      attributes: {
+        'company_name"': formData["attributes-company_name"],
+        who_are_you_trying_to_reach:
+          formData["attributes-who_are_you_trying_to_reach"],
+        sign_up: formData["attributes-sign_up"],
+      },
+    };
+    const url = "https://socket.tutorcruncher.com/f8d3735b347ad375b206/enquiry";
+
     try {
-      // @ts-expect-error -- TODO
-      const recaptchaValue = recaptchaRef.current.getValue();
-      const data = {
-        client_name: formData.client_name,
-        client_email: formData.client_email,
-        client_phone: formData.client_phone,
-        grecaptcha_response: recaptchaValue,
-        attributes: {
-          'company_name"': formData["attributes-company_name"],
-          who_are_you_trying_to_reach:
-            formData["attributes-who_are_you_trying_to_reach"],
-            sign_up: formData["attributes-sign_up"],
-        },
-      };
-      const response = await fetch("/api/contact", {
+      await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -56,22 +59,20 @@ export const Form = () => {
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({
-          client_name: "",
-          client_email: "",
-          client_phone: "",
-          ["attributes-company_name"]: "",
-          ["attributes-who_are_you_trying_to_reach"]: "",
-          ["attributes-sign_up"]: "",
-          terms_and_conditions: true,
-        });
-      } else {
-        setErrorMessage("Failed to submit the form. Please try again.");
-      }
+      setIsSubmitted(true);
+      setFormData({
+        client_name: "",
+        client_email: "",
+        client_phone: "",
+        ["attributes-company_name"]: "",
+        ["attributes-who_are_you_trying_to_reach"]: "",
+        ["attributes-sign_up"]: "",
+        terms_and_conditions: true,
+      });
+
+      return data;
     } catch {
-      setErrorMessage("Error submitting form. Please try again later.");
+      setErrorMessage("Failed to submit the form. Please try again.");
     }
   };
 
