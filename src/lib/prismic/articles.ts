@@ -1,6 +1,10 @@
 import { createClient } from "prismicio";
 
-import { ArticlePage, formatArticlePage } from "./format/article";
+import {
+  ArticleDocumentWithCategory,
+  ArticlePage,
+  formatArticlePage,
+} from "./format/article";
 import { ArticleDocument } from "../../../prismicio-types";
 
 export const fetchArticles = async (
@@ -27,9 +31,9 @@ export const fetchArticles = async (
 export const fetchArticleByUid = async (uid: string): Promise<ArticlePage> => {
   const client = createClient();
   try {
-    const article = await client.getByUID("article", uid, {
+    const article = (await client.getByUID("article", uid, {
       fetchLinks: "category.title",
-    });
+    })) as ArticleDocumentWithCategory;
     return formatArticlePage(article);
   } catch (error) {
     console.error("Error fetching articles:", error);
