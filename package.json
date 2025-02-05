@@ -11,7 +11,8 @@
     "start": "next start -p 8000",
     "lint": "next lint && npx tsc --noEmit",
     "slicemachine": "start-slicemachine",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.7",
@@ -55,6 +56,7 @@
     "prettier": "^3.3.3",
     "slice-machine-ui": "^2.12.3",
     "typescript": "5.5.4",
-    "typescript-eslint": "^8.17.0"
+    "typescript-eslint": "^8.17.0",
+    "husky": "^9.0.11"
   }
 }
