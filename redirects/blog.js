@@ -241,7 +241,7 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/where-to-advertise-tutoring-services',
-    destination: '/blog/tutoring-online-where-to-advertise-tutoring-services',
+    destination: '/blog/where-to-advertise-tutoring-services',
     permanent: true,
     statusCode: 301,
   },
@@ -583,7 +583,7 @@ const blogRedirects = [
   },
   {
     source: '/find-a-tutor',
-    destination: '/blog/tutoring-online-where-to-advertise-tutoring-services',
+    destination: '/blog/where-to-advertise-tutoring-services',
     permanent: true,
     statusCode: 301,
   },
@@ -631,7 +631,7 @@ const blogRedirects = [
   },
   {
     source: '/companies',
-    destination: '/blog/tutoring-online-where-to-advertise-tutoring-services',
+    destination: '/blog/where-to-advertise-tutoring-services',
     permanent: true,
     statusCode: 301,
   },
@@ -812,6 +812,36 @@ const blogRedirects = [
   {
     source: '/how-to-get-tutoring-clients',
     destination: '/blog/how-to-get-tutoring-clients',
+    permanent: true,
+    statusCode: 301,
+  },
+  {
+    source: '/how-to-start-a-tutoring-business-in-canada',
+    destination: '/blog/how-to-start-a-tutoring-business-in-canada',
+    permanent: true,
+    statusCode: 301,
+  },
+  {
+    source: '/tutorcruncher-vs-teachworks',
+    destination: '/blog/tutorcruncher-vs-teachworks',
+    permanent: true,
+    statusCode: 301,
+  },
+  {
+    source: '/tutorcruncher-vs-tutorbird',
+    destination: '/blog/tutorcruncher-vs-tutorbird',
+    permanent: true,
+    statusCode: 301,
+  },
+  {
+    source: '/how-to-become-a-self-employed-tutor',
+    destination: '/blog/how-to-become-a-self-employed-tutor',
+    permanent: true,
+    statusCode: 301,
+  },
+  {
+    source: '/blog/how-to-continue-growing-your-tutoring-business-tutoring-market-trends',
+    destination: '/blog/expand-tutoring-business',
     permanent: true,
     statusCode: 301,
   },
