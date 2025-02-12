@@ -720,12 +720,6 @@ const blogRedirects = [
     statusCode: 301,
   },
   {
-    source: '/blog/where-to-advertise-tutoring-services',
-    destination: '/blog/tutoring-online-where-to-advertise-tutoring-services',
-    permanent: true,
-    statusCode: 301,
-  },
-  {
     source: '/blog/why-continuing-your-childs-education-is-more-important-now-than-ever',
     destination: '/blog/why-continuing-your-child-s-education-is-more-important-now-than-ever',
     permanent: true,
