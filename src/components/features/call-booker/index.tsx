@@ -10,11 +10,12 @@ import { Action } from "@/components/ui/action";
 import { Heading } from "@/components/ui/heading";
 
 import styles from "./call-booker.module.scss";
-import { fetchAvailableSlots } from "./helpers";
+import { fetchAvailableSlots, getUpcomingWeekSlotDates } from "./helpers";
 import { getCurrencyOptions } from "../booking-widget/helpers";
 import { regions } from "app/data/regions/regions";
 import { useSearchParams } from "next/navigation";
 import { Slot } from "./types";
+import Link from "next/link";
 
 const CALL_TYPE = "sales";
 
@@ -33,6 +34,7 @@ export const CallBooker = ({ rep, rb }) => {
   const [revenueOptions, setRevenueOptions] = useState(null);
   const [countryCode, setCountryCode] = useState("GB");
   const [isLoading, setIsLoading] = useState(false);
+  const [hasLowAvailability, sethasLowAvailability] = useState(false);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -96,6 +98,11 @@ export const CallBooker = ({ rep, rb }) => {
           startDate,
           endDate
         );
+
+        const availableDaysInWeek = getUpcomingWeekSlotDates(dates);
+        if (availableDaysInWeek.length < 3) {
+          sethasLowAvailability(true);
+        }
         setCachedSlots(formattedSlots);
         setOpenSlots(dates);
       } catch (error) {
@@ -222,6 +229,19 @@ export const CallBooker = ({ rep, rb }) => {
       <Heading size="xxsmall" center variant="h3">
         Meet with {rep.rep_name} from TutorCruncher
       </Heading>
+      {hasLowAvailability && (
+        <div className={styles.lowAvailability}>
+          {rep.rep_name} has low availability in the next week. If you don
+          {"'"}t see any time that suits you try {rep.alt_rep_name}
+          {"'"}s calendar{" "}
+          <b>
+            <Link href={`/book-a-call/${rep.alt_rep_hermes_admin_id}`}>
+              here
+            </Link>
+            .
+          </b>
+        </div>
+      )}
       {!selectedDate ? (
         <div
           className={clsx(styles.calendarContainer, [
