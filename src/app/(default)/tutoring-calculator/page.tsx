@@ -6,7 +6,7 @@ import { formatMetaData } from "@/helpers/metaData";
 import { TutoringCalculator } from "@/components/features/tutoring-calculator";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const url = `https://tutorcruncher.com/tutoring-calculator`;
+  const url = "https://tutorcruncher.com/tutoring-calculator";
 
   return formatMetaData("Tutoring Calculator | TutorCruncher", "", url);
 }

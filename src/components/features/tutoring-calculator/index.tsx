@@ -21,12 +21,8 @@ export const TutoringCalculator = () => {
           `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
         );
 
-        console.log(response);
-
         const { country_code }: { country_code: string } =
           await response.json();
-
-        console.log("country_code", country_code);
 
         const fetchedRegion = getCountryPath(country_code) || "global";
         setRegion(fetchedRegion);
