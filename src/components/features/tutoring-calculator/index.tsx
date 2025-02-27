@@ -1,63 +1,66 @@
 "use client";
 
-import { useState } from "react";
-import ukData from "./data/uk.json";
-import usData from "./data/us.json";
+import { useEffect, useState } from "react";
+import data from "./data.json";
+import { RegionData } from "./types";
+import { getSubjectInfo, removeZeroValuesFromRegionData } from "./helpers";
 import styles from "./tutoring-calculator.module.scss";
-
-const getLatestYearData = (data) => {
-  const latestData = {};
-
-  Object.keys(data).forEach((subject) => {
-    const years = Object.keys(data[subject])
-      .map(Number)
-      .sort((a, b) => b - a);
-    const latestYear = years[0];
-    latestData[subject] = {
-      year: latestYear.toString(),
-      charge_rate: data[subject][latestYear]?.charge_rate || 0,
-      pay_rate: data[subject][latestYear]?.pay_rate || 0,
-    };
-  });
-
-  return latestData;
-};
-
-const getMinMaxValues = (value) => {
-  const min = (value * 0.875).toFixed(2);
-  const max = (value * 1.125).toFixed(2);
-  return { min, max };
-};
+import { getCountryPath } from "@/helpers/get-country-path";
+import { LoadingSvg } from "@/svgs/loading";
 
 export const TutoringCalculator = () => {
+  const [region, setRegion] = useState<string | null>(null);
+  const [regionData, setRegionData] = useState<RegionData | null>(null);
+  const [selectedQual, setSelectedQual] = useState("");
   const [selectedSubject, setSelectedSubject] = useState("");
 
-  const latestUSData = getLatestYearData(usData);
-  const latestUKData = getLatestYearData(ukData);
+  useEffect(() => {
+    async function fetchRegion() {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/loc/`
+        );
 
-  const subjects = [...Object.keys(latestUSData), ...Object.keys(latestUKData)];
-  const uniqueSubjects = Array.from(new Set(subjects)).sort();
+        console.log(response);
 
-  const getSubjectInfo = (subject) => {
-    const isUK = !!latestUKData[subject];
-    const data = isUK ? latestUKData[subject] : latestUSData[subject];
-    const symbol = isUK ? "£" : "$";
+        const { country_code }: { country_code: string } =
+          await response.json();
 
-    const { min: minCharge, max: maxCharge } = getMinMaxValues(
-      data.charge_rate
+        console.log("country_code", country_code);
+
+        const fetchedRegion = getCountryPath(country_code) || "global";
+        setRegion(fetchedRegion);
+      } catch {
+        setRegion("global");
+      }
+    }
+
+    fetchRegion();
+  }, []);
+
+  useEffect(() => {
+    const matchedData = data[region];
+
+    if (matchedData) {
+      const cleanedData = removeZeroValuesFromRegionData(matchedData);
+      setRegionData(cleanedData);
+    }
+  }, [region]);
+
+  if (!region || !regionData)
+    return (
+      <div className="text-center">
+        <LoadingSvg />
+      </div>
     );
-    const { min: minPay, max: maxPay } = getMinMaxValues(data.pay_rate);
 
-    return {
-      symbol,
-      minCharge,
-      maxCharge,
-      minPay,
-      maxPay,
-    };
-  };
+  const qualLevelKeys = Object.keys(regionData.qual_levels);
+  const subjectKeys = Object.keys(regionData.subjects);
+  const subjectData = regionData.data[selectedSubject];
 
-  const subjectInfo = selectedSubject ? getSubjectInfo(selectedSubject) : null;
+  const subjectInfo = subjectData
+    ? getSubjectInfo(region, subjectData[selectedQual])
+    : null;
 
   return (
     <div className={styles.calculator}>
@@ -69,16 +72,32 @@ export const TutoringCalculator = () => {
           aliquip ex ea commodo consequat.
         </p>
       </div>
-      <div className={styles.selectWrapper}>
+      <div className={styles.selectsWrapper}>
         <select
-          id="subject-select"
+          value={selectedQual}
+          onChange={(e) => setSelectedQual(e.target.value)}
+          required
+        >
+          <option value="" disabled>
+            Qualification Level:
+          </option>
+          {qualLevelKeys.map((k) => (
+            <option key={k} value={k}>
+              {regionData.qual_levels[k]}
+            </option>
+          ))}
+        </select>
+        <select
           value={selectedSubject}
           onChange={(e) => setSelectedSubject(e.target.value)}
+          required
         >
-          <option value="">-- Please select a subject --</option>
-          {uniqueSubjects.map((subject) => (
-            <option key={subject} value={subject}>
-              {subject.replace(/_/g, " ")}
+          <option value="" disabled>
+            Subject:
+          </option>
+          {subjectKeys.map((k) => (
+            <option key={k} value={k}>
+              {regionData.subjects[k]}
             </option>
           ))}
         </select>
