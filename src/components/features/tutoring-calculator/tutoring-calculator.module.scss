@@ -16,6 +16,13 @@ $input-placeholder: rgba(31, 55, 78, 0.5);
     }
   }
 
+  .noneSelected {
+    width: 100%;
+    text-align: center;
+    border: none !important;
+    grid-column: 1 / -1;
+  }
+
   .selectedSubject {
     padding: grid(8);
     color: $black;

@@ -97,11 +97,18 @@ export const TutoringCalculator = ({ intro, content }) => {
             </select>
           </div>
 
-          {selectedSubject && subjectInfo && (
-            <>
-              <div className={styles.selectedSubject}>
-                <div className="main-content">
-                  <div className={styles.results}>
+          <>
+            <div className={styles.selectedSubject}>
+              <div className="main-content">
+                <div className={styles.results}>
+                  {!subjectInfo || !selectedSubject ? (
+                    <div className={styles.noneSelected}>
+                      <p>
+                        Select a subject and qualification level to see results
+                      </p>
+                    </div>
+                  ) : null}
+                  {subjectInfo && (
                     <div>
                       <p>On average people charge</p>
                       <p className={styles.amount}>
@@ -111,7 +118,9 @@ export const TutoringCalculator = ({ intro, content }) => {
                       </p>
                       <p>per hour</p>
                     </div>
+                  )}
 
+                  {subjectInfo && (
                     <div>
                       <p>On average people pay</p>
                       <p className={styles.amount}>
@@ -121,11 +130,11 @@ export const TutoringCalculator = ({ intro, content }) => {
                       </p>
                       <p>per hour</p>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
-            </>
-          )}
+            </div>
+          </>
         </div>
       </Body>
       <Body containerSize="small" background="white" spacing="small">
