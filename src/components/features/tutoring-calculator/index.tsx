@@ -8,7 +8,7 @@ import styles from "./tutoring-calculator.module.scss";
 import { getCountryPath } from "@/helpers/get-country-path";
 import { LoadingSvg } from "@/svgs/loading";
 
-export const TutoringCalculator = () => {
+export const TutoringCalculator = ({ intro, statement }) => {
   const [region, setRegion] = useState<string | null>(null);
   const [regionData, setRegionData] = useState<RegionData | null>(null);
   const [selectedQual, setSelectedQual] = useState("");
@@ -24,10 +24,10 @@ export const TutoringCalculator = () => {
         const { country_code }: { country_code: string } =
           await response.json();
 
-        const fetchedRegion = getCountryPath(country_code) || "global";
+        const fetchedRegion = getCountryPath(country_code) || "usa";
         setRegion(fetchedRegion);
       } catch {
-        setRegion("global");
+        setRegion("usa");
       }
     }
 
@@ -60,14 +60,7 @@ export const TutoringCalculator = () => {
 
   return (
     <div className={styles.calculator}>
-      <div className="main-content">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </div>
+      <div className="main-content">{intro}</div>
       <div className={styles.selectsWrapper}>
         <select
           value={selectedQual}
@@ -128,7 +121,7 @@ export const TutoringCalculator = () => {
           </div>
           <div className={styles.statement}>
             <p>
-              * <i>Lorem ipsum dolor sit amet, consectetur adipisci</i>
+              <i>{statement}</i>
             </p>
           </div>
         </>

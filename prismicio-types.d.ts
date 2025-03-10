@@ -1048,7 +1048,7 @@ export interface NavigationDocumentDataLinksItem {
    * - **API ID Path**: navigation.links[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  link: prismic.LinkField;
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
 }
 
 /**
@@ -1953,6 +1953,132 @@ export type TestimonialDocument<Lang extends string = string> =
     Lang
   >;
 
+type TutoringCalculatorDocumentDataSlicesSlice = never;
+
+/**
+ * Item in *Tutoring Calculator → Schemas*
+ */
+export interface TutoringCalculatorDocumentDataSchemasItem {
+  /**
+   * Schema field in *Tutoring Calculator → Schemas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tutoring_calculator.schemas[].schema
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  schema: prismic.ContentRelationshipField<"schema">;
+}
+
+/**
+ * Content for Tutoring Calculator documents
+ */
+interface TutoringCalculatorDocumentData {
+  /**
+   * Heading field in *Tutoring Calculator*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tutoring_calculator.heading
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Intro field in *Tutoring Calculator*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tutoring_calculator.intro
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  intro: prismic.RichTextField;
+
+  /**
+   * Statement field in *Tutoring Calculator*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tutoring_calculator.statement
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  statement: prismic.KeyTextField;
+
+  /**
+   * Slice Zone field in *Tutoring Calculator*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tutoring_calculator.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TutoringCalculatorDocumentDataSlicesSlice> /**
+   * Meta Title field in *Tutoring Calculator*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: tutoring_calculator.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Tutoring Calculator*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: tutoring_calculator.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Tutoring Calculator*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tutoring_calculator.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Schemas field in *Tutoring Calculator*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tutoring_calculator.schemas[]
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  schemas: prismic.GroupField<
+    Simplify<TutoringCalculatorDocumentDataSchemasItem>
+  >;
+}
+
+/**
+ * Tutoring Calculator document from Prismic
+ *
+ * - **API ID**: `tutoring_calculator`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TutoringCalculatorDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<TutoringCalculatorDocumentData>,
+    "tutoring_calculator",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | ArticleDocument
   | CategoryDocument
@@ -1971,7 +2097,8 @@ export type AllDocumentTypes =
   | ReviewsDocument
   | SchemaDocument
   | SolutionsDocument
-  | TestimonialDocument;
+  | TestimonialDocument
+  | TutoringCalculatorDocument;
 
 /**
  * Item in *Accordions → Default → Primary → Content*
@@ -3145,7 +3272,13 @@ export interface TextImageGridSliceDefaultPrimaryContentItem {
    * - **API ID Path**: text_image_grid.default.primary.content[].button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  button_link: prismic.LinkField;
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * image field in *AlternatingGrid → default → Primary → content*
@@ -3211,7 +3344,13 @@ export interface TextImageGridSliceWithBackgroundPrimaryContentItem {
    * - **API ID Path**: text_image_grid.withBackground.primary.content[].button_link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  button_link: prismic.LinkField;
+  button_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 
   /**
    * image field in *AlternatingGrid → has background → Primary → content*
@@ -3494,6 +3633,10 @@ declare module "@prismicio/client" {
       TestimonialDocument,
       TestimonialDocumentData,
       TestimonialDocumentDataSlicesSlice,
+      TutoringCalculatorDocument,
+      TutoringCalculatorDocumentData,
+      TutoringCalculatorDocumentDataSlicesSlice,
+      TutoringCalculatorDocumentDataSchemasItem,
       AllDocumentTypes,
       AccordionsSlice,
       AccordionsSliceDefaultPrimaryContentItem,
