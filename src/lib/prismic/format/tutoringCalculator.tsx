@@ -11,12 +11,12 @@ export const formatTutoringCalculatorPage = (
 ) => {
   const heading = <PrismicRichText field={data.heading} />;
   const intro = <PrismicRichText field={data.intro} />;
-  const statement = data.statement;
+  const content = <PrismicRichText field={data.content} />;
 
   const meta = {
     title: data.meta_title || "",
     description: data.meta_description || "",
   };
 
-  return { heading, meta, intro, schemas, statement };
+  return { heading, meta, intro, schemas, content };
 };

@@ -1997,15 +1997,15 @@ interface TutoringCalculatorDocumentData {
   intro: prismic.RichTextField;
 
   /**
-   * Statement field in *Tutoring Calculator*
+   * Content field in *Tutoring Calculator*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: tutoring_calculator.statement
+   * - **API ID Path**: tutoring_calculator.content
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  statement: prismic.KeyTextField;
+  content: prismic.RichTextField;
 
   /**
    * Slice Zone field in *Tutoring Calculator*

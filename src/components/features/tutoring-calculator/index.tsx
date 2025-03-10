@@ -7,8 +7,9 @@ import { getSubjectInfo, removeZeroValuesFromRegionData } from "./helpers";
 import styles from "./tutoring-calculator.module.scss";
 import { getCountryPath } from "@/helpers/get-country-path";
 import { LoadingSvg } from "@/svgs/loading";
+import { Body } from "@/components/ui/body";
 
-export const TutoringCalculator = ({ intro, statement }) => {
+export const TutoringCalculator = ({ intro, content }) => {
   const [region, setRegion] = useState<string | null>(null);
   const [regionData, setRegionData] = useState<RegionData | null>(null);
   const [selectedQual, setSelectedQual] = useState("");
@@ -54,78 +55,82 @@ export const TutoringCalculator = ({ intro, statement }) => {
   const subjectKeys = Object.keys(regionData.subjects);
   const subjectData = regionData.data[selectedSubject];
 
-  const subjectInfo = subjectData
-    ? getSubjectInfo(region, subjectData[selectedQual])
-    : null;
+  const subjectInfo =
+    subjectData && selectedQual
+      ? getSubjectInfo(region, subjectData[selectedQual])
+      : null;
 
   return (
-    <div className={styles.calculator}>
-      <div className="main-content">{intro}</div>
-      <div className={styles.selectsWrapper}>
-        <select
-          value={selectedQual}
-          onChange={(e) => setSelectedQual(e.target.value)}
-          required
-        >
-          <option value="" disabled>
-            Qualification Level:
-          </option>
-          {qualLevelKeys.map((k) => (
-            <option key={k} value={k}>
-              {regionData.qual_levels[k]}
-            </option>
-          ))}
-        </select>
-        <select
-          value={selectedSubject}
-          onChange={(e) => setSelectedSubject(e.target.value)}
-          required
-        >
-          <option value="" disabled>
-            Subject:
-          </option>
-          {subjectKeys.map((k) => (
-            <option key={k} value={k}>
-              {regionData.subjects[k]}
-            </option>
-          ))}
-        </select>
-      </div>
+    <>
+      <Body containerSize="small" background="cream" spacing="small">
+        <div className={styles.calculator}>
+          <div className="main-content">{intro}</div>
+          <div className={styles.selectsWrapper}>
+            <select
+              value={selectedSubject}
+              onChange={(e) => setSelectedSubject(e.target.value)}
+              required
+            >
+              <option value="" disabled>
+                Subject:
+              </option>
+              {subjectKeys.map((k) => (
+                <option key={k} value={k}>
+                  {regionData.subjects[k]}
+                </option>
+              ))}
+            </select>
+            <select
+              value={selectedQual}
+              onChange={(e) => setSelectedQual(e.target.value)}
+              disabled={!selectedSubject}
+              required
+            >
+              <option value="" disabled>
+                Qualification Level:
+              </option>
+              {qualLevelKeys.map((k) => (
+                <option key={k} value={k}>
+                  {regionData.qual_levels[k]}
+                </option>
+              ))}
+            </select>
+          </div>
 
-      {selectedSubject && subjectInfo && (
-        <>
-          <div className={styles.selectedSubject}>
-            <div className="main-content">
-              <div className={styles.results}>
-                <div>
-                  <p>On average people charge</p>
-                  <p className={styles.amount}>
-                    {subjectInfo.symbol}
-                    {subjectInfo.minCharge} - {subjectInfo.symbol}
-                    {subjectInfo.maxCharge}
-                  </p>
-                  <p>per hour</p>
-                </div>
+          {selectedSubject && subjectInfo && (
+            <>
+              <div className={styles.selectedSubject}>
+                <div className="main-content">
+                  <div className={styles.results}>
+                    <div>
+                      <p>On average people charge</p>
+                      <p className={styles.amount}>
+                        {subjectInfo.symbol}
+                        {subjectInfo.minCharge} - {subjectInfo.symbol}
+                        {subjectInfo.maxCharge}
+                      </p>
+                      <p>per hour</p>
+                    </div>
 
-                <div>
-                  <p>On average people pay</p>
-                  <p className={styles.amount}>
-                    {subjectInfo.symbol}
-                    {subjectInfo.minPay} - {subjectInfo.symbol}
-                    {subjectInfo.maxPay}
-                  </p>
-                  <p>per hour</p>
+                    <div>
+                      <p>On average people pay</p>
+                      <p className={styles.amount}>
+                        {subjectInfo.symbol}
+                        {subjectInfo.minPay} - {subjectInfo.symbol}
+                        {subjectInfo.maxPay}
+                      </p>
+                      <p>per hour</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className={styles.statement}>
-            <p>
-              <i>{statement}</i>
-            </p>
-          </div>
-        </>
-      )}
-    </div>
+            </>
+          )}
+        </div>
+      </Body>
+      <Body containerSize="small" background="white" spacing="small">
+        <div className="main-content">{content}</div>
+      </Body>
+    </>
   );
 };
