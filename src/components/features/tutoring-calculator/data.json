@@ -1,0 +1,2097 @@
+{
+  "gb": {
+    "qual_levels": {
+      "primary": "Up to Key Stage 2 (ages 4 - 11)",
+      "secondary_1": "Key Stage 3 (ages 11 - 14)",
+      "secondary_2": "Key Stage 4 (ages 14 - 16)",
+      "secondary_3": "Key Stage 5 (ages 16 - 18)",
+      "uni": "University"
+    },
+    "subjects": {
+      "art": "Art",
+      "design-technology": "Design & Technology",
+      "economics": "Economics",
+      "engineering": "Engineering",
+      "english": "English",
+      "geography": "Geography",
+      "history": "History",
+      "humanities": "Humanities",
+      "languages": "Languages",
+      "maths": "Maths",
+      "other": "Other",
+      "performing-arts": "Performing Arts",
+      "politics": "Politics",
+      "science": "Science",
+      "teaching-skill": "Teaching Skill",
+      "primary": "Primary",
+      "special-educational-needs-sen": "Special Educational Needs (SEN)"
+    },
+    "data": {
+      "all": {
+        "all": {
+          "count": 1148770.0,
+          "charge_rate": 58.48921059045762,
+          "pay_rate": 35.66044017514385
+        },
+        "primary": {
+          "count": 231057.40769511435,
+          "charge_rate": 63.83152289215892,
+          "pay_rate": 38.56875160241163
+        },
+        "secondary_1": {
+          "count": 167455.43883808245,
+          "charge_rate": 54.9880485702275,
+          "pay_rate": 31.83015582698685
+        },
+        "secondary_2": {
+          "count": 443591.28279368667,
+          "charge_rate": 54.62161997529261,
+          "pay_rate": 32.832933080930786
+        },
+        "secondary_3": {
+          "count": 287087.71359297575,
+          "charge_rate": 61.344959031667486,
+          "pay_rate": 39.142333947640836
+        },
+        "uni": {
+          "count": 19578.15708014077,
+          "charge_rate": 71.14040047091419,
+          "pay_rate": 47.10501196164874
+        }
+      },
+      "art": {
+        "all": {
+          "count": 1280.0,
+          "charge_rate": 95.514875,
+          "pay_rate": 55.02946875
+        },
+        "primary": {
+          "count": 257.45230276708685,
+          "charge_rate": 104.23905312715722,
+          "pay_rate": 59.51743446259526
+        },
+        "secondary_1": {
+          "count": 186.584748655297,
+          "charge_rate": 89.79735805386453,
+          "pay_rate": 49.118758960516324
+        },
+        "secondary_2": {
+          "count": 494.26503301437094,
+          "charge_rate": 89.19896766547824,
+          "pay_rate": 50.66619638103313
+        },
+        "secondary_3": {
+          "count": 319.8832432941398,
+          "charge_rate": 100.1784095671447,
+          "pay_rate": 60.40255903165045
+        },
+        "uni": {
+          "count": 21.814672269105376,
+          "charge_rate": 116.1746993989673,
+          "pay_rate": 72.69017911670994
+        }
+      },
+      "design-technology": {
+        "all": {
+          "count": 1028.0,
+          "charge_rate": 80.3742607003891,
+          "pay_rate": 44.06322957198444
+        },
+        "primary": {
+          "count": 206.76638065981663,
+          "charge_rate": 87.71551898281649,
+          "pay_rate": 47.65683619762135
+        },
+        "secondary_1": {
+          "count": 149.8508762637854,
+          "charge_rate": 75.56306037596231,
+          "pay_rate": 39.3304024467472
+        },
+        "secondary_2": {
+          "count": 396.95660463966664,
+          "charge_rate": 75.0595243028976,
+          "pay_rate": 40.56946747603683
+        },
+        "secondary_3": {
+          "count": 256.90622977060605,
+          "charge_rate": 84.29855147797704,
+          "pay_rate": 48.365573679047294
+        },
+        "uni": {
+          "count": 17.519908666125254,
+          "charge_rate": 97.75917705259978,
+          "pay_rate": 58.20452428133352
+        }
+      },
+      "economics": {
+        "all": {
+          "count": 13403.0,
+          "charge_rate": 83.55747593822278,
+          "pay_rate": 55.5621278818175
+        },
+        "primary": {
+          "count": 2695.8071984275507,
+          "charge_rate": 91.18948408293018,
+          "pay_rate": 60.0935349718129
+        },
+        "secondary_1": {
+          "count": 1953.7463954898014,
+          "charge_rate": 78.5557284653491,
+          "pay_rate": 49.5942052277286
+        },
+        "secondary_2": {
+          "count": 5175.495498040324,
+          "charge_rate": 78.03224989220276,
+          "pay_rate": 51.15662110781766
+        },
+        "secondary_3": {
+          "count": 3349.5274295869967,
+          "charge_rate": 87.63718789283995,
+          "pay_rate": 60.98722712647653
+        },
+        "uni": {
+          "count": 228.42347845532763,
+          "charge_rate": 101.63092031120259,
+          "pay_rate": 73.39378554031303
+        }
+      },
+      "engineering": {
+        "all": {
+          "count": 7488.0,
+          "charge_rate": 52.83301949786325,
+          "pay_rate": 46.41282051282051
+        },
+        "primary": {
+          "count": 1506.0959711874582,
+          "charge_rate": 57.65870422073944,
+          "pay_rate": 50.19804962402062
+        },
+        "secondary_1": {
+          "count": 1091.5207796334876,
+          "charge_rate": 49.67043687086888,
+          "pay_rate": 41.427624057281825
+        },
+        "secondary_2": {
+          "count": 2891.45044313407,
+          "charge_rate": 49.339443702978045,
+          "pay_rate": 42.73275995782182
+        },
+        "secondary_3": {
+          "count": 1871.3169732707179,
+          "charge_rate": 55.41260317752482,
+          "pay_rate": 50.94457923239605
+        },
+        "uni": {
+          "count": 127.61583277426645,
+          "charge_rate": 64.26077779512397,
+          "pay_rate": 61.30817383892394
+        }
+      },
+      "english": {
+        "all": {
+          "count": 38309.0,
+          "charge_rate": 72.59607794513039,
+          "pay_rate": 38.35871831684461
+        },
+        "primary": {
+          "count": 7705.265833362758,
+          "charge_rate": 79.22688927505472,
+          "pay_rate": 41.48708965125074
+        },
+        "secondary_1": {
+          "count": 5584.277450184198,
+          "charge_rate": 68.25047935774539,
+          "pay_rate": 34.238612180667886
+        },
+        "secondary_2": {
+          "count": 14792.811835740264,
+          "charge_rate": 67.79567276058543,
+          "pay_rate": 35.31726544545247
+        },
+        "secondary_3": {
+          "count": 9573.755599496251,
+          "charge_rate": 76.14059725624551,
+          "pay_rate": 42.1040726022211
+        },
+        "uni": {
+          "count": 652.8892812165295,
+          "charge_rate": 88.29857687422533,
+          "pay_rate": 50.66925355587513
+        }
+      },
+      "geography": {
+        "all": {
+          "count": 2666.0,
+          "charge_rate": 74.82565641410352,
+          "pay_rate": 47.317363090772695
+        },
+        "primary": {
+          "count": 536.2248743570731,
+          "charge_rate": 81.66011392701031,
+          "pay_rate": 51.17636278649133
+        },
+        "secondary_1": {
+          "count": 388.6210468086108,
+          "charge_rate": 70.34659534059695,
+          "pay_rate": 42.235009806502916
+        },
+        "secondary_2": {
+          "count": 1029.4613890752444,
+          "charge_rate": 69.87782067484048,
+          "pay_rate": 43.565581588314686
+        },
+        "secondary_3": {
+          "count": 666.2568176735756,
+          "charge_rate": 78.47903537938474,
+          "pay_rate": 51.93744156057177
+        },
+        "uni": {
+          "count": 45.43587208549604,
+          "charge_rate": 91.0104121608167,
+          "pay_rate": 62.50301295882794
+        }
+      },
+      "history": {
+        "all": {
+          "count": 4303.0,
+          "charge_rate": 75.24947246107367,
+          "pay_rate": 44.25862653962352
+        },
+        "primary": {
+          "count": 865.4822334427928,
+          "charge_rate": 82.12264066367058,
+          "pay_rate": 47.86816889771486
+        },
+        "secondary_1": {
+          "count": 627.2454480185493,
+          "charge_rate": 70.7450417743985,
+          "pay_rate": 39.504811845440145
+        },
+        "secondary_2": {
+          "count": 1661.58002895378,
+          "charge_rate": 70.27361194682614,
+          "pay_rate": 40.749371468561925
+        },
+        "secondary_3": {
+          "count": 1075.3574967927216,
+          "charge_rate": 78.92354433712042,
+          "pay_rate": 48.58004925259942
+        },
+        "uni": {
+          "count": 73.33479279215659,
+          "charge_rate": 91.52589942766613,
+          "pay_rate": 58.462630363387
+        }
+      },
+      "humanities": {
+        "all": {
+          "count": 8957.0,
+          "charge_rate": 75.32203304677905,
+          "pay_rate": 48.71200625209333
+        },
+        "primary": {
+          "count": 1801.5627155349976,
+          "charge_rate": 82.20182881890065,
+          "pay_rate": 52.684747018396315
+        },
+        "secondary_1": {
+          "count": 1305.6559325824182,
+          "charge_rate": 70.81325888608069,
+          "pay_rate": 43.47985448396204
+        },
+        "secondary_2": {
+          "count": 3458.6967974294694,
+          "charge_rate": 70.34137447426622,
+          "pay_rate": 44.84964385346124
+        },
+        "secondary_3": {
+          "count": 2238.432976707508,
+          "charge_rate": 78.99964770922058,
+          "pay_rate": 53.46825800843649
+        },
+        "uni": {
+          "count": 152.65157774560691,
+          "charge_rate": 91.61415483534516,
+          "pay_rate": 64.3452415593047
+        }
+      },
+      "languages": {
+        "all": {
+          "count": 5587.0,
+          "charge_rate": 70.37991945587972,
+          "pay_rate": 43.77286379094326
+        },
+        "primary": {
+          "count": 1123.7390746560268,
+          "charge_rate": 76.80831036261621,
+          "pay_rate": 47.34278943802405
+        },
+        "secondary_1": {
+          "count": 814.413274013394,
+          "charge_rate": 66.16698003511786,
+          "pay_rate": 39.071224825495975
+        },
+        "secondary_2": {
+          "count": 2157.3896401963207,
+          "charge_rate": 65.7260574318291,
+          "pay_rate": 40.30212472280401
+        },
+        "secondary_3": {
+          "count": 1396.2403752221555,
+          "charge_rate": 73.81623434626046,
+          "pay_rate": 48.04685651479862
+        },
+        "uni": {
+          "count": 95.21763591210292,
+          "charge_rate": 85.60306430291992,
+          "pay_rate": 57.820970866905064
+        }
+      },
+      "maths": {
+        "all": {
+          "count": 49794.0,
+          "charge_rate": 73.92092963007592,
+          "pay_rate": 40.834707796120014
+        },
+        "primary": {
+          "count": 10015.296846862751,
+          "charge_rate": 80.67275082460542,
+          "pay_rate": 44.16501013477075
+        },
+        "secondary_1": {
+          "count": 7258.438261360828,
+          "charge_rate": 69.4960254689801,
+          "pay_rate": 36.44865587514391
+        },
+        "secondary_2": {
+          "count": 19227.682073373115,
+          "charge_rate": 69.03291881892986,
+          "pay_rate": 37.59693435819915
+        },
+        "secondary_3": {
+          "count": 12443.957981709686,
+          "charge_rate": 77.53013511315203,
+          "pay_rate": 44.821818277054255
+        },
+        "uni": {
+          "count": 848.6248366936196,
+          "charge_rate": 89.90999338130615,
+          "pay_rate": 53.93986697133935
+        }
+      },
+      "other": {
+        "all": {
+          "count": 56718.0,
+          "charge_rate": 83.38539564159527,
+          "pay_rate": 49.56937162805458
+        },
+        "primary": {
+          "count": 11407.952897143463,
+          "charge_rate": 91.0016862432503,
+          "pay_rate": 53.6120354101141
+        },
+        "secondary_1": {
+          "count": 8267.745136118076,
+          "charge_rate": 78.39394888902368,
+          "pay_rate": 44.24513032978662
+        },
+        "secondary_2": {
+          "count": 21901.346986335226,
+          "charge_rate": 77.87154838037286,
+          "pay_rate": 45.639028950128214
+        },
+        "secondary_3": {
+          "count": 14174.326400903923,
+          "charge_rate": 87.45670573826467,
+          "pay_rate": 54.40933674151426
+        },
+        "uni": {
+          "count": 966.6285794993115,
+          "charge_rate": 101.4216191239981,
+          "pay_rate": 65.47776280951372
+        }
+      },
+      "performing-arts": {
+        "all": {
+          "count": 1657.0,
+          "charge_rate": 55.17359082679541,
+          "pay_rate": 37.51715751357876
+        },
+        "primary": {
+          "count": 333.2800513164554,
+          "charge_rate": 60.213059645530194,
+          "pay_rate": 40.57689478489263
+        },
+        "secondary_1": {
+          "count": 241.53978790767746,
+          "charge_rate": 51.8709016851162,
+          "pay_rate": 33.48744333995045
+        },
+        "secondary_2": {
+          "count": 639.8415310193849,
+          "charge_rate": 51.525245090334366,
+          "pay_rate": 34.54243178099251
+        },
+        "secondary_3": {
+          "count": 414.09885479561694,
+          "charge_rate": 57.86745341117568,
+          "pay_rate": 41.18034160403682
+        },
+        "uni": {
+          "count": 28.23977496086532,
+          "charge_rate": 67.10761364724162,
+          "pay_rate": 49.557609069447174
+        }
+      },
+      "politics": {
+        "all": {
+          "count": 3383.0,
+          "charge_rate": 73.23156961276973,
+          "pay_rate": 50.57885900088679
+        },
+        "primary": {
+          "count": 680.4383908289491,
+          "charge_rate": 79.92042574992236,
+          "pay_rate": 54.703852211513954
+        },
+        "secondary_1": {
+          "count": 493.1376599225545,
+          "charge_rate": 68.84793051725597,
+          "pay_rate": 45.146188763861176
+        },
+        "secondary_2": {
+          "count": 1306.3270364747007,
+          "charge_rate": 68.38914263335073,
+          "pay_rate": 46.56847432981107
+        },
+        "secondary_3": {
+          "count": 845.4414156750586,
+          "charge_rate": 76.80711694291506,
+          "pay_rate": 55.517390699044114
+        },
+        "uni": {
+          "count": 57.655497098737094,
+          "charge_rate": 89.07152510305932,
+          "pay_rate": 66.81122685367151
+        }
+      },
+      "science": {
+        "all": {
+          "count": 33148.0,
+          "charge_rate": 68.53994660311331,
+          "pay_rate": 42.90023530831423
+        },
+        "primary": {
+          "count": 6667.210103221402,
+          "charge_rate": 74.80027728973573,
+          "pay_rate": 46.398993146603964
+        },
+        "secondary_1": {
+          "count": 4831.961912832645,
+          "charge_rate": 64.43714789044661,
+          "pay_rate": 38.29232528177947
+        },
+        "secondary_2": {
+          "count": 12799.919776844037,
+          "charge_rate": 64.0077525185968,
+          "pay_rate": 39.498686727256114
+        },
+        "secondary_3": {
+          "count": 8283.976366182927,
+          "charge_rate": 71.88642441836325,
+          "pay_rate": 47.08902438172538
+        },
+        "uni": {
+          "count": 564.9318409189883,
+          "charge_rate": 83.36510615166443,
+          "pay_rate": 56.66828809264791
+        }
+      },
+      "teaching-skill": {
+        "all": {
+          "count": 50267.0,
+          "charge_rate": 50.543822587383374,
+          "pay_rate": 22.55049674736905
+        },
+        "primary": {
+          "count": 10110.433518119653,
+          "charge_rate": 55.16041567280347,
+          "pay_rate": 24.389617831091726
+        },
+        "secondary_1": {
+          "count": 7327.3871567623555,
+          "charge_rate": 47.51827120425243,
+          "pay_rate": 20.12835012465803
+        },
+        "secondary_2": {
+          "count": 19410.328448854205,
+          "charge_rate": 47.20161960806291,
+          "pay_rate": 20.76247368264934
+        },
+        "secondary_3": {
+          "count": 12562.164836458223,
+          "charge_rate": 53.011635729492305,
+          "pay_rate": 24.752332557744353
+        },
+        "uni": {
+          "count": 856.6860398055625,
+          "charge_rate": 61.47642862500734,
+          "pay_rate": 29.787669860742408
+        }
+      },
+      "primary": {
+        "all": {
+          "count": 4857.0,
+          "charge_rate": 50.86545604282479,
+          "pay_rate": 26.584004529544988
+        },
+        "primary": {
+          "count": 976.9108082341726,
+          "charge_rate": 55.511426621090095,
+          "pay_rate": 28.752081080930466
+        },
+        "secondary_1": {
+          "count": 708.00165954592,
+          "charge_rate": 47.820651692740476,
+          "pay_rate": 23.72861923534369
+        },
+        "secondary_2": {
+          "count": 1875.5041135553122,
+          "charge_rate": 47.50198509764822,
+          "pay_rate": 24.4761656741998
+        },
+        "secondary_3": {
+          "count": 1213.8069630309665,
+          "charge_rate": 53.34897300842091,
+          "pay_rate": 29.179672989183707
+        },
+        "uni": {
+          "count": 82.77645563362876,
+          "charge_rate": 61.86763125185009,
+          "pay_rate": 35.11565884219178
+        }
+      },
+      "special-educational-needs-sen": {
+        "all": {
+          "count": 2404.0,
+          "charge_rate": 72.29874792013311,
+          "pay_rate": 36.414126455906825
+        },
+        "primary": {
+          "count": 483.527606134435,
+          "charge_rate": 78.90240159424071,
+          "pay_rate": 39.38390527987953
+        },
+        "secondary_1": {
+          "count": 350.4294810682297,
+          "charge_rate": 67.97094749723838,
+          "pay_rate": 32.50288873896221
+        },
+        "secondary_2": {
+          "count": 928.2915151301154,
+          "charge_rate": 67.51800364061111,
+          "pay_rate": 33.526859771088546
+        },
+        "secondary_3": {
+          "count": 600.7807163118064,
+          "charge_rate": 75.82875002804376,
+          "pay_rate": 39.969610334261056
+        },
+        "uni": {
+          "count": 40.97068135541353,
+          "charge_rate": 87.93693449887441,
+          "pay_rate": 48.10058019065272
+        }
+      }
+    }
+  },
+  "au": {
+    "qual_levels": {
+      "primary": "Primary (ages 4 - 11)",
+      "secondary_1": "Middle (ages 11 - 14)",
+      "secondary_2": "Secondary (ages 14 - 18)",
+      "uni": "College/University (ages 18+)"
+    },
+    "subjects": {
+      "art": "Art",
+      "design-technology": "Design & Technology",
+      "economics": "Economics",
+      "engineering": "Engineering",
+      "english": "English",
+      "geography": "Geography",
+      "history": "History",
+      "humanities": "Humanities",
+      "languages": "Languages",
+      "maths": "Maths",
+      "other": "Other",
+      "performing-arts": "Performing Arts",
+      "politics": "Politics",
+      "science": "Science",
+      "teaching-skill": "Teaching Skill",
+      "special-educational-needs-sen": "Special Educational Needs (SEN)"
+    },
+    "data": {
+      "all": {
+        "all": {
+          "count": 78900.0,
+          "charge_rate": 62.419560963244614,
+          "pay_rate": 30.46105918884664
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 78900.0,
+          "charge_rate": 62.419560963244614,
+          "pay_rate": 30.46105918884664
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "art": {
+        "all": {
+          "count": 82.0,
+          "charge_rate": 0.0,
+          "pay_rate": 35.0
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 82.0,
+          "charge_rate": 0.0,
+          "pay_rate": 35.0
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "design-technology": {
+        "all": {
+          "count": 5.0,
+          "charge_rate": 0.0,
+          "pay_rate": 35.0
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 5.0,
+          "charge_rate": 0.0,
+          "pay_rate": 35.0
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "economics": {
+        "all": {
+          "count": 149.0,
+          "charge_rate": 62.77852348993289,
+          "pay_rate": 32.852348993288594
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 149.0,
+          "charge_rate": 62.77852348993289,
+          "pay_rate": 32.852348993288594
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "engineering": {
+        "all": {
+          "count": 12.0,
+          "charge_rate": 0.0,
+          "pay_rate": 35.0
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 12.0,
+          "charge_rate": 0.0,
+          "pay_rate": 35.0
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "english": {
+        "all": {
+          "count": 1951.0,
+          "charge_rate": 70.5602255253716,
+          "pay_rate": 43.945668887749875
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 1951.0,
+          "charge_rate": 70.5602255253716,
+          "pay_rate": 43.945668887749875
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "geography": {
+        "all": {
+          "count": 3.0,
+          "charge_rate": 59.0,
+          "pay_rate": 28.0
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 3.0,
+          "charge_rate": 59.0,
+          "pay_rate": 28.0
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "history": {
+        "all": {
+          "count": 2.0,
+          "charge_rate": 64.0,
+          "pay_rate": 28.0
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 2.0,
+          "charge_rate": 64.0,
+          "pay_rate": 28.0
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "humanities": {
+        "all": {
+          "count": 99.0,
+          "charge_rate": 70.17171717171718,
+          "pay_rate": 36.303030303030305
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 99.0,
+          "charge_rate": 70.17171717171718,
+          "pay_rate": 36.303030303030305
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "languages": {
+        "all": {
+          "count": 3.0,
+          "charge_rate": 170.0,
+          "pay_rate": 100.0
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 3.0,
+          "charge_rate": 170.0,
+          "pay_rate": 100.0
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "maths": {
+        "all": {
+          "count": 1922.0,
+          "charge_rate": 65.10874089490115,
+          "pay_rate": 38.02549427679501
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 1922.0,
+          "charge_rate": 65.10874089490115,
+          "pay_rate": 38.02549427679501
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "other": {
+        "all": {
+          "count": 249.0,
+          "charge_rate": 52.17269076305221,
+          "pay_rate": 29.325301204819276
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 249.0,
+          "charge_rate": 52.17269076305221,
+          "pay_rate": 29.325301204819276
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "performing-arts": {
+        "all": {
+          "count": 281.0,
+          "charge_rate": 58.79003558718861,
+          "pay_rate": 38.754448398576514
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 281.0,
+          "charge_rate": 58.79003558718861,
+          "pay_rate": 38.754448398576514
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "politics": {
+        "all": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "science": {
+        "all": {
+          "count": 735.0,
+          "charge_rate": 60.49659863945578,
+          "pay_rate": 33.80680272108844
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 735.0,
+          "charge_rate": 60.49659863945578,
+          "pay_rate": 33.80680272108844
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "teaching-skill": {
+        "all": {
+          "count": 964.0,
+          "charge_rate": 69.53526970954357,
+          "pay_rate": 42.37448132780083
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 964.0,
+          "charge_rate": 69.53526970954357,
+          "pay_rate": 42.37448132780083
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      },
+      "special-educational-needs-sen": {
+        "all": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "primary": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "uni": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        }
+      }
+    }
+  },
+  "global": {
+    "qual_levels": {
+      "primary": "Primary (ages 4 - 11)",
+      "secondary_1": "Middle (ages 11 - 14)",
+      "secondary_2": "Secondary (ages 14 - 18)",
+      "uni": "College/University (ages 18+)"
+    },
+    "subjects": {
+      "art": "Art",
+      "design-technology": "Design & Technology",
+      "economics": "Economics",
+      "engineering": "Engineering",
+      "english": "English",
+      "geography": "Geography",
+      "history": "History",
+      "humanities": "Humanities",
+      "languages": "Languages",
+      "maths": "Maths",
+      "other": "Other",
+      "performing-arts": "Performing Arts",
+      "politics": "Politics",
+      "science": "Science",
+      "teaching-skill": "Teaching Skill",
+      "special-educational-needs-sen": "Special Educational Needs (SEN)"
+    },
+    "data": {
+      "all": {
+        "all": {
+          "count": 332059.0,
+          "charge_rate": 6291.5666807404705,
+          "pay_rate": 3976.843344014166
+        },
+        "primary": {
+          "count": 23145.715148188803,
+          "charge_rate": 6700.723242094718,
+          "pay_rate": 4637.0986677332385
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 301258.79637760704,
+          "charge_rate": 6265.3129643578295,
+          "pay_rate": 3905.1209419169727
+        },
+        "uni": {
+          "count": 1518.7477131357482,
+          "charge_rate": 7336.136652983011,
+          "pay_rate": 7892.493153479401
+        }
+      },
+      "art": {
+        "all": {
+          "count": 43.0,
+          "charge_rate": 106.74418604651163,
+          "pay_rate": 56.86046511627907
+        },
+        "primary": {
+          "count": 2.9972557628979146,
+          "charge_rate": 113.68603158731237,
+          "pay_rate": 66.30072251507093
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 39.01152579582876,
+          "charge_rate": 106.29875937805721,
+          "pay_rate": 55.8349861648284
+        },
+        "uni": {
+          "count": 0.19667032564946943,
+          "charge_rate": 124.4666035481782,
+          "pay_rate": 112.84599186170213
+        }
+      },
+      "design-technology": {
+        "all": {
+          "count": 24.0,
+          "charge_rate": 283.3333333333333,
+          "pay_rate": 209.16666666666666
+        },
+        "primary": {
+          "count": 1.6728869374313942,
+          "charge_rate": 301.7592196453353,
+          "pay_rate": 243.89355763638736
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 21.773874862788148,
+          "charge_rate": 282.1510279787938,
+          "pay_rate": 205.39434412985446
+        },
+        "uni": {
+          "count": 0.1097694840834248,
+          "charge_rate": 330.3743180599792,
+          "pay_rate": 415.11478874006514
+        }
+      },
+      "economics": {
+        "all": {
+          "count": 721.0,
+          "charge_rate": 101.82671289875174,
+          "pay_rate": 61.29195561719833
+        },
+        "primary": {
+          "count": 50.2563117453348,
+          "charge_rate": 108.44876267074208,
+          "pay_rate": 71.46795112336282
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 654.1234906695939,
+          "charge_rate": 101.4018060708858,
+          "pay_rate": 60.18655469847299
+        },
+        "uni": {
+          "count": 3.29765825100622,
+          "charge_rate": 118.73269706193314,
+          "pay_rate": 121.64078346214535
+        }
+      },
+      "engineering": {
+        "all": {
+          "count": 219.0,
+          "charge_rate": 61.94566210045662,
+          "pay_rate": 33.49771689497717
+        },
+        "primary": {
+          "count": 15.265093304061471,
+          "charge_rate": 65.97414584416734,
+          "pay_rate": 39.05917456356574
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 198.68660812294183,
+          "charge_rate": 61.68717261342651,
+          "pay_rate": 32.89358529796676
+        },
+        "uni": {
+          "count": 1.0016465422612513,
+          "charge_rate": 72.23031484663149,
+          "pay_rate": 66.47998887075518
+        }
+      },
+      "english": {
+        "all": {
+          "count": 3066.0,
+          "charge_rate": 63.747433137638616,
+          "pay_rate": 35.52576647097195
+        },
+        "primary": {
+          "count": 213.7113062568606,
+          "charge_rate": 67.89309062826007,
+          "pay_rate": 41.42393102325818
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 2781.6125137211857,
+          "charge_rate": 63.4814251439794,
+          "pay_rate": 34.88505898334179
+        },
+        "uni": {
+          "count": 14.023051591657518,
+          "charge_rate": 74.33122853266404,
+          "pay_rate": 70.50488148251671
+        }
+      },
+      "geography": {
+        "all": {
+          "count": 122.0,
+          "charge_rate": 100.34836065573771,
+          "pay_rate": 56.47540983606557
+        },
+        "primary": {
+          "count": 8.50384193194292,
+          "charge_rate": 106.87426942646145,
+          "pay_rate": 65.85173844091342
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 110.68386388583974,
+          "charge_rate": 99.92962275883463,
+          "pay_rate": 55.456875359729494
+        },
+        "uni": {
+          "count": 0.557994877424076,
+          "charge_rate": 117.00889842379831,
+          "pay_rate": 112.08180632561096
+        }
+      },
+      "history": {
+        "all": {
+          "count": 225.0,
+          "charge_rate": 68.84177777777778,
+          "pay_rate": 41.82657777777778
+        },
+        "primary": {
+          "count": 15.68331503841932,
+          "charge_rate": 73.31873343959933,
+          "pay_rate": 48.77083438076789
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 204.13007683863887,
+          "charge_rate": 68.55451188666243,
+          "pay_rate": 41.072235106914796
+        },
+        "uni": {
+          "count": 1.0290889132821075,
+          "charge_rate": 80.2713719554234,
+          "pay_rate": 83.00955058777112
+        }
+      },
+      "humanities": {
+        "all": {
+          "count": 241.0,
+          "charge_rate": 64.76099585062241,
+          "pay_rate": 34.995850622406635
+        },
+        "primary": {
+          "count": 16.798572996706916,
+          "charge_rate": 68.97256789884217,
+          "pay_rate": 40.80603590825658
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 218.64599341383098,
+          "charge_rate": 64.49075841947122,
+          "pay_rate": 34.364700171421056
+        },
+        "uni": {
+          "count": 1.102268569337724,
+          "charge_rate": 75.51307002718066,
+          "pay_rate": 69.45320384653009
+        }
+      },
+      "languages": {
+        "all": {
+          "count": 7710.0,
+          "charge_rate": 50.87581452658885,
+          "pay_rate": 29.106485084306097
+        },
+        "primary": {
+          "count": 537.4149286498354,
+          "charge_rate": 54.18439796599152,
+          "pay_rate": 33.93888859363438
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 6994.857299670692,
+          "charge_rate": 50.663517769184104,
+          "pay_rate": 28.581549388763865
+        },
+        "uni": {
+          "count": 35.26344676180022,
+          "charge_rate": 59.322573635180376,
+          "pay_rate": 57.765095171653776
+        }
+      },
+      "maths": {
+        "all": {
+          "count": 6457.0,
+          "charge_rate": 81.14759950441382,
+          "pay_rate": 47.267306798822986
+        },
+        "primary": {
+          "count": 450.076289791438,
+          "charge_rate": 86.42483400897922,
+          "pay_rate": 55.11486031102249
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 5858.079582875961,
+          "charge_rate": 80.80898335828877,
+          "pay_rate": 46.41484053575549
+        },
+        "uni": {
+          "count": 29.53256494694475,
+          "charge_rate": 94.62029240638242,
+          "pay_rate": 93.80728960687767
+        }
+      },
+      "other": {
+        "all": {
+          "count": 2577.0,
+          "charge_rate": 79.38693053938688,
+          "pay_rate": 43.981373690337605
+        },
+        "primary": {
+          "count": 179.62623490669594,
+          "charge_rate": 84.54966426918998,
+          "pay_rate": 51.283380234606426
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 2337.9698133918773,
+          "charge_rate": 79.0556613874204,
+          "pay_rate": 43.188169257642684
+        },
+        "uni": {
+          "count": 11.786498353457738,
+          "charge_rate": 92.56730484644075,
+          "pay_rate": 87.2859855679475
+        }
+      },
+      "performing-arts": {
+        "all": {
+          "count": 1166.0,
+          "charge_rate": 122113.42195540309,
+          "pay_rate": 214368.15780445968
+        },
+        "primary": {
+          "count": 81.27442371020857,
+          "charge_rate": 130054.76794406115,
+          "pay_rate": 249958.62621938565
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 1057.847420417124,
+          "charge_rate": 121603.86188726539,
+          "pay_rate": 210502.0263326158
+        },
+        "uni": {
+          "count": 5.332967435053055,
+          "charge_rate": 142387.54766289453,
+          "pay_rate": 425437.733257029
+        }
+      },
+      "politics": {
+        "all": {
+          "count": 84.0,
+          "charge_rate": 108.18452380952381,
+          "pay_rate": 57.30952380952381
+        },
+        "primary": {
+          "count": 5.855104281009879,
+          "charge_rate": 115.22003817340271,
+          "pay_rate": 66.82433616741996
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 76.20856201975852,
+          "charge_rate": 107.73308683854155,
+          "pay_rate": 56.27594608088329
+        },
+        "uni": {
+          "count": 0.3841931942919868,
+          "charge_rate": 126.14607627605298,
+          "pay_rate": 113.73719937362968
+        }
+      },
+      "science": {
+        "all": {
+          "count": 4363.0,
+          "charge_rate": 113.44762777905112,
+          "pay_rate": 70.85674994269998
+        },
+        "primary": {
+          "count": 304.11690450054886,
+          "charge_rate": 120.82541516195622,
+          "pay_rate": 82.62074020435212
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 3958.309001097695,
+          "charge_rate": 112.97422870452296,
+          "pay_rate": 69.57884788041736
+        },
+        "uni": {
+          "count": 19.955177460665933,
+          "charge_rate": 132.2829976342107,
+          "pay_rate": 140.62319418297142
+        }
+      },
+      "teaching-skill": {
+        "all": {
+          "count": 718.0,
+          "charge_rate": 31.704540389972145,
+          "pay_rate": 28.33983286908078
+        },
+        "primary": {
+          "count": 50.04720087815588,
+          "charge_rate": 33.76636717867768,
+          "pay_rate": 33.04495296220273
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 651.4017563117453,
+          "charge_rate": 31.5722423386794,
+          "pay_rate": 27.828723752483846
+        },
+        "uni": {
+          "count": 3.283937065495792,
+          "charge_rate": 36.96835027320746,
+          "pay_rate": 56.24358757471182
+        }
+      },
+      "special-educational-needs-sen": {
+        "all": {
+          "count": 8.0,
+          "charge_rate": 100.0,
+          "pay_rate": 50.0
+        },
+        "primary": {
+          "count": 0.557628979143798,
+          "charge_rate": 106.50325399247129,
+          "pay_rate": 58.30124883738343
+        },
+        "secondary_1": {
+          "count": 0.0,
+          "charge_rate": 0.0,
+          "pay_rate": 0.0
+        },
+        "secondary_2": {
+          "count": 7.257958287596049,
+          "charge_rate": 99.58271575722135,
+          "pay_rate": 49.09824959279389
+        },
+        "uni": {
+          "count": 0.03658982802780827,
+          "charge_rate": 116.60270049175736,
+          "pay_rate": 99.23062679045381
+        }
+      }
+    }
+  },
+  "usa": {
+    "qual_levels": {
+      "primary": "Primary (ages 4 - 11)",
+      "secondary_1": "High School (ages 14 - 18)",
+      "secondary_2": "SAT/ACT (ages 16 - 18)",
+      "uni": "College (ages 18+)"
+    },
+    "subjects": {
+      "art": "Art",
+      "design-technology": "Design & Technology",
+      "economics": "Economics",
+      "engineering": "Engineering",
+      "english": "English",
+      "geography": "Geography",
+      "history": "History",
+      "humanities": "Humanities",
+      "languages": "Languages",
+      "other": "Other",
+      "performing-arts": "Performing Arts",
+      "politics": "Politics",
+      "science": "Science",
+      "teaching-skill": "Teaching Skill",
+      "special-educational-needs-sen": "Special Educational Needs (SEN)",
+      "test-and-exam-prep": "Test and Exam Prep",
+      "math": "Math"
+    },
+    "data": {
+      "all": {
+        "all": {
+          "count": 653388.0,
+          "charge_rate": 78.2478674080332,
+          "pay_rate": 30.522722455876142
+        },
+        "primary": {
+          "count": 62411.49354303442,
+          "charge_rate": 111.39475854020544,
+          "pay_rate": 44.101942944975356
+        },
+        "secondary_1": {
+          "count": 535352.9699155905,
+          "charge_rate": 71.47592775360864,
+          "pay_rate": 28.042276866031404
+        },
+        "secondary_2": {
+          "count": 11690.370391746626,
+          "charge_rate": 63.10486827282314,
+          "pay_rate": 26.32593522601219
+        },
+        "uni": {
+          "count": 9003.470745256474,
+          "charge_rate": 77.65661316756965,
+          "pay_rate": 33.26453525617275
+        }
+      },
+      "art": {
+        "all": {
+          "count": 93.0,
+          "charge_rate": 58.693333333333335,
+          "pay_rate": 36.376344086021504
+        },
+        "primary": {
+          "count": 8.883341750234472,
+          "charge_rate": 83.55665031089691,
+          "pay_rate": 52.559775876730924
+        },
+        "secondary_1": {
+          "count": 76.19948055695838,
+          "charge_rate": 53.61373532489543,
+          "pay_rate": 33.420200760560185
+        },
+        "secondary_2": {
+          "count": 1.6639492100137074,
+          "charge_rate": 47.334645546041436,
+          "pay_rate": 31.37470058747566
+        },
+        "uni": {
+          "count": 1.2815092706153957,
+          "charge_rate": 58.24983648965179,
+          "pay_rate": 39.643979402210235
+        }
+      },
+      "design-technology": {
+        "all": {
+          "count": 9.0,
+          "charge_rate": 56.111111111111114,
+          "pay_rate": 22.77777777777778
+        },
+        "primary": {
+          "count": 0.8596782338936585,
+          "charge_rate": 79.88056263630725,
+          "pay_rate": 32.911358330537496
+        },
+        "secondary_1": {
+          "count": 7.374143279705649,
+          "charge_rate": 51.25499079788011,
+          "pay_rate": 20.92672931651985
+        },
+        "secondary_2": {
+          "count": 0.16102734290455234,
+          "charge_rate": 45.25215053905597,
+          "pay_rate": 19.64589833810305
+        },
+        "uni": {
+          "count": 0.12401702618858668,
+          "charge_rate": 55.68712597924079,
+          "pay_rate": 24.82387319943305
+        }
+      },
+      "economics": {
+        "all": {
+          "count": 93.0,
+          "charge_rate": 59.376344086021504,
+          "pay_rate": 17.806451612903224
+        },
+        "primary": {
+          "count": 8.883341750234472,
+          "charge_rate": 84.52899397208981,
+          "pay_rate": 25.7283443251157
+        },
+        "secondary_1": {
+          "count": 76.19948055695838,
+          "charge_rate": 54.23763510429141,
+          "pay_rate": 16.35940066789467
+        },
+        "secondary_2": {
+          "count": 1.6639492100137074,
+          "charge_rate": 47.885475939316585,
+          "pay_rate": 15.358115333390392
+        },
+        "uni": {
+          "count": 1.2815092706153957,
+          "charge_rate": 58.92768629652526,
+          "pay_rate": 19.405979866999747
+        }
+      },
+      "engineering": {
+        "all": {
+          "count": 6.0,
+          "charge_rate": 45.0,
+          "pay_rate": 18.333333333333332
+        },
+        "primary": {
+          "count": 0.5731188225957724,
+          "charge_rate": 64.06262944099889,
+          "pay_rate": 26.48962987579847
+        },
+        "secondary_1": {
+          "count": 4.916095519803767,
+          "charge_rate": 41.10548766958702,
+          "pay_rate": 16.84346505963793
+        },
+        "secondary_2": {
+          "count": 0.10735156193636822,
+          "charge_rate": 36.29132865013399,
+          "pay_rate": 15.812552320912209
+        },
+        "uni": {
+          "count": 0.08267801745905778,
+          "charge_rate": 44.65997231998519,
+          "pay_rate": 19.980190623933918
+        }
+      },
+      "english": {
+        "all": {
+          "count": 44014.0,
+          "charge_rate": 38.3236195301495,
+          "pay_rate": 17.829521970282183
+        },
+        "primary": {
+          "count": 4204.208642955054,
+          "charge_rate": 54.55804081772878,
+          "pay_rate": 25.761678428465025
+        },
+        "secondary_1": {
+          "count": 36062.83803477383,
+          "charge_rate": 35.00691266778899,
+          "pay_rate": 16.38059620017244
+        },
+        "secondary_2": {
+          "count": 787.4952745112186,
+          "charge_rate": 30.907001587363315,
+          "pay_rate": 15.378013582469496
+        },
+        "uni": {
+          "count": 606.4983767404949,
+          "charge_rate": 38.034039720402674,
+          "pay_rate": 19.43112260181032
+        }
+      },
+      "geography": {
+        "all": {
+          "count": 650.0,
+          "charge_rate": 10.397307692307692,
+          "pay_rate": 24.022153846153845
+        },
+        "primary": {
+          "count": 62.08787244787534,
+          "charge_rate": 14.801752663918998,
+          "pay_rate": 34.70934350204204
+        },
+        "secondary_1": {
+          "count": 532.577014645408,
+          "charge_rate": 9.497475625401247,
+          "pay_rate": 22.069980488996684
+        },
+        "secondary_2": {
+          "count": 11.629752543106557,
+          "charge_rate": 8.385158011957882,
+          "pay_rate": 20.719176248362373
+        },
+        "uni": {
+          "count": 8.956785224731261,
+          "charge_rate": 10.318743860907347,
+          "pay_rate": 26.180029802379337
+        }
+      },
+      "history": {
+        "all": {
+          "count": 2222.0,
+          "charge_rate": 34.24302430243024,
+          "pay_rate": 19.663411341134115
+        },
+        "primary": {
+          "count": 212.2450039679677,
+          "charge_rate": 48.74884837390462,
+          "pay_rate": 28.411444828484765
+        },
+        "secondary_1": {
+          "count": 1820.5940408339948,
+          "charge_rate": 31.27947140517589,
+          "pay_rate": 18.065453556964396
+        },
+        "secondary_2": {
+          "count": 39.75586177043503,
+          "charge_rate": 27.616107754089363,
+          "pay_rate": 16.959748398507365
+        },
+        "uni": {
+          "count": 30.618425799004402,
+          "charge_rate": 33.984278166646995,
+          "pay_rate": 21.429747649782747
+        }
+      },
+      "humanities": {
+        "all": {
+          "count": 33.0,
+          "charge_rate": 147.9318181818182,
+          "pay_rate": 73.9090909090909
+        },
+        "primary": {
+          "count": 3.152153524276748,
+          "charge_rate": 210.59780557144532,
+          "pay_rate": 106.79042523483054
+        },
+        "secondary_1": {
+          "count": 27.038525358920715,
+          "charge_rate": 135.12910062694036,
+          "pay_rate": 67.90282856273869
+        },
+        "secondary_2": {
+          "count": 0.5904335906500252,
+          "charge_rate": 119.30316069884958,
+          "pay_rate": 63.746801835875836
+        },
+        "uni": {
+          "count": 0.4547290960248178,
+          "charge_rate": 146.81402011655737,
+          "pay_rate": 80.5482395566526
+        }
+      },
+      "languages": {
+        "all": {
+          "count": 20388.0,
+          "charge_rate": 60.78010398273494,
+          "pay_rate": 39.82164999019031
+        },
+        "primary": {
+          "count": 1947.4577591804346,
+          "charge_rate": 86.52740619625176,
+          "pay_rate": 57.53786014274919
+        },
+        "secondary_1": {
+          "count": 16704.892576293198,
+          "charge_rate": 55.5199069959673,
+          "pay_rate": 36.585522012376444
+        },
+        "secondary_2": {
+          "count": 364.7806074597792,
+          "charge_rate": 49.01757175615004,
+          "pay_rate": 34.346286762269315
+        },
+        "uni": {
+          "count": 280.9399033258784,
+          "charge_rate": 60.320839143883646,
+          "pay_rate": 43.398772241649745
+        }
+      },
+      "other": {
+        "all": {
+          "count": 1498.0,
+          "charge_rate": 65.54956608811749,
+          "pay_rate": 20.195460614152204
+        },
+        "primary": {
+          "count": 143.08866604141116,
+          "charge_rate": 93.3172791626964,
+          "pay_rate": 29.18019691855405
+        },
+        "secondary_1": {
+          "count": 1227.3851814443403,
+          "charge_rate": 59.87659734626429,
+          "pay_rate": 18.554265557332723
+        },
+        "secondary_2": {
+          "count": 26.802106630113265,
+          "charge_rate": 52.864018795056666,
+          "pay_rate": 17.41864241488383
+        },
+        "uni": {
+          "count": 20.641945025611427,
+          "charge_rate": 65.05426237960815,
+          "pay_rate": 22.009590153213303
+        }
+      },
+      "performing-arts": {
+        "all": {
+          "count": 802.0,
+          "charge_rate": 0.5311720698254364,
+          "pay_rate": 36.90653366583541
+        },
+        "primary": {
+          "count": 76.60688262030158,
+          "charge_rate": 0.7561839884141182,
+          "pay_rate": 53.32584091672777
+        },
+        "secondary_1": {
+          "count": 657.1181011471034,
+          "charge_rate": 0.48520193259196653,
+          "pay_rate": 33.90730419670089
+        },
+        "secondary_2": {
+          "count": 14.349325445494552,
+          "charge_rate": 0.42837644790681856,
+          "pay_rate": 31.8319906131562
+        },
+        "uni": {
+          "count": 11.051295000360724,
+          "charge_rate": 0.527158443012294,
+          "pay_rate": 40.22179515883779
+        }
+      },
+      "politics": {
+        "all": {
+          "count": 24.0,
+          "charge_rate": 1.75,
+          "pay_rate": 0.75
+        },
+        "primary": {
+          "count": 2.2924752903830896,
+          "charge_rate": 2.4913244782610677,
+          "pay_rate": 1.0836666767372103
+        },
+        "secondary_1": {
+          "count": 19.664382079215066,
+          "charge_rate": 1.598546742706162,
+          "pay_rate": 0.6890508433488244
+        },
+        "secondary_2": {
+          "count": 0.42940624774547287,
+          "charge_rate": 1.411329447505211,
+          "pay_rate": 0.646877140400954
+        },
+        "uni": {
+          "count": 0.33071206983623114,
+          "charge_rate": 1.7367767013327573,
+          "pay_rate": 0.8173714346154785
+        }
+      },
+      "science": {
+        "all": {
+          "count": 9332.0,
+          "charge_rate": 33.63898414059151,
+          "pay_rate": 19.993963780540078
+        },
+        "primary": {
+          "count": 891.3908087439579,
+          "charge_rate": 47.888928350452275,
+          "pay_rate": 28.88905637981602
+        },
+        "secondary_1": {
+          "count": 7646.167231801458,
+          "charge_rate": 30.727707729078173,
+          "pay_rate": 18.369143473155983
+        },
+        "secondary_2": {
+          "count": 166.96746266503138,
+          "charge_rate": 27.12896508673004,
+          "pay_rate": 17.24485082084802
+        },
+        "uni": {
+          "count": 128.5918764879879,
+          "charge_rate": 33.38480223536084,
+          "pay_rate": 21.78999314526661
+        }
+      },
+      "teaching-skill": {
+        "all": {
+          "count": 199283.0,
+          "charge_rate": 48.33104143353924,
+          "pay_rate": 23.752808267639487
+        },
+        "primary": {
+          "count": 19035.473053892216,
+          "charge_rate": 68.8047466189864,
+          "pay_rate": 34.32016906475869
+        },
+        "secondary_1": {
+          "count": 163282.37724550898,
+          "charge_rate": 44.14824506010326,
+          "pay_rate": 21.82252342495989
+        },
+        "secondary_2": {
+          "count": 3565.556886227545,
+          "charge_rate": 38.97772685928479,
+          "pay_rate": 20.486864918217027
+        },
+        "uni": {
+          "count": 2746.053892215569,
+          "charge_rate": 47.96584383595377,
+          "pay_rate": 25.886489293155847
+        }
+      },
+      "special-educational-needs-sen": {
+        "all": {
+          "count": 945.0,
+          "charge_rate": 113.81587301587301,
+          "pay_rate": 58.38201058201058
+        },
+        "primary": {
+          "count": 90.26621455883415,
+          "charge_rate": 162.02986883377017,
+          "pay_rate": 84.35551918485872
+        },
+        "secondary_1": {
+          "count": 774.2850443690932,
+          "charge_rate": 103.96571033016112,
+          "pay_rate": 53.63756483724584
+        },
+        "secondary_2": {
+          "count": 16.907871004977995,
+          "charge_rate": 91.78953896046589,
+          "pay_rate": 50.354650741532325
+        },
+        "uni": {
+          "count": 13.021787749801602,
+          "charge_rate": 112.95586085475196,
+          "pay_rate": 63.62638366020538
+        }
+      },
+      "test-and-exam-prep": {
+        "all": {
+          "count": 2521.0,
+          "charge_rate": 161.46122967076556,
+          "pay_rate": 41.01919873066244
+        },
+        "primary": {
+          "count": 240.80542529399034,
+          "charge_rate": 229.858465010806,
+          "pay_rate": 59.268185027840204
+        },
+        "secondary_1": {
+          "count": 2065.5794675708826,
+          "charge_rate": 147.48761300773361,
+          "pay_rate": 37.6857513051413
+        },
+        "secondary_2": {
+          "count": 45.105547940264046,
+          "charge_rate": 130.21427889414488,
+          "pay_rate": 35.379175968572476
+        },
+        "uni": {
+          "count": 34.73854700238078,
+          "charge_rate": 160.24120106327027,
+          "pay_rate": 44.70389508434529
+        }
+      },
+      "math": {
+        "all": {
+          "count": 59197.0,
+          "charge_rate": 37.68407182796425,
+          "pay_rate": 20.740871496866394
+        },
+        "primary": {
+          "count": 5654.485823533656,
+          "charge_rate": 53.64757176317465,
+          "pay_rate": 29.96825505019031
+        },
+        "secondary_1": {
+          "count": 48503.017747637256,
+          "charge_rate": 34.42271444142703,
+          "pay_rate": 19.05535332894051
+        },
+        "secondary_2": {
+          "count": 1059.1484019911984,
+          "charge_rate": 30.391223012975697,
+          "pay_rate": 17.889060857755453
+        },
+        "uni": {
+          "count": 815.7150999206407,
+          "charge_rate": 37.39932454980483,
+          "pay_rate": 22.60399452075863
+        }
+      }
+    }
+  }
+}

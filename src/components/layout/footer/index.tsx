@@ -26,6 +26,7 @@ export const Footer = async () => {
                   {solution.title}
                 </Link>
               ))}
+              <Link href="/tutoring-calculator">Tutoring calculator</Link>
             </Accordion>
             <Accordion title="Features">
               <Link href="/features/tutor-client-student-management">
