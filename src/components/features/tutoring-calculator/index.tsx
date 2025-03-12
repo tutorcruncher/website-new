@@ -110,7 +110,7 @@ export const TutoringCalculator = ({ intro, content }) => {
                   ) : null}
                   {subjectInfo && (
                     <div>
-                      <p>On average people charge</p>
+                      <p>On average companies charge</p>
                       <p className={styles.amount}>
                         {subjectInfo.symbol}
                         {subjectInfo.minCharge} - {subjectInfo.symbol}
@@ -122,7 +122,7 @@ export const TutoringCalculator = ({ intro, content }) => {
 
                   {subjectInfo && (
                     <div>
-                      <p>On average people pay</p>
+                      <p>On average companies pay</p>
                       <p className={styles.amount}>
                         {subjectInfo.symbol}
                         {subjectInfo.minPay} - {subjectInfo.symbol}

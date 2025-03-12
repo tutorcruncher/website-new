@@ -6,9 +6,9 @@ import styles from "./release.module.scss";
 export const Release = ({ name, date, changes }: ReleaseProp) => (
   <div className={styles.release}>
     <Heading size="small" variant="h2" noMargin>
-      {name}
+      {date.toString()}
     </Heading>
-    <p>{date.toString()}</p>
+    <p>{name}</p>
     {changes}
   </div>
 );
