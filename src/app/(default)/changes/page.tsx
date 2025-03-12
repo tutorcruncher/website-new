@@ -31,11 +31,16 @@ export default async function Index() {
     }),
     changes: <PrismicRichText field={release.data.changes} />,
   }));
+  /* Sort the releases by date */
+  formattedReleases.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  })
 
   return (
     <>
       <SliceZone slices={data.slices} components={components} />
       <Body containerSize="small" background="cream">
+
         <ReleasesList releases={formattedReleases} />
       </Body>
     </>
