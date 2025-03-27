@@ -36,7 +36,7 @@ export const TutoringCalculator = ({ intro, content }) => {
   }, []);
 
   useEffect(() => {
-    const matchedData = data[region];
+    const matchedData = data[region] ? data[region] : data["usa"];
 
     if (matchedData) {
       const cleanedData = removeZeroValuesFromRegionData(matchedData);
