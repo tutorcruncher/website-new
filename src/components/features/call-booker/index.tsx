@@ -3,8 +3,9 @@ import clsx from "clsx";
 import { addMonths, formatDate, formatTime, isSameDay } from "helpers/dates";
 import Image from "next/image";
 import type { FormEvent } from "react";
-import { useEffect, useState } from "react";
+import { createRef, useEffect, useState } from "react";
 import Flatpickr from "react-flatpickr";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { Action } from "@/components/ui/action";
 import { Heading } from "@/components/ui/heading";
@@ -43,6 +44,7 @@ export const CallBooker = ({ rep, rb }) => {
   const [phone, setPhone] = useState("");
 
   const searchParams = useSearchParams();
+  const recaptchaRef = createRef();
 
   useEffect(() => {
     const zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -119,8 +121,18 @@ export const CallBooker = ({ rep, rb }) => {
   }, [countryCode]);
 
   const handleSubmit = async (event: FormEvent) => {
-    setIsLoading(true);
     event.preventDefault();
+
+    // @ts-expect-error -- captcha ref unkown
+    const recaptchaValue = recaptchaRef.current.getValue();
+
+    if (!recaptchaValue) {
+      setErrorMessage("Please complete the captcha to proceed");
+      return;
+    }
+
+    setIsLoading(true);
+
     const formData = new FormData(event.target as HTMLFormElement);
     const region = regions.find(
       (region) => region.region_code === countryCode.toLowerCase()
@@ -384,6 +396,10 @@ export const CallBooker = ({ rep, rb }) => {
                 </option>
               ))}
             </select>
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY}
+            />
             <Action type="submit" variant="outline" disabled={isLoading}>
               Submit
             </Action>
