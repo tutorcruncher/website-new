@@ -839,6 +839,12 @@ const blogRedirects = [
     permanent: true,
     statusCode: 301,
   },
+  {
+    source: '/blog/tutoring-online-where-to-advertise-tutoring-services',
+    destination: '/blog/where-to-advertise-tutoring-services',
+    permanent: true,
+    statusCode: 301,
+  }
 ];
 
 module.exports = blogRedirects;
