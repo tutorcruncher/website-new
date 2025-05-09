@@ -493,7 +493,7 @@ const blogRedirects = [
   },
   {
     source: '/tutoring-online/how-to-become-a-certified-tutor',
-    destination: '/blog/tutoring-online-how-to-become-a-certified-tutor',
+    destination: '/blog/how-to-become-a-certified-tutor',
     permanent: true,
     statusCode: 301,
   },
@@ -690,8 +690,8 @@ const blogRedirects = [
       statusCode: 301,
   },
   {
-    source: '/blog/how-to-become-a-certified-tutor',
-    destination: '/blog/tutoring-online-how-to-become-a-certified-tutor',
+    source: '/blog/tutoring-online-how-to-become-a-certified-tutor',
+    destination: '/blog/how-to-become-a-certified-tutor',
     permanent: true,
     statusCode: 301,
   },
