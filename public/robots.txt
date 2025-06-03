@@ -1,3 +1,9 @@
 User-agent: *
+
 Disallow: /api/
+Disallow: /_next/
+Disallow: /tutoring-online/
+Disallow: /us/blog/
+Disallow: /gb/blog/
+
 Sitemap: https://tutorcruncher.com/sitemap.xml
