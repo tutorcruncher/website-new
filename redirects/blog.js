@@ -844,6 +844,12 @@ const blogRedirects = [
     destination: '/blog/where-to-advertise-tutoring-services',
     permanent: true,
     statusCode: 301,
+  },
+  {
+    source: '/future-of-tutoring',
+    destination: '/blog/future-of-tutoring',
+    permanent: true,
+    statusCode: 301,
   }
 ];
 
