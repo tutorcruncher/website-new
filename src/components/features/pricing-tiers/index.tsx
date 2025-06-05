@@ -87,6 +87,9 @@ export const PricingTiers = ({ region }) => {
           );
         })}
       </div>
+      <p className={styles.taxMessage}>
+        Please note that all prices are exclusive of tax.
+      </p>
       <div className={styles.pricingCalculatorCta}>
         <PillCard>
           <p>
