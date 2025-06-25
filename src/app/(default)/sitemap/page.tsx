@@ -46,7 +46,11 @@ function renderEntries(entries) {
     <li key={entry.parent ? entry.parent.title : entry.title}>
       {entry.children ? (
         <>
-          <Link href={entry.parent.url}>{entry.parent.title}</Link>
+          {entry.parent.url ? (
+            <Link href={entry.parent.url}>{entry.parent.title}</Link>
+          ) : (
+            entry.parent.title
+          )}
           <ul>{renderEntries(entry.children)}</ul>
         </>
       ) : (
@@ -80,8 +84,11 @@ export default async function sitemap() {
     ...landingPages,
     // @ts-expect-error - pages nested with no parent
     ...formatEntries(pages, null, (doc) => `${doc.uid}`),
-    // @ts-expect-error - pages nested with no parent
-    ...formatEntries(solutions, null, (doc) => `solutions/${doc.uid}`),
+    formatEntries(
+      solutions,
+      { title: "Solutions", url: null },
+      (doc) => `solutions/${doc.uid}`
+    ),
     formatEntries(
       features,
       { title: "Features", url: "/features" },
