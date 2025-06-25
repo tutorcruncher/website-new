@@ -80,11 +80,8 @@ export default async function sitemap() {
     ...landingPages,
     // @ts-expect-error - pages nested with no parent
     ...formatEntries(pages, null, (doc) => `${doc.uid}`),
-    formatEntries(
-      solutions,
-      { title: "Solutions", url: "/solutions" },
-      (doc) => `solutions/${doc.uid}`
-    ),
+    // @ts-expect-error - pages nested with no parent
+    ...formatEntries(solutions, null, (doc) => `solutions/${doc.uid}`),
     formatEntries(
       features,
       { title: "Features", url: "/features" },
