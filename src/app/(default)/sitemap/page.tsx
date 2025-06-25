@@ -46,7 +46,11 @@ function renderEntries(entries) {
     <li key={entry.parent ? entry.parent.title : entry.title}>
       {entry.children ? (
         <>
-          <Link href={entry.parent.url}>{entry.parent.title}</Link>
+          {entry.parent.url ? (
+            <Link href={entry.parent.url}>{entry.parent.title}</Link>
+          ) : (
+            entry.parent.title
+          )}
           <ul>{renderEntries(entry.children)}</ul>
         </>
       ) : (
@@ -82,7 +86,7 @@ export default async function sitemap() {
     ...formatEntries(pages, null, (doc) => `${doc.uid}`),
     formatEntries(
       solutions,
-      { title: "Solutions", url: "/solutions" },
+      { title: "Solutions", url: null },
       (doc) => `solutions/${doc.uid}`
     ),
     formatEntries(
