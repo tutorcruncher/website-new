@@ -6,6 +6,12 @@
   "status": true,
   "json": {
     "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
       "heading": {
         "type": "StructuredText",
         "config": {
@@ -13,12 +19,6 @@
           "placeholder": "",
           "allowTargetBlank": true,
           "multi": "heading1,strong"
-        }
-      },
-      "uid": {
-        "type": "UID",
-        "config": {
-          "label": "UID"
         }
       },
       "optional_extras": {
@@ -36,6 +36,48 @@
               }
             }
           }
+        }
+      },
+      "currency": {
+        "type": "Text",
+        "config": {
+          "label": "Currency",
+          "placeholder": ""
+        }
+      },
+      "payg_base_price": {
+        "type": "Text",
+        "config": {
+          "label": "PAYG Base Price",
+          "placeholder": ""
+        }
+      },
+      "payg_payment_fees": {
+        "type": "Text",
+        "config": {
+          "label": "PAYG Payment Fees",
+          "placeholder": ""
+        }
+      },
+      "startup_base_price": {
+        "type": "Text",
+        "config": {
+          "label": "Startup Base Price",
+          "placeholder": ""
+        }
+      },
+      "startup_payment_fees": {
+        "type": "Text",
+        "config": {
+          "label": "Startup Payment Fees",
+          "placeholder": ""
+        }
+      },
+      "enterprise_base_price": {
+        "type": "Text",
+        "config": {
+          "label": "Enterprise Base Price",
+          "placeholder": ""
         }
       },
       "slices": {

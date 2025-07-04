@@ -6,27 +6,12 @@ export const TIERS = [
     solutionUrl: "/solutions/payg",
     featuresList: [
       {
-        heading: "Payment Fees",
-        features: [
-          "Standard UK card fees 2.65%",
-        ],
-        regions: ["gb"],
-      },
-      {
-        heading: "Payment Fees",
-        features: [
-          "Payment fees 1%",
-        ],
-        regions: ["eu", "au", "us", "ca"],
-      },
-      {
         heading: "First Class Customer Support",
         features: [
           "3 months of priority phone support",
           "1 hour platform optimisation call (including technical)",
           "1 hour training sessions on the platform",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Access to all features, including (but not limited to)",
@@ -35,7 +20,6 @@ export const TIERS = [
           "Client pipeline",
           "Activity feed",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Run All Payments and Invoicing",
@@ -44,7 +28,6 @@ export const TIERS = [
           "Split payments",
           "Credit requests",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Manage Lesson Scheduling",
@@ -53,7 +36,6 @@ export const TIERS = [
           "Lesson reports",
           "Email and SMS lesson reminders",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
     ],
   },
@@ -64,27 +46,12 @@ export const TIERS = [
     solutionUrl: "/solutions/startup",
     featuresList: [
       {
-        heading: "Payment Fees",
-        features: [
-          "Standard UK card fees 2.3%",
-        ],
-        regions: ["gb"],
-      },
-      {
-        heading: "Payment Fees",
-        features: [
-          "Payment fees 0.65%",
-        ],
-        regions: ["eu", "au", "us", "ca"],
-      },
-      {
         heading: "First Class Customer Support",
         features: [
           "3 months of priority phone support",
           "1 hour platform optimisation call (including technical)",
           "3 x 1 hour training sessions on the platform",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Access to all features, including (but not limited to)",
@@ -93,7 +60,6 @@ export const TIERS = [
           "Client pipeline",
           "Activity feed",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Customisable Features",
@@ -102,7 +68,6 @@ export const TIERS = [
           "Customisable email design (HTML templates)",
           "User & report exports",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Run All Payments and Invoicing",
@@ -111,7 +76,6 @@ export const TIERS = [
           "Split payments",
           "Credit requests",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Manage Lesson Scheduling",
@@ -120,7 +84,6 @@ export const TIERS = [
           "Lesson reports",
           "Email and SMS lesson reminders",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
     ],
   },
@@ -133,7 +96,6 @@ export const TIERS = [
       {
         heading: "Payment Fees",
         features: ["Competitive rates for high-volume merchants"],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "First Class Customer Support",
@@ -143,7 +105,6 @@ export const TIERS = [
           "1 hour platform optimisation call (including technical)",
           "3 x 1 hour training sessions on the platform",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Customisable Features",
@@ -152,7 +113,6 @@ export const TIERS = [
           "Customisable email design (HTML templates)",
           "User & report exports",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Run All Payments and Invoicing",
@@ -162,7 +122,6 @@ export const TIERS = [
           "Credit requests",
           "Subscriptions",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "Additional Support",
@@ -171,7 +130,6 @@ export const TIERS = [
           "Unlimited chat support",
           "Technical/system support",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
       {
         heading: "API & Custom Integrations",
@@ -179,7 +137,6 @@ export const TIERS = [
           "Custom javascript & CSS",
           "Custom integrations including Google Analytics",
         ],
-        regions: ["eu", "gb", "au", "us", "ca"],
       },
     ],
   },
