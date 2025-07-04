@@ -1,4 +1,3 @@
-import { regions } from "app/data/regions/regions";
 import { Metadata } from "next/types";
 
 import { PricingTiers } from "@/components/features/pricing-tiers";
@@ -23,15 +22,15 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 const PricingPage = async ({ params }) => {
   try {
-    const { heading, schemas, slices } = await fetchPricingPageByUid(
+    const { heading, schemas, slices, pricing } = await fetchPricingPageByUid(
       params.uid
     );
-    const region = regions.find((region) => region.region_code === params.uid);
+    const region = params.uid;
     return (
       <>
         <RenderSchemas schemas={schemas} />
         <Hero heading={heading} headingVariant="div" />
-        <PricingTiers region={region} />
+        <PricingTiers region={region} pricing={pricing} />
         <SliceZone slices={slices} components={components} />
       </>
     );

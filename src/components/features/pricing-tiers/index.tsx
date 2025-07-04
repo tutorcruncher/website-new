@@ -11,8 +11,10 @@ import { TickSvg } from "@/svgs/tick";
 import styles from "./pricing-tiers.module.scss";
 import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
-const TierPricing = ({ tier, region }) => {
-  const pricing = region.pricing[tier.pricing];
+const TierPricing = ({ tier, pricing }) => {
+  const currency = pricing.currency;
+  const basePrice = pricing[tier.pricing]?.base_price;
+  const fees = pricing[tier.pricing]?.fees;
 
   const PricingHeader = () => (
     <div className={styles.heading}>
@@ -25,31 +27,46 @@ const TierPricing = ({ tier, region }) => {
     <>
       <p className={styles.startingFrom}>Starting from</p>
       <h3>
-        {region?.currency}
-        {pricing?.base_price}
+        {currency}
+        {basePrice}
         <span className={styles.billingCycle}>/month</span>
       </h3>
     </>
   );
 
   return (
-    <div className={styles.pricing}>
-      <PricingHeader />
-      <PricingDetails />
-    </div>
+    <>
+      <div className={styles.pricing}>
+        <PricingHeader />
+        <PricingDetails />
+      </div>
+      {fees ?
+        <div
+          className={styles.featuresList}
+        >
+          <h4>Payment Fees</h4>
+          <ul className={styles.features}>
+            <li className={styles.feature}>
+              <span>
+                <TickSvg />
+              </span>
+              <span>Standard card fees {fees}%</span>
+            </li>
+          </ul>
+        </div> : null}
+    </>
   );
 };
 
-export const PricingTiers = ({ region }) => {
+export const PricingTiers = ({ region, pricing }) => {
   return (
     <Body containerSize="large" spacing="small">
       <div className={styles.pricingTiers}>
         {TIERS.map((tier) => {
           return (
             <div className={styles.pricingTier} key={tier.pricing}>
-              <TierPricing region={region} tier={tier} />
+              <TierPricing tier={tier} pricing={pricing} />
               {tier.featuresList
-                .filter((f) => f.regions.includes(region.region_code))
                 .map((featuresList) => (
                   <div
                     className={styles.featuresList}

@@ -1350,6 +1350,72 @@ interface PricingDocumentData {
   >;
 
   /**
+   * Currency field in *Pricing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.currency
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  currency: prismic.KeyTextField;
+
+  /**
+   * PAYG Base Price field in *Pricing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.payg_base_price
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  payg_base_price: prismic.KeyTextField;
+
+  /**
+   * PAYG Payment Fees field in *Pricing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.payg_payment_fees
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  payg_payment_fees: prismic.KeyTextField;
+
+  /**
+   * Startup Base Price field in *Pricing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.startup_base_price
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  startup_base_price: prismic.KeyTextField;
+
+  /**
+   * Startup Payment Fees field in *Pricing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.startup_payment_fees
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  startup_payment_fees: prismic.KeyTextField;
+
+  /**
+   * Enterprise Base Price field in *Pricing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterprise_base_price
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  enterprise_base_price: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Pricing*
    *
    * - **Field Type**: Slice Zone

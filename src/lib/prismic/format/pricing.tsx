@@ -14,6 +14,21 @@ export const formatPricingPage = (
     description: data.meta_description,
   };
 
+  const pricing = {
+    currency: data.currency,
+    payg: {
+      base_price: data.payg_base_price,
+      fees: data.payg_payment_fees,
+    },
+    startup: {
+      base_price: data.startup_base_price,
+      fees: data.startup_payment_fees,
+    },
+    enterprise: {
+      base_price: data.enterprise_base_price,
+    }
+  }
+
   const slices = data.slices;
 
   const optionalExtras: OptionalExtra[] = data.optional_extras.map(
@@ -27,5 +42,5 @@ export const formatPricingPage = (
     }
   );
 
-  return { heading, meta, optionalExtras, schemas, slices };
+  return { heading, meta, optionalExtras, schemas, slices, pricing };
 };
