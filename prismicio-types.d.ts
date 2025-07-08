@@ -1416,6 +1416,17 @@ interface PricingDocumentData {
   enterprise_base_price: prismic.KeyTextField;
 
   /**
+   * Enterprise Limit field in *Pricing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: pricing.enterprise_limit
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  enterprise_limit: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Pricing*
    *
    * - **Field Type**: Slice Zone

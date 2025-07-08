@@ -17,7 +17,8 @@ const TierBreakdown = ({
   currency,
   isRecommended = false,
 }) => {
-  const { revenuePercentage, totalAmount } = calculateFees(revenue, prices);
+  const offlinePercent = tier.name === 'Startup' ? 0.65 : 1;
+  const { revenuePercentage, totalAmount } = calculateFees(Number(revenue), offlinePercent, Number(prices.base_price));
 
   return (
     <div
@@ -77,19 +78,20 @@ const BreakdownLine = ({ label, amount, currency }) => (
   </div>
 );
 
-export const PriceCalculator = ({ region }) => {
+export const PriceCalculator = ({ region, pricing }) => {
   const [revenue, setRevenue] = useState(0);
 
-  const currency = region.currency;
-  const pricing = region.pricing;
+  const currency = pricing.currency;
   const enterpriseRevenueLimit = pricing.enterprise_limit;
 
   const { totalAmount: paygTotalAmount } = calculateFees(
     Number(revenue),
+    0.65,
     pricing.payg
   );
   const { totalAmount: startupTotalAmount } = calculateFees(
     Number(revenue),
+    1,
     pricing.startup
   );
 
@@ -148,7 +150,7 @@ export const PriceCalculator = ({ region }) => {
         your first 3 months and any fees from our integrated payment providers,
         see our Terms and Conditions for more info.
       </p>
-      <ArrowLink href="/pricing" text="Back to pricing" direction="backward" />
+      <ArrowLink href={`/pricing/${region}`} text="Back to pricing" direction="backward" />
     </div>
   );
 };
