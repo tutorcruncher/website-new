@@ -16,6 +16,7 @@ export const formatPricingPage = (
 
   const pricing = {
     currency: data.currency,
+    enterprise_limit: data.enterprise_limit,
     payg: {
       base_price: data.payg_base_price,
       fees: data.payg_payment_fees,

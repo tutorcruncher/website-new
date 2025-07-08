@@ -94,7 +94,7 @@ export const PriceCalculatorGB = ({ region, pricing }) => {
   const [onlinePercent, setOnlinePercent] = useState(10);
 
   const currency = pricing.currency;
-  const enterpriseRevenueLimit = pricing.enterprise_limit;
+  const enterpriseRevenueLimit = Number(pricing.enterprise_limit);
 
   const { totalAmount: paygTotalAmount } = calculateGBFees(
     Number(revenue),

@@ -82,7 +82,7 @@ export const PriceCalculator = ({ region, pricing }) => {
   const [revenue, setRevenue] = useState(0);
 
   const currency = pricing.currency;
-  const enterpriseRevenueLimit = pricing.enterprise_limit;
+  const enterpriseRevenueLimit = Number(pricing.enterprise_limit);
 
   const { totalAmount: paygTotalAmount } = calculateFees(
     Number(revenue),
