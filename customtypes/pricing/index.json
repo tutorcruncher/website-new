@@ -80,6 +80,13 @@
           "placeholder": ""
         }
       },
+      "enterprise_limit": {
+        "type": "Text",
+        "config": {
+          "label": "Enterprise Limit",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

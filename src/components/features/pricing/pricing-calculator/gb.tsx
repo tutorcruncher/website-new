@@ -18,10 +18,12 @@ const TierBreakdown = ({
   currency,
   isRecommended = false,
 }) => {
+  const offlinePercent = tier.name === 'Startup' ? 0.65 : 1;
   const { onlineAmount, offlineAmount, totalAmount } = calculateGBFees(
-    revenue,
-    onlinePercent,
-    prices
+    Number(revenue),
+    Number(onlinePercent),
+    offlinePercent,
+    prices,
   );
 
   return (
@@ -87,22 +89,23 @@ const BreakdownLine = ({ label, amount, currency }) => (
   </div>
 );
 
-export const PriceCalculatorGB = ({ region }) => {
+export const PriceCalculatorGB = ({ region, pricing }) => {
   const [revenue, setRevenue] = useState(15000);
   const [onlinePercent, setOnlinePercent] = useState(10);
 
-  const currency = region.currency;
-  const pricing = region.pricing;
+  const currency = pricing.currency;
   const enterpriseRevenueLimit = pricing.enterprise_limit;
 
   const { totalAmount: paygTotalAmount } = calculateGBFees(
     Number(revenue),
     onlinePercent,
+    1,
     pricing.payg
   );
   const { totalAmount: startupTotalAmount } = calculateGBFees(
     Number(revenue),
     onlinePercent,
+    0.65,
     pricing.startup
   );
 
@@ -192,7 +195,7 @@ export const PriceCalculatorGB = ({ region }) => {
         your first 3 months and any fees from our integrated payment providers,
         see our Terms and Conditions for more info.
       </p>
-      <ArrowLink href="/pricing" text="Back to pricing" direction="backward" />
+      <ArrowLink href={`/pricing/${region}`} text="Back to pricing" direction="backward" />
     </div>
   );
 };

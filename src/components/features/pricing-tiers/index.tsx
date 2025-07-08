@@ -112,7 +112,7 @@ export const PricingTiers = ({ region, pricing }) => {
           <p>
             Want to estimate which the best price plan would be for you, and how
             much you would be charged? <br />
-            <Link href={`/pricing-calculator/${region.region_code}`}>
+            <Link href={`/pricing-calculator/${region}`}>
               Click here to use our pricing calculator.
             </Link>
           </p>

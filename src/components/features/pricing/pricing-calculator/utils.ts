@@ -1,35 +1,39 @@
 export const calculateGBFees = (
   revenue: number,
   onlinePercent: number,
-  prices
+  offlinePercent: number,
+  pricing
 ) => {
+  const fees = Number(pricing?.fees)
+  const basePrice = Number(pricing?.base_price);
   const onlineAmount = Number(
     (
       revenue *
-      (prices.online_percentage / 100) *
+      (fees / 100) *
       (onlinePercent / 100)
     ).toFixed(2)
   );
   const offlineAmount = Number(
     (
       revenue *
-      (prices.offline_percentage / 100) *
+      (offlinePercent / 100) *
       (1 - onlinePercent / 100)
     ).toFixed(2)
   );
   const totalAmount = Number(
-    prices.base_price + onlineAmount + offlineAmount
+    basePrice + onlineAmount + offlineAmount
   ).toFixed(2);
+
 
   return { onlineAmount, offlineAmount, totalAmount };
 };
 
-export const calculateFees = (revenue: number, prices) => {
+export const calculateFees = (revenue: number, fees: number, basePrice: number,) => {
   const revenuePercentage = Number(
-    (revenue * (prices.revenue_percentage / 100)).toFixed(2)
+    (revenue * (Number(fees) / 100)).toFixed(2)
   );
 
-  const totalAmount = Number(prices.base_price + revenuePercentage).toFixed(2);
+  const totalAmount = Number(basePrice + revenuePercentage).toFixed(2);
 
   return { revenuePercentage, totalAmount };
 };
