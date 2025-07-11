@@ -40,6 +40,7 @@ export const reps = [
     alt_callbooker_url: "/book-a-call/maahi/",
     alt_rep_hermes_admin_id: 3,
     description: "",
+    is_support: true,
   },
   {
     rep_name: "Maahi",
@@ -50,5 +51,6 @@ export const reps = [
     alt_callbooker_url: "/book-a-call/raashi/",
     alt_rep_hermes_admin_id: 4,
     description: "",
+    is_support: true,
   },
 ];
