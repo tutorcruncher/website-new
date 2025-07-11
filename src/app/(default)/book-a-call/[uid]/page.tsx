@@ -8,8 +8,44 @@ import styles from "./book-a-call.module.scss";
 
 const BookACallUserPage = async ({ params, searchParams }) => {
   const rb = searchParams.rb;
-  const uid = params.uid;
-  const rep = reps.find((r) => r.hermes_admin_id === Number(uid));
+  const uid = Number(params.uid);
+  const rep = reps.find((r) => r.hermes_admin_id === uid);
+
+  const errorComponent = (
+    <Body containerSize="medium" background="cream">
+      <p className="text-center">
+        Invalid support link. Please contact your account manager to request a new support link.
+      </p>
+    </Body>
+  );
+
+  if (!rep) return errorComponent;
+
+  if (rep.is_support) {
+    const company_id = Number(searchParams.company_id);
+    const e = Number(searchParams.e);
+    const s = searchParams.s;
+
+    if (!company_id || !e || !s) {
+      return errorComponent;
+    }
+
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/support-link/validate/?admin_id=${uid}&company_id=${company_id}&e=${e}&s=${s}`,
+        {
+          method: "GET",
+          cache: "no-store",
+        }
+      );
+
+      if (!res.ok) {
+        return errorComponent;
+      }
+    } catch {
+      return errorComponent;
+    }
+  }
 
   return (
     <>
