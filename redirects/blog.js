@@ -844,6 +844,12 @@ const blogRedirects = [
     destination: '/blog/future-of-tutoring',
     permanent: true,
     statusCode: 301,
+  },
+  {
+    source: '/blog/top-5-benefits-of-online-tutoring',
+    destination: '/blog/what-are-the-benefits-of-online-tutoring',
+    permanent: true,
+    statusCode: 301,
   }
 ];
 
