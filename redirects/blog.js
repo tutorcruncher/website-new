@@ -49,7 +49,7 @@ const blogRedirects = [
   },
   {
     source: '/starting-tutor-business/how-to-structure-a-tutoring-session',
-    destination: '/blog/how-to-structure-a-tutoring-session-in-7-easy-steps',
+    destination: '/blog/how-to-structure-a-tutoring-session',
     permanent: true,
     statusCode: 301,
   },
@@ -678,12 +678,6 @@ const blogRedirects = [
     statusCode: 301,
   },
   {
-    source: '/blog/how-to-structure-a-tutoring-session',
-    destination: '/blog/how-to-structure-a-tutoring-session-in-7-easy-steps',
-    permanent: true,
-    statusCode: 301,
-  },
-    {
     source: '/blog/online-teaching-skills',
     destination: '/blog/7-online-teaching-skills-worth-developing',
     permanent: true,
