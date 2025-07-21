@@ -10,7 +10,7 @@ import { formatMetaData } from "@/helpers/metaData";
 export async function generateMetadata({ params }): Promise<Metadata> {
   try {
     const { meta } = await fetchPricingPageByUid(params.uid);
-    const url = `https://tutorcruncher.com/pricing-calculator`;
+    const url = `https://tutorcruncher.com/pricing-calculator/${params.uid}`;
 
     const title = `Pricing Calculator ${params.uid.toUpperCase()} | TutorCruncher`;
     return formatMetaData(title, meta.description, url);
