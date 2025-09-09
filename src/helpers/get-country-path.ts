@@ -24,6 +24,7 @@ const countryToPricingMap = {
   ],
   gb: ["gb", "bg", "hr", "cz", "hu", "pl", "ro", "sw"],
   us: ["us"],
+  za: ["za"],
 };
 
 export const getCountryPath = (country: string) => {
