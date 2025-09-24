@@ -58,6 +58,18 @@ const getPageInfo = () => {
   return `tc-${pageType}-${slugify(title)}`;
 };
 
+// Google Click ID (GCLID) storage helpers (90-day expiry)
+// Use consistent key "_tc_gclid" and ISO datetime expiry
+const GCLID_KEY = "_tc_gclid";
+const GCLID_EXPIRY_MS = 90 * 24 * 60 * 60 * 1000;
+
+const storeGclid = (value: string): {gclid: string, expiryDate: string} => {
+    const expiryIso = new Date(Date.now() + GCLID_EXPIRY_MS).toISOString();
+    const record = { gclid: value, expiryDate: expiryIso };
+    localStorage.setItem(GCLID_KEY, JSON.stringify(record));
+    return record;
+};
+
 const getTrackingParams = (): Record<string, string> => {
   const params: Record<string, string> = {};
   if (typeof window === "undefined") return params;
@@ -65,6 +77,34 @@ const getTrackingParams = (): Record<string, string> => {
   const urlParams = new URLSearchParams(window.location.search);
   const storedSource = localStorage.getItem("_tc_source") || null;
   const storedCampaign = localStorage.getItem("_tc_campaign") || null;
+
+  // Capture and persist Google Click ID (GCLID) with 90-day expiry
+  // Google documentation suggests validating gclsrc contains "aw" (e.g. aw.ds)
+  // to ensure the GCLID comes from Google Ads before storing/using it.
+  const gclidParam = urlParams.get("gclid");
+  const gclsrcParam = urlParams.get("gclsrc");
+  const isGclsrcValid = !gclsrcParam || gclsrcParam.includes("aw");
+  if (gclidParam && isGclsrcValid) {
+    const {gclid, expiryDate} = storeGclid(gclidParam);
+    if (gclid) {
+      params.gclid = gclid;
+      params.gclid_expiry_date = expiryDate;
+    }
+  } else {
+    try {
+      const raw = localStorage.getItem(GCLID_KEY);
+      if (raw) {
+        const record = JSON.parse(raw) as { gclid: string; expiryDate: string };
+        const expiryMs = new Date(record.expiryDate).getTime();
+        if (Number.isFinite(expiryMs) && Date.now() < expiryMs) {
+          params.gclid = record.gclid;
+          params.gclid_expiry_date = record.expiryDate;
+        }
+      }
+      } catch {
+        // ignore parse/storage errors
+      }
+  }
 
   const hasUTM = urlParams.has("utm_source");
   const utmSource = urlParams.get("utm_source");
