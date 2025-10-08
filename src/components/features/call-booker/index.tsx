@@ -150,7 +150,7 @@ export const CallBooker = ({ rep, rb }) => {
 
     const callType = rep?.is_support ? 'support' : 'sales';
 
-    const hermesData = {
+    const baseHermesData = {
       admin_id: rep.hermes_admin_id,
       bdr_person_id: bdrPersonId,
       call_type: callType,
@@ -168,6 +168,10 @@ export const CallBooker = ({ rep, rb }) => {
       website: formData.get("website"),
     };
 
+    const hermesData = callType === 'support' ? {
+      ...baseHermesData,
+      company_id: searchParams.get("company_id"),
+    } : baseHermesData;
 
     try {
       const response = await fetch(
