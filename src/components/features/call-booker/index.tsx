@@ -18,8 +18,6 @@ import { useSearchParams } from "next/navigation";
 import { Slot } from "./types";
 import Link from "next/link";
 
-const CALL_TYPE = "sales";
-
 export const CallBooker = ({ rep, rb }) => {
   const [openSlots, setOpenSlots] = useState([]);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -150,10 +148,12 @@ export const CallBooker = ({ rep, rb }) => {
     const utmSource =
       localStorage.getItem("_tc_source") || searchParams.get("utm_source");
 
-    const hermesData = {
+    const callType = rep?.is_support ? 'support' : 'sales';
+
+    const baseHermesData = {
       admin_id: rep.hermes_admin_id,
       bdr_person_id: bdrPersonId,
-      call_type: CALL_TYPE,
+      call_type: callType,
       company_name: formData.get("company"),
       country: countryCode,
       currency: region.currency_code,
@@ -168,9 +168,14 @@ export const CallBooker = ({ rep, rb }) => {
       website: formData.get("website"),
     };
 
+    const hermesData = callType === 'support' ? {
+      ...baseHermesData,
+      company_id: searchParams.get("company_id"),
+    } : baseHermesData;
+
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/${CALL_TYPE}/book/`,
+        `${process.env.NEXT_PUBLIC_HERMES_BASE_URL}/callbooker/${callType}/book/`,
         {
           method: "POST",
           body: JSON.stringify(hermesData),
