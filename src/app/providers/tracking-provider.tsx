@@ -88,7 +88,7 @@ const getTrackingParams = (): Record<string, string> => {
     const {gclid, expiryDate} = storeGclid(gclidParam);
     if (gclid) {
       params.gclid = gclid;
-      params.gclid_expiry_date = expiryDate;
+      params.gclid_expiry_dt = expiryDate;
     }
   } else {
     try {
@@ -98,7 +98,7 @@ const getTrackingParams = (): Record<string, string> => {
         const expiryMs = new Date(record.expiryDate).getTime();
         if (Number.isFinite(expiryMs) && Date.now() < expiryMs) {
           params.gclid = record.gclid;
-          params.gclid_expiry_date = record.expiryDate;
+          params.gclid_expiry_dt = record.expiryDate;
         }
       }
       } catch {
