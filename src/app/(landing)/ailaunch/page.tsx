@@ -16,7 +16,7 @@ export default function ProductLaunchPage() {
             <p>
               TutorCruncher AI is the next-generation tutoring platform that harnesses the power of artificial intelligence to deliver personalised, data-driven educational experiences.
             </p>
-            <p>Our cutting-edge AI technology analyses every lesson, providing tutors with unprecedented insights to maximise pupil success.
+            <p>Our cutting-edge AI technology analyses every lesson, providing tutors and companies with unprecedented insights to maximise student success.
             </p>
           </div>
           <div className={styles.heroButton}>
