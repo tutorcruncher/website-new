@@ -19,6 +19,7 @@ export default function ProductLaunchPage() {
             <p>Our cutting-edge AI technology analyses every lesson, providing tutors and companies with unprecedented insights to maximise student success.
             </p>
           </div>
+          <p className={styles.launchDate}><i>Launching 3rd November</i></p>
           <div className={styles.heroButton}>
             <Action href="https://forms.gle/uunftAqJqn2ZFQzFA" variant="white">
               Get Early Access
