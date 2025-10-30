@@ -83,7 +83,7 @@ export const NeverBooked = () => {
         following:
       </p>
       <div className={styles.revenueSelect}>
-        <p>Roughly, what is your monthly revenue?</p>
+        <p>Roughly, what is your annual revenue?</p>
         <select onChange={handleSelectChange} defaultValue="*">
           <option value="*" disabled>
             Please select
