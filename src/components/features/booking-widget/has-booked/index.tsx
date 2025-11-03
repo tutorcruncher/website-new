@@ -12,7 +12,7 @@ const SALES_AGENTS = [
     label: "Fionn",
   },
   {
-    value: 9,
+    value: 8,
     label: "Tony",
   },
 ];

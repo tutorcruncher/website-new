@@ -24,7 +24,7 @@ export const reps = [
     rep_name: "Tony",
     callbooker_url: "/book-a-call/tony/",
     img_path: "/img/reps/tony_blue.webp",
-    hermes_admin_id: 9,
+    hermes_admin_id: 8,
     alt_rep_name: "Sam",
     alt_callbooker_url: "/book-a-call/sam/",
     alt_rep_hermes_admin_id: 1,
