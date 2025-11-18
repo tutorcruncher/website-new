@@ -220,7 +220,7 @@ export const CallBooker = ({ rep, rb }) => {
           Meet with {rep.rep_name} from TutorCruncher
         </Heading>
 
-        <p>
+        <p id="callbooked-success">
           Thanks for booking with us! We&apos;ve just sent you a calendar invite
           which also includes the video call URL. We look forward to hearing
           about your business!
