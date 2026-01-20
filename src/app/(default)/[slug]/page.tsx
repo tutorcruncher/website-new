@@ -39,11 +39,16 @@ export default async function StaticPage({
     }
 
     const schemas = await fetchSchemas(content.data.schemas);
+    const isPrivacyPage = slug === "privacy";
 
     return (
       <>
         <RenderSchemas schemas={schemas} />
-        <SliceZone slices={content.data.slices} components={components} />
+        <SliceZone 
+          slices={content.data.slices} 
+          components={components}
+          context={{ isPrivacyPage }}
+        />
       </>
     );
   } catch {

@@ -12,14 +12,19 @@ export type BodyTextProps = SliceComponentProps<Content.BodyTextSlice>;
 /**
  * Component for "BodyText" Slices.
  */
-const BodyText = ({ slice }: BodyTextProps): JSX.Element => {
+const BodyText = ({ slice, index, context }: BodyTextProps): JSX.Element => {
   const backgroundColour =
     (slice.primary.background_colour?.toLowerCase() as
       | "white"
       | "blue"
       | "cream") || "white";
+  
+  // Only apply no-padding logic to privacy page
+  const isPrivacyPage = (context as any)?.isPrivacyPage === true;
+  const spacing = isPrivacyPage && index > 0 ? "none" : "small";
+  
   return (
-    <Body containerSize="small" spacing="small" background={backgroundColour}>
+    <Body containerSize="small" spacing={spacing} background={backgroundColour}>
       <div className="main-content">
         <PrismicRichText field={slice.primary.content} />
       </div>
