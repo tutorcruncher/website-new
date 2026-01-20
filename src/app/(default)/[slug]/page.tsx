@@ -42,14 +42,14 @@ export default async function StaticPage({
     const isPrivacyPage = slug === "privacy";
 
     return (
-      <>
+      <div data-page={isPrivacyPage ? "privacy" : undefined}>
         <RenderSchemas schemas={schemas} />
-        <SliceZone 
-          slices={content.data.slices} 
+        <SliceZone
+          slices={content.data.slices}
           components={components}
           context={{ isPrivacyPage }}
         />
-      </>
+      </div>
     );
   } catch {
     return notFound();

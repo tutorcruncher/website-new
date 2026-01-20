@@ -282,3 +282,14 @@ table th {
 *:focus-visible {
   outline: 3px solid #3da2f5;
 }
+
+div:before, div:after  {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+// Privacy page specific styles
+[data-page="privacy"] > section:first-of-type + section {
+  padding-top: 60px !important;
+}
