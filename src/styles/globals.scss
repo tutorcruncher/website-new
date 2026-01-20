@@ -283,7 +283,7 @@ table th {
   outline: 3px solid #3da2f5;
 }
 
-div:before, div:after  {
+[data-page="privacy"] div:before, [data-page="privacy"] div:after  {
   content: "";
   clear: both;
   display: table;
