@@ -39,7 +39,7 @@ export default async function StaticPage({
     }
 
     const schemas = await fetchSchemas(content.data.schemas);
-    const isPrivacyPage = slug === "privacy";
+    const isPrivacyPage = slug.includes('privacy');
 
     return (
       <div data-page={isPrivacyPage ? "privacy" : undefined}>
