@@ -47,10 +47,12 @@ const StaticBlogPage = async ({ params }) => {
     redirect(article.content.url);
   }
 
-  const relatedPosts = await fetchArticles(
-    [prismic.filter.at("my.article.category", article.content.category.id)],
-    3
-  );
+  const relatedPosts = article.content.category?.id
+    ? await fetchArticles(
+        [prismic.filter.at("my.article.category", article.content.category.id)],
+        3
+      )
+    : [];
   const schemaData = generateArticleSchema(article);
 
   return (

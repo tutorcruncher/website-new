@@ -1,3 +1,5 @@
+import { SMS_PRICING } from "app/(default)/sms-pricing/data";
+
 export async function getMsgBirdData() {
   const smsUrl = "https://rest.messagebird.com/pricing/sms/outbound";
 
@@ -63,7 +65,6 @@ function groupByContiguous(sortedArray, keyGetter) {
 
   return groups;
 }
-
 function priceFormatter(minPrice, maxPrice) {
   const formattedMin = minPrice.toFixed(3);
   const formattedMax = maxPrice.toFixed(3);
@@ -74,8 +75,16 @@ function priceFormatter(minPrice, maxPrice) {
 }
 
 export async function getSmsPricing() {
-  const pricingData = await getMsgBirdData();
-  const usdConvRate = await getUsdForex();
+  let pricingData;
+  let usdConvRate;
+
+  try {
+    pricingData = await getMsgBirdData();
+    usdConvRate = await getUsdForex();
+  } catch (error) {
+    console.error("Failed to fetch live SMS pricing, using static data:", error);
+    return SMS_PRICING;
+  }
 
   pricingData.sort((a, b) => a.countryName.localeCompare(b.countryName));
 
