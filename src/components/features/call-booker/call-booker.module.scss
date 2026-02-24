@@ -167,3 +167,11 @@
 .lowAvailability {
   margin-bottom: grid(5);
 }
+
+.selectLabel {
+  font-size: $font-size--small;
+  color: $navy-blue;
+  font-weight: 600;
+  margin-bottom: grid(1);
+  display: block;
+}

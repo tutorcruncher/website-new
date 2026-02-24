@@ -389,7 +389,11 @@ export const CallBooker = ({ rep, rb }) => {
               type="hidden"
               value={selectedTimeSlot ? selectedTimeSlot[0].toISOString() : ""}
             />
+            <label htmlFor="revenue" className={styles.selectLabel}>
+              Estimated Annual Revenue
+            </label>
             <select
+              id="revenue"
               name="revenue"
               defaultValue={
                 revenueOptions?.[defaultRevenueOptionIndex]?.[1] || ""
