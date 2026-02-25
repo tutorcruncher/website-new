@@ -11,7 +11,9 @@ import { TickSvg } from "@/svgs/tick";
 import styles from "./pricing-tiers.module.scss";
 import TrackingLink from "@/components/ui/tracking-link/tracking-link";
 
-const TierPricing = ({ tier, pricing }) => {
+const CARD_FEE_REGIONS = ["gb", "us"];
+
+const TierPricing = ({ tier, pricing, region }) => {
   const currency = pricing.currency;
   const basePrice = pricing[tier.pricing]?.base_price;
   const fees = pricing[tier.pricing]?.fees;
@@ -50,7 +52,7 @@ const TierPricing = ({ tier, pricing }) => {
               <span>
                 <TickSvg />
               </span>
-              <span>Standard card fees {fees}%</span>
+              <span>{CARD_FEE_REGIONS.includes(region) ? `Standard card fees ${fees}%` : `${fees}% of client payments`}</span>
             </li>
           </ul>
         </div> : null}
@@ -65,7 +67,7 @@ export const PricingTiers = ({ region, pricing }) => {
         {TIERS.map((tier) => {
           return (
             <div className={styles.pricingTier} key={tier.pricing}>
-              <TierPricing tier={tier} pricing={pricing} />
+              <TierPricing tier={tier} pricing={pricing} region={region} />
               {tier.featuresList
                 .map((featuresList) => (
                   <div
