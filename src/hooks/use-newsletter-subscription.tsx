@@ -11,7 +11,7 @@ export const useNewsletterSubscription = () => {
 
     try {
       const response = await fetch(
-        "https://intercom.tutorcruncher.com/blog-callback",
+        "https://intercom.tutorcruncher.com/blog-callback/",
         {
           method: "POST",
           headers: {
