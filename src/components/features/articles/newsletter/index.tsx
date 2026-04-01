@@ -1,53 +1,109 @@
-"use client";
+ /* eslint-disable */ 
+ "use client";
 
-import { Action } from "@/components/ui/action";
+import { useState, FormEvent } from "react";
 import { Heading } from "@/components/ui/heading";
+import { Action } from "@/components/ui/action";
 import styles from "./newsletter.module.scss";
-import { useNewsletterSubscription } from "hooks/use-newsletter-subscription";
+
+const MAILCHIMP_POST_URL =
+  "https://tutorcruncher.us13.list-manage.com/subscribe/post-json?u=ea12d2871ca6b988ff70c3dbe&id=492dd26d91&v_id=5416&f_id=00b5d7ecf0";
 
 export const Newsletter = () => {
-  const { isLoading, isSubmitted, errorMessage, subscribe } =
-    useNewsletterSubscription();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubscribe = async (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    const email = formData.get("email");
-    await subscribe(email);
+    setIsLoading(true);
+    setErrorMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const params = new URLSearchParams();
+    formData.forEach((value, key) => {
+      params.set(key, value as string);
+    });
+
+    const callbackName = `mc_resp_${Date.now()}`;
+    const url = `${MAILCHIMP_POST_URL}&${params.toString()}&c=${callbackName}`;
+
+    (window as any)[callbackName] = (data: { result: string; msg: string }) => {
+      if (data.result === "success") {
+        setIsSubmitted(true);
+      } else {
+        const msg = data.msg || "Something went wrong. Please try again.";
+        setErrorMessage(msg.includes("already subscribed")
+          ? "You are already subscribed!"
+          : msg.replace(/<a [^>]+>[^<]+<\/a>/, "").trim()
+        );
+      }
+      setIsLoading(false);
+      delete (window as any)[callbackName];
+      script.remove();
+    };
+
+    const script = document.createElement("script");
+    script.src = url;
+    script.onerror = () => {
+      setErrorMessage("Something went wrong. Please try again.");
+      setIsLoading(false);
+      delete (window as any)[callbackName];
+      script.remove();
+    };
+    document.body.appendChild(script);
   };
 
   return (
     <div className={styles.newsletter}>
       <Heading size="xsmall" variant="h2" noMargin>
-        Don’t miss out!
+        Stay in the loop
       </Heading>
       <p>
-        Sign up to our mailing list to receive all the exciting updates and
-        insights!
+        Sign up to our mailing list to get monthly updates and insights straight to your inbox.
       </p>
-      <form onSubmit={handleSubscribe}>
+      <form onSubmit={handleSubmit}>
+        <input type="hidden" name="tags" value="7236437" />
+        <div style={{ position: "absolute", left: "-5000px" }} aria-hidden="true">
+          <input
+            type="text"
+            name="b_ea12d2871ca6b988ff70c3dbe_492dd26d91"
+            tabIndex={-1}
+            defaultValue=""
+          />
+        </div>
         <input
           type="email"
-          name="email"
+          name="EMAIL"
           placeholder="Email"
           required
           disabled={isLoading || isSubmitted}
           className={styles.input}
         />
-        {isSubmitted ? (
-          <p className={styles.successMessage}>Thank you for subscribing!</p>
-        ) : (
-          <Action
-            disabled={isLoading}
-            disableAnimation
-            type="submit"
-            loading={isLoading}
-          >
-            Subscribe
-          </Action>
-        )}
+        <fieldset className={styles.gdpr}>
+          <label className={styles.consent}>
+            <input type="checkbox" name="gdpr[71425]" value="Y" disabled={isLoading || isSubmitted} checked />
+            <span>Email marketing</span>
+          </label>
+          {isSubmitted ? (
+            <>
+            <p className={styles.successMessage}>Thank you for subscribing!</p>
+            <p>You can unsubscribe at anytime by clicking the link in the footer of our emails.</p>
+            </>
+          ) : (
+            <>
+            <Action disableAnimation type="submit" disabled={isLoading} loading={isLoading}>
+              Subscribe
+            </Action>
+             <p className={styles.legalText}>
+            By signing up to our newsletter you consent to receive marketing communications from TutorCruncher.
+          </p>
+          </>
+          )}
+          {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+         
+        </fieldset>
       </form>
-      {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
     </div>
   );
 };
