@@ -88,7 +88,7 @@ export const Newsletter = () => {
           {isSubmitted ? (
             <>
             <p className={styles.successMessage}>Thank you for subscribing!</p>
-            <p className={styles.legalText}>You can unsubscribe at anytime by clicking the link in the footer of our emails.</p>
+            <p>You can unsubscribe at anytime by clicking the link in the footer of our emails.</p>
             </>
           ) : (
             <>
@@ -96,7 +96,7 @@ export const Newsletter = () => {
               Subscribe
             </Action>
              <p className={styles.legalText}>
-            By signing up to our newsletter, you are consenting to receive marketing communications from TutorCruncher.
+            By signing up to our newsletter you consent to receive marketing communications from TutorCruncher.
           </p>
           </>
           )}
